@@ -45,6 +45,10 @@
 
     <!-- 部分ファイルを読み込む -->
     <script src="include.js"></script>
+
+    <!-- モーダルウィンドウ用のJavaScript -->
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js" defer></script>
+    <script src="javascripts/modal.js" defer></script>
   </head>
 
 
@@ -182,10 +186,39 @@
                人が操作しているか確認する機能のこと -->
           <div data-netlify-recaptcha="true"></div>
 
+          <p>
+            <button
+              type="button"
+              class="simple button"
+              data-micromodal-trigger="privacy-modal">
+              お預かりする情報の取り扱い
+            </button>
+          </p>
+
           <!-- 送信ボタン -->
           <!-- type="submit" で、送信ボタンになる -->
           <input type="submit" value="送信">
         </form>
+
+        <!-- お預かりする情報の取り扱い（モーダル） -->
+        <div class="modal" id="privacy-modal" aria-hidden="true">
+          <div class="modal-overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal-container" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title">
+              <header class="modal-header">
+                <h2 class="modal-title" id="privacy-modal-title">お預かりする情報の取り扱い</h2>
+                <button class="modal-close" aria-label="閉じる" data-micromodal-close>&times;</button>
+              </header>
+              <div class="modal-content" id="privacy-modal-content">
+                <p>このお問い合わせフォームで入力いただいた内容は、回答およびご連絡の目的にのみ使用します。</p>
+                <p>取得した個人情報を第三者に提供することはありません（法令に基づく場合を除きます）。</p>
+              </div>
+              <footer class="modal-footer">
+                <button class="simple button" type="button" data-micromodal-close>閉じる</button>
+              </footer>
+            </div>
+          </div>
+        </div>
+
       </article>
     </main>
 

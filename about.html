@@ -45,6 +45,10 @@
 
     <!-- 部分ファイルを読み込む -->
     <script src="include.js"></script>
+
+    <!-- モーダルウィンドウ用のJavaScript -->
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js" defer></script>
+    <script src="javascripts/modal.js" defer></script>
   </head>
 
   <!-- 表示したい内容・出し物・コンテンツを記述します -->
@@ -141,6 +145,35 @@
               frameborder="0"
               allowfullscreen>
             </iframe>
+          </div>
+        </div>
+
+        <p class="mt-5">
+          <button
+            type="button"
+            class="simple button"
+            data-micromodal-trigger="video-modal">
+            動画を大きく表示する
+          </button>
+        </p>
+
+        <div class="modal" id="video-modal" aria-hidden="true">
+          <div class="modal-overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal-container" role="dialog" aria-modal="true" aria-labelledby="video-modal-title">
+              <header class="modal-header">
+                <h2 class="modal-title" id="video-modal-title">動画を大きく表示</h2>
+                <button class="modal-close" aria-label="閉じる" data-micromodal-close>&times;</button>
+              </header>
+              <div class="modal-content" id="video-modal-content">
+                <div class="modal-video-wrapper">
+                  <iframe
+                    src="https://www.youtube.com/embed/L83oyH-qR9Q?rel=0&showinfo=0"
+                    frameborder="0"
+                    allowfullscreen>
+                  </iframe>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
