@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;600;900&display=swap" rel="stylesheet">
   <!-- Reset CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@acab/reset.css@0.10.0/index.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@acab/reset.css@0.11.0/index.min.css">
 
   <!-- 自分で作ったスタイルシート -->
   <!-- <link rel="stylesheet" href="style.css"> -->
@@ -22,8 +22,8 @@
 </head>
 
 <body class="cake">
-  <main class="main">
-    <h2>
+  <main class="main" aria-labelledby="cake-title">
+    <h2 id="cake-title">
       ふわもち<br>
       チョコカップケーキ
     </h2>
@@ -33,12 +33,12 @@
   </main>
 
   <figure class="photo">
-    <img src="images/cake.webp" alt="">
+    <img src="images/cake.webp" alt="チョコカップケーキの写真">
   </figure>
 
   <aside class="sub">
     <h3>
-      <i class="fa-solid fa-gift"></i>
+      <i class="fa-solid fa-gift" aria-hidden="true"></i>
       GIFT BOX
     </h3>
     <p>

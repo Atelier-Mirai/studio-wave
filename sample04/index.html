@@ -14,19 +14,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 
   <!-- Reset CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@acab/reset.css@0.10.0/index.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@acab/reset.css@0.11.0/index.min.css">
 
   <!-- 自分で作ったスタイルシート -->
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="burger">
-  <h2 class="title">
+<body>
+  <main class="burger" aria-labelledby="burger-title">
+  <h2 class="title" id="burger-title">
     新鮮採れたて野菜が<br>
     おいしいハンバーガー
   </h2>
   <figure class="photo">
-    <img src="images/burger.webp" alt="">
+    <img src="images/burger.webp" alt="ハンバーガーの写真">
   </figure>
   <div class="text">
     <p>
@@ -40,11 +41,12 @@
     </p>
   </div>
   <div class="sub">
-    <img src="images/coffee.webp" alt="">
+    <img src="images/coffee.webp" alt="カプチーノの写真">
     <p>
       モーニングセットのドリンクメニューでは暖かいカプチーノも用意されています。
     </p>
   </div>
+  </main>
 </body>
 
 </html>

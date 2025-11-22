@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 
   <!-- Reset CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@acab/reset.css@0.10.0/index.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@acab/reset.css@0.11.0/index.min.css">
 
   <!-- 自分で作ったスタイルシート -->
   <link rel="stylesheet" href="style.css">
@@ -30,32 +30,44 @@
     </p>
 
     <div class="series">
-      <img src="images/food.svg" alt="">
+      <img src="images/food.svg" alt="ナイフとフォークのアイコン">
       FOOD SERIES
     </div>
 
     <time class="date" datetime="2025-07-07">R07/07/07</time>
 
-    <aside class="bread">
+    <nav class="bread" aria-label="パンくずリスト">
       <ol>
         <li><a href="#">トップ</a></li>
         <li><a href="#">グルメ</a></li>
         <li><a href="#">関東エリア</a></li>
       </ol>
-    </aside>
+    </nav>
 
-    <aside class="category">
+    <nav class="category" aria-label="カテゴリ">
       <ul>
         <li><a href="#">グループ</a></li>
         <li><a href="#">おひとり様</a></li>
       </ul>
-    </aside>
+    </nav>
 
-    <aside class="sns">
+    <aside class="sns" aria-label="SNSでシェア">
       <ul>
-        <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+        <li>
+          <a href="#" aria-label="X（旧Twitter）でシェアする">
+            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="Facebookでシェアする">
+            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="Instagramを開く">
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+          </a>
+        </li>
       </ul>
     </aside>
   </header>
@@ -68,14 +80,14 @@
       ハンバーガー
     </h2>
     <figure class="fig01">
-      <img src="images/food-burger.webp" alt="">
+      <img src="images/food-burger.webp" alt="ハンバーガーの写真">
     </figure>
     <p>
       肉汁たっぷりなお肉と新鮮な野菜を一緒に楽しむなら、ここのハンバーガーが一押しです。トマトにレタス、キュウリ、玉ねぎ、アボガド、ピクルスなどなど、いろいろな野菜が用意されていて、好きなものを組み合わせてオリジナルのバーガーを作ることもできます。
     </p>
     <div class="shop">
       <h3>FLESHカフェ　恵比寿中央店</h3>
-      <img src="images/shop01.webp" alt="">
+      <img src="images/shop01.webp" alt="FLESHカフェ 恵比寿中央店の外観写真">
       <p>
         〒123-4567<br>
         東京都渋谷区恵比寿12-3中央ビル<br>
@@ -94,17 +106,17 @@
       オレンジピールクッキー
     </h2>
     <figure class="fig01">
-      <img src="images/food-orange.webp" alt="">
+      <img src="images/food-orange.webp" alt="オレンジピールクッキーの写真">
     </figure>
     <figure class="fig02">
-      <img src="images/food-cookie.webp" alt="">
+      <img src="images/food-cookie.webp" alt="クッキーとオレンジの写真">
     </figure>
     <p>
       オレンジピールのちょっとほろ苦い甘さに誘われて、やめられなくなるクッキーです。オレンジピールだけを楽しむのもあり。甘いものが苦手な人にもおすすめできます。
     </p>
     <div class="shop">
       <h3>クッキー専門店 オレンジ</h3>
-      <img src="images/shop02.webp" alt="">
+      <img src="images/shop02.webp" alt="クッキー専門店 オレンジの外観写真">
       <p>
         〒123-4567<br>
         東京都渋谷区恵比寿12-3中央ビル<br>
@@ -123,14 +135,14 @@
       チョコカップケーキ
     </h2>
     <figure class="fig01">
-      <img src="images/food-cake.webp" alt="">
+      <img src="images/food-cake.webp" alt="チョコカップケーキの写真">
     </figure>
     <p>
       お餅のようなもっちりさと、ふわふわの柔らかさが楽しめるカップケーキです。カリッと食感のチョコチップがアクセントになっています。
     </p>
     <div class="shop">
       <h3>ショコラティエ</h3>
-      <img src="images/shop03.webp" alt="">
+      <img src="images/shop03.webp" alt="ショコラティエの外観写真">
       <p>
         〒123-4567<br>
         東京都渋谷区恵比寿12-3中央ビル<br>

@@ -1,0 +1,244 @@
+/**
+ * uaplus.css バージョン 0.2.0
+ * https://fokus.dev/tools/uaplus/
+ */
+
+/**
+ * 異なるボックスモデル
+ * 
+ * このリセットでは、要素のパディングやボーダーが指定した幅と高さの
+ * 外側ではなく内側に描画される従来のボックスモデルを使います。
+ * これにより、<code>inline-size</code> や <code>block-size</code> などの
+ * プロパティで相対単位と絶対単位を組み合わせやすくなります。
+ * 
+ * 参考: https://en.wikipedia.org/wiki/CSS_box_model
+ */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+/**
+ * フォーカススタイルの改善
+ *
+ * コンテンツとフォーカスアウトラインの間に余白を追加します。
+ */
+:where(:focus-visible) {
+    outline-offset: 3px;
+}
+
+/**
+ * 文字サイズ自動調整を無効化
+ * 
+ * モバイル最適化されていないサイトの可読性を高めるために、
+ * モバイル Safari などのブラウザは縦向きから横向きに切り替えたとき
+ * 既定のフォントサイズを自動的に大きくすることがあります。
+ * 最適化済みのサイトではこれを避けたいので無効にします。
+ *
+ * 参考: https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/
+ */
+:where(html) {
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/**
+ * 行の高さを大きくする
+ *
+ * 行の高さを少し大きくすると、長い段落が読みやすくなります。
+ */
+:where(html) {
+    line-height: 1.5;
+}
+
+/**
+ * スクロールバー用の余白を追加
+ *
+ * 長いページから短いページに切り替えたときに
+ * レイアウトが「ガタッ」と横にずれるのを防ぎます。
+ *
+ */
+:where(html) {
+    scrollbar-gutter: stable;
+}
+
+/**
+ * セクション化コンテンツ内にネストされた h1 への UA スタイルを除去
+ *
+ * section や article などの中に h1 をネストしても、
+ * ネストはセマンティクスに影響しないのと同様に、
+ * 見出しのスタイルにも影響すべきではありません。
+ * 
+ * 参考: https://github.com/whatwg/html/issues/7867#issuecomment-2632395167
+ *       https://github.com/whatwg/html/pull/11102
+ *       https://html.spec.whatwg.org/#sections-and-headings
+ */
+:where(h1) {
+    font-size: 2em;
+    margin-block: 0.67em;
+}
+
+/**
+ * title 属性付き略語の扱いを改善
+ * 
+ * title 属性を付けた abbr 要素は、アクセシビリティ対応が
+ * ブラウザ間で一貫しておらず、一部のユーザーにしか届かないため
+ * それほど有用ではありませんが、よく使われています。
+ * このルールでは、すべてのブラウザ（Safari にバグあり）で
+ * 略語に点線の下線を付け、カーソルも変更します。
+ * 
+ * 参考: https://adrianroselli.com/2024/01/using-abbr-element-with-title-attribute.html
+ */
+:where(abbr[title]) {
+    cursor: help;
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+}
+
+/**
+ * 強制カラーモードにおける mark 要素を最適化
+ *
+ * 強制カラーモードでは mark 要素の色が変わらないため
+ * 問題になることがあります。代わりにシステムカラーを使います。
+ * 
+ * 参考: https://adrianroselli.com/2017/12/tweaking-text-level-styles.html#MarkWHCM
+ */
+@media (forced-colors: active) {
+    :where(mark) {
+        color: HighlightText;
+        background-color: Highlight;
+    }
+}
+
+/**
+ * 埋め込みコンテンツによるはみ出しを防ぐ
+ * 
+ * 埋め込みコンテンツ（音声・動画・画像など）が
+ * コンテナからはみ出さないようにします。
+ */
+:where(audio, iframe, img, svg, video) {
+    max-block-size: 100%;
+    max-inline-size: 100%;
+}
+
+/**
+ * fieldset によるはみ出しを防ぐ
+ *
+ * 子要素によって fieldset が引き伸ばされないように、
+ * 既定の `min-inline-size: min-content` をリセットします。
+ *
+ * 参考: https://github.com/twbs/bootstrap/issues/12359
+ *       https://html.spec.whatwg.org/multipage/#the-fieldset-and-legend-elements
+ */
+:where(fieldset) {
+    min-inline-size: 0;
+}
+
+/**
+ * label をブロック要素にする
+ * 
+ * input・select・textarea 用の label は
+ * ブロック要素として扱うのが望ましいと考えます。
+ */
+:where(label):has(+ :where(input:not([type="radio"], [type="checkbox"]), select, textarea)) {
+    display: block;
+}
+
+/**
+ * textarea の高さを少し増やす
+ *
+ * textarea の既定の高さは小さいため、少し高くしておきます。
+ */
+:where(textarea:not([rows])) {
+    min-block-size: 6em;
+}
+
+/**
+ * フォーム要素にフォント指定を継承させる
+ * 
+ * button・input・select・textarea も
+ * ページ全体と同じフォントファミリとサイズを使うようにします。
+ */
+:where(button, input, select, textarea) {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/**
+ * search 入力のスタイルを正規化
+ *  
+ * macOS や iOS の検索入力に付いている角丸や
+ * 背景色の違いを取り除き、見た目をそろえます。
+ */
+:where([type="search"]) {
+    -webkit-appearance: textfield;
+}
+
+/* iOS のみ */
+@supports (-webkit-touch-callout: none) {
+    :where([type="search"]) {
+        border: 1px solid -apple-system-secondary-label;
+        background-color: canvas;
+    }
+}
+
+/**
+ * 一部の入力タイプの方向を維持する
+ * 
+ * 右から左に書く言語でも、値が空でないかぎり
+ * プレースホルダーではなく入力値を左寄せにしておきたい
+ * 入力タイプがあります（プレースホルダーは右寄せのまま）。
+ *
+ * 参考: https://rtlstyling.com/posts/rtl-styling#form-inputs
+ */
+:where(input):where([type="tel"], [type="url"], [type="email"], [type="number"]):not( :placeholder-shown) {
+    direction: ltr;
+}
+
+/**
+ * テーブルのスタイルを改善
+ *  
+ * 既定のスタイルのままだとテーブルは見分けづらいので、
+ * パディングと罫線の折りたたみを追加します。
+ */
+:where(table) {
+    border-collapse: collapse;
+    border: 1px solid;
+}
+
+:where(th, td) {
+    border: 1px solid;
+    padding: 0.25em 0.5em;
+    vertical-align: top;
+}
+
+/**
+ * ダイアログのフェード演出
+ *  
+ * dialog 要素とそのバックドロップに
+ * フェードイン／フェードアウトのトランジションを追加します。
+ */
+:where(dialog)::backdrop {
+    background: oklch(0% 0 0 / 0.3);
+}
+
+:where(dialog, [popover]),
+:where(dialog)::backdrop {
+    opacity: 0;
+    transition: opacity 150ms ease-out, display 150ms allow-discrete,
+        overlay 150ms allow-discrete;
+}
+
+:where(dialog[open], :popover-open),
+:where(dialog[open])::backdrop {
+    opacity: 1;
+}
+
+@starting-style {
+
+    :where(dialog[open], :popover-open),
+    :where(dialog[open])::backdrop {
+        opacity: 0;
+    }
+}
