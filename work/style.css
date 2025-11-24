@@ -5,6 +5,8 @@
 /* 基本設定(リセットCSS) */
 * {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 img {
@@ -13,7 +15,7 @@ img {
 }
 
 /* ページ全体の設定 */
-.top {
+body {
   display: grid;
   grid-template:
     ".    head .   " 100px
@@ -23,7 +25,7 @@ img {
   row-gap: 20px;
 }
 
-.top main {
+body main {
   grid-area: main;
   display: grid;
   grid-template:
@@ -49,26 +51,26 @@ nav {
 }
 
 /* ヒーローイメージ */
-.hero {
+figure.hero {
   grid-column: 1 / -1;
   grid-row: 1 / span 2;
 }
 
 /* タイトル（キャッチフレーズ） */
-.top h1 {
+h1.catch_phrase {
   grid-area: title;
   justify-self: center;
   align-self: center;
 }
 
 /* サブタイトル */
-.sub_title {
+p.sub_title {
   grid-area: sub;
   text-align: center;
 }
 
 /* 記事一覧 */
-#recent {
+section#recent {
   grid-area: recent;
   display: grid;
   grid-template-columns: 1fr 1fr;

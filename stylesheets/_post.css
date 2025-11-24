@@ -13,7 +13,7 @@ body.post {
     ".    sidebar .   " auto
     "foot foot    foot" 140px /
     20px  1fr     20px;
-  row-gap: 20px;
+  row-gap: var(--space-l);
 
   /* 画面幅が768px以上なら */
   @media (width >= 768px) {
@@ -91,15 +91,16 @@ body.post {
   /* aside 要素に枠線などの装飾を指定する */
   aside {
     border: solid 1px var(--amairo);
-    padding: 20px;
-    margin: 30px 0;
+    padding: var(--space-l);
+    margin-block: var(--space-xl);
+    margin-inline: 0;
     text-align: center;
 
     /* 見出し */
     h2 {
       border-bottom: solid 2px var(--sanaeiro);
-      padding-bottom: 20px;
-      margin-block-end: 20px;
+      padding-bottom: var(--space-l);
+      margin-block-end: var(--space-l);
       color: var(--sanaeiro);
       font-weight: normal;
       font-family: 'Yuji Boku', serif;

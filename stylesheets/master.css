@@ -1,91 +1,97 @@
 /*=============================================================================
   個々のスタイルシートを読み込み束ねる
 =============================================================================*/
+@layer reset, base, layout, components, utilities;
+
+/* Reset CSS をレイヤー内に取り込む
+-----------------------------------------------*/
+@import url('https://cdn.jsdelivr.net/npm/@acab/reset.css@0.10.0/index.min.css') layer(reset);
 
 /* 日本の伝統色 和の色
 -----------------------------------------------*/
-@import "_colors.css";
+@import "_colors.css" layer(base);
+@import "_design_tokens.css" layer(base);
 
 /* ページ全体の部品配置
 -----------------------------------------------*/
-@import "_layout.css";
+@import "_layout.css" layer(layout);
 
 /* ヘッダー
 -----------------------------------------------*/
-@import "_header.css";
+@import "_header.css" layer(components);
 
 /* ナビゲーションメニュー
 -----------------------------------------------*/
-@import "_navigation.css";
+@import "_navigation.css" layer(components);
 
 /* ヒーローイメージ
 -----------------------------------------------*/
-@import "_hero.css";
+@import "_hero.css" layer(components);
 
 /* タイトル
 -----------------------------------------------*/
-@import "_title.css";
+@import "_title.css" layer(components);
 
 /* サブタイトル
 -----------------------------------------------*/
-@import "_sub_title.css";
+@import "_sub_title.css" layer(components);
 
 /* 記事一覧
 -----------------------------------------------*/
-@import "_recent.css";
+@import "_recent.css" layer(components);
 
 /* フッター
 -----------------------------------------------*/
-@import "_footer.css";
+@import "_footer.css" layer(layout);
 
 /* 記事ページ
 -----------------------------------------------*/
-@import "_post.css";
+@import "_post.css" layer(layout);
 
 /* 図形状に切り抜く
 -----------------------------------------------*/
-@import "_shapes.css";
+@import "_shapes.css" layer(components);
 
 /* テーブル
 -----------------------------------------------*/
-@import "_table.css";
+@import "_table.css" layer(components);
 
 /* お問い合せフォーム
 -----------------------------------------------*/
-@import "_contact.css";
+@import "_contact.css" layer(components);
 
 /* テキストの配置
 -----------------------------------------------*/
-@import "_text.css";
+@import "_text.css" layer(base);
 
 /* 写真の枠とその効果
 -----------------------------------------------*/
-@import "_frame.css";
+@import "_frame.css" layer(components);
 
 /* 地図 や 動画
 -----------------------------------------------*/
-@import "_map_and_video.css";
+@import "_map_and_video.css" layer(components);
 
 /* モーダルウィンドウ
 -----------------------------------------------*/
-@import "_modal.css";
+@import "_modal.css" layer(components);
 
 /* 文字の装飾
 -----------------------------------------------*/
-@import "_text.css";
+@import "_text.css" layer(base);
 
 /* 様々なボタン
 -----------------------------------------------*/
-@import "_button.css";
+@import "_button.css" layer(components);
 
 /* 先頭に戻る
 -----------------------------------------------*/
-@import "_page_top.css";
+@import "_page_top.css" layer(components);
 
 /* 滑らかにスクロール
 -----------------------------------------------*/
-@import "_smooth_scroll.css";
+@import "_smooth_scroll.css" layer(utilities);
 
 /* いろいろ便利用
 -----------------------------------------------*/
-@import "_utility.css";
+@import "_utility.css" layer(utilities);

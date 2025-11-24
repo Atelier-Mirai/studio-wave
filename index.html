@@ -9,7 +9,7 @@
     <title>WAVE</title>
 
     <!-- ビューポート(視点)の指定 -->
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- ファビコンの指定 https://ao-system.net/favicongenerator/ -->
     <link rel="icon"
@@ -34,9 +34,6 @@
     <link rel="stylesheet"
           href="https://use.fontawesome.com/releases/v7.1.0/css/all.css">
 
-    <!-- Reset CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@acab/reset.css@0.10.0/index.min.css">
-
     <!-- 自分で作ったスタイルシート -->
     <link rel="stylesheet" href="stylesheets/master.css">
 
@@ -54,26 +51,26 @@
     </header>
 
     <!-- ナビゲーションメニュー -->
-    <nav>
+    <nav aria-label="主なメニュー">
       <!-- fa-lgは1.33倍、la-2xは2倍の大きさ、fa-fwは横に少し間隔が空く -->
       <!-- 2021年最新版、Font Awesome アイコンの使い方と便利な機能のまとめ -->
       <!-- https://coliss.com/articles/build-websites/operation/work/font-awesome-guide-and-useful-tricks.html -->
       <ul>
         <li>
           <a href="#recent">
-            <i class="fa-regular fa-newspaper"></i>
+            <i class="fa-regular fa-newspaper" aria-hidden="true"></i>
             最新記事
           </a>
         </li>
         <li>
           <a href="about.html">
-            <i class="fa-brands fa-pagelines fa-lg fa-fw"></i>
+            <i class="fa-brands fa-pagelines fa-lg fa-fw" aria-hidden="true"></i>
             サイトについて
           </a>
         </li>
         <li>
           <a href="contact.html">
-            <i class="fa-solid fa-envelope fa-lg fa-fw"></i>
+            <i class="fa-solid fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
             お問い合わせ
           </a>
         </li>
@@ -88,7 +85,7 @@
       </figure>
 
       <!-- 文字が煌めくタイトル(キャッチフレーズ) -->
-      <h1 class="glow text">
+      <h1 class="glow text catch_phrase">
         Best place to visit in the world
       </h1>
 
@@ -129,25 +126,9 @@
         <article class="link disable">
           <a href="post04.html">
             <figure>
-              <img src="images/chair.webp" alt="">
+              <img src="images/chair.webp" alt="海辺のリビングに置かれた椅子の写真">
             </figure>
-            <h3>居心地のいい部屋にあるもの</h3>
-          </a>
-        </article>
-        <article class="link disable">
-          <a href="post05.html">
-            <figure>
-              <img src="images/tile.webp" alt="">
-            </figure>
-            <h3>カラフルなタイル</h3>
-          </a>
-        </article>
-        <article class="link disable">
-          <a href="post06.html">
-            <figure>
-              <img src="images/recipe.webp" alt="">
-            </figure>
-            <h3>美味しいオムレツのレシピ</h3>
+            <h3>海辺の暮らしを楽しむ部屋づくり</h3>
           </a>
         </article>
         <article>
@@ -270,10 +251,10 @@
       <!-- ページの先頭にスムーズスクロール -->
       <p id="page_top">
         <!-- 金色のボタン -->
-        <a href="#" class="gold button">
+        <a href="#" class="gold button" aria-label="ページの先頭へ戻る">
           <span>
-            <i class="fa-solid fa-angles-up fa-lg fa-fw"></i>
-            <span class="computer only">Page Top</span>
+            <i class="fa-solid fa-angles-up fa-lg fa-fw" aria-hidden="true"></i>
+            <span class="desktop-only">Page Top</span>
           </span>
         </a>
       </p>
@@ -302,7 +283,7 @@
 
       <!-- 著作権表示 -->
       <p class="copyright">
-        Copyright © 令和六年 WAVE All rights reserved.
+        Copyright © 令和七年 WAVE All rights reserved.
       </p>
     </footer>
   </body>

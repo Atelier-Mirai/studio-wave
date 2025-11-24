@@ -30,7 +30,7 @@
 .simple.button {
   color: var(--sakurairo);
   border: solid 1px var(--sakurairo);
-  border-radius: 10px;
+  border-radius: var(--radius-m);
   background: #555d6b80;
 
   a:hover {

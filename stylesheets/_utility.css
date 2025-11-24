@@ -14,14 +14,14 @@
 
 /* モバイル / コンピュータ 切替
 -----------------------------------------------------------------------------*/
-.mobile.only {
+.mobile-only {
   display: inherit;
   @media (width >= 768px) {
     display: none;
   }
 }
 
-.computer.only {
+.desktop-only {
   display: inherit;
   @media (width < 768px) {
     display: none;
@@ -62,7 +62,7 @@
 .rotate-30.image  { transform: rotate(-30deg); }
 .sepia.image      { filter: sepia(100%); }
 .monochrome.image { filter: grayscale(1); }
-.rounded          { border-radius: 10px !important; }
+.rounded          { border-radius: var(--radius-m) !important; }
 .circular         { border-radius: 50% !important; }
 .centered.image   { margin: 0 auto; }
 

@@ -18,7 +18,8 @@ form {
 
   /* 入力枠、長文入力枠への装飾指定 */
   input,
-  textarea {
+  textarea,
+  select {
     width: 100%;            /* 幅 */
     box-sizing: border-box; /* padding込で幅を指定する */
     padding: 10px;          /* 空白を設ける */
@@ -27,7 +28,7 @@ form {
 
     outline: none;
     border: 1px solid var(--nibiiro);
-    border-radius: 5px;
+    border-radius: var(--radius-s);
     color: var(--kurohairo);
     transition: box-shadow 0.1s ease,
                 border-color 0.1s ease;

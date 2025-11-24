@@ -9,12 +9,18 @@
     <!-- ビューポート(視点)の指定 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap">
+
     <!-- 自分で作ったスタイルシート -->
     <link rel="stylesheet" href="style.css">
   </head>
 
   <!-- 表示したい内容・出し物・コンテンツを記述します -->
-  <body>
+  <body class="top">
     <!-- ヘッダー(サイト名) -->
     <header><a href="index.html">WAVE</a></header>
 
@@ -86,6 +92,16 @@
 
     <!-- フッター -->
     <footer>
+      <!-- ページの先頭にスムーズスクロール -->
+      <p id="page_top">
+        <!-- 金色のボタン -->
+        <a href="#" class="gold button">
+          <span>
+            <i class="fa-solid fa-angles-up fa-lg fa-fw"></i>
+            <span class="desktop-only">Page Top</span>
+          </span>
+        </a>
+      </p>
       <!-- 連絡先 -->
       <address>
         <!-- 会社名 -->
@@ -95,12 +111,14 @@
         <!-- 電話番号 -->
         <p class="tel">
           <a href="tel:052-373-4649">
+            <i class="fa-solid fa-phone fa-rotate-90 fa-lg"></i>
             052-373-4649
           </a>
         </p>
         <!-- メールアドレス -->
         <p class="email">
           <a href="mailto:contact@wave.example.jp">
+            <i class="fa-regular fa-envelope fa-lg"></i>
             contact@wave.example.jp
           </a>
         </p>
