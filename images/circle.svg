@@ -1,14 +1,26 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" viewBox="0 0 310 246" style="enable-background:new 0 0 310 246;" xml:space="preserve">
-<style type="text/css">
-	.st0{opacity:0.2;fill:#FFFFFF;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
-	.st1{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;}
-</style>
-<circle class="st0" cx="105.5" cy="105.5" r="104.5"/>
-<circle class="st0" cx="226" cy="90" r="83"/>
-<circle class="st0" cx="204.5" cy="196.5" r="48.5"/>
-<circle class="st1" cx="105.5" cy="105.5" r="104.5"/>
-<circle class="st1" cx="226" cy="90" r="83"/>
-<circle class="st1" cx="204.5" cy="196.5" r="48.5"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <style>
+    /* 柔らかな RGB の三原色をイメージした半透明の円（白い枠線付き） */
+    .decor-r {
+      fill: rgb(255, 128, 128);
+      fill-opacity: 0.25;
+      stroke: #c001;	/* cool */
+      stroke-width: 64;
+    }
+    .decor-g {
+      fill: rgb(128, 255, 160);
+      fill-opacity: 0.06125;
+      stroke: #1dea;	/* idea */
+      stroke-width: 2;
+    }
+    .decor-b {
+      fill: rgb(128, 192, 255);
+      fill-opacity: 0.25;
+      stroke: #c0de;	/* code */
+      stroke-width: 1;
+    }
+  </style>
+  <circle  class="decor-r" cx="117.3" cy="133.7" r =" 31.50" />
+  <ellipse class="decor-g" cx="084"   cy="46.49" rx="077.34" ry="14.106" />
+  <ellipse class="decor-b" cx=" 75.8" cy="37.3"  rx=" 80.80" ry="25.25" transform="rotate(22.3 37 76)"/>
 </svg>
