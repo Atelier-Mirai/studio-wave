@@ -1,0 +1,57 @@
+/*=============================================================================
+  フッター
+=============================================================================*/
+footer {
+  /* 自身の配置指定 */
+  grid-area: foot;
+  justify-self: center;
+  align-self: center;
+
+  background: url("../images/beach_waves.webp") 75% 75%;
+  background-size: cover;
+  width: 100vw;
+
+  /* 傘下の要素の為に、自身をグリッドコンテナにする */
+  display: grid;
+  grid-template:
+      "address"   auto
+      "copyright" auto /
+       1fr;
+
+  line-height: 1.75;
+  text-align: center;
+
+  address {
+    grid-area: address;
+    align-self: center;
+
+    /* 桜色の影を作る */
+    .company_name, .address, .tel, .email {
+      text-shadow: 1px  1px 3px var(--sakurairo),
+                   1px -1px 3px var(--sakurairo),
+                  -1px  1px 3px var(--sakurairo),
+                  -1px -1px 3px var(--sakurairo);
+    }
+
+    .company_name {
+      font-size: larger;
+      color: var(--utsushiiro);
+    }
+
+    .address, .tel, .email {
+      font-size: medium;
+      color: var(--kurohairo);
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+  }
+
+  .copyright {
+    grid-area: copyright;
+    background: var(--kurohairo);
+    color: var(--sakurairo);
+    font-size: 12px;
+  }
+}

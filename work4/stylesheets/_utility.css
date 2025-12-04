@@ -1,0 +1,32 @@
+/*=====================================================================
+  いろいろ便利（work3 用に必要な分だけ抜粋）
+=====================================================================*/
+
+/* リンク無効化 */
+.link.disable {
+  pointer-events: none;
+
+  &:hover {
+    pointer-events: none;
+  }
+
+  a {
+    pointer-events: none;
+    cursor: default;
+  }
+}
+
+/* モバイル / コンピュータ 切替 */
+.mobile-only {
+  display: inherit;
+  @media (width >= 768px) {
+    display: none;
+  }
+}
+
+.desktop-only {
+  display: inherit;
+  @media (width < 768px) {
+    display: none;
+  }
+}

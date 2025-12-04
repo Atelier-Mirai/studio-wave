@@ -37,45 +37,46 @@
     <link rel="stylesheet" href="stylesheets/master.css">
 
     <!-- 自分で作ったJavaScript -->
+    <script src="javascripts/hero_slideshow.js" defer></script>
     <script src="javascripts/glow_text.js" defer></script>
     <script src="javascripts/page_top.js" defer></script>
   </head>
 
   <!-- 表示したい内容・出し物・コンテンツを記述します -->
   <body class="top">
-    <!-- ヘッダー(サイト名) -->
-    <header><a href="index.html">WAVE</a></header>
+    <div class="site-header">
+      <!-- ヘッダー(サイト名) -->
+      <header><a href="index.html">WAVE</a></header>
 
-    <!-- ナビゲーションメニュー -->
-    <nav aria-label="主なメニュー">
-      <ul>
-        <li>
-          <a href="#recent">
-            <i class="fa-regular fa-newspaper" aria-hidden="true"></i>
-            最新記事
-          </a>
-        </li>
-        <li>
-          <a href="about.html">
-            <i class="fa-brands fa-pagelines fa-lg fa-fw" aria-hidden="true"></i>
-            サイトについて
-          </a>
-        </li>
-        <li>
-          <a href="contact.html">
-            <i class="fa-solid fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
-            お問い合わせ
-          </a>
-        </li>
-      </ul>
-    </nav>
+      <!-- ナビゲーションメニュー -->
+      <nav aria-label="主なメニュー">
+        <ul>
+          <li>
+            <a href="#recent">
+              <i class="fa-regular fa-newspaper" aria-hidden="true"></i>
+              最新記事
+            </a>
+          </li>
+          <li>
+            <a href="about.html">
+              <i class="fa-brands fa-pagelines fa-lg fa-fw" aria-hidden="true"></i>
+              サイトについて
+            </a>
+          </li>
+          <li>
+            <a href="contact.html">
+              <i class="fa-solid fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+              お問い合わせ
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
 
     <!-- 主要なコンテンツ -->
     <main>
-      <!-- ヒーローイメージ -->
-      <figure class="hero">
-        <img src="images/blue_sea_1920x1280.webp"
-             alt="世界で一番の観光地">
+      <!-- ヒーローイメージ（JavaScriptでスライドショーを表示） -->
+      <figure class="hero" aria-label="世界で一番の観光地">
       </figure>
 
       <!-- キャッチフレーズ -->
