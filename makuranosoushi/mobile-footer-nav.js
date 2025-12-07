@@ -26,7 +26,7 @@
 
   // スクロール量に応じて固定フッターの表示／非表示を切り替える
   const updateFixedFooter = () => {
-    const footer = document.getElementById('fixed_footer')
+    const footer = document.getElementById('mobile-footer-nav')
     if (!footer) return
 
     const scroll = getScrollAmount()

@@ -3,14 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>枕草子</title>
-    <meta name="description" content="書籍「動くWebデザインアイディア帳」をもとに作成">
     <meta name="viewport" content="width=device-width">
+    <meta name="description" content="枕草子を題材に、視差効果と桜・蛍・紅葉・雪のアニメーションを楽しめるページ">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="stylesheets/reset.css">
-    <link rel="stylesheet" href="stylesheets/master.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.1.0/css/all.css">
+    <link rel="stylesheet" href="style.css">
     <script src="mobile-footer-nav.js" defer></script>
   </head>
 
@@ -22,6 +21,7 @@
 
     <!-- メイン：視差スクロール用コンテナ -->
     <main class="parallax-wrapper">
+      <!-- 春 -->
       <section id="haru" class="kisetsu haru">
         <div class="parallax-bg photograph"></div>
         <div class="parallax-content">
@@ -36,6 +36,7 @@
         </div>
       </section>
 
+      <!-- 夏 -->
       <section id="natsu" class="kisetsu natsu">
         <div class="parallax-bg photograph"></div>
         <div class="parallax-content">
@@ -50,6 +51,7 @@
         </div>
       </section>
 
+      <!-- 秋 -->
       <section id="aki" class="kisetsu aki">
         <div class="parallax-bg photograph"></div>
         <div class="parallax-content">
@@ -58,12 +60,14 @@
           </div>
           <article>
             <p>
-              秋は、夕暮。夕日のさして、山の端いと近うなりたるに、烏の寝どころへ行くとて、三つ四つ、二つ三つなど、飛びいそぐさへあはれなり。まいて、雁などのつらねたるが、いと小さく見ゆるは、いとをかし。日入りはてて、風の音、虫の音など、はた、言ふべきにあらず。
+              秋は、夕暮。夕日のさして、山の端いと近うなりたるに、烏の寝どころへ行くとて、三つ四つ、二つ三つなど、飛びいそぐさへあはれなり。
+              <!-- まいて、雁などのつらねたるが、いと小さく見ゆるは、いとをかし。日入りはてて、風の音、虫の音など、はた、言ふべきにあらず。 -->
             </p>
           </article>
         </div>
       </section>
 
+      <!-- 冬 -->
       <section id="fuyu" class="kisetsu fuyu">
         <div class="parallax-bg photograph"></div>
         <div class="parallax-content">
@@ -72,14 +76,16 @@
           </div>
           <article>
             <p>
-              冬は、つとめて。雪の降りたるは、言ふべきにもあらず。霜のいと白きも。またさらでも、いと寒きに、火など急ぎおこして、炭持てわたるも、いとつきづきし。昼になりて、ぬるくゆるびもていけば、火桶の火も、白き灰がちになりて、わろし。
+              冬は、つとめて。雪の降りたるは、言ふべきにもあらず。霜のいと白きも。またさらでも、いと寒きに、火など急ぎおこして、炭持てわたるも、いとつきづきし。
+              <!-- 昼になりて、ぬるくゆるびもていけば、火桶の火も、白き灰がちになりて、わろし。 -->
             </p>
           </article>
         </div>
       </section>
     </main>
 
-    <footer id="fixed_footer">
+    <!-- モバイル版メニュー -->
+    <footer id="mobile-footer-nav">
       <nav>
         <ul>
           <li>
@@ -110,7 +116,8 @@
       </nav>
     </footer>
 
-    <nav class="follow_menu">
+    <!-- デスクトップ版メニュー -->
+    <nav class="desktop-follow-nav">
       <ul>
         <li>
           <a href="#haru">
@@ -138,17 +145,5 @@
         </li>
       </ul>
     </nav>
-
-    <!--
-    https://bungobungo.jp/text/hakbn/
-    春は、あけぼの。やうやうしろくなりゆく山ぎは、すこし明かりて、紫だちたる雲の、細くたなびきたる。
-
-    夏は、夜。月のころはさらなり。闇もなほ、蛍の多く飛びちがひたる。また、ただ一つ二つなど、ほのかにうち光りて行くも、をかし。雨など降るも、をかし。
-
-    秋は、夕暮。夕日のさして、山の端いと近うなりたるに、烏の寝どころへ行くとて、三つ四つ、二つ三つなど、飛びいそぐさへあはれなり。まいて、雁などのつらねたるが、いと小さく見ゆるは、いとをかし。日入りはてて、風の音、虫の音など、はた、言ふべきにあらず。
-
-    冬は、つとめて。雪の降りたるは、言ふべきにもあらず。霜のいと白きも。またさらでも、いと寒きに、火など急ぎおこして、炭持てわたるも、いとつきづきし。昼になりて、ぬるくゆるびもていけば、火桶の火も、白き灰がちになりて、わろし。
-    -->
-
   </body>
 </html>
