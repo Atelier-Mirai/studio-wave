@@ -1,0 +1,52 @@
+/*=====================================================================
+  ボタンの為のCSS（work3 用に本体から抜粋）
+=====================================================================*/
+
+.button {
+  position: relative;
+  text-decoration: none;
+
+  font-size: clamp(10px, 2vw, 16px);
+  padding: 0.8rem 1.2rem;
+  transition: all 0.3s;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+  display: inline-block;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+/* 金塊のようなボタン */
+.gold.button {
+  color: #b1921b;
+  border-right:   4px solid #cea82c;
+  border-bottom: 10px solid #987c1e;
+  border-left:    4px solid #ffed8b;
+  border-radius: 0;
+  background: linear-gradient(-90deg,
+                              #ffd75b 0%,
+                              #fff5a0 30%,
+                              #fffabe 40%,
+                              #ffffdb 50%,
+                              #fff5a0 70%,
+                              #fdd456 100%);
+  text-shadow: -1px -1px 1px #ffffd9;
+  padding: 0.4rem 0.6rem;
+  letter-spacing: 0;
+
+  span {
+    white-space: nowrap;
+  }
+
+  &:hover {
+    margin-block-start: 3px;
+    color: #b1921b;
+    border-right:  4px solid #cea82c;
+    border-bottom: 7px solid #987c1e;
+    border-left:   4px solid #ffed8b;
+  }
+}

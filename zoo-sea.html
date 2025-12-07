@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <!-- サイトに関する設定事項を記述します -->
+  <head>
+    <!-- 文字コードの指定 -->
+    <meta charset="utf-8">
+
+    <!-- ページのタイトル -->
+    <title>動物園の思い出・海の思い出 - WAVE</title>
+
+    <!-- ビューポート(視点)の指定 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- ファビコン -->
+    <link rel="icon" href="images/icon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v7.1.0/css/all.css">
+
+    <!-- GLightbox (ライトボックス表示用) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.3.0/css/glightbox.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.3.0/js/glightbox.min.js" defer></script>
+    <script src="glightbox/glightbox-custom.js" defer></script>
+
+    <!-- Swiper (スライドショー用) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="javascripts/swiper-custom.js" defer></script>
+
+    <!-- 自分で作ったスタイルシート -->
+    <link rel="stylesheet" href="stylesheets/master.css">
+
+    <!-- 先頭へ戻るボタンの為のJavaScript -->
+    <script src="javascripts/page-top.js" defer></script>
+
+    <!-- 部分ファイルを読み込む -->
+    <script src="include.js"></script>
+  </head>
+
+  <!-- 表示したい内容・出し物・コンテンツを記述します -->
+  <body class="inner">
+    <div class="site-header">
+      <!-- ヘッダー(サイト名) -->
+      <header id="header"></header>
+      <script>include("header")</script>
+
+      <!-- ナビゲーションメニュー -->
+      <nav id="navigation"></nav>
+      <script>include("navigation")</script>
+    </div>
+
+    <!-- 主要なコンテンツ -->
+    <main>
+      <!-- 動物園の思い出 -->
+      <section class="zoo">
+        <h2 class="title">動物園の思い出</h2>
+        <p>動物園に行ってきました。いろいろな動物に会えました。<br>（クリックすると大きく表示されます）</p>
+        <a href="images/tora.webp" class="glightbox" title="大きな虎です">
+          <img src="images/tora-s.webp" alt="虎">
+        </a>
+        <a href="images/tsuru.webp" class="glightbox" title="鶴です">
+          <img src="images/tsuru-s.webp" alt="鶴">
+        </a>
+        <a href="images/zou.webp" class="glightbox" title="象さん 象さん お鼻が長いのね">
+          <img src="images/zou-s.webp" alt="象">
+        </a>
+        <a href="images/saru.webp" class="glightbox" title="お猿さんです">
+          <img src="images/saru-s.webp" alt="猿">
+        </a>
+        <a href="images/hakucho.webp" class="glightbox" title="白鳥の湖">
+          <img src="images/hakucho-s.webp" alt="白鳥">
+        </a>
+        <a href="images/araiguma.webp" class="glightbox" title="洗熊です">
+          <img src="images/araiguma-s.webp" alt="洗熊">
+        </a>
+        <a href="images/kuma.webp" class="glightbox" title="熊さんです">
+          <img src="images/kuma-s.webp" alt="熊">
+        </a>
+      </section>
+
+      <!-- 海の思い出 -->
+      <section class="sea">
+        <h2 class="title">海の思い出</h2>
+        <p>海に行ってきました。波の音はとっても心落ち着きます。</p>
+        <!-- Swiper スライドショー -->
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="images/sea01.webp" alt="海の写真1">
+              <h3>空飛ぶ鷗</h3>
+            </div>
+            <div class="swiper-slide">
+              <img src="images/sea02.webp" alt="海の写真2">
+              <h3>打ち寄せる波</h3>
+            </div>
+            <div class="swiper-slide">
+              <img src="images/sea03.webp" alt="海の写真3">
+              <h3>透明な南の海</h3>
+            </div>
+            <div class="swiper-slide">
+              <img src="images/sea04.webp" alt="海の写真4">
+              <h3>夜明け前</h3>
+            </div>
+            <div class="swiper-slide">
+              <img src="images/sea05.webp" alt="海の写真5">
+              <h3>断崖にて</h3>
+            </div>
+            <div class="swiper-slide">
+              <img src="images/sea06.webp" alt="海の写真6">
+              <h3>眼下を望む</h3>
+            </div>
+            <div class="swiper-slide">
+              <img src="images/sea07.webp" alt="海の写真7">
+              <h3>崖に立つ松</h3>
+            </div>
+          </div>
+
+          <!-- ページネーション -->
+          <div class="swiper-pagination"></div>
+
+          <!-- ナビゲーションボタン -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- サイドバー -->
+    <div id="sidebar"></div>
+    <script>include("sidebar")</script>
+
+    <!-- フッター -->
+    <footer id="footer"></footer>
+    <script>include("footer")</script>
+  </body>
+</html>

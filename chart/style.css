@@ -1,0 +1,120 @@
+/*=====================================================================
+  Muuri 用
+=====================================================================*/
+
+/* sakura.css の補正 */
+body {
+  max-width: 90vw;
+  table {
+    margin-bottom: 0;
+  }
+}
+
+/* 区切り線 ラーメンらしく雷門の模様に */
+.divider {
+  background-image: url("images/raimon.webp");
+  height: 20px;
+  border: none;
+  overflow: none;
+}
+
+/* グリッドで配置する */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+
+  .item { grid-column: 1; grid-row: 1 / 3; }
+  table { grid-column: 2; grid-row: 1; }
+  .map  { grid-column: 2; grid-row: 2; }
+}
+
+/* ラーメンの種類に応じて枠線を付ける */
+[data-color="shoyu"]    { border: 5px solid #674196; }
+[data-color="miso"]     { border: 5px solid #f19072; }
+[data-color="shio"]     { border: 5px solid #2ca9e1; }
+[data-color="tonkotsu"] { border: 5px solid #ffec47; }
+
+/* ラーメンカードに適宜余白等設定 */
+.card {
+  .card-image {
+    margin: 0;
+    img { width: 100%; height: auto; }
+  }
+  h2, p { padding: 0.5em; }
+  h2    { margin: 0; font-size: 1.5em; }
+}
+
+/* 表 */
+table {
+  border-collapse: collapse;
+  th, td { border: solid 1px #674196; }
+}
+
+/* 地図 */
+.map {
+  padding: 20px;
+  border: solid 1px #674196;
+  aspect-ratio: 2 / 3;
+  iframe { width: 100%; height: 100%; }
+}
+
+/* 評価 */
+.report {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+  h2 { grid-column: 1 / -1; grid-row: 1; }
+  .rating {
+    display: inline;
+    .star {
+      font-size: 3rem;
+      margin: 0 .05em;
+      &::before {
+        content: '\f005';
+        color: #ffec47;
+        font-weight: 900;
+        font-family: 'Font Awesome 6 Free';
+      }
+    }
+    &[data-rate="0"  ] .star:nth-child(n+1)::before,
+    &[data-rate="0.5"] .star:nth-child(n+1)::before,
+    &[data-rate="1"  ] .star:nth-child(n+2)::before,
+    &[data-rate="1.5"] .star:nth-child(n+2)::before,
+    &[data-rate="2"  ] .star:nth-child(n+3)::before,
+    &[data-rate="2.5"] .star:nth-child(n+3)::before,
+    &[data-rate="3"  ] .star:nth-child(n+4)::before,
+    &[data-rate="3.5"] .star:nth-child(n+4)::before,
+    &[data-rate="4"  ] .star:nth-child(n+5)::before,
+    &[data-rate="4.5"] .star:nth-child(n+5)::before {
+      color: #9ea1a3;
+      font-weight: 400;
+    }
+    &[data-rate="0.5"] .star:nth-child(1)::before,
+    &[data-rate="1.5"] .star:nth-child(2)::before,
+    &[data-rate="2.5"] .star:nth-child(3)::before,
+    &[data-rate="3.5"] .star:nth-child(4)::before,
+    &[data-rate="4.5"] .star:nth-child(5)::before {
+      content: '\f5c0';
+      color: #ffec47;
+      font-weight: 900;
+      font-family: 'Font Awesome 6 Free';
+    }
+  }
+
+  .chart-container {
+    grid-column: 1;
+    grid-row: 2;
+    #myChart {
+      max-width: 480px;
+      max-height: 640px;
+    }
+  }
+  .note {
+    grid-column: 2;
+    grid-row: 2;
+    p { text-indent: 1em; }
+  }
+}

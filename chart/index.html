@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>人気のラーメン店</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
+
+  <!-- 簡単に見栄えの良いページを作るためのスタイルシート -->
+  <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css">
+
+  <!-- 自分で作ったスタイルシート -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script src="chart.js" defer></script>
+</head>
+
+<body>
+  <h1><a href="../index.html">グラフ表示</a></h1>
+  <h2>全国各地の美味しいラーメン店を紹介します。</h2>
+
+  <hr class="divider">
+
+  <section>
+    <!-- 店舗紹介 -->
+    <div class="grid">
+      <div class="item" data-color="shoyu" data-title="櫻幕ラーメンは 京都市東区にある 醤油ラーメンが人気のお店。280円とお財布に優しいお店である。">
+        <div class="item-content">
+          <div class="card">
+            <figure class="card-image">
+              <img src="images/ramen01.webp" loading="lazy">
+            </figure>
+            <h2 class="card-title">
+              [京都市] 櫻幕ラーメン
+            </h2>
+            <p class="card-desc">
+              櫻幕ラーメンは 京都市東区にある 醤油ラーメンが人気のお店。280円とお財布に優しいお店である。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <table>
+        <tr><th>店名</th><td>櫻幕ラーメン</td></tr>
+        <tr><th>住所</th><td>京都市東区櫻幕1-2-3</td></tr>
+        <tr><th>電話</th><td>075-222-1234</td></tr>
+        <tr><th>営業時間</th><td>10:00 - 23:00</td></tr>
+        <tr><th>定休日</th><td>年中無休</td></tr>
+      </table>
+
+      <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26149.203783331257!2d135.760547381569!3d34.99041880153053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600108dcae68a29b%3A0xeb260d8a2775cd4b!2z5YaG5bGx5YWs5ZyS!5e0!3m2!1sja!2sjp!4v1662141726568!5m2!1sja!2sjp" style="border:0;" loading="lazy"></iframe>
+        <p>
+          京都駅より徒歩４０分。<br>
+          円山公園で営業中です。<br>
+          ご来店、お待ちいたしております。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="report">
+    <h2>総合評価
+      <!-- 今すぐ使えるCSSレシピブックより ★を付ける -->
+      <div class="rating" data-rate="3.5">
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+      </div>
+    </h2>
+
+    <!-- グラフ描画領域 -->
+    <div class="chart-container">
+      <canvas id="myChart"></canvas>
+    </div>
+
+    <!-- 評価記事 -->
+    <article class="note">
+      <p>
+        櫻幕ラーメンは 京都市東区にある 醤油ラーメンが人気のお店。280円とお財布に優しいお店である。
+      </p>
+      <p>
+        店名の由来は、京都の桜の名所、円山公園に花見客の紅白幕で賑わうところからと、店主の櫻木薫さんは語る。
+      </p>
+      <p>
+        国産小麦を丁寧に打ち、醤油をベースに仕立てた汁は雑味がなく澄み渡っており、具材に至っては十年もの研究を経て現在のものが得られたという逸品。腹一杯食べたい方には百円追加で大盛サービスも行っている。価格は創業当時から変わらぬ破格の２８０円。これで採算が取れるのか心配になるほどであるが、公園内の屋台で営業しているため、家賃がかからぬ分を還元しているとのこと。落ち着いて食べるには少しせわしない雰囲気と京都駅から徒歩４０分というアクセスが評価を落としてはいるが、京都に立ち寄ったならば是非食したい逸品である。
+      </p>
+      <p>
+        <cite>「散る櫻 残る櫻も 散る櫻」</cite> 良寛和尚の詠んだ名句そのままの心が伝わる店主との対話を終えて、心に何か温かいものを受け取った筆者であった。
+      </p>
+    </article>
+  </section>
+
+  <hr class="divider">
+
+  <footer>
+    <p class="copyright">
+      Copyright © 美味しいラーメン調査委員会 All rights reserved.
+    </p>
+  </footer>
+</body>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>人気のラーメン店</title>
+
+      <!-- 簡単に見栄えの良いページを作るためのスタイルシート -->
+      <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css">
+      <!-- Muuri -->
+      <script src="https://cdn.jsdelivr.net/npm/muuri@0.9.5/dist/muuri.min.js" defer></script>
+      <script src="muuri-filter.js" defer></script>
+      <!-- 自分で作ったスタイルシート -->
+      <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+      <h1><a href="../index.html">絞り込み機能</a></h1>
+
+      <h2>全国各地の美味しいラーメン店を紹介します。</h2>
+      <hr class="divider">
+
+      <!-- 絞り込み -->
+      <section class="grid-wrapper">
+        <div class="form-group">
+          <input type="text"
+                 id="search-field"
+                 class="form-input search-field"
+                 placeholder="所在地やラーメン店名などを入力">
+          <select class="form-select filter-field">
+            <option value=""        >全てを表示</option>
+            <option value="shoyu"   >醤油ラーメンを表示</option>
+            <option value="miso"    >味噌ラーメンを表示</option>
+            <option value="shio"    >塩ラーメンを表示</option>
+            <option value="tonkotsu">豚骨ラーメンを表示</option>
+          </select>
+        </div>
+
+        <!-- Muuri 記述例 -->
+        <!--
+          <div class="grid">
+            <div class="item">
+              <div class="item-content">
+                Safe zone, enter your custom markup
+                This can be anything.
+                Safe zone ends
+              </div>
+            </div>
+          </div>
+        -->
+
+        <!-- ラーメン店紹介 -->
+        <div class="grid">
+          <div class="item" data-color="shoyu" data-title="櫻幕ラーメンは 京都市東区にある 醤油ラーメンが人気のお店。280円とお財布に優しいお店である。">
+            <div class="item-content">
+              <div class="card">
+                <figure class="card-image">
+                  <img src="images/ramen01.webp" loading="lazy">
+                </figure>
+                <h2 class="card-title">
+                  [京都市] 櫻幕ラーメン
+                </h2>
+                <p class="card-desc">
+                  櫻幕ラーメンは 京都市東区にある 醤油ラーメンが人気のお店。280円とお財布に優しいお店である。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="item" data-color="miso" data-title="柳風ラーメンは 京都市北区にある 味噌ラーメンが人気のお店。280円とお財布に優しいお店である。">
+            <div class="item-content">
+              <div class="card">
+                <figure class="card-image">
+                  <img src="images/ramen02.webp" loading="lazy">
+                </figure>
+                <h2 class="card-title">
+                  [京都市] 柳風ラーメン
+                </h2>
+                <p class="card-desc">
+                  柳風ラーメンは 京都市北区にある 味噌ラーメンが人気のお店。280円とお財布に優しいお店である。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="item" data-color="shio" data-title="鳳凰ラーメンは 東京都西区にある 塩ラーメンが人気のお店。380円とお財布に優しいお店である。">
+            <div class="item-content">
+              <div class="card">
+                <figure class="card-image">
+                  <img src="images/ramen03.webp" loading="lazy">
+                </figure>
+                <h2 class="card-title">
+                  [東京都] 鳳凰ラーメン
+                </h2>
+                <p class="card-desc">
+                  鳳凰ラーメンは 東京都西区にある 塩ラーメンが人気のお店。380円とお財布に優しいお店である。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="item" data-color="shio" data-title="藤帰ラーメンは 仙台市北区にある 塩ラーメンが人気のお店。580円と良心的な価格設定が嬉しい。">
+            <div class="item-content">
+              <div class="card">
+                <figure class="card-image">
+                  <img src="images/ramen04.webp" loading="lazy">
+                </figure>
+                <h2 class="card-title">
+                  [仙台市] 藤帰ラーメン
+                </h2>
+                <p class="card-desc">
+                  藤帰ラーメンは 仙台市北区にある 塩ラーメンが人気のお店。580円と良心的な価格設定が嬉しい。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="item" data-color="shio" data-title="鳳凰ラーメンは 福岡市東区にある 塩ラーメンが人気のお店。980円と高価だが価値ある逸品。">
+            <div class="item-content">
+              <div class="card">
+                <figure class="card-image">
+                  <img src="images/ramen05.webp" loading="lazy">
+                </figure>
+                <h2 class="card-title">
+                  [福岡市] 鳳凰ラーメン
+                </h2>
+                <p class="card-desc">
+                  鳳凰ラーメンは 福岡市東区にある 塩ラーメンが人気のお店。980円と高価だが価値ある逸品。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="item" data-color="shio" data-title="柳風ラーメンは 東京都西区にある 塩ラーメンが人気のお店。980円と高価だが価値ある逸品。">
+            <div class="item-content">
+              <div class="card">
+                <figure class="card-image">
+                  <img src="images/ramen06.webp" loading="lazy">
+                </figure>
+                <h2 class="card-title">
+                  [東京都] 柳風ラーメン
+                </h2>
+                <p class="card-desc">
+                  柳風ラーメンは 東京都西区にある 塩ラーメンが人気のお店。980円と高価だが価値ある逸品。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="item" data-color="shoyu" data-title="菊盃ラーメンは 福岡市北区にある 醤油ラーメンが人気のお店。280円とお財布に優しいお店である。">
+            <div class="item-content">
+              <div class="card">
+                <figure class="card-image">
+                  <img src="images/ramen07.webp" loading="lazy">
+                </figure>
+                <h2 class="card-title">
+                  [福岡市] 菊盃ラーメン
+                </h2>
+                <p class="card-desc">
+                  菊盃ラーメンは 福岡市北区にある 醤油ラーメンが人気のお店。280円とお財布に優しいお店である。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="item" data-color="tonkotsu" data-title="梅鶯ラーメンは 大阪市南区にある 豚骨ラーメンが人気のお店。280円とお財布に優しいお店である。">
+            <div class="item-content">
+              <div class="card">
+                <figure class="card-image">
+                  <img src="images/ramen08.webp" loading="lazy">
+                </figure>
+                <h2 class="card-title">
+                  [大阪市] 梅鶯ラーメン
+                </h2>
+                <p class="card-desc">
+                  梅鶯ラーメンは 大阪市南区にある 豚骨ラーメンが人気のお店。280円とお財布に優しいお店である。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="item" data-color="shoyu" data-title="紅葉ラーメンは 京都市北区にある 醤油ラーメンが人気のお店。880円と高価だが価値ある逸品。">
+            <div class="item-content">
+              <div class="card">
+                <figure class="card-image">
+                  <img src="images/ramen09.webp" loading="lazy">
+                </figure>
+                <h2 class="card-title">
+                  [京都市] 紅葉ラーメン
+                </h2>
+                <p class="card-desc">
+                  紅葉ラーメンは 京都市北区にある 醤油ラーメンが人気のお店。880円と高価だが価値ある逸品。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="item" data-color="shio" data-title="柳風ラーメンは 札幌市北区にある 塩ラーメンが人気のお店。780円と良心的な価格設定が嬉しい。">
+            <div class="item-content">
+              <div class="card">
+                <figure class="card-image">
+                  <img src="images/ramen10.webp" loading="lazy">
+                </figure>
+                <h2 class="card-title">
+                  [札幌市] 柳風ラーメン
+                </h2>
+                <p class="card-desc">
+                  柳風ラーメンは 札幌市北区にある 塩ラーメンが人気のお店。780円と良心的な価格設定が嬉しい。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="item" data-color="shio" data-title="柳風ラーメンは 大阪市南区にある 塩ラーメンが人気のお店。780円と良心的な価格設定が嬉しい。">
+            <div class="item-content">
+              <div class="card">
+                <figure class="card-image">
+                  <img src="images/ramen11.webp" loading="lazy">
+                </figure>
+                <h2 class="card-title">
+                  [大阪市] 柳風ラーメン
+                </h2>
+                <p class="card-desc">
+                  柳風ラーメンは 大阪市南区にある 塩ラーメンが人気のお店。780円と良心的な価格設定が嬉しい。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="item" data-color="shio" data-title="牡丹ラーメンは 札幌市西区にある 塩ラーメンが人気のお店。280円とお財布に優しいお店である。">
+            <div class="item-content">
+              <div class="card">
+                <figure class="card-image">
+                  <img src="images/ramen12.webp" loading="lazy">
+                </figure>
+                <h2 class="card-title">
+                  [札幌市] 牡丹ラーメン
+                </h2>
+                <p class="card-desc">
+                  牡丹ラーメンは 札幌市西区にある 塩ラーメンが人気のお店。280円とお財布に優しいお店である。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="item" data-color="shio" data-title="鳳凰ラーメンは 仙台市南区にある 塩ラーメンが人気のお店。680円と良心的な価格設定が嬉しい。">
+            <div class="item-content">
+              <div class="card">
+                <figure class="card-image">
+                  <img src="images/ramen13.webp" loading="lazy">
+                </figure>
+                <h2 class="card-title">
+                  [仙台市] 鳳凰ラーメン
+                </h2>
+                <p class="card-desc">
+                  鳳凰ラーメンは 仙台市南区にある 塩ラーメンが人気のお店。680円と良心的な価格設定が嬉しい。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="item" data-color="shio" data-title="梅鶯ラーメンは 福岡市南区にある 塩ラーメンが人気のお店。780円と良心的な価格設定が嬉しい。">
+            <div class="item-content">
+              <div class="card">
+                <figure class="card-image">
+                  <img src="images/ramen14.webp" loading="lazy">
+                </figure>
+                <h2 class="card-title">
+                  [福岡市] 梅鶯ラーメン
+                </h2>
+                <p class="card-desc">
+                  梅鶯ラーメンは 福岡市南区にある 塩ラーメンが人気のお店。780円と良心的な価格設定が嬉しい。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="item" data-color="shoyu" data-title="鳳凰ラーメンは 福岡市南区にある 醤油ラーメンが人気のお店。680円と良心的な価格設定が嬉しい。">
+            <div class="item-content">
+              <div class="card">
+                <figure class="card-image">
+                  <img src="images/ramen15.webp" loading="lazy">
+                </figure>
+                <h2 class="card-title">
+                  [福岡市] 鳳凰ラーメン
+                </h2>
+                <p class="card-desc">
+                  鳳凰ラーメンは 福岡市南区にある 醤油ラーメンが人気のお店。680円と良心的な価格設定が嬉しい。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="item" data-color="shoyu" data-title="鳳凰ラーメンは 仙台市南区にある 醤油ラーメンが人気のお店。380円とお財布に優しいお店である。">
+            <div class="item-content">
+              <div class="card">
+                <figure class="card-image">
+                  <img src="images/ramen16.webp" loading="lazy">
+                </figure>
+                <h2 class="card-title">
+                  [仙台市] 鳳凰ラーメン
+                </h2>
+                <p class="card-desc">
+                  鳳凰ラーメンは 仙台市南区にある 醤油ラーメンが人気のお店。380円とお財布に優しいお店である。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="item" data-color="shio" data-title="菖蒲ラーメンは 東京都東区にある 塩ラーメンが人気のお店。480円とお財布に優しいお店である。">
+            <div class="item-content">
+              <div class="card">
+                <figure class="card-image">
+                  <img src="images/ramen17.webp" loading="lazy">
+                </figure>
+                <h2 class="card-title">
+                  [東京都] 菖蒲ラーメン
+                </h2>
+                <p class="card-desc">
+                  菖蒲ラーメンは 東京都東区にある 塩ラーメンが人気のお店。480円とお財布に優しいお店である。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="item" data-color="shio" data-title="芒月ラーメンは 京都市北区にある 塩ラーメンが人気のお店。680円と良心的な価格設定が嬉しい。">
+            <div class="item-content">
+              <div class="card">
+                <figure class="card-image">
+                  <img src="images/ramen18.webp" loading="lazy">
+                </figure>
+                <h2 class="card-title">
+                  [京都市] 芒月ラーメン
+                </h2>
+                <p class="card-desc">
+                  芒月ラーメンは 京都市北区にある 塩ラーメンが人気のお店。680円と良心的な価格設定が嬉しい。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="item" data-color="shoyu" data-title="柳風ラーメンは 東京都東区にある 醤油ラーメンが人気のお店。780円と良心的な価格設定が嬉しい。">
+            <div class="item-content">
+              <div class="card">
+                <figure class="card-image">
+                  <img src="images/ramen19.webp" loading="lazy">
+                </figure>
+                <h2 class="card-title">
+                  [東京都] 柳風ラーメン
+                </h2>
+                <p class="card-desc">
+                  柳風ラーメンは 東京都東区にある 醤油ラーメンが人気のお店。780円と良心的な価格設定が嬉しい。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="item" data-color="tonkotsu" data-title="櫻幕ラーメンは 京都市西区にある 豚骨ラーメンが人気のお店。380円とお財布に優しいお店である。">
+            <div class="item-content">
+              <div class="card">
+                <figure class="card-image">
+                  <img src="images/ramen20.webp" loading="lazy">
+                </figure>
+                <h2 class="card-title">
+                  [京都市] 櫻幕ラーメン
+                </h2>
+                <p class="card-desc">
+                  櫻幕ラーメンは 京都市西区にある 豚骨ラーメンが人気のお店。380円とお財布に優しいお店である。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="item" data-color="tonkotsu" data-title="松鶴ラーメンは 札幌市西区にある 豚骨ラーメンが人気のお店。480円とお財布に優しいお店である。">
+            <div class="item-content">
+              <div class="card">
+                <figure class="card-image">
+                  <img src="images/ramen21.webp" loading="lazy">
+                </figure>
+                <h2 class="card-title">
+                  [札幌市] 松鶴ラーメン
+                </h2>
+                <p class="card-desc">
+                  松鶴ラーメンは 札幌市西区にある 豚骨ラーメンが人気のお店。480円とお財布に優しいお店である。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="item" data-color="shio" data-title="櫻幕ラーメンは 福岡市東区にある 塩ラーメンが人気のお店。680円と良心的な価格設定が嬉しい。">
+            <div class="item-content">
+              <div class="card">
+                <figure class="card-image">
+                  <img src="images/ramen22.webp" loading="lazy">
+                </figure>
+                <h2 class="card-title">
+                  [福岡市] 櫻幕ラーメン
+                </h2>
+                <p class="card-desc">
+                  櫻幕ラーメンは 福岡市東区にある 塩ラーメンが人気のお店。680円と良心的な価格設定が嬉しい。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="item" data-color="shio" data-title="松鶴ラーメンは 東京都南区にある 塩ラーメンが人気のお店。780円と良心的な価格設定が嬉しい。">
+            <div class="item-content">
+              <div class="card">
+                <figure class="card-image">
+                  <img src="images/ramen23.webp" loading="lazy">
+                </figure>
+                <h2 class="card-title">
+                  [東京都] 松鶴ラーメン
+                </h2>
+                <p class="card-desc">
+                  松鶴ラーメンは 東京都南区にある 塩ラーメンが人気のお店。780円と良心的な価格設定が嬉しい。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="item" data-color="miso" data-title="萩猪ラーメンは 仙台市南区にある 味噌ラーメンが人気のお店。880円と高価だが価値ある逸品。">
+            <div class="item-content">
+              <div class="card">
+                <figure class="card-image">
+                  <img src="images/ramen24.webp" loading="lazy">
+                </figure>
+                <h2 class="card-title">
+                  [仙台市] 萩猪ラーメン
+                </h2>
+                <p class="card-desc">
+                  萩猪ラーメンは 仙台市南区にある 味噌ラーメンが人気のお店。880円と高価だが価値ある逸品。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </body>
+  </html>

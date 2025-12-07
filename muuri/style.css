@@ -1,0 +1,56 @@
+/*=====================================================================
+  Muuri 用
+=====================================================================*/
+
+/* sakura.css の補正 */
+body {
+  max-width: 90vw;
+}
+
+/* 区切り線 ラーメンらしく雷門の模様に */
+.divider {
+  background-image: url("images/raimon.webp");
+  height: 20px;
+  border: none;
+  overflow: none;
+}
+
+/* 24店舗をグリッドで配置する */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* ラーメンの種類に応じて枠線を付ける */
+div {
+  &[data-color="shoyu"]    { border: 5px solid #674196; }
+  &[data-color="miso"]     { border: 5px solid #f19072; }
+  &[data-color="shio"]     { border: 5px solid #2ca9e1; }
+  &[data-color="tonkotsu"] { border: 5px solid #ffec47; }
+}
+
+/* Muuri 補正 */
+.item { transform: none !important; }
+
+/* ラーメンカードに適宜余白等設定 */
+.card {
+  .card-image {
+    margin: 0;
+
+    & img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  & h2,
+  & p {
+    padding: 0.5em;
+  }
+
+  & h2 {
+    margin: 0;
+    font-size: 1.5em;
+  }
+}

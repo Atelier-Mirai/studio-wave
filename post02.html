@@ -41,55 +41,95 @@
     <link rel="stylesheet" href="stylesheets/master.css">
 
     <!-- 先頭へ戻るボタンの為のJavaScript -->
-    <script src="javascripts/page_top.js" defer></script>
+    <script src="javascripts/page-top.js" defer></script>
+
+    <!-- タブ切り替えの為のJavaScript -->
+    <script src="javascripts/tabular.js" defer></script>
 
     <!-- 部分ファイルを読み込む -->
     <script src="include.js"></script>
   </head>
 
   <!-- 表示したい内容・出し物・コンテンツを記述します -->
-  <body class="post">
-    <!-- ヘッダー(サイト名) -->
-    <header id="header"></header>
-    <script>include("header")</script>
+  <body class="inner">
+    <div class="site-header">
+      <!-- ヘッダー(サイト名) -->
+      <header id="header"></header>
+      <script>include("header")</script>
 
-    <!-- ナビゲーションメニュー -->
-    <nav id="navigation"></nav>
-    <script>include("navigation")</script>
+      <!-- ナビゲーションメニュー -->
+      <nav id="navigation"></nav>
+      <script>include("navigation")</script>
+    </div>
 
     <!-- 主要なコンテンツ -->
-    <main>
-      <!-- 投稿記事 -->
-      <article>
-        <h1>アトリエに置きたい一鉢のグリーン</h1>
+    <main class="main">
+      <!-- タブの見出し部分 -->
+      <ul class="tab menu">
+        <li><a href="#midori" class="active">緑のアクセント</a></li>
+        <li><a href="#komono">小物と飾り棚</a></li>
+      </ul>
+
+      <!-- タブの内容部分 -->
+      <article id="midori" class="tab segument active">
+        <h1>緑のアクセントならこれ</h1>
+
         <time datetime="2024-08-25">
           <i class="fa-regular fa-clock fa-lg fa-fw"></i>
           八月二十五日
         </time>
 
-        <figure class="sepia rotate-3 frame">
-          <img src="images/plant.webp"
-               alt="アトリエの窓辺に飾られた観葉植物">
+        <figure>
+          <img src="images/plant.webp" alt="緑のアクセントならサボテンが一番">
         </figure>
 
-        <p>
-          絵の具やスケッチブックが並ぶアトリエの片隅に、
-          一鉢だけでも緑があると、空気の柔らかさがふっと変わります。
-          窓から差し込む光を受けて葉がきらりと透けるたび、
-          休憩のたびにそのグリーンに目がいき、深呼吸したくなるような心地よさが生まれます。
-        </p>
-        <p>
-          大きな鉢をどんと置くのも素敵ですが、
-          アトリエに置きたいのは、机の片隅や棚の一角にそっと収まるような一鉢です。
-          手のひらに乗るサイズの観葉植物なら、道具の色味や壁のトーンとも合わせやすく、
-          作業中の視界にやさしい緑をひとさじ添えてくれます。
-        </p>
-        <p>
-          水やりのタイミングを気にかけたり、伸びてきた葉を整えたりする時間も、
-          アトリエで過ごすひとときの大切な小さな儀式になります。
-          作品づくりに行き詰まったときは、窓辺の一鉢のグリーンを眺めながら、
-          ゆっくりと手を休めてみましょう。その静かな時間が、新しいアイデアを連れてきてくれるかもしれません。
-        </p>
+        <figure class="readmore-box">
+          <input type="checkbox" id="readmore-01">
+          <label for="readmore-01"></label>
+          <blockquote cite="https://ja.wikipedia.org/wiki/サボテン" class="readmore-container">
+            <p>
+              サボテン（シャボテン、仙人掌、覇王樹）は、サボテン科に属する植物の総称である。北アメリカと中央アメリカを中心に2000種以上ある。その多くは多肉植物であるため、多肉植物の別名として使われることもあるが、サボテン科以外の多肉植物をサボテンと呼ぶのは誤りである。棘の部分は葉や茎が変化したものであると考えられている。
+            </p>
+            <p>
+              日本には16世紀後半に南蛮人によって持ち込まれたのが初めとされている。彼らが「ウチワサボテン」の茎の切り口で畳や衣服の汚れをふき取り、樹液をシャボン（石鹸）としてつかっていたため「石鹸のようなもの」という意味で「石鹸体（さぼんてい）」と呼ばれるようになったとする説が有力である。
+            </p>
+            <p>
+              英語でサボテンを表す Cactus（キャクタス）は、古代ギリシア語で棘だらけの植物を指すのに使われた κάκτος（カクトス） という単語がラテン語の Cactus（カクトゥス）を経て取り入れられた言葉である。ラテン語では複数形が「Cacti」（カクティー）、属格も「Cacti」（カクティー；おおむね「サボテンの」という意）と屈折し、これらも英語に取り入れられている。
+            </p>
+            <figcaption>
+              出典: <cite><a href="https://ja.wikipedia.org/wiki/サボテン">ウィキペディア</a></cite>
+            </figcaption>
+          </blockquote>
+        </figure>
+      </article>
+
+      <article id="komono" class="tab segument">
+        <h1>小物と飾り棚の組み合わせ</h1>
+
+        <time datetime="2024-08-26">
+          <i class="far fa-clock fa-lg fa-fw"></i>
+          八月二十六日
+        </time>
+
+        <figure>
+          <img src="images/items.webp" alt="飾り棚にお気に入りの小物を飾ります">
+        </figure>
+
+        <figure class="readmore-box">
+          <input type="checkbox" id="readmore-02">
+          <label for="readmore-02"></label>
+          <blockquote cite="https://kotobank.jp/word/飾り棚-461816" class="readmore-container">
+            <p>
+              飾り棚とは、器具の収納と展示双方の目的を兼ねる装飾用の戸棚である。ヨーロッパでは中世後期に領主たちの住居形式マナハウスができあがり、そのホールに置く家具としてつくられた。当初は開放した棚の形式であったが、ルネサンス時代に入りイギリスでは、収納用のカップボードと展示用のコートカップボードとに分かれた。フランスでは、上段は棚、下段に扉のつくビュッフェbuffet（フランス語）の形式が生まれた。17世紀から18世紀の初頭にかけて中国から高級陶器が輸入されるようになると、上段はガラス戸になり、18世紀以降は本棚もこの形式に倣った。現在サイドボードとよばれる戸棚はこの流れに属する。
+            </p>
+            <p>
+              飾り棚は壁に作り付けにしたものや、最近の住宅で使われる間仕切り兼用の棚を意味することもある。日本の作り付け棚の古い例は鎌倉時代の絵巻『春日権現霊験記(かすがごんげんれいげんき)』にみられ、経巻などを収納していた。武家調度の厨子棚(ずしだな)や黒棚、桂離宮(かつらりきゅう)の桂棚などは飾り棚に相当するものである。
+            </p>
+            <figcaption>
+              出典: <cite><a href="https://kotobank.jp/word/飾り棚-461816">コトバンク</a></cite>
+            </figcaption>
+          </blockquote>
+        </figure>
       </article>
     </main>
 
@@ -110,7 +150,7 @@
 
       <style>
       /* PICKUP写真が二列配置になっていたのを、一列配置にする */
-      .post .sidebar .pickup ul.container {
+      .inner .sidebar .pickup ul.container {
         grid-template-columns: 1fr;
       }
 

@@ -1,0 +1,152 @@
+/*===============================================
+  記事ページの為の装飾いろいろ
+=================================================*/
+
+/* レイアウト */
+body.inner {
+  /* overflow: hidden; */
+
+  display: grid;
+  grid-template:
+    ".    head    .   " 100px
+    ".    main    .   " auto
+    ".    sidebar .   " auto
+    "foot foot    foot" 140px /
+    20px  1fr     20px;
+  row-gap: var(--space-l);
+
+  /* 画面幅が768px以上なら */
+  @media (width >= 768px) {
+    grid-template:
+      ".    head head head head head    head    .    " 100px
+      ".    main main main main sidebar sidebar .    " auto
+      "foot foot foot foot foot foot    foot    foot " auto /
+      0.2fr 1fr  1fr  1fr  1fr  1fr     1fr     0.2fr;
+    column-gap: 5%;
+  }
+
+  font-family: "Helvetica Neue",
+                Arial,
+                "Hiragino Kaku Gotic ProN",
+                "Hiragino Sans",
+                Meiryo,
+                sans-serif;
+
+  min-height: 100vh;
+
+  /* 区切り線 */
+  &::before {
+    content: "";
+    background: var(--nibiiro);
+    height: 2px;
+    grid-column: 1 / -1;
+    grid-row:    2;
+    /* 画面幅が768px以上なら */
+    @media (width >= 768px) {
+      margin-block-start: -20px;
+    }
+  }
+
+  /* overflow: hidden; */
+}
+
+.inner main,
+.inner .sidebar {
+  margin-block-start: var(--space-l);
+}
+
+/* 投稿記事 */
+.inner main {
+  grid-area: main;
+
+  /* 投稿記事 */
+  article {
+    /* 配下の要素の余白指定 */
+    /* > * {
+      margin-block: 1em;
+      display: block;
+    } */
+
+    /* 見出し */
+    h1 {
+      font-family: "Yuji Boku", serif;
+      /* 書体の大きさを可変にする */
+      /* https://www.fluid-type-scale.com/ */
+      font-size: clamp(1.5rem, 2.73vw + 0.82rem, 3rem);
+      /* 文字間を詰める */
+      letter-spacing: -3px;
+    }
+
+    /* 本文 */
+    p {
+      line-height: 2;
+    }
+  }
+
+  /* 時計アイコン */
+  .fa-clock {
+    color: var(--amairo);
+  }
+}
+
+/* サイドバー */
+.inner .sidebar {
+  grid-area: sidebar;
+
+  /* aside 要素に枠線などの装飾を指定する */
+  aside {
+    border: solid 1px var(--amairo);
+    padding: var(--space-l);
+    margin-block: var(--space-xl);
+    margin-inline: 0;
+    text-align: center;
+
+    /* 見出し */
+    h2 {
+      border-bottom: solid 2px var(--sanaeiro);
+      padding-bottom: var(--space-l);
+      margin-block-end: var(--space-l);
+      color: var(--sanaeiro);
+      font-weight: normal;
+      font-family: 'Yuji Boku', serif;
+    }
+
+    /* 本文 */
+    p {
+      font-size: 14px;
+    }
+  }
+
+  /* プロフィール画像の余白指定 */
+  .profile figure img {
+    margin-inline: auto;
+  }
+
+  /* ピックアップ記事の装飾指定 */
+  .pickup {
+    /* ピックアップ記事をグリッド配置する */
+    ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 10px;
+      list-style: none;
+      padding: 0;
+      text-align: left;
+
+      /* リンク */
+      a {
+        color: var(--kurohairo);
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    /* 見出し */
+    h3 {
+      font-size: 14px;
+    }
+  }
+}

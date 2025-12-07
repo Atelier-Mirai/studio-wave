@@ -1,0 +1,31 @@
+/*=====================================================================
+  動物園の思い出（GLightbox を使ったライトボックス表示）
+=====================================================================*/
+.zoo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 10px;
+
+  @media (width >= 768px) {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: 20px;
+  }
+
+  h2,
+  p {
+    grid-column: 1 / -1;
+  }
+
+  a img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+  }
+}

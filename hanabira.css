@@ -4,13 +4,13 @@
 html,
 body {
   overflow-x: hidden;
-  overflow-x: clip;
   position: relative;
 }
 
 /* さくらの花びらの楕円形 */
 .hana {
   position: absolute;
+  pointer-events: none;
   width:  0;
   height: 0;
   border: 10px solid transparent;

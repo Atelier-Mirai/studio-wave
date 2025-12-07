@@ -3,7 +3,7 @@
 =================================================*/
 
 /* レイアウト */
-body.post {
+body.inner {
   /* overflow: hidden; */
 
   display: grid;
@@ -35,23 +35,16 @@ body.post {
   min-height: 100vh;
 
   /* 区切り線 */
-  &::before {
-    content: "";
-    background: var(--nibiiro);
-    height: 2px;
-    grid-column: 1 / -1;
-    grid-row:    2;
-    /* 画面幅が768px以上なら */
-    @media (width >= 768px) {
-      margin-block-start: -20px;
-    }
-  }
-
   /* overflow: hidden; */
 }
 
+.inner main,
+.inner .sidebar {
+  margin-block-start: var(--space-l);
+}
+
 /* 投稿記事 */
-.post main {
+.inner main {
   grid-area: main;
 
   /* 投稿記事 */
@@ -85,7 +78,7 @@ body.post {
 }
 
 /* サイドバー */
-.post .sidebar {
+.inner .sidebar {
   grid-area: sidebar;
 
   /* aside 要素に枠線などの装飾を指定する */

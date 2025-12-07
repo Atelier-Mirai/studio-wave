@@ -33,51 +33,52 @@
     <!-- 自分で作ったスタイルシート -->
     <link rel="stylesheet" href="stylesheets/master.css">
 
-    <!-- 文字を煌めかせる為のJavaScript-->
-    <script src="javascripts/glow_text.js" defer></script>
-    <!-- 先頭へ戻るボタンの為のJavaScript -->
-    <script src="javascripts/page_top.js" defer></script>
+    <!-- 自分で作ったJavaScript -->
+    <script src="javascripts/hero-slideshow.js" defer></script>
+    <script src="javascripts/glow-text.js" defer></script>
+    <script src="javascripts/page-top.js" defer></script>
   </head>
 
   <!-- 表示したい内容・出し物・コンテンツを記述します -->
   <body class="top">
-    <!-- ヘッダー(サイト名) -->
-    <header>
-      <a href="index.html">WAVE</a>
-    </header>
+    <div class="site-header">
+      <!-- ヘッダー(サイト名) -->
+      <header>
+        <a href="index.html">WAVE</a>
+      </header>
 
-    <!-- ナビゲーションメニュー -->
-    <nav aria-label="主なメニュー">
-      <!-- fa-lgは1.33倍、la-2xは2倍の大きさ、fa-fwは横に少し間隔が空く -->
-      <!-- 2021年最新版、Font Awesome アイコンの使い方と便利な機能のまとめ -->
-      <!-- https://coliss.com/articles/build-websites/operation/work/font-awesome-guide-and-useful-tricks.html -->
-      <ul>
-        <li>
-          <a href="#recent">
-            <i class="fa-regular fa-newspaper" aria-hidden="true"></i>
-            最新記事
-          </a>
-        </li>
-        <li>
-          <a href="about.html">
-            <i class="fa-brands fa-pagelines fa-lg fa-fw" aria-hidden="true"></i>
-            サイトについて
-          </a>
-        </li>
-        <li>
-          <a href="contact.html">
-            <i class="fa-solid fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
-            お問い合わせ
-          </a>
-        </li>
-      </ul>
-    </nav>
+      <!-- ナビゲーションメニュー -->
+      <nav aria-label="主なメニュー">
+        <!-- fa-lgは1.33倍、la-2xは2倍の大きさ、fa-fwは横に少し間隔が空く -->
+        <!-- 2021年最新版、Font Awesome アイコンの使い方と便利な機能のまとめ -->
+        <!-- https://coliss.com/articles/build-websites/operation/work/font-awesome-guide-and-useful-tricks.html -->
+        <ul>
+          <li>
+            <a href="#recent">
+              <i class="fa-regular fa-newspaper" aria-hidden="true"></i>
+              最新記事
+            </a>
+          </li>
+          <li>
+            <a href="about.html">
+              <i class="fa-brands fa-pagelines fa-lg fa-fw" aria-hidden="true"></i>
+              サイトについて
+            </a>
+          </li>
+          <li>
+            <a href="contact.html">
+              <i class="fa-solid fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+              お問い合わせ
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
 
     <!-- 主要なコンテンツ -->
     <main>
-      <!-- ヒーローイメージ -->
-      <figure class="hero">
-        <img src="images/blue_sea_1920x1280.webp" alt="世界で一番の観光地">
+      <!-- ヒーローイメージ（JavaScriptでスライドショーを表示） -->
+      <figure class="hero" aria-label="世界で一番の観光地">
       </figure>
 
       <!-- 文字が煌めくタイトル(キャッチフレーズ) -->
@@ -130,15 +131,15 @@
         <article>
           <a href="makuranosoushi/index.html">
             <figure>
-              <img src="makuranosoushi/images/haru_s.webp" alt="">
+              <img src="makuranosoushi/images/haru-s.webp" alt="">
             </figure>
             <h3>枕草子</h3>
           </a>
         </article>
         <article>
-          <a href="sakura_fubuki.html">
+          <a href="sakura-fubuki.html">
             <figure>
-              <img src="images/aozora_to_sakura.webp" alt="">
+              <img src="images/aozora-to-sakura.webp" alt="">
             </figure>
             <h3>さくらを詠んだ俳句</h3>
           </a>
@@ -152,43 +153,51 @@
           </a>
         </article>
         <article>
-          <a href="box.html">
-            <figure>
-              <img src="images/box_sizing.webp" alt="">
-            </figure>
-            <h3>Boxモデル練習</h3>
-          </a>
-        </article>
-        <article>
-          <a href="grid.html">
-            <figure>
-              <img src="images/grid_layout.webp" alt="">
-            </figure>
-            <h3>グリッドレイアウト練習</h3>
-          </a>
-        </article>
-        <article>
-          <a href="css_layer.html">
-            <figure>
-              <img src="images/css_layer.webp" alt="">
-            </figure>
-            <h3>CSSレイヤ練習</h3>
-          </a>
-        </article>
-        <article>
-          <a href="js_aisatsu.html">
-            <figure>
-              <img src="images/js.webp" alt="">
-            </figure>
-            <h3>JavaScript練習</h3>
-          </a>
-        </article>
-        <article>
           <a href="gottani.html">
             <figure>
               <img src="images/gottani.webp" alt="">
             </figure>
             <h3>ごった煮</h3>
+          </a>
+        </article>
+        <article>
+          <a href="glightbox/index.html">
+            <figure>
+              <img src="images/glightbox.webp" alt="">
+            </figure>
+            <h3>モーダルウィンドウ</h3>
+          </a>
+        </article>
+        <article>
+          <a href="shuffle_text/index.html">
+            <figure>
+              <img src="images/shuffle-text.webp" alt="">
+            </figure>
+            <h3>シャッフルテキスト</h3>
+          </a>
+        </article>
+        <article>
+          <a href="muuri/index.html">
+            <figure>
+              <img src="images/muuri.webp" alt="">
+            </figure>
+            <h3>絞り込み機能</h3>
+          </a>
+        </article>
+        <article>
+          <a href="chart/index.html">
+            <figure>
+              <img src="images/chart.webp" alt="">
+            </figure>
+            <h3>グラフ描画</h3>
+          </a>
+        </article>
+        <article>
+          <a href="zoo-sea.html">
+            <figure>
+              <img src="images/tora-s.webp" alt="">
+            </figure>
+            <h3>動物園・海の思い出</h3>
           </a>
         </article>
         <article>

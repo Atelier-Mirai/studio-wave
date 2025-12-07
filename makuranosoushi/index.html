@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stylesheets/reset.css">
     <link rel="stylesheet" href="stylesheets/master.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
+    <script src="mobile-footer-nav.js" defer></script>
   </head>
 
   <body>
@@ -18,56 +20,124 @@
       <h1>枕草子</h1>
     </header>
 
-    <!-- メイン -->
-    <main>
-      <section class="kisetsu haru">
-        <div class="photograph"><!-- CSSにより背景画像表示 --></div>
-        <div class="heading">
-          <h2>春</h2>
-        </div>
-        <article>
+    <!-- メイン：視差スクロール用コンテナ -->
+    <main class="parallax-wrapper">
+      <section id="haru" class="kisetsu haru">
+        <div class="parallax-bg photograph"></div>
+        <div class="parallax-content">
+          <div class="heading">
+            <h2>春</h2>
+          </div>
+          <article>
             <p>
               春は、あけぼの。やうやうしろくなりゆく山ぎは、すこし明かりて、紫だちたる雲の、細くたなびきたる。
             </p>
-        </article>
+          </article>
+        </div>
       </section>
 
-      <section class="kisetsu natsu">
-        <div class="photograph"></div>
-        <div class="heading">
-          <h2>夏</h2>
+      <section id="natsu" class="kisetsu natsu">
+        <div class="parallax-bg photograph"></div>
+        <div class="parallax-content">
+          <div class="heading">
+            <h2>夏</h2>
+          </div>
+          <article>
+            <p>
+              夏は、夜。月のころはさらなり。闘もなほ、蛍の多く飛びちがひたる。また、ただ一つ二つなど、ほのかにうち光りて行くも、をかし。雨など降るも、をかし。
+            </p>
+          </article>
         </div>
-        <article>
-          <p>
-            夏は、夜。月のころはさらなり。闇もなほ、蛍の多く飛びちがひたる。また、ただ一つ二つなど、ほのかにうち光りて行くも、をかし。雨など降るも、をかし。
-          </p>
-        </article>
       </section>
 
-      <section class="kisetsu aki">
-        <div class="photograph"></div>
-        <div class="heading">
-          <h2>秋</h2>
+      <section id="aki" class="kisetsu aki">
+        <div class="parallax-bg photograph"></div>
+        <div class="parallax-content">
+          <div class="heading">
+            <h2>秋</h2>
+          </div>
+          <article>
+            <p>
+              秋は、夕暮。夕日のさして、山の端いと近うなりたるに、烏の寝どころへ行くとて、三つ四つ、二つ三つなど、飛びいそぐさへあはれなり。まいて、雁などのつらねたるが、いと小さく見ゆるは、いとをかし。日入りはてて、風の音、虫の音など、はた、言ふべきにあらず。
+            </p>
+          </article>
         </div>
-        <article>
-          <p>
-            秋は、夕暮。夕日のさして、山の端いと近うなりたるに、烏の寝どころへ行くとて、三つ四つ、二つ三つなど、飛びいそぐさへあはれなり。まいて、雁などのつらねたるが、いと小さく見ゆるは、いとをかし。日入りはてて、風の音、虫の音など、はた、言ふべきにあらず。
-          </p>
-        </article>
       </section>
 
-      <section class="kisetsu fuyu">
-        <div class="photograph"></div>
-        <div class="heading">
-          <h2>冬</h2>
+      <section id="fuyu" class="kisetsu fuyu">
+        <div class="parallax-bg photograph"></div>
+        <div class="parallax-content">
+          <div class="heading">
+            <h2>冬</h2>
+          </div>
+          <article>
+            <p>
+              冬は、つとめて。雪の降りたるは、言ふべきにもあらず。霜のいと白きも。またさらでも、いと寒きに、火など急ぎおこして、炭持てわたるも、いとつきづきし。昼になりて、ぬるくゆるびもていけば、火桶の火も、白き灰がちになりて、わろし。
+            </p>
+          </article>
         </div>
-        <article>
-          <p>
-            冬は、つとめて。雪の降りたるは、言ふべきにもあらず。霜のいと白きも。またさらでも、いと寒きに、火など急ぎおこして、炭持てわたるも、いとつきづきし。昼になりて、ぬるくゆるびもていけば、火桶の火も、白き灰がちになりて、わろし。
-          </p>
-        </article>
       </section>
     </main>
+
+    <footer id="fixed_footer">
+      <nav>
+        <ul>
+          <li>
+            <a href="#haru">
+              <i class="fa-solid fa-seedling fa-lg"></i><br>
+              <span>春</span>
+            </a>
+          </li>
+          <li>
+            <a href="#natsu">
+              <i class="fa-solid fa-moon fa-lg"></i><br>
+              <span>夏</span>
+            </a>
+          </li>
+          <li>
+            <a href="#aki">
+              <i class="fa-solid fa-leaf fa-lg"></i><br>
+              <span>秋</span>
+            </a>
+          </li>
+          <li>
+            <a href="#fuyu">
+              <i class="fa-solid fa-snowflake fa-lg"></i><br>
+              <span>冬</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+
+    <nav class="follow_menu">
+      <ul>
+        <li>
+          <a href="#haru">
+            <i class="fa-solid fa-seedling"></i><br>
+            春
+          </a>
+        </li>
+        <li>
+          <a href="#natsu">
+            <i class="fa-solid fa-moon"></i><br>
+            夏
+          </a>
+        </li>
+        <li>
+          <a href="#aki">
+            <i class="fa-solid fa-leaf"></i><br>
+            秋
+          </a>
+        </li>
+        <li>
+          <a href="#fuyu">
+            <i class="fa-solid fa-snowflake"></i><br>
+            冬
+          </a>
+        </li>
+      </ul>
+    </nav>
 
     <!--
     https://bungobungo.jp/text/hakbn/

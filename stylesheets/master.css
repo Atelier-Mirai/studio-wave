@@ -5,7 +5,7 @@
 
 /* Reset CSS をレイヤー内に取り込む
 -----------------------------------------------*/
-@import url('https://cdn.jsdelivr.net/npm/@acab/reset.css@0.10.0/index.min.css') layer(reset);
+@import url('https://cdn.jsdelivr.net/npm/@acab/reset.css@0.11.0/index.min.css') layer(reset);
 
 /* 日本の伝統色 和の色
 -----------------------------------------------*/
@@ -24,6 +24,10 @@
 -----------------------------------------------*/
 @import "_navigation.css" layer(components);
 
+/* サイトヘッダー（ロゴ＋ナビの固定バー）
+-----------------------------------------------*/
+@import "_site-header.css" layer(components);
+
 /* ヒーローイメージ
 -----------------------------------------------*/
 @import "_hero.css" layer(components);
@@ -34,7 +38,7 @@
 
 /* サブタイトル
 -----------------------------------------------*/
-@import "_sub_title.css" layer(components);
+@import "_sub-title.css" layer(components);
 
 /* 記事一覧
 -----------------------------------------------*/
@@ -70,11 +74,27 @@
 
 /* 地図 や 動画
 -----------------------------------------------*/
-@import "_map_and_video.css" layer(components);
+@import "_map-and-video.css" layer(components);
 
 /* モーダルウィンドウ
 -----------------------------------------------*/
 @import "_modal.css" layer(components);
+
+/* 続きを読むボタン
+-----------------------------------------------*/
+@import "_readmore.css" layer(components);
+
+/* タブ
+-----------------------------------------------*/
+@import "_tabular.css" layer(components);
+
+/* 動物園の思い出（GLightbox）
+-----------------------------------------------*/
+@import "_zoo.css" layer(components);
+
+/* 海の思い出（Swiper スライドショー）
+-----------------------------------------------*/
+@import "_sea.css" layer(components);
 
 /* 文字の装飾
 -----------------------------------------------*/
@@ -86,11 +106,11 @@
 
 /* 先頭に戻る
 -----------------------------------------------*/
-@import "_page_top.css" layer(components);
+@import "_page-top.css" layer(components);
 
 /* 滑らかにスクロール
 -----------------------------------------------*/
-@import "_smooth_scroll.css" layer(utilities);
+@import "_smooth-scroll.css" layer(utilities);
 
 /* いろいろ便利用
 -----------------------------------------------*/

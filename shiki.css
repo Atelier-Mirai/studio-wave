@@ -1,0 +1,236 @@
+/*---------------------------------------------------------------------
+ 四季エフェクト共通スタイル
+  - .shiki-container : 全体ラッパー（fixed / pointer-events: none）
+  - .shiki-particle  : 各パーティクルの基本
+  - .shiki--{season} : 季節スコープ（今は主に色分け用）
+---------------------------------------------------------------------*/
+
+html,
+body {
+  overflow-x: hidden;
+  position: relative;
+}
+
+.shiki-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.shiki-particle {
+  position: absolute;
+  pointer-events: none;
+  display: block;
+  top: 0;
+  left: 0;
+  transform-origin: center;
+}
+
+/*----------------------------------------
+ 春 (桜)
+-----------------------------------------*/
+.shiki-spring {
+  .shiki-particle.sakura {
+    width: 0 !important;
+    height: 0 !important;
+    border: 10px solid transparent;
+    border-radius: 15px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    background: none;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -7px;
+      left: -7px;
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-radius: 15px;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 0;
+      transform: rotate(15deg);
+    }
+
+    &.t1, &.t1::after { border-color: #fef4f4; }
+    &.t2, &.t2::after { border-color: #ffd1d9; }
+    &.t3, &.t3::after { border-color: #ffc0cb; }
+    &.t4, &.t4::after { border-color: #ffb7c5; }
+    &.t5, &.t5::after { border-color: #ffafbd; }
+
+    &.a1 { animation: a1 12s infinite linear; }
+    &.a2 { animation: a2 10s infinite linear; }
+    &.a3 { animation: a3  9s infinite linear; }
+    &.a4 { animation: a4  9s infinite linear; }
+    &.a5 { animation: a5  8s infinite linear; }
+  }
+}
+
+@keyframes a1 {
+  from { transform: rotate(0deg) scale(.9); }
+  50%  { transform: rotate(270deg) scale(.9); }
+  to   { transform: rotate(1deg) scale(.9); }
+}
+@keyframes a2 {
+  from { transform: rotate(-90deg) scale(.8); }
+  50%  { transform: rotate(-360deg) scale(.8); }
+  to   { transform: rotate(-89deg) scale(.8); }
+}
+@keyframes a3 {
+  from { transform: rotate(30deg) scale(.7); }
+  50%  { transform: rotate(300deg) scale(.7); }
+  to   { transform: rotate(29deg) scale(.7); }
+}
+@keyframes a4 {
+  from { transform: rotate(-120deg) scale(.6); }
+  50%  { transform: rotate(-390deg) scale(.6); }
+  to   { transform: rotate(-119deg) scale(.6); }
+}
+@keyframes a5 {
+  from { transform: rotate(60deg) scale(.5); }
+  50%  { transform: rotate(330deg) scale(.5); }
+  to   { transform: rotate(59deg) scale(.5); }
+}
+
+/*----------------------------------------
+夏 (蛍)
+-----------------------------------------*/
+.shiki-summer {
+  .shiki-particle.hotaru {
+    border-radius: 50%;
+    filter: blur(0.6px);
+    box-shadow: 0 0 8px 2px currentColor;
+    background-color: currentColor;
+
+    &.t1 { color: #ccff00; } /* 鮮やかな黄緑 */
+    &.t2 { color: #ffff00; } /* 黄色 */
+    &.t3 { color: #adff2f; } /* GreenYellow */
+    &.t4 { color: #ffeb3b; } /* やや濃い黄色 */
+    &.t5 { color: #ffcc00; } /* オレンジ寄り */
+
+    &.a1 { animation: firefly1 4s infinite alternate; }
+    &.a2 { animation: firefly2 5s infinite alternate; }
+    &.a3 { animation: firefly3 3s infinite alternate; }
+    &.a4 { animation: firefly4 6s infinite alternate; }
+    &.a5 { animation: firefly5 4s infinite alternate; }
+  }
+}
+
+@keyframes firefly1 {
+  from { opacity: 0.2; transform: scale(0.8); }
+  to   { opacity: 1;   transform: scale(1.2); }
+}
+@keyframes firefly2 {
+  from { opacity: 0.3; transform: scale(0.9); }
+  to   { opacity: 0.8; transform: scale(1.1); }
+}
+@keyframes firefly3 {
+  from { opacity: 0.1; transform: scale(0.7); }
+  to   { opacity: 1;   transform: scale(1.0); }
+}
+@keyframes firefly4 {
+  from { opacity: 0.4; transform: scale(1.0); }
+  to   { opacity: 0.9; transform: scale(1.3); }
+}
+@keyframes firefly5 {
+  from { opacity: 0.2; transform: scale(0.8); }
+  to   { opacity: 1;   transform: scale(1.1); }
+}
+
+/*----------------------------------------
+秋 (落ち葉)
+-----------------------------------------*/
+.shiki-autumn {
+  .shiki-particle.ochiba {
+    border-radius: 0 100% 0 100%;
+    background-color: currentColor;
+
+    &.t1 { color: #d32f2f; } /* 真っ赤 */
+    &.t2 { color: #f57f17; } /* 濃いオレンジ */
+    &.t3 { color: #fbc02d; } /* 黄色 */
+    &.t4 { color: #8d6e63; } /* 茶色 */
+    &.t5 { color: #e64a19; } /* 朱色 */
+
+    &.a1 { animation: leaf1 10s infinite linear; }
+    &.a2 { animation: leaf2 12s infinite linear; }
+    &.a3 { animation: leaf3 8s infinite linear; }
+    &.a4 { animation: leaf4 11s infinite linear; }
+    &.a5 { animation: leaf5 9s infinite linear; }
+  }
+}
+
+@keyframes leaf1 {
+  0%   { transform: rotate(0deg) scale(0.8); }
+  50%  { transform: rotate(180deg) scale(0.8); }
+  100% { transform: rotate(360deg) scale(0.8); }
+}
+@keyframes leaf2 {
+  0%   { transform: rotate3d(1, 1, 0, 0deg) scale(0.7); }
+  50%  { transform: rotate3d(1, 1, 0, 180deg) scale(0.7); }
+  100% { transform: rotate3d(1, 1, 0, 360deg) scale(0.7); }
+}
+@keyframes leaf3 {
+  0%   { transform: rotateZ(0deg) rotateX(0deg) scale(0.9); }
+  100% { transform: rotateZ(360deg) rotateX(360deg) scale(0.9); }
+}
+@keyframes leaf4 {
+  0%   { transform: skew(0deg) rotate(0deg) scale(0.6); }
+  50%  { transform: skew(20deg) rotate(180deg) scale(0.6); }
+  100% { transform: skew(0deg) rotate(360deg) scale(0.6); }
+}
+@keyframes leaf5 {
+  0%   { transform: rotate(0deg) scale(0.8); }
+  100% { transform: rotate(-360deg) scale(0.8); }
+}
+
+/*----------------------------------------
+ 冬 (雪)
+-----------------------------------------*/
+.shiki-winter {
+  .shiki-particle.yuki {
+    border-radius: 50%;
+    background-color: #fff;
+    filter: blur(1px);
+
+    &.t1 { opacity: 0.9; }
+    &.t2 { opacity: 0.7; }
+    &.t3 { opacity: 0.5; }
+    &.t4 { opacity: 0.3; }
+    &.t5 { opacity: 0.8; box-shadow: 0 0 5px #fff; }
+
+    &.a1 { animation: snow1 10s infinite; }
+    &.a2 { animation: snow2 12s infinite; }
+    &.a3 { animation: snow3 8s infinite; }
+    &.a4 { animation: snow4 14s infinite; }
+    &.a5 { animation: snow5 11s infinite; }
+  }
+}
+
+@keyframes snow1 {
+  0%   { transform: scale(1.0); }
+  50%  { transform: scale(0.9); }
+  100% { transform: scale(1.0); }
+}
+@keyframes snow2 {
+  0%   { transform: scale(0.8); }
+  50%  { transform: scale(1.1); }
+  100% { transform: scale(0.8); }
+}
+@keyframes snow3 {
+  0%   { transform: scale(0.6); }
+  50%  { transform: scale(0.8); }
+  100% { transform: scale(0.6); }
+}
+@keyframes snow4 {
+  0%   { transform: scale(1.2); }
+  50%  { transform: scale(1.0); }
+  100% { transform: scale(1.2); }
+}
+@keyframes snow5 {
+  0%   { transform: scale(0.9); }
+  50%  { transform: scale(0.95); }
+  100% { transform: scale(0.9); }
+}

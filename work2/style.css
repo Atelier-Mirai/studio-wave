@@ -245,7 +245,7 @@ footer {
   grid-area: foot;
   justify-self: center;
   align-self: center;
-  background: url("images/beach_waves.webp") 75% 75%;
+  background: url("images/beach-waves.webp") 75% 75%;
   background-size: cover;
   width: 100vw;
   display: grid;

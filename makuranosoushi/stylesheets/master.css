@@ -5,16 +5,18 @@ body {
   color: #171917; /* 墨色 */
   font-size: 2rem;
   word-wrap: break-word;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  min-height: 100vh;
+  overflow-x: hidden;        /* 横スクロール防止 */
+  margin: 0;                 /* 上部の余白を完全に削除 */
 }
 
 /* ヘッダー（＝枕草子） */
 .header {
-  /* https://developer.mozilla.org/ja/docs/Web/CSS/position */
-  position: fixed;     /* 位置固定表示 */
-  top: 0;              /* 表示位置 上から0px */
-  left: 0;             /* 表示位置 左から0px */
-
-  width: 240px;
+  position: sticky;
+  top: 0;
+  /* width: 240px; */
   height: 100vh;       /* 1vhは画面高さの1%を表す単位 */
   background: #feeeed; /* 桜色 */
   padding: 150px 0 0 0;
@@ -27,64 +29,237 @@ body {
 
   h1 {
     writing-mode: vertical-rl; /* 縦書き */
-    font-size: 3.5rem;         /* rem は １文字分の大きさ を表す単位 */
+    font-size: 2.5rem;         /* rem は １文字分の大きさ を表す単位 */
                                /* 3.5rem なら、3.5倍の文字サイズで表示される */
     letter-spacing: 1.5rem;    /* 文字間隔 */
   }
 }
 
-/* メイン（＝写真と随筆） */
-main {
-  display: grid;   /* グリッドモードに設定 */
-                   /* grid-template-columns や */
-                   /* grid-template-rows を書かなくても */
-                   /* 一列 x 四行に自動設定されるので、*/
-  row-gap: 100px;  /* 行間のみ指定 */
-  margin-block-end: 100px;  /* 最後も和紙があると見栄えが良いので */
+/* =============================================
+   視差スクロール用コンテナ（メイン）
+   ============================================= */
+.parallax-wrapper {
+  grid-column: 2 / 3;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 1px;                /* 3D空間の奥行き基準 */
+  transform-style: preserve-3d;
+  margin: 0;
+  padding: 0;                       /* 画像の上に余白を残さない */
 }
 
 /* 季節を彩る背景写真を個別指定する */
-.haru  .photograph { background: url(../images/haru.webp) no-repeat center; }
-.natsu .photograph { background: url(../images/natsu.webp) no-repeat center; }
-.aki   .photograph { background: url(../images/aki.webp) no-repeat center; }
-.fuyu  .photograph { background: url(../images/fuyu.webp) no-repeat center; }
+.haru  .photograph { background-image: url(../images/haru.webp); }
+.natsu .photograph { background-image: url(../images/natsu.webp); }
+.aki   .photograph { background-image: url(../images/aki.webp); }
+.fuyu  .photograph { background-image: url(../images/fuyu.webp); }
 
-/* 各季節の配置 */
+/* =============================================
+   各季節セクション
+   ============================================= */
 .kisetsu {
-  display: grid;
-  /* 背景写真 */
-  .photograph {
-    /* https://developer.mozilla.org/ja/docs/Web/CSS/background-size */
-    /* 背景画像の大きさ指定 */
-    background-size: cover;
-    /* https://developer.mozilla.org/ja/docs/Web/CSS/background-attachment */
-    /* 背景画像を固定 */
-    background-attachment: fixed;
-    width: 100%;
-    height: 50vh;
+  transform-style: preserve-3d;
+  display: flex;                         /* 写真と本文を縦方向に並べる */
+  flex-direction: column;
+
+  /* 背景写真（奥に配置してゆっくり動く） */
+  .parallax-bg {
+    order: 2;                            /* セクション内で写真を下側に表示 */
+    height: 45vh;                       /* 写真の高さ */
+    background-size: cover;             /* 左右をトリミングして全面表示 */
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translateZ(-0.5px) scale(1.5);  /* 奥に配置 → ゆっくり動く */
+    transform-origin: center center;
+  }
+
+  /* 前面コンテンツ（基準位置） */
+  .parallax-content {
+    order: 1;                            /* 文章（見出し + 本文）を先に表示 */
+    transform: translateZ(0);           /* 基準面 */
+    padding-block-start: 5vh;           /* セクション全体を少し下げる（論理プロパティ） */
+    padding-block-end: 50px;
+    background: url(../images/washi.webp); /* 和紙背景で文字の視認性確保 */
+    display: grid;                      /* 見出し + 本文をグリッドで配置 */
+    grid-template-columns: 1fr auto;    /* 左: 余白 / 右: 本文用の細いカラム */
   }
 
   /* 見出し */
   .heading {
     display: grid;
-    justify-content: center;
+    justify-content: center;            /* 左右中央 */
+    grid-column: 1 / -1;                /* グリッド全体を横断して中央に配置 */
     h2 {
       writing-mode: vertical-rl;
       text-orientation: upright;
       letter-spacing: 0.2em;
-      font-size: 2.5rem;
-      margin: 100px 0;
+      font-size: 2.0rem;
+      margin-inline: 50px;
+      margin-block: 0.2em 0.2em;   /* 見出し上下の余白を詰める */
     }
   }
 
   /* 随筆 */
   article {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-
     writing-mode: vertical-rl;
-    height: 13em;
-    line-height: 2.5;
+    line-height: 1.5;
+    height: 40vh;                  /* 40vh の高さで折り返し */
+    margin: 0;                     /* グリッド上で位置を制御する */
+    grid-column: 2 / 3;            /* 右側のカラムに配置して右端寄せにする */
+    padding-right: 1em;            /* 内側に1行分の余白を確保（右端の空き） */
+    p {
+      margin: 0;                  /* 上余白をなくして左端から開始 */
+    }
   }
+}
+
+/* =========================================================
+   固定フッター / 追随メニュー 共通: スクロール挙動
+   ========================================================= */
+html {
+  scroll-behavior: smooth;       /* ゆっくり遷移する */
+  scroll-padding-top: 20px;      /* 上に20px余白を設けて停止する */
+}
+
+/* =========================================================
+   iPhone 用 固定フッター
+   ========================================================= */
+#fixed_footer {
+  position: fixed;
+  left: 0;
+  bottom: -90px;                 /* 通常は下に隠しておく */
+  width: 100%;
+  z-index: 1000;
+  background: transparent;
+  transition-property: bottom;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transition-delay: 0.3s;
+  display: none;                 /* メディアクエリで表示切り替え */
+}
+
+#fixed_footer.active {
+  bottom: 0;                      /* active 時にせり上がる */
+}
+
+#fixed_footer nav ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: column;
+  margin: 0 -1px;
+  padding: 0;
+  list-style: none;
+}
+
+#fixed_footer nav ul li a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  background: #0d0d0d;            /* 黒羽色 */
+  padding-top: 12px;
+  color: #fef4f4;                 /* 桜色 */
+  font-size: 11px;
+  height: 60px;
+  border-left: 1px solid #fef4f4; /* 桜色 */
+  position: relative;
+}
+
+#fixed_footer nav ul li:first-child a {
+  border-left: none;
+}
+
+#fixed_footer nav ul li a i {
+  margin-bottom: 4px;
+}
+
+#fixed_footer nav ul li a span {
+  display: block;
+}
+
+/* フッターメニューの hover は枠線なし */
+#fixed_footer a:hover {
+  border: none;
+}
+
+/* =========================================================
+   iPad / デスクトップ 用 追随メニュー
+   ========================================================= */
+.follow_menu {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  z-index: 10000;
+  display: none;                  /* メディアクエリで表示切り替え */
+}
+
+.follow_menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.follow_menu li {
+  display: block;
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: relative;
+  margin-block: 6px;
+}
+
+.follow_menu li:nth-child(1) { background: #e7609e; border: 1px solid #e7609e; }
+.follow_menu li:nth-child(2) { background: #67a70c; border: 1px solid #67a70c; }
+.follow_menu li:nth-child(3) { background: #3d6eda; border: 1px solid #3d6eda; }
+.follow_menu li:nth-child(4) { background: #a61017; border: 1px solid #a61017; }
+
+.follow_menu a {
+  font-size: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: #fef4f4;                 /* 桜色 */
+  display: block;
+  box-sizing: border-box;
+  padding: 20px 10px;
+  line-height: 20px;
+  position: relative;
+  border-bottom: none;            /* reset.css の下線を消す */
+}
+
+.follow_menu a i {
+  margin-bottom: 4px;
+}
+
+.follow_menu a::after {
+  content: "";
+  display: block;
+  width: 98px;
+  height: 98px;
+  border: 0 solid #fef4f4;        /* 桜色 */
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  opacity: 0;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+.follow_menu a:hover::after {
+  opacity: 1;
+  border-width: 7px;
+}
+
+/* =========================================================
+   メニュー表示の出し分け
+   ========================================================= */
+@media (width < 768px) {
+  #fixed_footer { display: block; }
+}
+
+@media (width >= 768px) {
+  .follow_menu { display: block; }
 }

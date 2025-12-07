@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <style>
+    /* 柔らかな RGB の三原色をイメージした半透明の円（白い枠線付き） */
+    .decor-r {
+      fill: rgb(255, 128, 128);
+      fill-opacity: 0.25;
+      stroke: #c001;	/* cool */
+      stroke-width: 64;
+    }
+    .decor-g {
+      fill: rgb(128, 255, 160);
+      fill-opacity: 0.06125;
+      stroke: #1dea;	/* idea */
+      stroke-width: 2;
+    }
+    .decor-b {
+      fill: rgb(128, 192, 255);
+      fill-opacity: 0.25;
+      stroke: #c0de;	/* code */
+      stroke-width: 1;
+    }
+  </style>
+  <circle  class="decor-r" cx="117.3" cy="133.7" r =" 31.50" />
+  <ellipse class="decor-g" cx="084"   cy="46.49" rx="077.34" ry="14.106" />
+  <ellipse class="decor-b" cx=" 75.8" cy="37.3"  rx=" 80.80" ry="25.25" transform="rotate(22.3 37 76)"/>
+</svg>

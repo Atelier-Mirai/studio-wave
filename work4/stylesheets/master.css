@@ -21,7 +21,7 @@
 
 /* サイトヘッダー（ロゴ＋ナビの固定バー）
 -----------------------------------------------*/
-@import "_site_header.css";
+@import "_site-header.css";
 
 /* ヒーローイメージ
 -----------------------------------------------*/
@@ -33,7 +33,7 @@
 
 /* サブタイトル
 -----------------------------------------------*/
-@import "_sub_title.css";
+@import "_sub-title.css";
 
 /* 記事一覧
 -----------------------------------------------*/
@@ -45,6 +45,6 @@
 
 @import "_text.css";
 @import "_button.css";
-@import "_page_top.css";
-@import "_smooth_scroll.css";
+@import "_page-top.css";
+@import "_smooth-scroll.css";
 @import "_utility.css";

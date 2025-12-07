@@ -1,0 +1,71 @@
+/*=====================================================================
+  タブの為の装飾
+=====================================================================*/
+
+/* タブの色や形 */
+.tab {
+  &.menu {
+    display: grid;
+    grid-auto-flow: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid var(--nibiiro);
+
+    li {
+      background: white;
+
+      a {
+        display: block;
+        margin-bottom: -2px;
+        padding: 10px 20px;
+        border-bottom: 1px solid var(--nibiiro);
+        text-decoration: none;
+      }
+
+      &.active a {
+        background: var(--sakurairo);
+        border-top: 1px solid var(--nibiiro);
+        border-left: 1px solid var(--nibiiro);
+        border-right: 1px solid var(--nibiiro);
+        border-bottom: 1px solid var(--harukazeiro);
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  &.segument {
+    display: none;    /* はじめは非表示 */
+    opacity: 0;       /* 透過 */
+    background: var(--sakurairo);
+    margin-top: 0;    /* タブ見出しとの間隔調整 */
+
+    &.active {
+      display: block;
+
+      /* ふわっと表示させる */
+      animation-name: display-lightly-animation;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      border-top: 1px solid var(--harukazeiro);
+      border-left: 1px solid var(--nibiiro);
+      border-right: 1px solid var(--nibiiro);
+      border-bottom: 1px solid var(--nibiiro);
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+  }
+}
+
+/* 中身の表示 */
+/* ふわっと表示させるためのアニメーション */
+@keyframes display-lightly-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

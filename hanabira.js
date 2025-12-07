@@ -15,22 +15,28 @@
   const HANABIRA_Z_BASE     = 10000 // 花びらの z-index の基準値
 
   // ウィンドウの高さ
-  const windowHeight = window.innerHeight
+  let windowHeight = window.innerHeight
   // ウィンドウの幅(スクロールバー除く)
-  const windowWidth  = document.documentElement.clientWidth
+  let windowWidth  = document.documentElement.clientWidth
   // スクロール位置とイベントリスナの登録
   // (画面スクロールした鴇に花びらがウィンドウ内に納まるようにする為)
-  let scroll         = document.documentElement.scrollTop || document.body.scrollTop
+  let scroll       = document.documentElement.scrollTop || document.body.scrollTop
+
+  window.addEventListener('resize', () => {
+    windowHeight = window.innerHeight
+    windowWidth  = document.documentElement.clientWidth
+  })
+
   document.addEventListener('scroll', () => {
     scroll = document.documentElement.scrollTop || document.body.scrollTop
-  }, false)
+  }, { passive: true })
 
   // =========================================================================
   // 乱数関数
   // min 以上 max 以下の乱数を返す (integer)
   // min 以上 max 未満の乱数を返す (float)
   // =========================================================================
-  let rand = (min, max, type = "integer") => {
+  const rand = (min, max, type = "integer") => {
     if(type === "integer"){
       return Math.floor(Math.random() * (max-min+1)) + min
     } else {
@@ -72,7 +78,9 @@
     // 花びらの位置に関して
     // 空中にいるか？(ウィンドウ内か？)
     isInTheAir() {
-      return this.y < scroll + windowHeight - HANABIRA_HEIGHT
+      const verticalInView   = this.y < scroll + windowHeight - HANABIRA_HEIGHT
+      const horizontalInView = (this.x + HANABIRA_WIDTH) >= 0 && this.x <= windowWidth
+      return verticalInView && horizontalInView
     }
 
     // 地面に着いたか？
@@ -101,20 +109,10 @@
           this.tremorCount = 0
         }
 
-        // 左右に移動する
+        // 左右に移動する（端に達しても画面外へそのまま流れていく）
         let deltaX   = rand(0.2, 0.7, "float")
         let signFlag = (this.direction === "right" ? +1 : -1)
         this.x      += signFlag * deltaX
-
-        // もし右端にいるなら、左端に移動する
-        if (this.isOnTheRightEdge()) {
-          this.x = HANABIRA_WIDTH / 2
-        }
-
-        // もし左端にいるなら、右端に移動する
-        if (this.isOnTheLeftEdge()) {
-          this.x = windowWidth - HANABIRA_WIDTH
-        }
 
         // 移動回数を増やす
         this.tremorCount++
@@ -141,28 +139,31 @@
 
   // 櫻の花びらのための新しい div 要素を作成し、body の末尾に追加
   const divHanabira = document.createElement("div")
+  divHanabira.style.position = 'fixed'
+  divHanabira.style.inset = '0'
+  divHanabira.style.pointerEvents = 'none'
   document.body.after(divHanabira)
 
   // 花びらインスタンスを生成、
   // それぞれの花びらについて、位置等の初期設定を行う
-  let domHanabiras = [] // 花びら要素の配列
-  let jsHanabiras  = [] // 花びらjsオブジェクトの配列
-  for(let i = 0; i < NUMBER_OF_HANABIRAS; i++){
+  const domHanabiras = [] // 花びら要素の配列
+  const jsHanabiras  = [] // 花びらjsオブジェクトの配列
+  for (let i = 0; i < NUMBER_OF_HANABIRAS; i++) {
     // 各種属性の初期値の準備
-    let id           = i
-    let x            = rand(HANABIRA_WIDTH / 2, windowWidth - HANABIRA_WIDTH)
-    let y            = rand(-500, 0) + scroll
-    let z            = HANABIRA_Z_BASE + i
-    let tremorMax    = rand(15, 50)
-    let fallingSpeed = rand(1, 3)
-    let cssClassName    = `hana t${rand(1, 5)} a${rand(1, 5)}`
+    const id           = i
+    const x            = rand(HANABIRA_WIDTH / 2, windowWidth - HANABIRA_WIDTH)
+    const y            = rand(-500, 0) + scroll
+    const z            = HANABIRA_Z_BASE + i
+    const tremorMax    = rand(15, 50)
+    const fallingSpeed = rand(1, 3)
+    const cssClassName = `hana t${rand(1, 5)} a${rand(1, 5)}`
     // 各種属性の初期値を与え、花びらクラスのインスタンスを生成
-    let jsHanabira   = new Hanabira(id, x, y, z, tremorMax, fallingSpeed, cssClassName)
+    const jsHanabira   = new Hanabira(id, x, y, z, tremorMax, fallingSpeed, cssClassName)
     // 生成したインスタンスを、あとから扱いやすいよう、配列に格納する
     jsHanabiras[i]   = jsHanabira
 
     // 花びらの div を作る
-    let domHanabira = document.createElement('div')
+    const domHanabira = document.createElement('div')
     // 初期表示位置を設定する
     jsHanabira.applyPositionToDom(domHanabira)
     // ID や 花びらの色とアニメーションのための css class を設定する
@@ -178,16 +179,26 @@
   // メイン処理
   // 生成したそれぞれの花びらの位置情報を更新し、画面に反映する。
   // =========================================================================
-  setInterval(() => {
-    for(let jsHanabira of jsHanabiras) {
-      // 各花びらに対し、位置情報の更新処理を行う
-      jsHanabira.move()
+  const FRAME_INTERVAL = 1000 / FPS
+  let lastTime = performance.now()
 
-      // js オブジェクトの位置情報を、dom の位置に反映する。
-      let id          = jsHanabira.id
-      let domHanabira = domHanabiras[id]
-      jsHanabira.applyPositionToDom(domHanabira)
+  const tick = (now) => {
+    if (now - lastTime >= FRAME_INTERVAL) {
+      for (const jsHanabira of jsHanabiras) {
+        // 各花びらに対し、位置情報の更新処理を行う
+        jsHanabira.move()
+
+        // js オブジェクトの位置情報を、dom の位置に反映する。
+        const id          = jsHanabira.id
+        const domHanabira = domHanabiras[id]
+        jsHanabira.applyPositionToDom(domHanabira)
+      }
+      lastTime = now
     }
-  }, 1000 / FPS)
+
+    requestAnimationFrame(tick)
+  }
+
+  requestAnimationFrame(tick)
 }
 )()

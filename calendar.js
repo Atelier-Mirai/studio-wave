@@ -6,7 +6,7 @@
 import HOLIDAYS from "./holidays.js"
 
 // ブログデータを取得
-import BLOG_DATA from "./blog_data.js"
+import BLOG_DATA from "./blog-data.js"
 
 let today = new Date()
 // 年と月も設定

@@ -117,7 +117,7 @@
 }
 
 /* aside.pickup の css を少し調整 */
-.post .sidebar aside.pickup  { margin: 0; padding: 0; border: none; }
+.inner .sidebar aside.pickup  { margin: 0; padding: 0; border: none; }
 
 /* 日付欄 */
 #calendar table {
