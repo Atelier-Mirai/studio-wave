@@ -1,0 +1,48 @@
+/*=====================================================================
+  バッジ（キャンペーン告知）
+=====================================================================*/
+.campaign-badge {
+  position: absolute;
+  z-index: 5;
+  inset-block-start: 20%;
+  inset-inline-end: 5%;
+  inline-size: 120px;
+  block-size: 120px;
+  
+  @media (width <= 768px) {
+    inline-size: 80px;
+    block-size: 80px;
+    inset-block-start: auto;
+    inset-block-end: 20%;
+  }
+}
+
+.badge-link {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--shiro);
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.3;
+  
+  @media (width <= 768px) {
+    font-size: 0.7rem;
+  }
+}
+
+.badge-bg {
+  position: absolute;
+  inset: 0;
+  background: url("../images/badge.svg") no-repeat center / contain;
+  animation: rotate-badge 10s linear infinite;
+}
+
+@keyframes rotate-badge {
+  to {
+    transform: rotate(360deg);
+  }
+}

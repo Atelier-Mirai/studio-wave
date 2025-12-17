@@ -1,0 +1,72 @@
+/*=====================================================================
+  ヘッダー（ヒーロースライダー）
+=====================================================================*/
+#header {
+  position: relative;
+  block-size: 100vh;
+  block-size: 100dvh;
+  overflow: hidden;
+}
+
+.hero-slideshow {
+  position: absolute;
+  inset: 0;
+  
+  img {
+    position: absolute;
+    inset: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s;
+    
+    &.is-active {
+      opacity: 1;
+    }
+  }
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--kuro-50);
+}
+
+.hero-content {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: var(--shiro);
+  
+  h1 {
+    font-size: clamp(3rem, 10vw, 6rem);
+    margin-block-end: 10px;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    letter-spacing: 0.3em;
+  }
+}
+
+.social-links {
+  position: absolute;
+  inset-block-end: 30px;
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  
+  img {
+    inline-size: 24px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

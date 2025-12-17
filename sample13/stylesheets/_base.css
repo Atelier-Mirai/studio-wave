@@ -1,0 +1,49 @@
+/*=====================================================================
+  ベーススタイル
+=====================================================================*/
+body {
+  font-family: 'Kosugi Maru', sans-serif;
+  color: var(--sumi);
+  font-size: 1rem;
+  line-height: 1.85;
+  background-color: var(--kinari);
+}
+
+a {
+  color: var(--sora);
+  text-decoration: none;
+}
+
+img {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1, h2, h3 {
+  font-family: 'Lato', 'Kosugi Maru', sans-serif;
+}
+
+h2 {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-block-end: 40px;
+  
+  span {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--sora);
+    margin-block-end: 5px;
+  }
+}
+
+.inner {
+  max-inline-size: 1000px;
+  margin-inline: auto;
+  padding: 60px 20px;
+}

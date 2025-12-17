@@ -1,0 +1,54 @@
+/*=====================================================================
+  タブ
+  タブメニューとコンテンツ切り替え
+=====================================================================*/
+
+.tab-container {
+  @media (width <= 1110px) {
+    inline-size: 100%;
+  }
+}
+
+/* タブリスト */
+.tab-list {
+  display: flex;
+  position: relative;
+  inset-block-start: 1px;
+
+  li {
+    flex: 1;
+  }
+
+  a {
+    display: block;
+    padding: 15px 20px;
+    text-align: center;
+    border: 1px solid transparent;
+    border-block-end: none;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: var(--gofun-20);
+    }
+  }
+
+  li.is-active a {
+    background-color: var(--sumi);
+    border-color: var(--hai);
+  }
+}
+
+/* タブコンテンツ */
+.tab-content {
+  border-block-start: 1px solid var(--hai);
+  border-inline-start: 1px solid var(--hai);
+}
+
+.tab-panel {
+  display: none;
+  padding: 20px;
+
+  &.is-active {
+    display: block;
+  }
+}

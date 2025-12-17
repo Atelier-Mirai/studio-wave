@@ -1,0 +1,60 @@
+/*=====================================================================
+  お問い合わせセクション
+  連絡先と予約情報
+=====================================================================*/
+
+#contact {
+  display: grid;
+  grid-template-columns: 1fr 25%;
+  gap: 5%;
+  align-items: center;
+
+  @media (width <= 1190px) {
+    grid-template-columns: 1fr 35%;
+  }
+
+  @media (width <= 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (width <= 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* コンタクト画像 */
+.contact-image {
+  min-block-size: 300px;
+  background: url("../images/contact.webp") no-repeat center / cover;
+  order: 2;
+
+  @media (width <= 600px) {
+    order: 1;
+    margin-block-end: 50px;
+  }
+}
+
+/* コンタクト情報 */
+.contact-info {
+  text-align: center;
+  order: 1;
+
+  @media (width <= 600px) {
+    order: 2;
+  }
+}
+
+.contact-info h2 {
+  font-size: 1.3rem;
+  margin-block-end: 10px;
+}
+
+.contact-info dt {
+  font-size: 1.2rem;
+  margin-block-end: 10px;
+}
+
+.contact-info dd {
+  font-size: 0.8rem;
+  margin-block-end: 30px;
+}

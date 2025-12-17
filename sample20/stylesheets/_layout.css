@@ -1,0 +1,23 @@
+/*=====================================================================
+  レイアウト
+=====================================================================*/
+#wrapper {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 40px;
+  max-inline-size: 1200px;
+  margin-inline: auto;
+  padding: 40px 20px;
+  
+  @media (width <= 960px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+main {
+  min-inline-size: 0;
+}
+
+section {
+  margin-block-end: 60px;
+}

@@ -1,0 +1,61 @@
+/*=====================================================================
+  サービス
+=====================================================================*/
+#service {
+  background-color: var(--kinari);
+}
+
+.service-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-block-end: 80px;
+  
+  &:last-child {
+    margin-block-end: 0;
+  }
+  
+  &:nth-child(even) {
+    direction: rtl;
+    
+    > * {
+      direction: ltr;
+    }
+  }
+  
+  @media (width <= 768px) {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    
+    &:nth-child(even) {
+      direction: ltr;
+    }
+  }
+}
+
+.service-image {
+  img {
+    inline-size: 100%;
+    block-size: auto;
+  }
+}
+
+.service-content {
+  h3 {
+    font-size: 1.5rem;
+    margin-block-end: 20px;
+    
+    span {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--hai);
+      margin-block-end: 5px;
+    }
+  }
+  
+  p {
+    margin-block-end: 30px;
+    color: var(--hai);
+  }
+}

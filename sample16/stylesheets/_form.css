@@ -1,0 +1,65 @@
+/*=====================================================================
+  フォーム
+=====================================================================*/
+.form-content {
+  max-inline-size: 500px;
+  margin-inline: auto;
+  
+  h3 {
+    font-size: 1.5rem;
+    margin-block-end: 30px;
+    text-align: center;
+  }
+}
+
+.form-list {
+  li {
+    margin-block-end: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-block-end: 5px;
+    font-size: 0.9rem;
+    color: var(--hai);
+  }
+  
+  input,
+  textarea {
+    inline-size: 100%;
+    padding: 12px 15px;
+    background-color: transparent;
+    border: 1px solid var(--hai);
+    color: var(--shiro);
+    font-size: 1rem;
+    
+    &:focus {
+      border-color: var(--shiro);
+      outline: none;
+    }
+  }
+  
+  textarea {
+    min-block-size: 150px;
+    resize: vertical;
+  }
+}
+
+.submit-btn {
+  text-align: center;
+  margin-block-start: 30px;
+  
+  input {
+    padding: 15px 50px;
+    background-color: var(--shiro);
+    border: none;
+    color: var(--kuro);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

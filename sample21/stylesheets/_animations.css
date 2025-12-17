@@ -1,0 +1,31 @@
+/*=====================================================================
+  アニメーション
+=====================================================================*/
+/* タイピングアニメーション */
+.typing-text {
+  overflow: hidden;
+  white-space: nowrap;
+  border-inline-end: 2px solid var(--gofun);
+  animation: 
+    typing 3s steps(40) forwards,
+    blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { inline-size: 0; }
+  to { inline-size: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* フェードイン */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.8s;
+  
+  &.is-visible {
+    opacity: 1;
+  }
+}

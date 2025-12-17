@@ -1,0 +1,89 @@
+/*=====================================================================
+  ローディング画面（スプラッシュ）
+  ページ読み込み時のアニメーション
+=====================================================================*/
+
+/* ローディングオーバーレイ */
+#splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background-color: var(--kobaiiro);
+  color: var(--gofun);
+}
+
+/* ロゴ */
+.splash-logo {
+  font-size: 1.8rem;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+/* 画面遷移アニメーション用背景 */
+.splash-bg-left,
+.splash-bg-right {
+  display: none;
+}
+
+body.appear .splash-bg-left,
+body.appear .splash-bg-right {
+  content: "";
+  display: block;
+  position: fixed;
+  z-index: 999;
+  inset-block: 0;
+  inline-size: 50%;
+  background-color: var(--kobaiiro);
+  animation: page-slide 1.2s ease-in-out forwards;
+}
+
+/* 右側（左へ消える） */
+body.appear .splash-bg-left {
+  inset-inline-start: 0;
+  transform-origin: left;
+}
+
+/* 左側（右へ消える） */
+body.appear .splash-bg-right {
+  inset-inline-end: 0;
+  transform-origin: right;
+  animation-name: page-slide-reverse;
+}
+
+@keyframes page-slide {
+  0% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+
+@keyframes page-slide-reverse {
+  0% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+}
+
+/* メインコンテンツの出現 */
+#wrapper {
+  opacity: 0;
+}
+
+body.appear #wrapper {
+  animation: fade-in 1s 0.2s forwards;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

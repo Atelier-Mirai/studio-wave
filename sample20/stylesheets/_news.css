@@ -1,0 +1,60 @@
+/*=====================================================================
+  ニュース（アコーディオン）
+=====================================================================*/
+#news {
+  > h2 {
+    font-size: 1.2rem;
+    padding-block-end: 15px;
+    border-block-end: 2px solid var(--wakakusa);
+    margin-block-end: 20px;
+  }
+}
+
+.accordion-list {
+  li {
+    margin-block-end: 10px;
+  }
+}
+
+.accordion-item {
+  border: 1px solid var(--usuhai);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.accordion-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: var(--gofun);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+  
+  &:hover {
+    background-color: var(--wakakusa-20);
+  }
+  
+  &::after {
+    content: "+";
+    font-size: 1.2rem;
+    color: var(--wakakusa);
+    transition: transform 0.3s;
+  }
+  
+  .accordion-item.is-open &::after {
+    transform: rotate(45deg);
+  }
+}
+
+.accordion-content {
+  display: none;
+  padding: 15px 20px;
+  background-color: var(--kinari);
+  font-size: 0.9rem;
+  
+  .accordion-item.is-open & {
+    display: block;
+  }
+}

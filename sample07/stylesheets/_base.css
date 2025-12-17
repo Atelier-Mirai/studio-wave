@@ -1,0 +1,34 @@
+/*
+  基本要素（body / a / p / img など）の共通スタイル。
+  部品ごとの見た目ではなく「サイト全体の土台」をここにまとめます。
+*/
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+p {
+  line-height: 1.8;
+  text-wrap: pretty;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  filter: brightness(90%) contrast(120%);
+}
+
+img {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}

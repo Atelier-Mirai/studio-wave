@@ -1,0 +1,30 @@
+/*=====================================================================
+  ベーススタイル
+=====================================================================*/
+body {
+  font-family: 'Marcellus', serif;
+  color: var(--sumi);
+  font-size: 1rem;
+  line-height: 1.8;
+  background-color: var(--kuro);
+}
+
+a {
+  color: var(--shiro);
+  text-decoration: none;
+}
+
+img {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1 {
+  font-family: 'Italianno', cursive;
+}

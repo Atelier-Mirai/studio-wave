@@ -1,0 +1,49 @@
+/*=====================================================================
+  ニュースセクション
+  お知らせとタブメニュー
+=====================================================================*/
+
+/* ニュース背景画像 */
+.news-image-wrapper {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  inline-size: 90%;
+  block-size: 60vh;
+}
+
+.news-image {
+  block-size: 60vh;
+  background: url("../images/news-bg.webp") no-repeat center / cover;
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    inset-block-end: 0;
+    inset-inline-start: 0;
+    inline-size: 70%;
+    block-size: 10vh;
+    background-color: var(--kuro);
+  }
+}
+
+#news {
+  padding: 0 0 5% 15%;
+
+  @media (width <= 768px) {
+    padding: 0 0 5% 30px;
+  }
+}
+
+/* ニュースリスト */
+.news-list {
+  li {
+    padding-block: 20px;
+  }
+
+  time {
+    display: block;
+    color: var(--hai);
+  }
+}

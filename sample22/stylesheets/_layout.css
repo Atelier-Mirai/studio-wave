@@ -1,0 +1,49 @@
+#container {
+  opacity: 0;
+}
+
+body.appear #container {
+  animation: container-fade-in 1s ease forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes container-fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+#content-area {
+  padding-inline-start: 230px;
+}
+
+@media (width <= 990px) {
+  #content-area {
+    padding-inline-start: 0;
+  }
+}
+
+main {
+  display: grid;
+  gap: clamp(var(--space-7), 12vw, 140px);
+}
+
+.heading-block {
+  display: grid;
+  justify-content: center;
+}
+
+.heading-block h2 {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  letter-spacing: 0.2em;
+  font-size: clamp(1.7rem, 3.2vw, 2.2rem);
+  margin-block: clamp(var(--space-7), 10vw, 120px);
+}
+
+@media (width <= 990px) {
+  .heading-block h2 {
+    writing-mode: horizontal-tb;
+    margin-block: var(--space-7);
+  }
+}

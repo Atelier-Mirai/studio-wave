@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Sugiyama Co. - 企業サイト</title>
+  <meta name="description" content="最適な人材をご提案致します">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheets/master.css">
+  <script src="javascripts/main.js" defer></script>
+</head>
+
+<body>
+  <div id="splash">
+    <p class="splash-logo">杉山株式会社</p>
+  </div>
+  <div class="splash-transition splash-transition-top" aria-hidden="true"></div>
+  <div class="splash-transition splash-transition-bottom" aria-hidden="true"></div>
+
+  <div id="container">
+    <header id="header" class="site-header" data-header>
+      <div class="header-inner">
+        <button type="button" class="nav-toggle" popovertarget="global-nav" popovertargetaction="toggle" aria-label="メニュー" aria-expanded="false">
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+
+        <nav class="site-nav" aria-label="グローバルナビゲーション">
+          <ul>
+            <li class="is-current"><a href="#">ホーム</a></li>
+            <li><a href="#">会社概要</a></li>
+            <li><a href="#service">事業紹介</a></li>
+            <li><a href="#">求人情報</a></li>
+            <li><a href="#news">お知らせ</a></li>
+            <li><a href="#access">アクセス</a></li>
+          </ul>
+        </nav>
+
+        <h1 class="site-title">杉山株式会社</h1>
+
+        <ul class="utility-nav" aria-label="クイックリンク">
+          <li>
+            <a href="#access" class="utility-link">
+              <img src="images/map.svg" alt="" loading="lazy">
+              <span>アクセス</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contact" class="utility-link">
+              <img src="images/contact.svg" alt="" loading="lazy">
+              <span>お問い合わせ</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <nav id="global-nav" class="nav-popover" popover>
+      <div class="nav-popover-bg" aria-hidden="true"></div>
+      <div class="nav-popover-inner">
+        <button type="button" class="nav-close" popovertarget="global-nav" popovertargetaction="hide" aria-label="メニューを閉じる"></button>
+        <ul class="nav-popover-list">
+          <li><a href="#">ホーム</a></li>
+          <li><a href="#">会社概要</a></li>
+          <li><a href="#service">事業紹介</a></li>
+          <li><a href="#">求人情報</a></li>
+          <li><a href="#news">お知らせ</a></li>
+          <li><a href="#access">アクセス</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main id="main">
+      <section id="lead" class="lead" aria-label="キービジュアル">
+        <div class="lead-layout">
+          <div class="hero" data-hero>
+            <picture class="hero-slide is-active" data-loaded="true">
+              <source srcset="images/hero-01-sp.webp" media="(width <= 768px)">
+              <img src="images/hero-01.webp" alt="" decoding="async">
+            </picture>
+            <picture class="hero-slide" data-loaded="false">
+              <source data-srcset="images/hero-02-sp.webp" media="(width <= 768px)">
+              <img data-src="images/hero-02.webp" alt="" decoding="async">
+            </picture>
+            <picture class="hero-slide" data-loaded="false">
+              <source data-srcset="images/hero-03-sp.webp" media="(width <= 768px)">
+              <img data-src="images/hero-03.webp" alt="" decoding="async">
+            </picture>
+          </div>
+
+          <div class="lead-copy" aria-label="コンセプト">
+            <h2 class="lead-heading" data-reveal="right">Concept</h2>
+            <p class="lead-text" data-reveal="right">最適な人材を<span>ご提案致します</span></p>
+          </div>
+
+          <article id="news" class="news-card" data-reveal="left">
+            <h2>お知らせ</h2>
+            <ul>
+              <li><a href="#"><time datetime="2025-12-23">2025.12.23</time>年始年末のお取引について</a></li>
+              <li><a href="#"><time datetime="2025-04-15">2025.04.15</time>ゴールデンウィークの営業について</a></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="service" class="section service">
+        <header class="section-header" data-reveal="left">
+          <h2>事業紹介</h2>
+          <p>株式会社杉山は「社会をより良く」を<br>コンセプトに人と仕事をつなげます</p>
+        </header>
+
+        <ul class="service-grid" aria-label="サービス一覧">
+          <li><a href="#" class="service-link">人材派遣</a></li>
+          <li><a href="#" class="service-link">業務委託</a></li>
+          <li><a href="#" class="service-link">アルバイト</a></li>
+          <li><a href="#" class="service-link">警備</a></li>
+          <li><a href="#" class="service-link">求人広告</a></li>
+          <li><a href="#" class="service-link">シニア派遣</a></li>
+          <li><a href="#" class="service-link">ドライバー派遣</a></li>
+          <li><a href="#" class="service-link">社員教育</a></li>
+        </ul>
+      </section>
+
+      <section id="message" class="section message">
+        <h2 class="section-title" data-reveal="left">Message</h2>
+
+        <div class="split-section">
+          <div class="split-content" data-reveal="left">
+            <h3>万全の教育体制で<br>エキスパートを派遣</h3>
+            <p>杉山株式会社は、万全の教育体制で派遣社員の皆様をサポートし、人材を必要としている企業様にエキスパートを送り出します。どうぞお気軽にご相談ください。</p>
+            <p><a href="#" class="button">会社概要</a></p>
+          </div>
+
+          <div class="split-media" data-reveal="right">
+            <img src="images/message.webp" alt="" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </section>
+
+      <section id="history" class="section history">
+        <h2 class="section-title" data-reveal="right">History</h2>
+
+        <div class="split-section">
+          <div class="split-media" data-reveal="left">
+            <img src="images/history.webp" alt="" loading="lazy" decoding="async">
+          </div>
+
+          <div class="split-content" data-reveal="right">
+            <ol class="timeline" aria-label="沿革">
+              <li class="timeline-item">
+                <dl>
+                  <dt>1980年</dt>
+                  <dd>銀座9丁目で創業</dd>
+                </dl>
+              </li>
+              <li class="timeline-item">
+                <dl>
+                  <dt>1990年</dt>
+                  <dd>プライバシーマーク取得</dd>
+                </dl>
+              </li>
+              <li class="timeline-item">
+                <dl>
+                  <dt>2001年</dt>
+                  <dd>BEST CONNECT AWARD2001 受賞</dd>
+                </dl>
+              </li>
+              <li class="timeline-item">
+                <dl>
+                  <dt>2016年</dt>
+                  <dd>東京証券取引所マザーズに上場</dd>
+                </dl>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer" class="site-footer">
+      <div class="footer-grid">
+        <section id="access" class="footer-access">
+          <h2>交通アクセス</h2>
+          <div class="access-info">
+            <address>〒104-0061<br>東京都中央区銀座5丁目1-1</address>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="button button-invert">Google Map</a>
+          </div>
+          <div class="map-embed">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.1872337842015!2d139.75989081525861!3d35.6723914801963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bef7abe6d7f%3A0x7c12dce58bb5263f!2z44CSMTA0LTAwNjEg5p2x5Lqs6YO95Lit5aSu5Yy66YqA5bqn77yV5LiB55uu77yR4oiS77yR!5e0!3m2!1sja!2sjp!4v1577446697807!5m2!1sja!2sjp" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+
+          <nav class="footer-nav" aria-label="フッターナビゲーション">
+            <ul>
+              <li><a href="#">ホーム</a></li>
+              <li><a href="#">会社概要</a></li>
+              <li><a href="#service">事業紹介</a></li>
+              <li><a href="#">求人情報</a></li>
+              <li><a href="#news">お知らせ</a></li>
+              <li><a href="#access">アクセス</a></li>
+              <li><a href="#contact">お問い合わせ</a></li>
+            </ul>
+          </nav>
+        </section>
+
+        <section id="contact" class="footer-contact">
+          <h2>杉山株式会社</h2>
+          <p class="tel"><a href="tel:03-1234-5678">03-1234-5678</a></p>
+          <p>電話受付：平日9時〜17時</p>
+          <small>&copy; Sugiyama Co.</small>
+        </section>
+      </div>
+
+      <button type="button" class="page-top" data-page-top aria-label="ページトップへ">
+        <span aria-hidden="true"></span>
+      </button>
+    </footer>
+  </div>
+</body>
+</html>

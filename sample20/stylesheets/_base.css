@@ -1,0 +1,42 @@
+/*=====================================================================
+  ベーススタイル
+=====================================================================*/
+body {
+  font-family: 'Sawarabi Gothic', sans-serif;
+  color: var(--sumi);
+  font-size: 1rem;
+  line-height: 1.8;
+  background-color: var(--shironeri);
+}
+
+a {
+  color: var(--matsubairo);
+  text-decoration: none;
+  transition: opacity 0.3s;
+  
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+img {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-block-end: 30px;
+  
+  span {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--hai);
+  }
+}

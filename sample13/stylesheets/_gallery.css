@@ -1,0 +1,31 @@
+/*=====================================================================
+  ギャラリースライダー
+=====================================================================*/
+.gallery-slider {
+  padding-block: 40px;
+  background-color: var(--kinari);
+  overflow: hidden;
+}
+
+.gallery-track {
+  display: flex;
+  gap: 20px;
+  animation: scroll-gallery 20s linear infinite;
+  
+  img {
+    inline-size: 250px;
+    block-size: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+}
+
+@keyframes scroll-gallery {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

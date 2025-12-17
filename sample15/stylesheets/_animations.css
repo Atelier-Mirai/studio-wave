@@ -1,0 +1,15 @@
+/*=====================================================================
+  アニメーション
+=====================================================================*/
+.random-text span {
+  display: inline-block;
+  opacity: 0;
+}
+
+.random-text.is-visible span {
+  animation: random-fade 0.5s forwards;
+}
+
+@keyframes random-fade {
+  to { opacity: 1; }
+}

@@ -1,0 +1,46 @@
+/*=====================================================================
+  フッター
+=====================================================================*/
+#footer {
+  position: relative;
+  padding: 40px 20px;
+  text-align: center;
+  background-color: var(--kon);
+  border-block-start: 1px solid var(--shiro-10);
+}
+
+.copyright {
+  color: var(--hai);
+  font-size: 0.85rem;
+}
+
+#page-top {
+  position: fixed;
+  z-index: 10;
+  inset-inline-end: 20px;
+  inset-block-end: 20px;
+  
+  a {
+    display: grid;
+    place-items: center;
+    inline-size: 50px;
+    block-size: 50px;
+    background-color: var(--ai);
+    border-radius: 50%;
+    transition: all 0.3s;
+    
+    &::before {
+      content: "";
+      inline-size: 10px;
+      block-size: 10px;
+      border-block-start: 2px solid var(--kon);
+      border-inline-start: 2px solid var(--kon);
+      transform: rotate(45deg) translateY(3px);
+    }
+    
+    &:hover {
+      background-color: var(--asagi);
+      transform: translateY(-5px);
+    }
+  }
+}

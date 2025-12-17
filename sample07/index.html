@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Boards</title>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.1.0/css/all.css">
+	
+	<link href="stylesheets/master.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header: ロゴ + ナビゲーション（モバイルは app.js で開閉します） -->
+<header class="header">
+	<div class="header-container w-container">
+		<div class="site">
+			<a href="index.html">
+				<img src="images/logo.svg" alt="Boards" width="135" height="26">
+			</a>
+		</div>
+
+		<button class="nav-btn" type="button" aria-controls="primary-nav" aria-expanded="false">
+			<i class="fa-solid fa-bars"></i>
+			<i class="fa-solid fa-xmark"></i>
+			<span class="sr-only">MENU</span>
+		</button>
+
+		<nav class="nav" id="primary-nav">
+			<ul>
+				<li><a href="index.html">ホーム</a></li>
+				<li><a href="services.html">サービス案内</a></li>
+				<li><a href="contact.html">お問い合わせ</a></li>				
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<!-- Hero: 背景画像 + キャッチコピー + CTAボタン -->
+<section class="hero">
+	<div class="hero-container w-container">
+		<h1>Stationery Services</h1>
+		<p>便利な道具とサービスをお届けします</p>
+		<a href="#" class="btn">無料で始める</a>
+	</div>
+</section>
+
+<!-- Image + Text: 文章と画像を組み合わせた紹介セクション -->
+<section class="img-text">
+	<div class="img-text-container w-container">
+		<div class="text">
+			<h2 class="heading-decoration">日常のツールたち</h2>
+			<p>Convenient</p>
+			<p>どこにでもある、誰でも使ったことがある、普段は存在を意識しないけどないと困るツールたち。日常をちょっと楽しくしてくれます。</p>
+		</div>
+		<figure class="img">
+			<img src="images/tool.jpg" alt="" width="1600" height="1260">
+		</figure>
+	</div>
+</section>
+
+<!-- Image + Text（左右反転）: `.img-text-container.is-reversed` で並び順を反転します -->
+<section class="img-text">
+	<div class="img-text-container is-reversed w-container">
+		<div class="text">
+			<h2 class="heading-decoration">効率化の手助け</h2>
+			<p>Helpful</p>
+			<p>さまざまな作業を効率よく進めるためには、目的に応じて最適な道具を使うことが大切です。そんな道具たちが揃っています。</p>
+		</div>
+		<figure class="img">
+			<img src="images/helpful.jpg" alt="" width="1600" height="1260">
+		</figure>
+	</div>
+</section>
+
+<!-- Posts: ニュース（カード一覧） -->
+<section class="posts">
+	<div class="w-container">
+		<h2 class="heading">
+			News Releases <span>最新情報</span>
+		</h2>
+
+		<div class="posts-container">
+			<article class="post">
+				<a href="#">
+					<figure><img src="images/news-01.jpg" alt="" width="1000" height="750"></figure>
+					<h3>スパンコール</h3>
+					<p>キラキラと光を反射する装飾素材です。いつもの道具にアクセントを付けます。</p>
+				</a>
+			</article>
+
+			<article class="post">
+				<a href="#">
+					<figure><img src="images/news-02.jpg" alt="" width="1000" height="750"></figure>
+					<h3>卓上ランタン</h3>
+					<p>手元に灯りが欲しいときに、便利でかわいい卓上ランタンです。</p>
+				</a>
+			</article>
+
+			<article class="post">
+				<a href="#">
+					<figure><img src="images/news-03.jpg" alt="" width="1000" height="1000"></figure>
+					<h3>冊子印刷</h3>
+					<p>スタンダードプランにも手軽な冊子印刷が登場しました。</p>
+				</a>
+			</article>
+
+			<article class="post">
+				<a href="#">
+					<figure><img src="images/news-04.jpg" alt="" width="1000" height="750"></figure>
+					<h3>マグネット</h3>
+					<p>メモやアイデアを貼り出しておくなら、かわいいマグネットがおすすめです。</p>
+				</a>
+			</article>
+
+			<article class="post">
+				<a href="#">
+					<figure><img src="images/news-05.jpg" alt="" width="1000" height="750"></figure>
+					<h3>ビジネスノート</h3>
+					<p>書き心地や開きやすさにこだわった、ビジネス用のノートたちを紹介します。</p>
+				</a>
+			</article>
+
+			<article class="post">
+				<a href="#">
+					<figure><img src="images/news-06.jpg" alt="" width="1000" height="750"></figure>
+					<h3>ボールペン</h3>
+					<p>スタイリッシュなボールペンで仕事環境の雰囲気を変えてみました。</p>
+				</a>
+			</article>
+		</div>
+	</div>
+</section>
+
+<!-- Footer: サイト情報 / SNS / フッターメニュー -->
+<footer class="footer">
+	<div class="footer-container w-container">
+		<div class="footer-site">
+			<a href="index.html">
+				<img src="images/logo.svg" alt="Boards" width="135" height="26">
+			</a>
+		</div>
+
+		<ul class="footer-sns">
+			<li>
+				<a href="#">
+					<i class="fa-brands fa-x-twitter"></i>
+					<span class="sr-only">X</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class="fa-brands fa-facebook-f"></i>
+					<span class="sr-only">Facebook</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class="fa-brands fa-instagram"></i>
+					<span class="sr-only">Instagram</span>
+				</a>
+			</li>
+		</ul>
+
+		<ul class="footer-menu">
+			<li><a href="#">会社概要</a></li>
+			<li><a href="#">特定商取引法</a></li>
+			<li><a href="#">個人情報の取り扱い</a></li>
+			<li><a href="services.html">サービス案内</a></li>
+			<li><a href="contact.html">お問い合わせ</a></li>
+		</ul>
+
+		<div class="footer-copy">
+			@ Boards Production.
+		</div>
+	</div>
+</footer>
+
+<!-- ナビ開閉などの最小JS（ES Modules / HTML解析後に実行） -->
+<script src="javascripts/app.js" type="module"></script>
+
+</body>
+</html>

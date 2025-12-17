@@ -1,0 +1,44 @@
+/*
+  画像＋テキストのセクション（index.html の `.img-text`）。
+  - モバイル：縦並び（テキスト→画像）
+  - PC：横並び
+  `.img-text-container.is-reversed` を付けると左右が入れ替わります。
+*/
+.img-text {
+  padding-block: var(--v-space);
+  background-color: var(--color-surface-strong);
+
+  /* 連続するセクションの間は、余白を詰めて一体感を出す */
+  + .img-text {
+    padding-block-start: 0;
+  }
+
+  .img-text-container {
+    display: grid;
+    gap: clamp(2.8125rem, 6vw, 5rem);
+    /* まずは縦並び（text → image） */
+    grid-template-areas:
+      "text"
+      "image";
+
+    > .text {
+      grid-area: text;
+    }
+
+    > .img {
+      grid-area: image;
+    }
+
+    @media (width >= 48rem) {
+      grid-template-columns: minmax(17em, 1fr) 2fr;
+      align-items: center;
+      grid-template-areas: "text image";
+
+      /* 同じ要素にクラスを追加して左右を入れ替える */
+      &.is-reversed {
+        grid-template-columns: 2fr minmax(17em, 1fr);
+        grid-template-areas: "image text";
+      }
+    }
+  }
+}

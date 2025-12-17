@@ -1,0 +1,96 @@
+/*=====================================================================
+  サービスセクション
+  サービス紹介エリア
+=====================================================================*/
+
+#service {
+  padding: 10% 0 10% 15%;
+
+  @media (width <= 768px) {
+    padding: 30% 0 10% 30px;
+  }
+}
+
+.service-lead {
+  @media (width <= 500px) {
+    padding-inline-end: 10%;
+
+    br {
+      display: none;
+    }
+  }
+}
+
+/* サービスグリッド */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5%;
+  padding: 10% 0 0 10%;
+  position: relative;
+
+  /* 背景 */
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset-block-start: 10%;
+    inset-inline-end: 0;
+    inline-size: 0;
+    block-size: 60vh;
+    background-color: var(--sumi);
+    opacity: 0;
+  }
+
+  &.is-animated::after {
+    animation: extend-bg 0.9s forwards ease-in-out;
+  }
+
+  @media (width <= 570px) {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+@keyframes extend-bg {
+  from {
+    inline-size: 0;
+    opacity: 0;
+  }
+  to {
+    inline-size: 80%;
+    opacity: 1;
+  }
+}
+
+/* サービスカード */
+.service-card {
+  h3 {
+    font-size: 1.5rem;
+    margin-block-end: 30px;
+  }
+
+  p {
+    margin-block-end: 30px;
+  }
+
+  @media (width <= 570px) {
+    margin-block-end: 100px;
+    padding-inline-end: 10%;
+  }
+}
+
+/* サービス画像 */
+.service-image {
+  position: relative;
+  overflow: hidden;
+  block-size: 60vh;
+  background: url("../images/service-01.webp") no-repeat center / cover;
+
+  @media (width <= 570px) {
+    inline-size: 100%;
+    block-size: 40vh;
+    background-position: right;
+    margin-block-end: 50px;
+  }
+}

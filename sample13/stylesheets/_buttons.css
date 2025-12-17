@@ -1,0 +1,49 @@
+/*=====================================================================
+  ボタン
+=====================================================================*/
+.btn-primary {
+  display: inline-block;
+  padding: 15px 40px;
+  background-color: var(--sora);
+  color: var(--shiro);
+  font-weight: bold;
+  border-radius: 50px;
+  transition: all 0.3s;
+  
+  &:hover {
+    background-color: var(--momo);
+    transform: scale(1.05);
+  }
+}
+
+.btn-arrow {
+  display: inline-block;
+  padding: 15px 50px 15px 30px;
+  background-color: var(--shiro);
+  color: var(--sora);
+  font-weight: bold;
+  border-radius: 50px;
+  position: relative;
+  transition: all 0.3s;
+  
+  &::after {
+    content: "";
+    position: absolute;
+    inset-inline-end: 20px;
+    inset-block-start: 50%;
+    inline-size: 8px;
+    block-size: 8px;
+    border-block-start: 2px solid var(--sora);
+    border-inline-end: 2px solid var(--sora);
+    transform: translateY(-50%) rotate(45deg);
+    transition: transform 0.3s;
+  }
+  
+  &:hover {
+    background-color: var(--kiiro);
+    
+    &::after {
+      transform: translateY(-50%) translateX(5px) rotate(45deg);
+    }
+  }
+}

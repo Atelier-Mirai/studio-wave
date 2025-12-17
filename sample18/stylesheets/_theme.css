@@ -1,0 +1,35 @@
+:root {
+  --color-brand: #1c305c;
+  --color-brand-2: #19448e;
+  --color-ink: #595857;
+  --color-ink-muted: #57696d;
+  --color-paper: #fbfaf5;
+  --color-paper-2: #f3f3f2;
+  --color-border: #c8c2c6;
+  --color-surface: #ffffff;
+
+  --brand-85: rgb(28 48 92 / 85%);
+  --brand-20: rgb(28 48 92 / 20%);
+  --surface-90: rgb(255 255 255 / 90%);
+
+  --shadow-1: 0 10px 30px rgb(0 0 0 / 12%);
+
+  --content-max: 1200px;
+  --header-height: 94px;
+  --header-height-compact: 70px;
+
+  --radius-1: 8px;
+  --radius-2: 14px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  --font-sans: "Noto Serif JP", serif;
+  --font-display: "Alex Brush", cursive;
+}

@@ -1,0 +1,114 @@
+/*=====================================================================
+  サイドバー
+=====================================================================*/
+#sidebar {
+  @media (width <= 960px) {
+    display: none;
+  }
+}
+
+.sidebar-sticky {
+  position: sticky;
+  inset-block-start: 100px;
+}
+
+/* ユーティリティボタン */
+.utility-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-block-end: 30px;
+}
+
+.utility-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 12px;
+  background-color: var(--gofun);
+  border: 1px solid var(--usuhai);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  text-align: center;
+  transition: all 0.3s;
+  
+  &:hover {
+    border-color: var(--wakakusa);
+    background-color: var(--wakakusa-20);
+  }
+  
+  img {
+    inline-size: 20px;
+  }
+}
+
+/* Login ボタンは塗りつぶし、Cart はアウトライン調に */
+.utility-buttons li:first-child .utility-btn {
+  background-color: var(--wakakusa);
+  border-color: var(--wakakusa);
+  color: var(--gofun);
+}
+
+.utility-buttons li:first-child .utility-btn:hover {
+  background-color: var(--matsubairo);
+  border-color: var(--matsubairo);
+}
+
+.utility-buttons li:last-child .utility-btn {
+  background-color: var(--gofun);
+  border-color: var(--wakakusa);
+}
+
+.utility-buttons li:last-child .utility-btn:hover {
+  background-color: var(--wakakusa-20);
+}
+
+/* タブエリア */
+.tab-area {
+  background-color: var(--gofun);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 5%);
+}
+
+.tab-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.tab-item {
+  padding: 12px;
+  background-color: var(--kinari);
+  text-align: center;
+  cursor: pointer;
+  font-size: 0.85rem;
+  border-block-end: 3px solid transparent;
+  transition: all 0.3s;
+  
+  &.is-active {
+    background-color: var(--gofun);
+    border-color: var(--wakakusa);
+  }
+}
+
+.tab-content {
+  display: none;
+  padding: 20px;
+  
+  &.is-active {
+    display: block;
+  }
+  
+  a {
+    display: block;
+    padding: 8px 0;
+    border-block-end: 1px dotted var(--usuhai);
+    font-size: 0.85rem;
+    
+    &:last-child {
+      border: none;
+    }
+  }
+}

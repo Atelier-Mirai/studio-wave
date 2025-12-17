@@ -1,0 +1,53 @@
+/*
+  最新情報（ニュース一覧）のセクション。
+  - `.posts-container` を grid にしてカードを並べます。
+  ※このファイルは「CSS Nesting（ネスト）」を使っています（`.posts` 内の `.w-container`）。
+*/
+.posts {
+  padding-block: var(--v-space);
+  background-color: var(--color-section-muted);
+
+  /* `.posts` セクション内のコンテナだけ、見出しと一覧を縦に並べる */
+  .w-container {
+    display: grid;
+    gap: 2rem;
+  }
+
+  /* ニュースのカード一覧（グリッド） */
+  .posts-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1.5625rem;
+  }
+
+  @media (width >= 48rem) {
+    .posts-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* 1つのニュースカード（article.post） */
+  .post {
+    a {
+      display: block;
+    }
+
+    h3 {
+      margin-block: 1em 0.5em;
+      font-size: clamp(0.75rem, 2vw, 1.25rem);
+      min-block-size: 0;
+    }
+
+    p {
+      max-inline-size: 20em;
+      font-size: clamp(0.625rem, 1.6vw, 0.875rem);
+      min-block-size: 0;
+    }
+
+    img {
+      inline-size: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+/*=====================================================================
+  モーダル（セール情報）
+=====================================================================*/
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background-color: var(--sumi-80);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.modal-content {
+  position: relative;
+  inline-size: min(90vw, 500px);
+  padding: 40px;
+  background-color: var(--gofun);
+  border-radius: 16px;
+  text-align: center;
+  
+  h2 {
+    color: var(--wakakusa);
+    margin-block-end: 20px;
+    
+    span {
+      color: var(--hai);
+    }
+  }
+  
+  img {
+    inline-size: 100%;
+    border-radius: 8px;
+    margin-block-end: 20px;
+  }
+  
+  p {
+    font-size: 0.9rem;
+    line-height: 2;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  inset-block-start: 15px;
+  inset-inline-end: 15px;
+  inline-size: 30px;
+  block-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 0;
+    inline-size: 100%;
+    block-size: 2px;
+    background-color: var(--sumi);
+  }
+  
+  &::before { transform: rotate(45deg); }
+  &::after { transform: rotate(-45deg); }
+}

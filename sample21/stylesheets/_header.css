@@ -1,0 +1,33 @@
+/*=====================================================================
+  ヘッダー
+=====================================================================*/
+#header {
+  position: fixed;
+  z-index: 100;
+  inset-block-start: 0;
+  inset-inline: 0;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  mix-blend-mode: difference;
+}
+
+.header-nav {
+  display: flex;
+  gap: 40px;
+  
+  a {
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    transition: opacity 0.3s;
+    
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  
+  @media (width <= 768px) {
+    gap: 20px;
+    font-size: 0.8rem;
+  }
+}

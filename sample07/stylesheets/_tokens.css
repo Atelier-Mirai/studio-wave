@@ -1,0 +1,27 @@
+/*
+  デザイントークン（色・余白・角丸・フォントなど）をCSS変数としてまとめたファイル。
+  ここを変更するとサイト全体に反映されます。
+  例: `color: var(--color-ink);` / `background-color: var(--color-surface);`
+*/
+:root {
+  --v-space: clamp(5.625rem, 9vw, 7.5rem);
+  --container-max: 72.875rem;
+
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  --font-display: "Montserrat", var(--font-sans);
+
+  --color-page: #dcdddd;
+  --color-surface: #fffffc;
+  --color-surface-strong: #ffffff;
+  --color-ink: #252424;
+  --color-muted: #44617b;
+  --color-muted-2: #afafb0;
+  --color-brand: #deb068;
+  --color-accent: #a22041;
+  --color-section-muted: #e9e4d4;
+  --color-section-tint: #eaedf7;
+  --color-overlay: rgb(89 88 87 / 90%);
+
+  --radius-s: 0.25rem;
+  --radius-m: 1.25rem;
+}

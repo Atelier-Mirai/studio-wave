@@ -1,0 +1,53 @@
+/*=====================================================================
+  アニメーション
+=====================================================================*/
+.fade-down {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 0.8s;
+  
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.smooth-appear {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s;
+  
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.zoom-out {
+  overflow: hidden;
+  
+  img {
+    transform: scale(1.2);
+    transition: transform 0.8s;
+  }
+  
+  &.is-visible img {
+    transform: scale(1);
+  }
+}
+
+/* ランダムテキスト出現 */
+.random-text span {
+  display: inline-block;
+  opacity: 0;
+}
+
+.random-text.is-visible span {
+  animation: random-appear 0.5s forwards;
+}
+
+@keyframes random-appear {
+  to {
+    opacity: 1;
+  }
+}

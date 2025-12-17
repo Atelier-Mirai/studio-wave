@@ -1,0 +1,46 @@
+/*=====================================================================
+  ボタン
+=====================================================================*/
+.btn-border {
+  display: inline-block;
+  padding: 15px 50px;
+  border: 1px solid var(--ai);
+  color: var(--ai);
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: -100%;
+    inline-size: 100%;
+    block-size: 100%;
+    background-color: var(--ai);
+    transition: inset-inline-start 0.3s;
+    z-index: -1;
+  }
+  
+  &:hover {
+    color: var(--kon);
+    
+    &::before {
+      inset-inline-start: 0;
+    }
+  }
+}
+
+.btn-glow {
+  display: inline-block;
+  padding: 15px 50px;
+  background-color: var(--ai);
+  color: var(--kon);
+  font-weight: bold;
+  transition: all 0.3s;
+  
+  &:hover {
+    box-shadow: 0 0 20px var(--ai-30);
+    transform: translateY(-3px);
+  }
+}

@@ -1,0 +1,42 @@
+/*=====================================================================
+  フッター
+=====================================================================*/
+#footer {
+  position: relative;
+  padding: 60px 40px;
+  background-color: var(--sumi);
+  color: var(--shiro);
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-block-end: 20px;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: var(--hai);
+}
+
+#page-top {
+  position: fixed;
+  z-index: 10;
+  inset-inline-end: 20px;
+  inset-block-end: 20px;
+  
+  a {
+    display: block;
+    padding: 15px;
+    background-color: var(--sumi);
+    color: var(--shiro);
+    font-size: 0.8rem;
+    transition: opacity 0.3s;
+    
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

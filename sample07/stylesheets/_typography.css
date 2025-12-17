@@ -1,0 +1,44 @@
+/*
+  見出し周りの共通スタイル。
+  - `.heading-decoration`: 見出しの下線や直後の説明文（p）まで含めた装飾
+  - `.heading`: セクション見出し（英語＋日本語のサブ）を大きく配置
+*/
+.heading-decoration {
+  font-size: clamp(1.875rem, 3vw, 2.5rem);
+  min-block-size: 0;
+  font-weight: 400;
+
+  /* 擬似要素は `&` が必要（`::after` 単体だと対象が曖昧になるため） */
+  &::after {
+    display: block;
+    content: "";
+    inline-size: 10rem;
+    border-block-start: solid 1px var(--color-accent);
+    margin-block-start: 0.6em;
+  }
+
+  /* 見出し直後の説明文だけ、余白や色を調整 */
+  + p {
+    margin-block-start: 1em;
+    margin-block-end: 2em;
+    color: var(--color-muted-2);
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+  }
+}
+
+.heading {
+  position: absolute;
+  inset-block-start: calc((var(--v-space) + 0.6em) * -1);
+  inset-inline-start: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5.2vw, 4.375rem);
+  min-block-size: 0;
+  font-weight: 300;
+
+  span {
+    display: block;
+    color: var(--color-muted-2);
+    font-size: 1.125rem;
+  }
+}

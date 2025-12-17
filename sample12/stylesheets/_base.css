@@ -1,0 +1,49 @@
+/*=====================================================================
+  ベーススタイル
+  フォント、リンク、画像などの基本設定
+=====================================================================*/
+
+body {
+  background-color: var(--kuro);
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--shironezumi);
+  font-size: 1rem;
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  word-wrap: break-word;
+}
+
+a {
+  color: var(--shironezumi);
+  text-decoration: none;
+  outline: none;
+}
+
+img {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 英字フォント */
+h1, h2, h3,
+.nav-list,
+.scroll-indicator span,
+.social-label,
+.footer-logo {
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.2em;
+}
+
+/* セクション見出し共通 */
+h2 {
+  font-size: 2rem;
+  margin-block-end: 50px;
+  text-transform: uppercase;
+}

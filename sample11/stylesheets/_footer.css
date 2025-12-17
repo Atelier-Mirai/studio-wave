@@ -1,0 +1,78 @@
+/*=====================================================================
+  フッター
+  サイト情報とナビゲーション
+=====================================================================*/
+
+#footer {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  gap: 5%;
+  align-items: center;
+  border-block-start: 1px solid var(--usuhai);
+  background-color: var(--shironeri);
+
+  @media (width <= 900px) {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+/* フッターロゴ */
+.footer-info {
+  @media (width <= 900px) {
+    margin-block: 50px;
+  }
+}
+
+.footer-info dt {
+  font-size: 0.8rem;
+}
+
+.footer-info dd {
+  font-size: 2rem;
+  font-family: 'Parisienne', cursive;
+
+  @media (width <= 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+/* フッターナビ */
+.footer-nav {
+  text-align: end;
+
+  @media (width <= 900px) {
+    text-align: center;
+  }
+}
+
+.footer-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+
+  @media (width <= 900px) {
+    justify-content: center;
+  }
+}
+
+.footer-nav li {
+  padding-inline: 10px;
+  font-size: 0.8rem;
+  line-height: 3;
+}
+
+/* コピーライト */
+.copyright {
+  grid-column: 1 / -1;
+  text-align: end;
+  margin-block-start: 20px;
+  font-size: 0.7rem;
+
+  @media (width <= 900px) {
+    text-align: center;
+  }
+}

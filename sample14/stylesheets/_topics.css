@@ -1,0 +1,75 @@
+/*=====================================================================
+  トピックスセクション
+=====================================================================*/
+#topics {
+  padding: 100px 20px;
+}
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-inline-size: 1200px;
+  margin-inline: auto;
+  margin-block-end: 50px;
+  
+  @media (width <= 960px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (width <= 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.topic-card {
+  background-color: var(--shiro-10);
+  overflow: hidden;
+  transition: transform 0.3s;
+  
+  &:hover {
+    transform: translateY(-10px);
+  }
+  
+  a {
+    display: block;
+    color: var(--shiro);
+  }
+}
+
+.topic-image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  
+  img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+  
+  .topic-card:hover & img {
+    transform: scale(1.1);
+  }
+}
+
+.topic-content {
+  padding: 20px;
+  
+  time {
+    display: block;
+    color: var(--ai);
+    font-size: 0.85rem;
+    margin-block-end: 10px;
+  }
+  
+  h3 {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+
+.topics-button {
+  text-align: center;
+}

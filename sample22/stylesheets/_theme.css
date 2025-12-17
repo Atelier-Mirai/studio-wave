@@ -1,0 +1,29 @@
+:root {
+  --color-brand: #493759;
+  --color-brand-2: #460e44;
+  --color-ink: #252424;
+  --color-ink-muted: #71686c;
+  --color-paper: #fbfaf5;
+  --color-paper-2: #f3f3f2;
+  --color-border: #c8c2c6;
+
+  --brand-90: rgb(73 55 89 / 90%);
+  --brand-80: rgb(73 55 89 / 80%);
+  --brand-20: rgb(73 55 89 / 20%);
+
+  --content-max: 1200px;
+
+  --radius-1: 8px;
+  --radius-2: 14px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  --font-sans: "Noto Serif JP", serif;
+}

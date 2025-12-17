@@ -1,0 +1,70 @@
+/*=====================================================================
+  コースセクション
+=====================================================================*/
+#course {
+  background-color: var(--shiro);
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  
+  @media (width <= 768px) {
+    grid-template-columns: 1fr;
+    max-inline-size: 400px;
+    margin-inline: auto;
+  }
+}
+
+.course-card {
+  background-color: var(--shiro);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgb(0 0 0 / 10%);
+  transition: transform 0.3s;
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+  
+  a {
+    display: block;
+    color: var(--sumi);
+  }
+}
+
+.course-image {
+  block-size: 180px;
+  background-size: cover;
+  background-position: center;
+  
+  &.course-01 {
+    background-image: url("../images/course-01.webp");
+  }
+  
+  &.course-02 {
+    background-image: url("../images/course-02.webp");
+  }
+  
+  &.course-03 {
+    background-image: url("../images/course-03.webp");
+  }
+}
+
+.course-card .grade {
+  display: inline-block;
+  padding: 5px 15px;
+  margin: -15px 0 0 15px;
+  position: relative;
+  background-color: var(--kiiro);
+  font-size: 0.85rem;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+.course-card h3 {
+  padding: 15px;
+  font-size: 1.1rem;
+  text-align: center;
+}

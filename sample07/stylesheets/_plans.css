@@ -1,0 +1,41 @@
+/*
+  サービスプラン（services.html の `.plans`）の一覧。
+  カード（.plan）を grid で並べ、画面幅が広い時は3列になります。
+*/
+.plans {
+  padding-block: var(--v-space);
+  background-color: var(--color-section-tint);
+
+  .plans-container {
+    display: grid;
+    gap: 1.6875rem;
+
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .plan {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-rows: auto auto 1fr auto auto;
+    padding: 3.75rem 1.6875rem;
+    border-radius: var(--radius-m);
+    background-color: var(--color-surface-strong);
+
+    h3 {
+      font-family: var(--font-display);
+      font-size: 2.375rem;
+      font-weight: 400;
+    }
+
+    .price {
+      font-size: 1.625rem;
+      font-weight: 700;
+    }
+
+    .btn {
+      inline-size: auto;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+/*
+  ヘッダー（上部固定ではない通常ヘッダー）のスタイル。
+  - ロゴ（.site）
+  - ナビ（.nav）
+  - モバイル用のメニュー開閉ボタン（.nav-btn）
+*/
+.header {
+  block-size: 7rem;
+  background-color: var(--color-surface-strong);
+
+  .header-container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    block-size: 100%;
+
+    .nav {
+      grid-column: 2;
+      justify-self: end;
+    }
+
+    .nav-btn {
+      grid-column: 3;
+      justify-self: end;
+      position: relative;
+      /*
+        `.nav` はモバイルで全面オーバーレイになります。
+        その上にボタンが出るように、ボタン側の z-index を少し大きくしています。
+      */
+      z-index: 20;
+      padding: 0;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      color: var(--color-muted-2);
+      font-size: 1.875rem;
+
+      .fa-bars {
+        display: inline-block;
+      }
+
+      .fa-xmark {
+        display: none !important;
+      }
+    }
+
+    @media (width >= 48rem) {
+      .nav-btn {
+        display: none;
+      }
+    }
+  }
+}
+
+html.is-nav-open {
+  .header {
+    .header-container {
+      .nav-btn {
+        color: var(--color-surface-strong);
+
+        .fa-bars {
+          display: none !important;
+        }
+
+        .fa-xmark {
+          display: inline-block !important;
+        }
+      }
+    }
+  }
+}

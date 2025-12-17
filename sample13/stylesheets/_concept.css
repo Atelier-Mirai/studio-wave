@@ -1,0 +1,46 @@
+/*=====================================================================
+  コンセプトセクション
+=====================================================================*/
+#concept {
+  background-color: var(--shiro);
+}
+
+.concept-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+  
+  @media (width <= 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.concept-image {
+  img {
+    border-radius: 10px;
+  }
+}
+
+.concept-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  
+  li {
+    padding: 15px;
+    background-color: var(--kiiro);
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  @media (width <= 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.concept-button {
+  text-align: center;
+  margin-block-start: 30px;
+}

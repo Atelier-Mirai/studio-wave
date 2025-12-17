@@ -1,0 +1,20 @@
+.button {
+  display: inline grid;
+  place-items: center;
+  padding-inline: var(--space-6);
+  padding-block: var(--space-3);
+  border: 1px solid var(--color-ink-muted);
+  border-radius: 999px;
+  background: transparent;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.button:where(:hover, :focus-visible) {
+  background: var(--color-ink);
+  color: #fff;
+  border-color: transparent;
+  text-decoration: none;
+}

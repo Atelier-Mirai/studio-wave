@@ -1,0 +1,166 @@
+/*=====================================================================
+  ブログセクション
+  記事一覧のグリッドレイアウト
+=====================================================================*/
+
+#blog {
+  margin-block-end: 50px;
+}
+
+/* ブログエリア全体 */
+.blog-grid {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  gap: 2%;
+
+  @media (width <= 820px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* メイン記事（左側大きめ） */
+.blog-main {
+  @media (width <= 820px) {
+    max-inline-size: 50%;
+    margin-inline: auto;
+    margin-block-end: 3vh;
+  }
+
+  @media (width <= 768px) {
+    max-inline-size: 100%;
+  }
+}
+
+/* サブ記事グリッド（右側） */
+.blog-sub-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2%;
+
+  @media (width <= 1300px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (width <= 450px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ブログカード共通 */
+.blog-card {
+  margin-block-end: 3vh;
+  text-align: center;
+  overflow: hidden;
+
+  a {
+    display: block;
+    position: relative;
+  }
+
+  figure {
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+
+  img {
+    inline-size: auto;
+    block-size: 32vh;
+    object-fit: cover;
+
+    @media (width <= 450px) {
+      inline-size: 100%;
+      block-size: auto;
+    }
+  }
+
+  /* 日付オーバーレイ */
+  figure time {
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline-start: 0;
+    display: block;
+    inline-size: 100%;
+    padding: 10px;
+    background-color: var(--kobaiiro-80);
+    color: var(--gofun);
+    font-size: 0.8rem;
+  }
+}
+
+/* メイン記事の画像は大きめ */
+.blog-main img {
+  block-size: 67vh;
+
+  @media (width <= 820px) {
+    inline-size: 100%;
+    block-size: auto;
+  }
+}
+
+/* ホバー時のオーバーレイ */
+.blog-card .overlay {
+  position: absolute;
+  z-index: 3;
+  inset-inline-start: 50%;
+  inset-block-start: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  color: var(--gofun);
+  transition: opacity 0.5s ease-in-out;
+}
+
+.blog-card figure::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  background-color: var(--usubeni);
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.3s ease-in-out;
+}
+
+.blog-card a:hover {
+  figure::before {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .overlay {
+    opacity: 1;
+  }
+}
+
+/* オーバーレイ内のテキスト */
+.blog-card h3 {
+  font-size: 1rem;
+  margin-block-end: 20px;
+
+  @media (width <= 450px) {
+    font-size: 0.9rem;
+  }
+}
+
+.blog-card p {
+  margin-block-end: 20px;
+  text-align: start;
+  font-size: 0.9rem;
+
+  @media (width <= 450px) {
+    display: none;
+  }
+}
+
+.blog-card .read-more {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid var(--gofun-70);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.blog-card time {
+  font-size: 0.8rem;
+}

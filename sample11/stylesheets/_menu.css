@@ -1,0 +1,76 @@
+/*=====================================================================
+  メニューセクション
+  サービスメニューのスライダー表示
+=====================================================================*/
+
+#menu {
+  padding-block: 70px;
+}
+
+/* メニューカード */
+.menu-card {
+  background-color: var(--gofun);
+  margin-block-end: 10px;
+}
+
+.menu-card a {
+  display: block;
+}
+
+/* 円形マスク画像 */
+.menu-card .circle-mask {
+  position: relative;
+  display: block;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    border-radius: 50%;
+    background-color: var(--gofun-20);
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  &:hover::before {
+    animation: ripple 0.75s;
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* メニュー情報エリア */
+.menu-info {
+  padding: 20px;
+  box-shadow: 5px 0 10px var(--usuhai);
+}
+
+.menu-info h3 {
+  font-size: 0.9rem;
+  margin-block-end: 10px;
+}
+
+.menu-info p {
+  font-size: 0.8rem;
+}
+
+/* メニュー一覧ボタン */
+.menu-button {
+  text-align: center;
+  margin-block-start: 50px;
+}

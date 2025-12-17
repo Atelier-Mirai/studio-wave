@@ -1,0 +1,88 @@
+/*=====================================================================
+  スライダー
+  メニューセクション用カルーセル
+=====================================================================*/
+
+.slider-container {
+  inline-size: 94%;
+  margin-inline: auto;
+  position: relative;
+}
+
+.slider-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc(25% - 15px);
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (width <= 1200px) {
+    grid-auto-columns: calc(33.333% - 14px);
+  }
+
+  @media (width <= 769px) {
+    grid-auto-columns: calc(50% - 10px);
+  }
+
+  @media (width <= 426px) {
+    grid-auto-columns: 100%;
+  }
+}
+
+.slider-track > * {
+  scroll-snap-align: start;
+}
+
+/* スライダー矢印ボタン */
+.slider-prev,
+.slider-next {
+  position: absolute;
+  inset-block-start: 42%;
+  cursor: pointer;
+  inline-size: 15px;
+  block-size: 15px;
+  border-block-start: 2px solid var(--hai);
+  border-inline-end: 2px solid var(--hai);
+  background: transparent;
+  border-inline-start: none;
+  border-block-end: none;
+}
+
+.slider-prev {
+  inset-inline-start: -1.5%;
+  transform: rotate(-135deg);
+}
+
+.slider-next {
+  inset-inline-end: -1.5%;
+  transform: rotate(45deg);
+}
+
+/* ドットナビゲーション */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-block-start: 20px;
+}
+
+.slider-dot {
+  inline-size: 8px;
+  block-size: 8px;
+  border-radius: 50%;
+  background-color: var(--usuhai);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  &.is-active {
+    background-color: var(--kobaiiro);
+  }
+}

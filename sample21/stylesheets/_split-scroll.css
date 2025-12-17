@@ -1,0 +1,261 @@
+/*=====================================================================
+  分割スクロール
+=====================================================================*/
+#split-scroll {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  block-size: 100vh;
+  block-size: 100dvh;
+  
+  @media (width <= 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.split-left,
+.split-right {
+  position: relative;
+  block-size: 100%;
+  overflow: hidden;
+}
+
+/* スクロールで移動するコンテンツラッパー */
+.split-content {
+  position: relative;
+  block-size: 600vh; /* 6セクション × 100vh */
+  will-change: transform;
+}
+
+.split-section {
+  position: relative;
+  display: grid;
+  place-items: center;
+  block-size: 100vh;
+  block-size: 100dvh;
+  background-size: cover;
+  background-position: center;
+}
+
+/* 左側セクション */
+.section-left-1 {
+  background-image: url("../images/hero-left.webp");
+}
+
+.section-left-2 {
+  background-image: url("../images/women-01.webp");
+}
+
+.section-left-3 {
+  background-image: url("../images/women-02.webp");
+}
+
+.section-left-4 {
+  background-image: url("../images/women-03.webp");
+}
+
+.section-left-5 {
+  background-image: url("../images/women-04.webp");
+}
+
+.section-left-6 {
+  /* Contact セクション: 背景色を時間とともに変化させる */
+  background-color: #daca0b;
+  animation: contact-bg-change 40s linear infinite;
+}
+
+@keyframes contact-bg-change {
+  0%   { background-color: #daca0b; }
+  20%  { background-color: #8bda0b; }
+  30%  { background-color: #18da0b; }
+  40%  { background-color: #0bdaaa; }
+  50%  { background-color: #0ba1da; }
+  60%  { background-color: #0b38da; }
+  70%  { background-color: #810bda; }
+  80%  { background-color: #da0b9a; }
+  90%  { background-color: #da0b4e; }
+  100% { background-color: #da6a0b; }
+}
+
+/* 右側セクション */
+.section-right-1 {
+  background-image: url("../images/hero-right.webp");
+}
+
+.section-right-2 {
+  background-image: url("../images/men-01.webp");
+}
+
+.section-right-3 {
+  background-image: url("../images/men-02.webp");
+}
+
+.section-right-4 {
+  background-image: url("../images/men-03.webp");
+}
+
+.section-right-5 {
+  background-image: url("../images/men-04.webp");
+}
+
+.section-right-6 {
+  /* Scroll セクション: 空間的なグラデーション＋時間変化 */
+  background-image:
+    radial-gradient(circle at 20% 0%, rgba(255, 255, 255, 0.25), transparent 55%),
+    radial-gradient(circle at 80% 100%, rgba(255, 255, 255, 0.18), transparent 60%),
+    linear-gradient(120deg,
+      #0b38da,
+      #0ba1da,
+      #0bdaaa,
+      #18da0b,
+      #daca0b,
+      #da0b4e,
+      #810bda
+    );
+  background-size: 160% 160%, 200% 200%, 400% 400%;
+  background-blend-mode: screen;
+  animation: right-scroll-bg 32s ease-in-out infinite alternate;
+}
+
+@keyframes right-scroll-bg {
+  0% {
+    background-position: 0% 0%, 100% 100%, 0% 50%;
+  }
+  25% {
+    background-position: 30% 10%, 80% 60%, 50% 0%;
+  }
+  50% {
+    background-position: 60% 50%, 40% 40%, 100% 50%;
+  }
+  75% {
+    background-position: 80% 80%, 20% 30%, 50% 100%;
+  }
+  100% {
+    background-position: 100% 100%, 0% 0%, 0% 50%;
+  }
+}
+
+/* セクションコンテンツ */
+.section-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 40px;
+}
+
+/* 最後にフェードインさせるヒーローセクション */
+.js-last-hero {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.js-last-hero.is-visible {
+  opacity: 1;
+}
+
+.hero-title {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  line-height: 1.4;
+  letter-spacing: 0.15em;
+}
+
+.collection-title {
+  font-size: 2rem;
+  margin-block-end: 30px;
+  letter-spacing: 0.1em;
+  
+  @media (width <= 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+.btn-collection {
+  display: inline-block;
+  padding: 15px 40px;
+  border: 1px solid var(--gofun);
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--gofun);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+    z-index: -1;
+  }
+  
+  &:hover {
+    color: var(--sumi);
+    
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+/* コンタクト */
+.contact-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+#contact-wave {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-start: 50%;
+  inline-size: 100%;
+  block-size: 160px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  
+  img {
+    inline-size: 30px;
+    filter: invert(1);
+    transition: opacity 0.3s;
+    
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
+
+/* スクロールインジケータ */
+.scroll-indicator {
+  position: absolute;
+  inset-block-end: 50px;
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  writing-mode: vertical-rl;
+  
+  &::after {
+    content: "";
+    display: block;
+    inline-size: 1px;
+    block-size: 50px;
+    background-color: var(--gofun);
+    margin-block-start: 10px;
+    margin-inline: auto;
+    animation: scroll-line 1.5s infinite;
+  }
+}
+
+@keyframes scroll-line {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  50.01% { transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}

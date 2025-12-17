@@ -1,0 +1,94 @@
+/*=====================================================================
+  ナビゲーション
+=====================================================================*/
+.menu-toggle {
+  position: relative;
+  z-index: 9999;
+  inline-size: 40px;
+  block-size: 30px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  
+  span {
+    display: block;
+    position: absolute;
+    inset-inline: 0;
+    block-size: 2px;
+    background-color: var(--shiro);
+    transition: all 0.3s;
+    
+    &:nth-of-type(1) { inset-block-start: 0; }
+    &:nth-of-type(2) { inset-block-start: 14px; }
+    &:nth-of-type(3) { inset-block-end: 0; }
+  }
+  
+  &.is-active span {
+    &:nth-of-type(1) {
+      inset-block-start: 14px;
+      transform: rotate(45deg);
+    }
+    &:nth-of-type(2) { opacity: 0; }
+    &:nth-of-type(3) {
+      inset-block-end: 14px;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+#global-nav {
+  position: fixed;
+  z-index: 998;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--sumi), var(--kuro));
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+  
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.nav-list {
+  text-align: center;
+  
+  li {
+    margin-block-end: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    
+    #global-nav.is-active & {
+      animation: fade-up 0.5s forwards;
+      
+      &:nth-child(1) { animation-delay: 0.1s; }
+      &:nth-child(2) { animation-delay: 0.2s; }
+      &:nth-child(3) { animation-delay: 0.3s; }
+      &:nth-child(4) { animation-delay: 0.4s; }
+    }
+  }
+  
+  a {
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+    transition: color 0.3s;
+    
+    &:hover {
+      color: var(--aoi);
+    }
+  }
+  
+  .current a {
+    color: var(--aoi);
+  }
+}
+
+@keyframes fade-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

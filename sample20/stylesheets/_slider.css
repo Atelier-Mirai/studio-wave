@@ -1,0 +1,52 @@
+/*=====================================================================
+  メインスライダー
+=====================================================================*/
+.main-slider {
+  position: relative;
+  margin-block-end: 40px;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  animation: slider-scroll 20s linear infinite;
+}
+
+.slider-item {
+  flex: 0 0 300px;
+  margin-inline-end: 20px;
+  
+  a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+  
+  img {
+    inline-size: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+}
+
+.detail-price {
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline: 0;
+  padding: 10px;
+  background-color: var(--sumi-80);
+  color: var(--gofun);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+@keyframes slider-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

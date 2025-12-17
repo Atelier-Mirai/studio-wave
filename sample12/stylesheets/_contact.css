@@ -1,0 +1,72 @@
+/*=====================================================================
+  お問い合わせセクション
+  連絡先情報
+=====================================================================*/
+
+#contact {
+  display: grid;
+  grid-template-columns: 65% 35%;
+  border-block: 1px solid var(--hai);
+
+  @media (width <= 690px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contact-detail {
+  border-inline-end: 1px solid var(--hai);
+  text-align: center;
+  padding: 20px;
+
+  h2 {
+    margin-block-end: 5px;
+    font-size: 1.5rem;
+
+    @media (width <= 690px) {
+      font-size: 1.2rem;
+    }
+  }
+
+  p {
+    @media (width <= 690px) {
+      text-align: start;
+    }
+  }
+}
+
+.contact-actions {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+
+  p {
+    text-align: center;
+
+    &:last-child {
+      border-block-start: 1px solid var(--hai);
+    }
+  }
+
+  a {
+    display: block;
+    padding: 20px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: var(--gofun-20);
+    }
+  }
+
+  br {
+    display: none;
+
+    @media (width <= 690px) {
+      display: block;
+    }
+  }
+}
+
+@media (width <= 400px) {
+  #contact {
+    font-size: 0.8rem;
+  }
+}

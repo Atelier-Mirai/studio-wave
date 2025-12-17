@@ -1,0 +1,71 @@
+/*=====================================================================
+  新着アイテム（サムネイル切替ギャラリー）
+=====================================================================*/
+#new-items {
+  h2 {
+    text-align: center;
+    
+    &::before {
+      content: "🌸";
+      margin-inline-end: 10px;
+    }
+  }
+}
+
+.gallery-main {
+  position: relative;
+  margin-block-end: 20px;
+  overflow: hidden;
+  
+  img {
+    position: absolute;
+    inset: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s;
+    
+    &.is-active {
+      position: relative;
+      opacity: 1;
+    }
+  }
+}
+
+.gallery-thumbs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.thumb-item {
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 3px solid transparent;
+  transition: border-color 0.3s;
+  
+  &.is-active {
+    border-color: var(--wakakusa);
+  }
+  
+  img {
+    inline-size: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+  
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
+.thumb-caption {
+  display: block;
+  padding: 8px;
+  background-color: var(--gofun);
+  font-size: 0.75rem;
+  text-align: center;
+}

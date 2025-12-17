@@ -1,0 +1,29 @@
+/*=====================================================================
+  ベーススタイル
+=====================================================================*/
+body {
+  font-family: 'Oswald', sans-serif;
+  color: var(--gofun);
+  background-color: var(--sumi);
+}
+
+a {
+  color: var(--gofun);
+  text-decoration: none;
+}
+
+img {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1, h2 {
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}

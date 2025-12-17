@@ -1,0 +1,57 @@
+/*=====================================================================
+  モバイルナビゲーション
+=====================================================================*/
+.menu-toggle {
+  position: fixed;
+  z-index: 9999;
+  inset-block-end: 20px;
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+  padding: 15px 30px;
+  background-color: var(--sumi);
+  color: var(--shiro);
+  border: none;
+  cursor: pointer;
+  display: none;
+  
+  @media (width <= 768px) {
+    display: block;
+  }
+}
+
+#global-nav {
+  position: fixed;
+  z-index: 998;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background-color: var(--kuro-90);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.nav-list {
+  text-align: center;
+  
+  li {
+    margin-block-end: 20px;
+  }
+  
+  a {
+    display: block;
+    padding: 15px 40px;
+    color: var(--shiro);
+    font-size: 1.2rem;
+    transition: opacity 0.3s;
+    
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

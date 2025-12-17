@@ -1,0 +1,9 @@
+/*
+  `.w-container` は「最大幅＋左右余白」を持つ共通コンテナ。
+  セクションの中身をこの箱に入れると、画面が広くても読みやすい幅に収まります。
+*/
+.w-container {
+  inline-size: min(92%, var(--container-max));
+  margin-inline: auto;
+  position: relative;
+}

@@ -1,0 +1,19 @@
+/*=====================================================================
+  ベーススタイル
+=====================================================================*/
+body {
+  font-family: 'Rammetto One', cursive;
+  color: var(--shiro);
+  background-color: var(--sumi);
+  overflow: hidden;
+}
+
+a {
+  color: var(--shiro);
+  text-decoration: none;
+}
+
+img {
+  max-inline-size: 100%;
+  block-size: auto;
+}

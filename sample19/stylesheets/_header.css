@@ -1,0 +1,57 @@
+/*=====================================================================
+  ヘッダー
+=====================================================================*/
+#header {
+  position: fixed;
+  z-index: 100;
+  inset-block-start: 0;
+  inset-inline: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+  
+  @media (width <= 768px) {
+    padding: 20px;
+  }
+}
+
+#header h1 {
+  inline-size: 150px;
+  
+  img {
+    inline-size: 100%;
+  }
+  
+  @media (width <= 768px) {
+    inline-size: 100px;
+  }
+}
+
+/* ヒーロータイトル */
+.hero-title {
+  position: absolute;
+  z-index: 10;
+  inset-inline-start: 50%;
+  inset-block-end: 20%;
+  transform: translateX(-50%);
+  font-size: clamp(3rem, 12vw, 8rem);
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 40px var(--aoi);
+  
+  span {
+    display: inline-block;
+  }
+}
+
+.circle-bg {
+  position: fixed;
+  z-index: 1;
+  inset-block-end: -200px;
+  inset-inline-end: -200px;
+  inline-size: 500px;
+  block-size: 500px;
+  background: radial-gradient(circle, var(--murasaki), transparent 70%);
+  pointer-events: none;
+  opacity: 0.5;
+}

@@ -1,0 +1,48 @@
+/*=====================================================================
+  ローディング画面
+=====================================================================*/
+#splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background-color: var(--kuro);
+}
+
+.splash-text {
+  font-family: 'La Belle Aurore', cursive;
+  font-size: 2rem;
+  color: var(--shiro);
+}
+
+.loader-cover {
+  position: fixed;
+  inset-inline: 0;
+  z-index: 9998;
+  block-size: 50%;
+  background-color: var(--kuro);
+  
+  &.cover-up {
+    inset-block-start: 0;
+    transform-origin: top;
+  }
+  
+  &.cover-down {
+    inset-block-end: 0;
+    transform-origin: bottom;
+  }
+}
+
+body.loaded {
+  #splash {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+  }
+  
+  .loader-cover {
+    transform: scaleY(0);
+    transition: transform 0.8s 0.3s;
+  }
+}

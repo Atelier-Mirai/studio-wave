@@ -1,0 +1,107 @@
+/*=====================================================================
+  ヘッダー
+  ヒーローイメージとタイトル
+=====================================================================*/
+
+#header {
+  position: relative;
+  inline-size: 100%;
+  block-size: 100vh;
+  block-size: 100dvh;
+  overflow: hidden;
+}
+
+/* ヒーロー背景画像 */
+.header-bg {
+  position: fixed;
+  z-index: 1;
+  inset-block-start: 0;
+  inline-size: 100%;
+  block-size: 100vh;
+  block-size: 100dvh;
+  background: url("../images/hero.webp") no-repeat top center / cover;
+  transform-origin: center;
+}
+
+/* ヘッダーコンテンツ（中央配置） */
+.header-content {
+  position: fixed;
+  z-index: 2;
+  inset-inline-start: 50%;
+  inset-block-start: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--gofun);
+}
+
+.header-content h1 {
+  display: block;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: normal;
+  line-height: 1;
+  letter-spacing: 0;
+  padding-inline: 10px;
+}
+
+.header-content p {
+  font-size: clamp(0.8rem, 1.3vw, 1rem);
+  letter-spacing: 0.4em;
+  margin-block-end: 20px;
+}
+
+/* スクロールダウンインジケーター */
+.scroll-indicator {
+  position: fixed;
+  z-index: 2;
+  inset-block-end: 10px;
+  inset-inline-start: 50%;
+
+  /* Scroll テキスト */
+  span {
+    position: absolute;
+    inset-inline-start: 10px;
+    inset-block-end: 10px;
+    color: var(--shironeri);
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    writing-mode: vertical-rl;
+  }
+
+  /* 動く丸 */
+  &::before {
+    content: "";
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline-start: -4px;
+    inline-size: 10px;
+    block-size: 10px;
+    border-radius: 50%;
+    background-color: var(--shironeri);
+    animation:
+      scroll-circle-move 1.6s ease-in-out infinite,
+      scroll-circle-fade 1.6s ease-out infinite;
+  }
+
+  /* 縦線 */
+  &::after {
+    content: "";
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline-start: 0;
+    inline-size: 2px;
+    block-size: 50px;
+    background-color: var(--shironeri);
+  }
+}
+
+@keyframes scroll-circle-move {
+  0% { inset-block-end: 45px; }
+  100% { inset-block-end: -5px; }
+}
+
+@keyframes scroll-circle-fade {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  80% { opacity: 0.9; }
+  100% { opacity: 0; }
+}

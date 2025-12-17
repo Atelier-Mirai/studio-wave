@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>お問い合わせありがとうございます | Boards</title>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.1.0/css/all.css">
+	
+	<link href="stylesheets/master.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header: ロゴ + ナビゲーション（モバイルは app.js で開閉します） -->
+<header class="header">
+	<div class="header-container w-container">
+		<div class="site">
+			<a href="index.html">
+				<img src="images/logo.svg" alt="Boards" width="135" height="26">
+			</a>
+		</div>
+
+		<button class="nav-btn" type="button" aria-controls="primary-nav" aria-expanded="false">
+			<i class="fa-solid fa-bars"></i>
+			<i class="fa-solid fa-xmark"></i>
+			<span class="sr-only">MENU</span>
+		</button>
+
+		<nav class="nav" id="primary-nav">
+			<ul>
+				<li><a href="index.html">ホーム</a></li>
+				<li><a href="services.html">サービス案内</a></li>
+				<li><a href="contact.html">お問い合わせ</a></li>				
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<!-- Entry: 成功メッセージ（services.html / contact.html と同じレイアウトに揃えています） -->
+<article class="entry">
+	<figure class="entry-img">
+		<!-- 既存の画像を使ってページ全体のトーンを揃えます -->
+		<img src="images/service.jpg" alt="" width="1600" height="470">
+	</figure>
+	
+	<div class="w-container">
+		<h1 class="heading-decoration">お問い合わせ<br>ありがとうございます</h1>
+		<p>Thanks</p>
+
+		<div class="entry-container">
+			<!--
+				このページは「送信完了」をユーザーに伝えるためのサンクスページです。
+				実務ではサーバ側でメール送信などを行い、その結果に応じて表示を切り替えます。
+				このサンプルサイトでは、入力が有効な場合に JavaScript が thanks.html へ遷移します。
+			-->
+			<p>お問い合わせを受け付けました。内容を確認のうえ、1営業日以内を目安に<span class="no-wrap">ご連絡します。</span></p>
+			<p>自動返信メールは送信されない設定です（サンプルのため）。</p>
+
+			<p>
+				<a class="btn btn-accent" href="index.html">ホームへ戻る</a>
+			</p>
+			<p>
+				<a href="contact.html">お問い合わせフォームへ戻る</a>
+			</p>
+		</div>
+	</div>
+</article>
+
+<!-- Footer: サイト情報 / SNS / フッターメニュー -->
+<footer class="footer">
+	<div class="footer-container w-container">
+		<div class="footer-site">
+			<a href="index.html">
+				<img src="images/logo.svg" alt="Boards" width="135" height="26">
+			</a>
+		</div>
+
+		<ul class="footer-sns">
+			<li>
+				<a href="#">
+					<i class="fa-brands fa-x-twitter"></i>
+					<span class="sr-only">X</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class="fa-brands fa-facebook-f"></i>
+					<span class="sr-only">Facebook</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class="fa-brands fa-instagram"></i>
+					<span class="sr-only">Instagram</span>
+				</a>
+			</li>
+		</ul>
+
+		<ul class="footer-menu">
+			<li><a href="#">会社概要</a></li>
+			<li><a href="#">特定商取引法</a></li>
+			<li><a href="#">個人情報の取り扱い</a></li>
+			<li><a href="services.html">サービス案内</a></li>
+			<li><a href="contact.html">お問い合わせ</a></li>
+		</ul>
+
+		<div class="footer-copy">
+			@ Boards Production.
+		</div>
+	</div>
+</footer>
+
+<!-- ナビ開閉などの最小JS（ES Modules / HTML解析後に実行） -->
+<script src="javascripts/app.js" type="module"></script>
+
+</body>
+</html>

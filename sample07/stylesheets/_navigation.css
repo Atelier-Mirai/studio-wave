@@ -1,0 +1,71 @@
+/*
+  ナビゲーションメニューのスタイル。
+  - モバイル：画面全体を覆うオーバーレイ（translateでスライドイン）
+  - PC：ヘッダー右側に横並び
+  開閉は `javascripts/app.js` が `html.is-nav-open` を付け外しして制御します。
+*/
+
+/* モバイル（基本）：画面全体を覆うオーバーレイ */
+.nav {
+  position: fixed;
+  inset: 0;
+  /* ヘッダーより前面に出すため。ボタン（z-index: 20）の下にくる値にします。 */
+  z-index: 10;
+  background-color: rgb(0 0 0 / 35%);
+  translate: 100% 0;
+  transition: translate 0.3s;
+
+  display: grid;
+  justify-items: end;
+
+  ul {
+    inline-size: 80vw;
+    block-size: 100%;
+    background-color: var(--color-overlay);
+    display: grid;
+    place-content: center;
+    gap: 2.5rem;
+    color: var(--color-surface-strong);
+  }
+}
+
+html.is-nav-open {
+  .nav {
+    translate: 0 0;
+  }
+}
+
+/* PC：ヘッダー内に横並びで表示 */
+@media (width >= 48rem) {
+  .nav {
+    position: static;
+    inset: auto;
+    display: block;
+    z-index: auto;
+    background-color: transparent;
+    translate: none;
+    transition: none;
+    justify-self: end;
+
+    ul {
+      display: grid;
+      inline-size: auto;
+      block-size: auto;
+      background-color: transparent;
+      grid-auto-flow: column;
+      gap: 2.5rem;
+      color: var(--color-muted);
+    }
+  }
+
+  html.is-nav-open {
+    .nav {
+      translate: none;
+    }
+  }
+}
+
+body.is-scroll-locked {
+  /* メニュー表示中にページ本体がスクロールしないようにする */
+  overflow: hidden;
+}

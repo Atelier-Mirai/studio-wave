@@ -1,0 +1,188 @@
+/*=====================================================================
+  ビジュアルエリア（ヒーロー）
+  スライドショーとタイトル
+=====================================================================*/
+
+#visual-area {
+  position: relative;
+  block-size: 100vh;
+  block-size: 100dvh;
+
+  /* 下部の赤いアクセント */
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset-block-end: 0;
+    inset-inline-end: 0;
+    inline-size: 0;
+    block-size: 12%;
+    background-color: var(--shinku);
+  }
+
+  body.appear &::after {
+    animation: extend-left 0.2s 1s forwards ease-in-out;
+  }
+
+  @media (width <= 960px) {
+    block-size: 90vh;
+    block-size: 90dvh;
+  }
+}
+
+@keyframes extend-left {
+  from { inline-size: 0; }
+  to { inline-size: 40%; }
+}
+
+/* スライダーエリア */
+.slider-area {
+  position: absolute;
+  z-index: -1;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  inline-size: 85%;
+
+  @media (width <= 960px) {
+    inline-size: 100%;
+    block-size: 90vh;
+    block-size: 90dvh;
+  }
+}
+
+/* スライダー本体 */
+.hero-slideshow {
+  position: relative;
+  inline-size: 100%;
+  block-size: 100vh;
+  block-size: 100dvh;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    inset: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+
+    &.is-active {
+      opacity: 1;
+    }
+  }
+
+  @media (width <= 960px) {
+    block-size: 90vh;
+    block-size: 90dvh;
+  }
+}
+
+/* ビジュアルタイトル */
+#visual-area h2 {
+  position: absolute;
+  inset-block-start: 36%;
+  inset-inline-start: 5%;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 1.5;
+  text-transform: uppercase;
+
+  @media (width <= 960px) {
+    font-size: 2.1rem;
+  }
+
+  @media (width <= 450px) {
+    font-size: 7vw;
+    inset-block-start: auto;
+    inset-block-end: 13%;
+  }
+}
+
+/* SNSリンク */
+.social-links {
+  position: absolute;
+  inset-inline-start: 2%;
+  inset-block-end: 2%;
+  color: var(--hai);
+
+  dt,
+  dd,
+  ul,
+  li {
+    display: inline-block;
+  }
+
+  dt {
+    text-transform: uppercase;
+  }
+
+  li {
+    margin-inline: 10px;
+
+    @media (width <= 960px) {
+      margin-inline: 2px;
+    }
+  }
+
+  img {
+    inline-size: 20px;
+  }
+
+  @media (width <= 960px) {
+    inset-inline-start: 20px;
+    inset-block-end: 16px;
+  }
+}
+
+/* スクロールインジケーター */
+.scroll-indicator {
+  position: absolute;
+  inset-inline-end: 20px;
+  inset-block-end: 0;
+
+  span {
+    position: absolute;
+    inset-inline-start: -23px;
+    inset-block-start: -31px;
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+    color: var(--shironezumi);
+    font-size: 0.8rem;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline-start: 0;
+    inline-size: 1px;
+    block-size: 80px;
+    background-color: var(--shironezumi);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline-start: -3px;
+    inline-size: 7px;
+    block-size: 7px;
+    background-color: var(--shironezumi);
+    border-radius: 50%;
+    animation: scroll-dot 1.5s infinite;
+  }
+}
+
+@keyframes scroll-dot {
+  0% {
+    inset-block-end: 80px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    inset-block-end: 0;
+    opacity: 0;
+  }
+}

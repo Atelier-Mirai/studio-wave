@@ -1,0 +1,50 @@
+/*=====================================================================
+  ローディング画面（SVG描画）
+=====================================================================*/
+#splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background-color: var(--sumi);
+}
+
+.splash-logo {
+  inline-size: min(80vw, 800px);
+}
+
+.splash-logo svg {
+  inline-size: 100%;
+  block-size: auto;
+  
+  path {
+    fill: none;
+    stroke: var(--gofun);
+    stroke-width: 1;
+    stroke-dasharray: 1500;
+    stroke-dashoffset: 1500;
+    animation: svg-draw 3s ease forwards;
+  }
+}
+
+@keyframes svg-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+.splash-bg {
+  display: none;
+}
+
+body.appear .splash-bg {
+  display: block;
+  position: fixed;
+  z-index: 9998;
+  inset: 0;
+  background-color: var(--sumi);
+  animation: splash-fade 0.8s forwards;
+}
+
+@keyframes splash-fade {
+  to { opacity: 0; }
+}

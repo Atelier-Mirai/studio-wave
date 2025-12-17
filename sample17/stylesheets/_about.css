@@ -1,0 +1,33 @@
+/*=====================================================================
+  会社概要
+=====================================================================*/
+#about {
+  max-inline-size: 800px;
+  margin-inline: auto;
+}
+
+.about-list {
+  li {
+    padding-block: 20px;
+    border-block-end: 1px solid var(--sumi-10);
+  }
+  
+  dl {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 20px;
+    
+    @media (width <= 480px) {
+      grid-template-columns: 1fr;
+      gap: 5px;
+    }
+  }
+  
+  dt {
+    font-weight: bold;
+  }
+  
+  dd {
+    color: var(--hai);
+  }
+}

@@ -1,0 +1,39 @@
+/*=====================================================================
+  お問い合わせセクション
+=====================================================================*/
+#contact {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, var(--momo), var(--sora));
+  text-align: center;
+  color: var(--shiro);
+}
+
+.contact-content {
+  max-inline-size: 600px;
+  margin-inline: auto;
+  
+  h2 {
+    font-size: 1.8rem;
+    margin-block-end: 20px;
+    color: var(--shiro);
+    
+    span {
+      color: var(--kiiro);
+    }
+  }
+  
+  p {
+    margin-block-end: 30px;
+  }
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  
+  @media (width <= 480px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}

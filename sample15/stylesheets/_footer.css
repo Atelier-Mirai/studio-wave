@@ -1,0 +1,45 @@
+/*=====================================================================
+  フッター
+=====================================================================*/
+#footer {
+  position: fixed;
+  inset-block-end: 0;
+  inset-inline: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: var(--kuro);
+  color: var(--shiro);
+}
+
+.scroll-link,
+.page-top-link {
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  
+  a {
+    display: block;
+    padding: 10px;
+    transition: opacity 0.3s;
+    
+    &:hover { opacity: 0.7; }
+  }
+}
+
+.scroll-link {
+  &.is-hidden { display: none; }
+}
+
+.page-top-link {
+  display: none;
+  
+  &.is-visible { display: block; }
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: var(--hai);
+}

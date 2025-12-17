@@ -1,0 +1,50 @@
+/*=====================================================================
+  代表ご挨拶セクション
+=====================================================================*/
+#greeting {
+  padding: 100px 20px;
+  background-color: var(--rurikon);
+}
+
+.greeting-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-inline-size: 1000px;
+  margin-inline: auto;
+  align-items: center;
+  
+  @media (width <= 768px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.greeting-image {
+  img {
+    inline-size: 100%;
+    block-size: auto;
+  }
+}
+
+.greeting-content {
+  h2 {
+    margin-block-end: 30px;
+  }
+  
+  .lead {
+    font-size: 1.3rem;
+    margin-block-end: 20px;
+    color: var(--ai);
+  }
+  
+  p {
+    margin-block-end: 15px;
+    color: var(--hai);
+  }
+  
+  .signature {
+    text-align: end;
+    margin-block-start: 30px;
+  }
+}

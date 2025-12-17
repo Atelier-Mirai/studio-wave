@@ -1,0 +1,57 @@
+/*=====================================================================
+  FAQ（アコーディオン）
+=====================================================================*/
+.faq-bg {
+  block-size: 300px;
+  background: url("../images/faq-bg.webp") no-repeat center / cover;
+}
+
+#faq {
+  max-inline-size: 800px;
+  margin-inline: auto;
+}
+
+.accordion-list {
+  li {
+    margin-block-end: 15px;
+  }
+}
+
+.accordion-item {
+  border: 1px solid var(--sumi-10);
+}
+
+.accordion-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  
+  &:hover {
+    background-color: var(--kinari);
+  }
+  
+  &::after {
+    content: "+";
+    font-size: 1.5rem;
+    color: var(--hai);
+    transition: transform 0.3s;
+  }
+  
+  .accordion-item.is-open &::after {
+    transform: rotate(45deg);
+  }
+}
+
+.accordion-content {
+  display: none;
+  padding: 0 20px 20px;
+  color: var(--hai);
+  
+  .accordion-item.is-open & {
+    display: block;
+  }
+}

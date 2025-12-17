@@ -1,0 +1,30 @@
+/*
+  ボタンの見た目。
+  `.btn` が基本形で、色違いは `.btn-accent` のような「バリエーション」で作ります。
+*/
+.btn {
+  display: block;
+  inline-size: 16.25rem;
+  padding: 0.625rem;
+  box-sizing: border-box;
+  border-radius: var(--radius-s);
+  background-color: var(--color-brand);
+  color: var(--color-surface-strong);
+  font-size: 1.125rem;
+  text-align: center;
+  text-shadow: 0 0 6px rgb(0 0 0 / 32%);
+
+  /* 同じ要素にクラスを追加して見た目だけ変える（例: class="btn btn-accent"） */
+  &.btn-accent {
+    background-color: var(--color-accent);
+  }
+
+  &:disabled,
+  &.btn-accent:disabled {
+    background-color: color-mix(in srgb, var(--color-muted-2) 55%, var(--color-surface-strong));
+    color: color-mix(in srgb, var(--color-ink) 55%, var(--color-muted-2));
+    text-shadow: none;
+    cursor: not-allowed;
+    opacity: 0.75;
+  }
+}

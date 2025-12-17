@@ -1,0 +1,44 @@
+/*=====================================================================
+  ヘッダー
+=====================================================================*/
+#header {
+  position: relative;
+  block-size: 100vh;
+  block-size: 100dvh;
+  display: grid;
+  place-items: center;
+  background-size: cover;
+  background-position: center;
+  scroll-snap-align: start;
+}
+
+.hero-content {
+  text-align: center;
+  
+  h1 {
+    font-size: clamp(3rem, 10vw, 5rem);
+    margin-block-end: 10px;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    letter-spacing: 0.3em;
+  }
+}
+
+.social-links {
+  position: absolute;
+  inset-block-end: 30px;
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  
+  img {
+    inline-size: 24px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    
+    &:hover { opacity: 1; }
+  }
+}

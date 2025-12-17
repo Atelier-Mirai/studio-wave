@@ -1,0 +1,77 @@
+/*=====================================================================
+  ボタン
+  各種ボタンスタイル
+=====================================================================*/
+
+/* 線が伸びるボタン */
+.btn-line {
+  position: relative;
+  display: inline-block;
+  padding: 10px 30px;
+  color: var(--shironezumi);
+  text-decoration: none;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: var(--shinku);
+    transition: all 0.3s;
+  }
+
+  /* 上線 */
+  &::before {
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inline-size: 0;
+    block-size: 2px;
+  }
+
+  /* 下線 */
+  &::after {
+    inset-block-end: 0;
+    inset-inline-end: 0;
+    inline-size: 0;
+    block-size: 2px;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    inline-size: 100%;
+  }
+
+  /* 左右の線 */
+  span {
+    position: relative;
+    display: block;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: var(--shinku);
+      transition: all 0.3s;
+      transition-delay: 0.2s;
+    }
+
+    &::before {
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      inline-size: 2px;
+      block-size: 0;
+    }
+
+    &::after {
+      inset-block-end: 0;
+      inset-inline-end: 0;
+      inline-size: 2px;
+      block-size: 0;
+    }
+  }
+
+  &:hover span::before,
+  &:hover span::after {
+    block-size: 100%;
+  }
+}

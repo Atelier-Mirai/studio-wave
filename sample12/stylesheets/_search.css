@@ -1,0 +1,99 @@
+/*=====================================================================
+  検索
+  全画面検索オーバーレイ
+=====================================================================*/
+
+/* 検索ボタン */
+.search-toggle {
+  position: fixed;
+  z-index: 9999;
+  inset-block-start: 20px;
+  inset-inline-end: 20px;
+  inline-size: 30px;
+  block-size: 30px;
+  cursor: pointer;
+  background: url("../images/icon-search.svg") no-repeat center / contain;
+  border: none;
+}
+
+/* 検索オーバーレイ */
+#search-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  display: grid;
+  place-items: center;
+  background-color: var(--kuro-80);
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  &.is-active {
+    z-index: 9998;
+    opacity: 1;
+  }
+}
+
+/* 閉じるボタン */
+.search-close {
+  position: absolute;
+  inset-block-start: 20px;
+  inset-inline-end: 20px;
+  inline-size: 40px;
+  block-size: 40px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+
+  span {
+    position: absolute;
+    inset-inline-start: 50%;
+    inset-block-start: 50%;
+    inline-size: 100%;
+    block-size: 2px;
+    background-color: var(--gofun);
+
+    &:first-child {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &:last-child {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+}
+
+/* 検索フォーム */
+.search-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  inline-size: min(80%, 600px);
+}
+
+.search-input {
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  color: var(--gofun);
+  background-color: transparent;
+  border: none;
+  border-block-end: 2px solid var(--gofun);
+  outline: none;
+
+  &::placeholder {
+    color: var(--hai);
+  }
+}
+
+.search-submit {
+  padding: 15px 30px;
+  font-size: 1rem;
+  color: var(--gofun);
+  background-color: var(--shinku);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: var(--enji);
+  }
+}

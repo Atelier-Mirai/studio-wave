@@ -1,0 +1,63 @@
+/*
+  フッター部分（全ページ共通）。
+  - `.footer-sns` はSNSアイコンのリスト
+  - `.footer-menu` はフッターメニュー
+  ※このファイルは「CSS Nesting（ネスト）」を一部使っています（`.footer-sns` 内の `a`）。
+*/
+.footer {
+  padding-block: 4.375rem;
+  background-color: var(--color-surface-strong);
+  color: var(--color-muted-2);
+  font-size: 0.8125rem;
+
+  .footer-container {
+    display: grid;
+    gap: 3.125rem;
+    justify-items: center;
+
+    @media (width >= 48rem) {
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto auto;
+      gap: 1.25rem;
+
+      > .footer-site {
+        margin-block-end: 1.25rem;
+      }
+
+      > *:not(.footer-sns) {
+        justify-self: start;
+      }
+
+      > .footer-sns {
+        grid-column: 2;
+        grid-row: 1 / 4;
+        justify-self: end;
+        align-self: center;
+      }
+    }
+  }
+
+  .footer-sns {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1.5rem;
+    font-size: 1.5rem;
+
+    a {
+      display: grid;
+      place-items: center;
+      inline-size: 2.25rem;
+      aspect-ratio: 1;
+      background-color: var(--color-muted-2);
+      color: var(--color-surface-strong);
+      clip-path: circle(50%);
+    }
+  }
+
+  .footer-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+    gap: 1.25rem;
+    justify-items: center;
+  }
+}
