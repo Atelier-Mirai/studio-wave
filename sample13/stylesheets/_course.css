@@ -40,15 +40,15 @@
   background-position: center;
   
   &.course-01 {
-    background-image: url("../images/course-01.webp");
+    background-image: url("../images/course01.webp");
   }
   
   &.course-02 {
-    background-image: url("../images/course-02.webp");
+    background-image: url("../images/course02.webp");
   }
   
   &.course-03 {
-    background-image: url("../images/course-03.webp");
+    background-image: url("../images/course03.webp");
   }
 }
 

@@ -85,7 +85,7 @@
   position: relative;
   overflow: hidden;
   block-size: 60vh;
-  background: url("../images/service-01.webp") no-repeat center / cover;
+  background: url("../images/service01.webp") no-repeat center / cover;
 
   @media (width <= 570px) {
     inline-size: 100%;

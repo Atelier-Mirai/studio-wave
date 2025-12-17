@@ -81,23 +81,23 @@
 
 /* セクション背景 */
 .section-profile {
-  background-image: url("../images/section-bg-01.webp");
+  background-image: url("../images/section-bg01.webp");
 }
 
 .section-landscape {
-  background-image: url("../images/section-bg-02.webp");
+  background-image: url("../images/section-bg02.webp");
 }
 
 .section-women {
-  background-image: url("../images/section-bg-03.webp");
+  background-image: url("../images/section-bg03.webp");
 }
 
 .section-flower {
-  background-image: url("../images/section-bg-04.webp");
+  background-image: url("../images/section-bg04.webp");
 }
 
 .section-contact {
-  background-image: url("../images/section-bg-05.webp");
+  background-image: url("../images/section-bg05.webp");
 }
 
 /* セクションナビ */

@@ -29,14 +29,14 @@
   }
   
   &.slide-01 {
-    background: url("../images/hero-01.webp") no-repeat center / cover;
+    background: url("../images/hero01.webp") no-repeat center / cover;
   }
   
   &.slide-02 {
-    background: url("../images/hero-02.webp") no-repeat center / cover;
+    background: url("../images/hero02.webp") no-repeat center / cover;
   }
   
   &.slide-03 {
-    background: url("../images/hero-03.webp") no-repeat center / cover;
+    background: url("../images/hero03.webp") no-repeat center / cover;
   }
 }

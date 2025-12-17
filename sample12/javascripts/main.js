@@ -122,14 +122,14 @@
     const isMobile = window.innerWidth <= 768
     const images = isMobile
       ? [
-          { src: 'images/hero-01-sp.webp', alt: 'ヒーロー画像1' },
-          { src: 'images/hero-02-sp.webp', alt: 'ヒーロー画像2' },
-          { src: 'images/hero-03-sp.webp', alt: 'ヒーロー画像3' },
+          { src: 'images/hero01-sp.webp', alt: 'ヒーロー画像1' },
+          { src: 'images/hero02-sp.webp', alt: 'ヒーロー画像2' },
+          { src: 'images/hero03-sp.webp', alt: 'ヒーロー画像3' },
         ]
       : [
-          { src: 'images/hero-01.webp', alt: 'ヒーロー画像1' },
-          { src: 'images/hero-02.webp', alt: 'ヒーロー画像2' },
-          { src: 'images/hero-03.webp', alt: 'ヒーロー画像3' },
+          { src: 'images/hero01.webp', alt: 'ヒーロー画像1' },
+          { src: 'images/hero02.webp', alt: 'ヒーロー画像2' },
+          { src: 'images/hero03.webp', alt: 'ヒーロー画像3' },
         ]
 
     // 画像を生成

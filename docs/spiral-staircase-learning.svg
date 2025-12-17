@@ -1,0 +1,119 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0F6FF;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="stairGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF6B9D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA07A;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="stairGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#C77DFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9D4EDD;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="stairGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4EA8DE;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5390D9;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky background -->
+  <rect width="800" height="600" fill="url(#skyGradient)"/>
+  
+  <!-- Sun -->
+  <circle cx="650" cy="100" r="50" fill="#FFD700" opacity="0.8"/>
+  <circle cx="650" cy="100" r="60" fill="#FFD700" opacity="0.3"/>
+  
+  <!-- Clouds -->
+  <ellipse cx="150" cy="80" rx="40" ry="20" fill="white" opacity="0.7"/>
+  <ellipse cx="170" cy="75" rx="35" ry="18" fill="white" opacity="0.7"/>
+  <ellipse cx="130" cy="75" rx="30" ry="15" fill="white" opacity="0.7"/>
+  
+  <ellipse cx="550" cy="150" rx="45" ry="22" fill="white" opacity="0.6"/>
+  <ellipse cx="575" cy="145" rx="38" ry="20" fill="white" opacity="0.6"/>
+  <ellipse cx="525" cy="145" rx="35" ry="18" fill="white" opacity="0.6"/>
+  
+  <!-- Stars/sparkles -->
+  <polygon points="200,200 205,210 215,210 207,216 210,226 200,220 190,226 193,216 185,210 195,210" fill="#FFD700" opacity="0.6"/>
+  <polygon points="700,250 703,256 709,256 704,260 706,266 700,262 694,266 696,260 691,256 697,256" fill="#FFD700" opacity="0.6"/>
+  <polygon points="100,350 103,356 109,356 104,360 106,366 100,362 94,366 96,360 91,356 97,356" fill="#FFA500" opacity="0.6"/>
+  
+  <!-- Central spiral staircase -->
+  <!-- Level 1 (bottom) - HTML -->
+  <g opacity="0.95">
+    <ellipse cx="400" cy="500" rx="140" ry="30" fill="url(#stairGradient1)"/>
+    <rect x="260" y="480" width="280" height="20" fill="url(#stairGradient1)"/>
+    <ellipse cx="400" cy="480" rx="140" ry="30" fill="#FF8FAB"/>
+    <text x="400" y="490" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white" text-anchor="middle">HTML</text>
+  </g>
+  
+  <!-- Level 2 - CSS -->
+  <g opacity="0.95">
+    <ellipse cx="450" cy="400" rx="130" ry="28" fill="url(#stairGradient2)"/>
+    <rect x="320" y="382" width="260" height="18" fill="url(#stairGradient2)"/>
+    <ellipse cx="450" cy="382" rx="130" ry="28" fill="#D4A5FF"/>
+    <text x="450" y="392" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white" text-anchor="middle">CSS</text>
+  </g>
+  
+  <!-- Level 3 - JavaScript -->
+  <g opacity="0.95">
+    <ellipse cx="350" cy="300" rx="120" ry="26" fill="url(#stairGradient3)"/>
+    <rect x="230" y="284" width="240" height="16" fill="url(#stairGradient3)"/>
+    <ellipse cx="350" cy="284" rx="120" ry="26" fill="#7CB9E8"/>
+    <text x="350" y="293" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">JavaScript</text>
+  </g>
+  
+  <!-- Level 4 - Windsurf -->
+  <g opacity="0.95">
+    <ellipse cx="420" cy="210" rx="110" ry="24" fill="#48CAE4"/>
+    <rect x="310" y="196" width="220" height="14" fill="#48CAE4"/>
+    <ellipse cx="420" cy="196" rx="110" ry="24" fill="#90E0EF"/>
+    <text x="420" y="204" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="white" text-anchor="middle">Windsurf</text>
+  </g>
+  
+  <!-- Level 5 (top) - Firefox -->
+  <g opacity="0.95">
+    <ellipse cx="380" cy="130" rx="100" ry="22" fill="#06D6A0"/>
+    <rect x="280" y="118" width="200" height="12" fill="#06D6A0"/>
+    <ellipse cx="380" cy="118" rx="100" ry="22" fill="#6BFFB8"/>
+    <text x="380" y="125" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">Firefox</text>
+  </g>
+  
+  <!-- Person climbing -->
+  <g transform="translate(420, 160)">
+    <!-- Head -->
+    <circle cx="0" cy="0" r="12" fill="#FFE5B4"/>
+    <!-- Body -->
+    <line x1="0" y1="12" x2="0" y2="35" stroke="#333" stroke-width="3"/>
+    <!-- Arms -->
+    <line x1="0" y1="18" x2="-12" y2="28" stroke="#333" stroke-width="3"/>
+    <line x1="0" y1="18" x2="12" y2="25" stroke="#333" stroke-width="3"/>
+    <!-- Legs -->
+    <line x1="0" y1="35" x2="-8" y2="50" stroke="#333" stroke-width="3"/>
+    <line x1="0" y1="35" x2="8" y2="48" stroke="#333" stroke-width="3"/>
+  </g>
+  
+  <!-- Labels on the side -->
+  <text x="600" y="490" font-family="Arial, sans-serif" font-size="16" fill="#333">1. 主題</text>
+  <text x="600" y="390" font-family="Arial, sans-serif" font-size="16" fill="#333">2. 文法</text>
+  <text x="600" y="290" font-family="Arial, sans-serif" font-size="16" fill="#333">3. 道具</text>
+  
+  <!-- Arrow pointing up -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#FF6B9D" />
+    </marker>
+  </defs>
+  <path d="M 350 520 Q 300 450, 320 380 Q 340 310, 360 240 Q 380 170, 380 100" 
+        stroke="#FF6B9D" stroke-width="3" fill="none" stroke-dasharray="10,5" 
+        marker-end="url(#arrowhead)" opacity="0.6"/>
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#333" text-anchor="middle">学びの螺旋階段</text>
+  <text x="400" y="75" font-family="Arial, sans-serif" font-size="16" fill="#666" text-anchor="middle">一歩ずつ、楽しく成長しよう！</text>
+</svg>

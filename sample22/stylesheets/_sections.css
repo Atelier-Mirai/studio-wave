@@ -138,7 +138,7 @@
 }
 
 .menu-bg::before {
-  background-image: url("../images/hero-01.webp");
+  background-image: url("../images/hero01.webp");
 }
 
 .menu-bg::before,
@@ -262,7 +262,7 @@
 }
 
 .access-bg::before {
-  background-image: url("../images/hero-02.webp");
+  background-image: url("../images/hero02.webp");
 }
 
 .access-grid {
