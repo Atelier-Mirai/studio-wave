@@ -1,117 +1,86 @@
 /*=====================================================================
   ナビゲーション
-  ハンバーガーメニューとフルスクリーンナビ
 =====================================================================*/
-
-/* ハンバーガーボタン */
 .menu-toggle {
   position: fixed;
   z-index: 9999;
-  inset-block-start: 10px;
-  inset-inline-end: 10px;
+  inset-block-start: 20px;
+  inset-inline-end: 20px;
   inline-size: 50px;
   block-size: 50px;
   cursor: pointer;
   background: transparent;
   border: none;
-  padding: 0;
 
-  /* ハンバーガーの線 */
   span {
     display: block;
     position: absolute;
-    inset-inline-start: 13px;
-    block-size: 3px;
-    background-color: var(--usuzumi);
-    transition: all 0.4s;
+    inset-inline-start: 10px;
+    inline-size: 30px;
+    block-size: 2px;
+    background-color: var(--shiro);
+    transition: all 0.3s;
 
     &:nth-of-type(1) {
-      inset-block-start: 22px;
-      inline-size: 50%;
+      inset-block-start: 16px;
     }
-
     &:nth-of-type(2) {
-      inset-block-start: 29px;
-      inline-size: 30%;
+      inset-block-start: 24px;
+    }
+    &:nth-of-type(3) {
+      inset-block-start: 32px;
     }
   }
 
-  /* アクティブ時（×に変形） */
   &.is-active span {
     &:nth-of-type(1) {
-      inset-block-start: 20px;
-      inset-inline-start: 16px;
-      inline-size: 35%;
-      transform: translateY(6px) rotate(-45deg);
+      inset-block-start: 24px;
+      transform: rotate(45deg);
     }
-
     &:nth-of-type(2) {
-      inset-block-start: 32px;
-      inset-inline-start: 16px;
-      inline-size: 35%;
-      transform: translateY(-6px) rotate(45deg);
+      opacity: 0;
+    }
+    &:nth-of-type(3) {
+      inset-block-start: 24px;
+      transform: rotate(-45deg);
     }
   }
 }
 
-/* フルスクリーンナビ */
 #global-nav {
   position: fixed;
-  z-index: -1;
-  inset-block-start: 0;
-  inline-size: 100%;
-  block-size: 100vh;
-  block-size: 100dvh;
-  background-color: var(--kobaiiro-80);
+  z-index: 998;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background-color: var(--kon-90);
   opacity: 0;
+  visibility: hidden;
   transition: all 0.3s;
 
-  /* アクティブ時 */
   &.is-active {
-    z-index: 998;
     opacity: 1;
+    visibility: visible;
   }
 }
 
-/* ナビリスト */
 .nav-list {
-  display: none;
-  position: absolute;
-  z-index: 999;
-  inset-inline-start: 50%;
-  inset-block-start: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
 
-  #global-nav.is-active & {
-    display: block;
+  li {
+    margin-block-end: 20px;
   }
-}
 
-.nav-list li {
-  list-style: none;
-}
+  a {
+    display: block;
+    padding: 15px 40px;
+    color: var(--shiro);
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    transition: color 0.3s;
 
-.nav-list a {
-  display: block;
-  padding: 10px;
-  color: var(--gofun);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: bold;
-}
-
-/* ナビロゴ */
-.nav-logo {
-  font-size: 2rem;
-  text-transform: none;
-  font-weight: normal;
-  line-height: 1;
-  white-space: nowrap;
-  margin-block-end: 20px;
-}
-
-/* コンテンツぼかし効果 */
-.is-blurred {
-  filter: blur(8px);
+    &:hover {
+      color: var(--ai);
+    }
+  }
 }

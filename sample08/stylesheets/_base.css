@@ -1,0 +1,61 @@
+/*=====================================================================
+  ベーススタイル
+  フォント、リンク、画像などの基本設定
+=====================================================================*/
+
+body {
+  background-color: var(--kobaiiro);
+  font-family: "Noto Serif JP", serif;
+  color: var(--sumi);
+  font-size: 1rem;
+  line-height: 1.85;
+  letter-spacing: 0.2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  word-wrap: break-word;
+}
+
+/* ページ読み込み完了後の背景色 */
+body.appear {
+  background-color: var(--shironeri);
+}
+
+a {
+  color: var(--sumi);
+  text-decoration: none;
+  outline: none;
+}
+
+img {
+  max-inline-size: 100%;
+  block-size: auto;
+  vertical-align: bottom;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 装飾フォント（英字） */
+h1,
+.nav-logo,
+.section-title,
+.footer-logo,
+.splash-logo {
+  font-family: "Parisienne", cursive;
+}
+
+/* セクション見出し共通 */
+.section-title {
+  font-size: 4rem;
+  font-weight: normal;
+  text-align: center;
+  margin-block-end: 50px;
+  color: var(--kobaiiro);
+
+  @media (width <= 768px) {
+    font-size: 3rem;
+  }
+}

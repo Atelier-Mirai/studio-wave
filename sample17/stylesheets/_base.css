@@ -2,16 +2,21 @@
   ベーススタイル
 =====================================================================*/
 body {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Sawarabi Gothic", sans-serif;
   color: var(--sumi);
   font-size: 1rem;
   line-height: 1.8;
-  background-color: var(--shiro);
+  background-color: var(--shironeri);
 }
 
 a {
-  color: var(--sumi);
+  color: var(--matsubairo);
   text-decoration: none;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 img {
@@ -25,28 +30,13 @@ ul {
   list-style: none;
 }
 
-h1,
-h2,
-h3 {
-  font-family: "Lato", sans-serif;
-  font-weight: 900;
-}
-
 h2 {
-  font-size: 2.5rem;
-  margin-block-end: 50px;
-  letter-spacing: 0.1em;
-}
+  font-size: 1.5rem;
+  margin-block-end: 30px;
 
-section {
-  padding: 100px 20px;
-
-  @media (width <= 768px) {
-    padding: 60px 20px;
+  span {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--hai);
   }
-}
-
-.inner {
-  max-inline-size: 1000px;
-  margin-inline: auto;
 }

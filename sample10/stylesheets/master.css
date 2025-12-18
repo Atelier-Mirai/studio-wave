@@ -1,0 +1,25 @@
+/*=====================================================================
+  キッズサイト（学習塾） - メインスタイルシート
+=====================================================================*/
+@layer reset, base, layout, components, animations, utilities;
+
+@import url("https://cdn.jsdelivr.net/npm/@acab/reset.css@0.11.0/index.min.css")
+layer(reset);
+@import "_colors.css" layer(base);
+@import "_base.css" layer(base);
+@import "_layout.css" layer(layout);
+@import "_splash.css" layer(components);
+@import "_header.css" layer(components);
+@import "_navigation.css" layer(components);
+@import "_concept.css" layer(components);
+@import "_news.css" layer(components);
+@import "_course.css" layer(components);
+@import "_gallery.css" layer(components);
+@import "_contact.css" layer(components);
+@import "_footer.css" layer(layout);
+@import "_buttons.css" layer(components);
+@import "_badge.css" layer(components);
+@import "_slider.css" layer(components);
+@import "_page-top.css" layer(components);
+@import "_animations.css" layer(animations);
+@import "_utilities.css" layer(utilities);

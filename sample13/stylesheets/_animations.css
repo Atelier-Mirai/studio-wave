@@ -1,48 +1,30 @@
 /*=====================================================================
   アニメーション
 =====================================================================*/
-/* フェードイン */
-.fade-in {
+.blur-in {
+  filter: blur(10px);
   opacity: 0;
-  transition: opacity 0.8s;
+  transition: all 1s;
 
   &.is-visible {
+    filter: blur(0);
     opacity: 1;
   }
 }
 
-/* フェードアップ */
-.fade-up {
+.text-animate span {
+  display: inline-block;
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s;
+  transform: translateY(20px);
+}
 
-  &.is-visible {
+.text-animate.is-visible span {
+  animation: text-rise 0.5s forwards;
+}
+
+@keyframes text-rise {
+  to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-/* ズームイン */
-.zoom-in {
-  opacity: 0;
-  transform: scale(0.9);
-  transition: all 0.8s;
-
-  &.is-visible {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* フリップ */
-.flip-in {
-  opacity: 0;
-  transform: perspective(400px) rotateX(-90deg);
-  transition: all 0.8s;
-
-  &.is-visible {
-    opacity: 1;
-    transform: perspective(400px) rotateX(0);
   }
 }

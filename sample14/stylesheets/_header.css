@@ -5,18 +5,12 @@
   position: fixed;
   z-index: 100;
   inset-block-start: 0;
-  inset-inline-start: 0;
-  inline-size: 100%;
+  inset-inline: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 30px;
-  background-color: transparent;
-  transition: background-color 0.3s;
-
-  &.is-scrolled {
-    background-color: var(--kon-90);
-  }
+  padding: 20px 40px;
+  background-color: var(--shiro);
 
   @media (width <= 768px) {
     padding: 15px 20px;
@@ -26,49 +20,25 @@
 #header h1 {
   font-size: 1.5rem;
   letter-spacing: 0.1em;
-
-  a {
-    color: var(--shiro);
-  }
 }
 
-.header-content {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-
-  @media (width <= 960px) {
+.pc-nav {
+  @media (width <= 768px) {
     display: none;
   }
 }
 
-.header-contact {
+.pc-nav ul {
   display: flex;
-  gap: 20px;
-
-  dl {
-    display: flex;
-    gap: 10px;
-  }
-
-  dt {
-    color: var(--ai);
-  }
-
-  a {
-    color: var(--shiro);
-  }
+  gap: 30px;
 }
 
-.header-button {
-  display: inline-block;
-  padding: 10px 25px;
-  border: 1px solid var(--ai);
-  color: var(--ai);
-  transition: all 0.3s;
+.pc-nav a {
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  transition: opacity 0.3s;
 
   &:hover {
-    background-color: var(--ai);
-    color: var(--kon);
+    opacity: 0.6;
   }
 }

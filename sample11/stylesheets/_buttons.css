@@ -1,83 +1,46 @@
 /*=====================================================================
   ボタン
-  各種ボタンスタイル
 =====================================================================*/
-
-/* 基本ボタン（線から塗りに変化） */
-.btn-outline {
-  position: relative;
+.btn-border {
   display: inline-block;
-  padding: 10px 30px;
-  color: var(--sumi);
-  border: 1px solid var(--usuhai);
-  text-decoration: none;
-  outline: none;
+  padding: 15px 50px;
+  border: 1px solid var(--ai);
+  color: var(--ai);
+  position: relative;
   overflow: hidden;
   transition: color 0.3s;
-  transition-delay: 0.6s;
 
-  &:hover {
-    color: var(--gofun);
-    border-color: transparent;
+  &::before {
+    content: "";
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: -100%;
+    inline-size: 100%;
+    block-size: 100%;
+    background-color: var(--ai);
+    transition: inset-inline-start 0.3s;
+    z-index: -1;
   }
 
-  /* ボタン内のテキスト */
-  span {
-    position: relative;
-    z-index: 2;
-    display: block;
-
-    /* 左右の線 */
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      inset-block-start: 0;
-      inline-size: 1px;
-      block-size: 0;
-      background-color: var(--kobaiiro);
-      transition: block-size 0.3s;
-    }
+  &:hover {
+    color: var(--kon);
 
     &::before {
       inset-inline-start: 0;
     }
-
-    &::after {
-      inset-inline-end: 0;
-    }
-  }
-
-  &:hover span::before,
-  &:hover span::after {
-    block-size: 100%;
-  }
-
-  /* 背景の塗り */
-  &::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    inset-inline-start: 0;
-    inset-block-start: 0;
-    inline-size: 100%;
-    block-size: 0;
-    background-color: var(--kobaiiro);
-    transition: block-size 0.3s;
-    transition-delay: 0.4s;
-  }
-
-  &:hover::before {
-    block-size: 100%;
   }
 }
 
-/* リードセクション用ボタン */
-.lead-button .btn-outline {
-  padding: 20px 15px;
+.btn-glow {
+  display: inline-block;
+  padding: 15px 50px;
+  background-color: var(--ai);
+  color: var(--kon);
+  font-weight: bold;
+  transition: all 0.3s;
 
-  @media (width <= 768px) {
-    inline-size: 250px;
-    padding: 10px 30px;
+  &:hover {
+    box-shadow: 0 0 20px var(--ai-30);
+    transform: translateY(-3px);
   }
 }

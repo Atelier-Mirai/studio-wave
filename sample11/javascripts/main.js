@@ -1,346 +1,344 @@
 /*=====================================================================
-  女性向けエステサロンサイト - メインスクリプト
-  バニラ JS で実装（jQuery 不使用）
+  科学的なサイト - メインスクリプト
 =====================================================================*/
 
 (() => {
   "use strict";
 
-  /*---------------------------------------------------------------
-    ローディング画面（スプラッシュ）
-  ---------------------------------------------------------------*/
+  /* ローディング画面（テキストアニメーション） */
   const initSplash = () => {
     const splash = document.getElementById("splash");
-    const splashLogo = document.querySelector(".splash-logo");
-    if (!splash) return;
+    const textEl = document.querySelector(".splash-text");
+    if (!splash || !textEl) return;
 
-    // ロゴをフェードアウト後、スプラッシュ全体を非表示に
-    setTimeout(() => {
-      if (splashLogo) {
-        splashLogo.style.transition = "opacity 0.5s";
-        splashLogo.style.opacity = "0";
-      }
-    }, 1200);
+    const text = "Science Labo";
+    textEl.innerHTML = text
+      .split("")
+      .map(
+        (char, i) =>
+          `<span style="animation-delay: ${i * 0.1}s">${char === " " ? "&nbsp;" : char}</span>`,
+      )
+      .join("");
 
     setTimeout(() => {
-      splash.style.transition = "opacity 0.5s";
-      splash.style.opacity = "0";
+      document.body.classList.add("loaded");
       setTimeout(() => {
         splash.style.display = "none";
-        document.body.classList.add("appear");
-        // グロウテキストの初期化
-        initGlowText();
-        // スクロールアニメーションを一度実行
-        handleScrollAnimations();
+        initParticles();
+        initWave();
       }, 500);
-    }, 1500);
+    }, 2000);
   };
 
-  /*---------------------------------------------------------------
-    ハンバーガーメニュー
-  ---------------------------------------------------------------*/
+  /* ナビゲーション */
   const initNavigation = () => {
-    const menuToggle = document.querySelector(".menu-toggle");
-    const globalNav = document.getElementById("global-nav");
-    const navLinks = globalNav?.querySelectorAll("a");
-    const blurTargets = document.querySelectorAll(
-      "#header, #container, #footer",
-    );
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.getElementById("global-nav");
+    const links = nav?.querySelectorAll("a");
 
-    if (!menuToggle || !globalNav) return;
+    if (!toggle || !nav) return;
 
-    // メニュートグル
-    menuToggle.addEventListener("click", () => {
-      menuToggle.classList.toggle("is-active");
-      globalNav.classList.toggle("is-active");
-      blurTargets.forEach((el) => el.classList.toggle("is-blurred"));
+    toggle.addEventListener("click", () => {
+      toggle.classList.toggle("is-active");
+      nav.classList.toggle("is-active");
     });
 
-    // ナビリンククリックでメニューを閉じる
-    navLinks?.forEach((link) => {
+    links?.forEach((link) => {
       link.addEventListener("click", () => {
-        menuToggle.classList.remove("is-active");
-        globalNav.classList.remove("is-active");
-        blurTargets.forEach((el) => el.classList.remove("is-blurred"));
+        toggle.classList.remove("is-active");
+        nav.classList.remove("is-active");
       });
     });
   };
 
-  /*---------------------------------------------------------------
-    ページトップボタン
-  ---------------------------------------------------------------*/
+  /* ヘッダースクロール */
+  const initHeaderScroll = () => {
+    const header = document.getElementById("header");
+    if (!header) return;
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (window.scrollY > 100) {
+          header.classList.add("is-scrolled");
+        } else {
+          header.classList.remove("is-scrolled");
+        }
+      },
+      { passive: true },
+    );
+  };
+
+  /* パーティクル背景 */
+  const initParticles = () => {
+    const container = document.getElementById("particles-js");
+    if (!container) return;
+
+    const canvas = document.createElement("canvas");
+    container.appendChild(canvas);
+    const ctx = canvas.getContext("2d");
+
+    const resize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    resize();
+    window.addEventListener("resize", resize);
+
+    const particles = [];
+    const particleCount = 80;
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        radius: Math.random() * 2 + 1,
+      });
+    }
+
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      particles.forEach((p, i) => {
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(0, 191, 255, 0.5)";
+        ctx.fill();
+
+        // 近い粒子を線で繋ぐ
+        for (let j = i + 1; j < particles.length; j++) {
+          const p2 = particles[j];
+          const dx = p.x - p2.x;
+          const dy = p.y - p2.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 150) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = `rgba(0, 191, 255, ${0.2 * (1 - dist / 150)})`;
+            ctx.stroke();
+          }
+        }
+      });
+
+      requestAnimationFrame(animate);
+    };
+    animate();
+  };
+
+  /* 波形アニメーション */
+  const initWave = () => {
+    const canvas = document.getElementById("wave-canvas");
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+
+    const resize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = 150;
+    };
+    resize();
+    window.addEventListener("resize", resize);
+
+    let phase = 0;
+
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      ctx.beginPath();
+      ctx.moveTo(0, canvas.height);
+
+      for (let x = 0; x <= canvas.width; x++) {
+        const y =
+          Math.sin(x * 0.01 + phase) * 20 +
+          Math.sin(x * 0.02 + phase * 1.5) * 15 +
+          50;
+        ctx.lineTo(x, y);
+      }
+
+      ctx.lineTo(canvas.width, canvas.height);
+      ctx.fillStyle = "rgba(0, 191, 255, 0.1)";
+      ctx.fill();
+
+      phase += 0.02;
+      requestAnimationFrame(draw);
+    };
+    draw();
+  };
+
+  /* カウントアップ */
+  const initCountUp = () => {
+    const countEl = document.querySelector(".count-number");
+    if (!countEl) return;
+
+    const target = parseInt(countEl.dataset.count || "0", 10);
+    let current = 0;
+    let hasAnimated = false;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            hasAnimated = true;
+            const duration = 2000;
+            const step = target / (duration / 16);
+
+            const animate = () => {
+              current += step;
+              if (current < target) {
+                countEl.textContent = Math.floor(current);
+                requestAnimationFrame(animate);
+              } else {
+                countEl.textContent = target;
+              }
+            };
+            animate();
+          }
+        });
+      },
+      { threshold: 0.5 },
+    );
+
+    observer.observe(countEl);
+  };
+
+  /* チャート */
+  const initCharts = () => {
+    const pieCanvas = document.getElementById("chart-pie");
+    const barCanvas = document.getElementById("chart-bar");
+
+    if (pieCanvas) {
+      const ctx = pieCanvas.getContext("2d");
+      drawPieChart(ctx, pieCanvas);
+    }
+
+    if (barCanvas) {
+      const ctx = barCanvas.getContext("2d");
+      drawBarChart(ctx, barCanvas);
+    }
+  };
+
+  const drawPieChart = (ctx, canvas) => {
+    const data = [
+      { value: 40, color: "#00bfff", label: "基礎研究" },
+      { value: 30, color: "#48929b", label: "応用研究" },
+      { value: 20, color: "#1e3a5f", label: "開発" },
+      { value: 10, color: "#adb5bd", label: "その他" },
+    ];
+
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+    const radius = Math.min(centerX, centerY) - 20;
+
+    let startAngle = -Math.PI / 2;
+    const total = data.reduce((sum, d) => sum + d.value, 0);
+
+    data.forEach((d) => {
+      const sliceAngle = (d.value / total) * Math.PI * 2;
+      ctx.beginPath();
+      ctx.moveTo(centerX, centerY);
+      ctx.arc(centerX, centerY, radius, startAngle, startAngle + sliceAngle);
+      ctx.closePath();
+      ctx.fillStyle = d.color;
+      ctx.fill();
+      startAngle += sliceAngle;
+    });
+  };
+
+  const drawBarChart = (ctx, canvas) => {
+    const data = [
+      { label: "2020", value: 150 },
+      { label: "2021", value: 220 },
+      { label: "2022", value: 280 },
+      { label: "2023", value: 350 },
+      { label: "2024", value: 395 },
+    ];
+
+    const padding = 40;
+    const barWidth = (canvas.width - padding * 2) / data.length - 20;
+    const maxValue = Math.max(...data.map((d) => d.value));
+
+    ctx.fillStyle = "#adb5bd";
+    ctx.font = "12px sans-serif";
+
+    data.forEach((d, i) => {
+      const barHeight = (d.value / maxValue) * (canvas.height - padding * 2);
+      const x = padding + i * (barWidth + 20) + 10;
+      const y = canvas.height - padding - barHeight;
+
+      ctx.fillStyle = "#00bfff";
+      ctx.fillRect(x, y, barWidth, barHeight);
+
+      ctx.fillStyle = "#adb5bd";
+      ctx.textAlign = "center";
+      ctx.fillText(d.label, x + barWidth / 2, canvas.height - 10);
+      ctx.fillText(d.value, x + barWidth / 2, y - 10);
+    });
+  };
+
+  /* スクロールアニメーション */
+  const handleScrollAnimations = () => {
+    const triggers = document.querySelectorAll(
+      ".fade-down, .smooth-appear, .zoom-out, .random-text",
+    );
+    const windowH = window.innerHeight;
+
+    triggers.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < windowH - 50) {
+        el.classList.add("is-visible");
+      }
+    });
+  };
+
+  /* ランダムテキスト */
+  const initRandomText = () => {
+    document.querySelectorAll(".random-text").forEach((el) => {
+      const text = el.textContent || "";
+      el.innerHTML = text
+        .split("")
+        .map(
+          (char) =>
+            `<span style="animation-delay: ${Math.random() * 0.5}s">${char === " " ? "&nbsp;" : char}</span>`,
+        )
+        .join("");
+    });
+  };
+
+  /* ページトップ */
   const initPageTop = () => {
-    const pageTop = document.getElementById("page-top");
-    const blog = document.getElementById("blog");
-    const footer = document.getElementById("footer");
+    const btn = document.getElementById("page-top");
+    if (!btn) return;
 
-    if (!pageTop) return;
-
-    // スムーズスクロール
-    pageTop.addEventListener("click", (e) => {
+    btn.addEventListener("click", (e) => {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
-
-    // 表示範囲のチェック
-    const checkVisibility = () => {
-      const scroll = window.scrollY;
-      const windowH = window.innerHeight;
-
-      const blogTop = blog?.offsetTop ?? Infinity;
-      const blogH = blog?.offsetHeight ?? 0;
-      const footerTop = footer?.offsetTop ?? Infinity;
-      const footerH = footer?.offsetHeight ?? 0;
-
-      const inBlogRange =
-        scroll + windowH >= blogTop && scroll + windowH <= blogTop + blogH;
-      const inFooterRange =
-        scroll + windowH >= footerTop &&
-        scroll + windowH <= footerTop + footerH;
-
-      if (inBlogRange || inFooterRange) {
-        pageTop.classList.add("is-visible");
-        pageTop.classList.remove("is-hidden");
-        pageTop.classList.remove("initially-hidden");
-      } else if (!pageTop.classList.contains("initially-hidden")) {
-        pageTop.classList.add("is-hidden");
-        pageTop.classList.remove("is-visible");
-      }
-    };
-
-    window.addEventListener("scroll", checkVisibility, { passive: true });
   };
 
-  /*---------------------------------------------------------------
-    ヘッダー背景のパララックス効果
-  ---------------------------------------------------------------*/
-  const initHeaderParallax = () => {
-    const headerBg = document.querySelector(".header-bg");
-    if (!headerBg) return;
-
-    const updateParallax = () => {
-      const scroll = window.scrollY;
-      const scale = (100 + scroll / 10) / 100;
-      const top = -(scroll / 50);
-      headerBg.style.transform = `scale(${scale})`;
-      headerBg.style.top = `${top}%`;
-    };
-
-    window.addEventListener("scroll", updateParallax, { passive: true });
-  };
-
-  /*---------------------------------------------------------------
-    スクロールアニメーション
-  ---------------------------------------------------------------*/
-  const handleScrollAnimations = () => {
-    const windowH = window.innerHeight;
-    const scroll = window.scrollY;
-
-    // フェードインアニメーション
-    document.querySelectorAll(".fade-trigger").forEach((el) => {
-      const elemPos = el.offsetTop - 50;
-      if (scroll >= elemPos - windowH) {
-        el.classList.add("fade-in");
-      } else {
-        el.classList.remove("fade-in");
-      }
-    });
-
-    // ズームアウトアニメーション
-    document.querySelectorAll(".zoom-trigger").forEach((el) => {
-      const elemPos = el.offsetTop;
-      if (scroll >= elemPos - windowH) {
-        el.classList.add("zoom-out");
-      } else {
-        el.classList.remove("zoom-out");
-      }
-    });
-
-    // スライドアニメーション（左から）
-    document.querySelectorAll(".slide-left").forEach((el) => {
-      const elemPos = el.offsetTop - 50;
-      if (scroll >= elemPos - windowH) {
-        el.classList.add("is-animated");
-      } else {
-        el.classList.remove("is-animated");
-      }
-    });
-
-    // ぼかしアニメーション
-    document.querySelectorAll(".blur-trigger").forEach((el) => {
-      const elemPos = el.offsetTop - 50;
-      if (scroll >= elemPos - windowH) {
-        el.classList.add("blur-in");
-      } else {
-        el.classList.remove("blur-in");
-      }
-    });
-
-    // グロウアニメーション
-    document.querySelectorAll(".glow-text").forEach((el) => {
-      const elemPos = el.offsetTop - 50;
-      if (scroll >= elemPos - windowH) {
-        el.classList.add("is-glowing");
-      } else {
-        el.classList.remove("is-glowing");
-      }
-    });
-  };
-
-  /*---------------------------------------------------------------
-    グロウテキストの初期化
-    各文字を span で囲み、遅延アニメーションを設定
-  ---------------------------------------------------------------*/
-  const initGlowText = () => {
-    document.querySelectorAll(".glow-text").forEach((el) => {
-      const text = el.textContent ?? "";
-      let html = "";
-      text.split("").forEach((char, i) => {
-        if (char !== " ") {
-          const delay = i < 10 ? `.${i}s` : `${i / 10}s`;
-          html += `<span style="animation-delay: ${delay}">${char}</span>`;
-        } else {
-          html += char;
-        }
-      });
-      el.innerHTML = html;
-    });
-  };
-
-  /*---------------------------------------------------------------
-    スライダー
-    CSS スクロールスナップベースのシンプルな実装
-  ---------------------------------------------------------------*/
-  const initSlider = () => {
-    const container = document.querySelector(".slider-container");
-    const track = document.querySelector(".slider-track");
-    const prevBtn = document.querySelector(".slider-prev");
-    const nextBtn = document.querySelector(".slider-next");
-    const dotsContainer = document.querySelector(".slider-dots");
-
-    if (!track) return;
-
-    const slides = track.querySelectorAll(".menu-card");
-    const slideCount = slides.length;
-
-    // 表示枚数を画面幅に応じて決定
-    const getSlidesToShow = () => {
-      const width = window.innerWidth;
-      if (width <= 426) return 1;
-      if (width <= 769) return 2;
-      if (width <= 1200) return 3;
-      return 4;
-    };
-
-    let currentIndex = 0;
-
-    // ドットを生成
-    const createDots = () => {
-      if (!dotsContainer) return;
-      dotsContainer.innerHTML = "";
-      const slidesToShow = getSlidesToShow();
-      const dotCount = Math.ceil(slideCount / slidesToShow);
-
-      for (let i = 0; i < dotCount; i++) {
-        const dot = document.createElement("button");
-        dot.className = "slider-dot";
-        dot.setAttribute("aria-label", `スライド ${i + 1}`);
-        if (i === 0) dot.classList.add("is-active");
-        dot.addEventListener("click", () => goToSlide(i * slidesToShow));
-        dotsContainer.appendChild(dot);
-      }
-    };
-
-    // スライドへ移動
-    const goToSlide = (index) => {
-      const slidesToShow = getSlidesToShow();
-      const maxIndex = Math.max(0, slideCount - slidesToShow);
-      currentIndex = Math.max(0, Math.min(index, maxIndex));
-
-      const slideWidth = slides[0]?.offsetWidth ?? 0;
-      const gap = 20;
-      track.scrollTo({
-        left: currentIndex * (slideWidth + gap),
-        behavior: "smooth",
-      });
-
-      updateDots();
-    };
-
-    // ドットの状態を更新
-    const updateDots = () => {
-      if (!dotsContainer) return;
-      const dots = dotsContainer.querySelectorAll(".slider-dot");
-      const slidesToShow = getSlidesToShow();
-      const activeIndex = Math.floor(currentIndex / slidesToShow);
-
-      dots.forEach((dot, i) => {
-        dot.classList.toggle("is-active", i === activeIndex);
-      });
-    };
-
-    // 前へ
-    prevBtn?.addEventListener("click", () => {
-      const slidesToShow = getSlidesToShow();
-      goToSlide(currentIndex - slidesToShow);
-    });
-
-    // 次へ
-    nextBtn?.addEventListener("click", () => {
-      const slidesToShow = getSlidesToShow();
-      goToSlide(currentIndex + slidesToShow);
-    });
-
-    // 自動スライド
-    let autoSlideInterval = setInterval(() => {
-      const slidesToShow = getSlidesToShow();
-      const maxIndex = Math.max(0, slideCount - slidesToShow);
-      if (currentIndex >= maxIndex) {
-        goToSlide(0);
-      } else {
-        goToSlide(currentIndex + slidesToShow);
-      }
-    }, 5000);
-
-    // ホバー時は自動スライド停止
-    container?.addEventListener("mouseenter", () => {
-      clearInterval(autoSlideInterval);
-    });
-
-    container?.addEventListener("mouseleave", () => {
-      autoSlideInterval = setInterval(() => {
-        const slidesToShow = getSlidesToShow();
-        const maxIndex = Math.max(0, slideCount - slidesToShow);
-        if (currentIndex >= maxIndex) {
-          goToSlide(0);
-        } else {
-          goToSlide(currentIndex + slidesToShow);
-        }
-      }, 5000);
-    });
-
-    // リサイズ時にドットを再生成
-    window.addEventListener("resize", createDots);
-
-    // 初期化
-    createDots();
-  };
-
-  /*---------------------------------------------------------------
-    初期化
-  ---------------------------------------------------------------*/
+  /* 初期化 */
   const init = () => {
     initNavigation();
+    initHeaderScroll();
+    initCountUp();
+    initCharts();
+    initRandomText();
     initPageTop();
-    initHeaderParallax();
-    initSlider();
-
     window.addEventListener("scroll", handleScrollAnimations, {
       passive: true,
     });
+    handleScrollAnimations();
   };
 
-  // ページ読み込み完了時
   window.addEventListener("load", () => {
     initSplash();
     init();

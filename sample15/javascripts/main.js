@@ -1,189 +1,199 @@
-/*=====================================================================
-  ギャラリーサイト - メインスクリプト
-=====================================================================*/
-
 (() => {
   "use strict";
 
-  /* ローディング画面 */
   const initSplash = () => {
     const splash = document.getElementById("splash");
-    const textEl = document.querySelector(".splash-text");
-    if (!splash || !textEl) return;
+    if (!splash) return;
 
-    const text = "Ryoko Kubota";
-    textEl.innerHTML = text
-      .split("")
-      .map(
-        (char, i) =>
-          `<span style="animation-delay: ${i * 0.1}s">${char === " " ? "&nbsp;" : char}</span>`,
-      )
-      .join("");
-
-    setTimeout(() => {
-      document.body.classList.add("loaded");
-      setTimeout(() => {
-        splash.style.display = "none";
-        initHeroSlideshow();
-        initGalleryAnimation();
-      }, 800);
-    }, 2000);
+    window.setTimeout(() => {
+      splash.classList.add("is-hidden");
+      document.body.classList.add("appear");
+    }, 1500);
   };
 
-  /* ナビゲーション */
-  const initNavigation = () => {
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.getElementById("global-nav");
-    const links = nav?.querySelectorAll("a");
+  const initNavPopover = () => {
+    const toggle = document.querySelector(".nav-toggle");
+    const popover = document.getElementById("global-nav");
+    if (!toggle || !popover) return;
 
-    if (!toggle || !nav) return;
-
-    toggle.addEventListener("click", () => {
-      toggle.classList.toggle("is-active");
-      nav.classList.toggle("is-active");
-    });
-
-    links?.forEach((link) => {
-      link.addEventListener("click", () => {
-        toggle.classList.remove("is-active");
-        nav.classList.remove("is-active");
-      });
-    });
-  };
-
-  /* ヒーロースライドショー */
-  const initHeroSlideshow = () => {
-    const container = document.querySelector(".hero-slideshow");
-    if (!container) return;
-
-    const images = container.querySelectorAll("img");
-    if (images.length <= 1) return;
-
-    let current = 0;
-    images[0]?.classList.add("is-active");
-
-    setInterval(() => {
-      images[current].classList.remove("is-active");
-      current = (current + 1) % images.length;
-      images[current].classList.add("is-active");
-    }, 5000);
-  };
-
-  /* ギャラリーフィルター */
-  const initGalleryFilter = () => {
-    const buttons = document.querySelectorAll(".filter-buttons button");
-    const items = document.querySelectorAll(".gallery-item");
-
-    buttons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const filter = btn.dataset.filter;
-
-        buttons.forEach((b) => b.classList.remove("is-active"));
-        btn.classList.add("is-active");
-
-        items.forEach((item) => {
-          if (filter === "all" || item.dataset.category === filter) {
-            item.hidden = false;
-            setTimeout(() => item.classList.add("is-visible"), 50);
-          } else {
-            item.classList.remove("is-visible");
-            setTimeout(() => {
-              item.hidden = true;
-            }, 300);
-          }
-        });
-      });
-    });
-  };
-
-  /* ギャラリー出現アニメーション */
-  const initGalleryAnimation = () => {
-    const items = document.querySelectorAll(".gallery-item");
-    items.forEach((item, i) => {
-      setTimeout(() => {
-        item.classList.add("is-visible");
-      }, i * 50);
-    });
-  };
-
-  /* ライトボックス */
-  const initLightbox = () => {
-    const galleryLinks = document.querySelectorAll(".gallery-item a");
-    const overlay = document.getElementById("lightbox-overlay");
-    const content = overlay?.querySelector(".lightbox-content img");
-    const caption = overlay?.querySelector(".lightbox-caption");
-    const closeBtn = overlay?.querySelector(".lightbox-close");
-    const prevBtn = overlay?.querySelector(".lightbox-nav.prev");
-    const nextBtn = overlay?.querySelector(".lightbox-nav.next");
-
-    if (!overlay || galleryLinks.length === 0) return;
-
-    let currentIndex = 0;
-    const items = Array.from(galleryLinks);
-
-    const open = (index) => {
-      currentIndex = index;
-      const link = items[index];
-      if (content) content.src = link.href;
-      if (caption) caption.textContent = link.dataset.caption || "";
-      overlay.classList.add("is-active");
+    const updateExpanded = () => {
+      const isOpen = popover.matches(":popover-open");
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
     };
 
-    const close = () => overlay.classList.remove("is-active");
-    const prev = () => open((currentIndex - 1 + items.length) % items.length);
-    const next = () => open((currentIndex + 1) % items.length);
+    popover.addEventListener("toggle", updateExpanded);
+    updateExpanded();
 
-    galleryLinks.forEach((link, i) => {
-      link.addEventListener("click", (e) => {
-        e.preventDefault();
-        open(i);
+    popover.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        popover.hidePopover?.();
       });
-    });
-
-    closeBtn?.addEventListener("click", close);
-    prevBtn?.addEventListener("click", prev);
-    nextBtn?.addEventListener("click", next);
-
-    document.addEventListener("keydown", (e) => {
-      if (!overlay.classList.contains("is-active")) return;
-      if (e.key === "Escape") close();
-      if (e.key === "ArrowLeft") prev();
-      if (e.key === "ArrowRight") next();
-    });
-
-    overlay.addEventListener("click", (e) => {
-      if (e.target === overlay) close();
     });
   };
 
-  /* スクロール / ページトップ */
-  const initScrollLinks = () => {
-    const scrollLink = document.querySelector(".scroll-link");
-    const pageTopLink = document.querySelector(".page-top-link");
+  const initHeaderAutoHide = () => {
+    const header = document.querySelector("[data-header]");
+    if (!header) return;
 
-    window.addEventListener(
-      "scroll",
-      () => {
-        const scrolled = window.scrollY > 300;
+    let lastY = window.scrollY;
 
-        scrollLink?.classList.toggle("is-hidden", scrolled);
-        pageTopLink?.classList.toggle("is-visible", scrolled);
+    const onScroll = () => {
+      const currentY = window.scrollY;
+      const delta = currentY - lastY;
+
+      if (currentY < 80) {
+        header.classList.remove("is-hidden");
+        lastY = currentY;
+        return;
+      }
+
+      if (delta > 10) {
+        header.classList.add("is-hidden");
+      }
+
+      if (delta < -10) {
+        header.classList.remove("is-hidden");
+      }
+
+      lastY = currentY;
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+  };
+
+  const loadHeroSlide = (slide) => {
+    if (!slide || slide.dataset.loaded === "true") return;
+
+    const source = slide.querySelector("source[data-srcset]");
+    if (source?.dataset.srcset) {
+      source.srcset = source.dataset.srcset;
+      source.removeAttribute("data-srcset");
+    }
+
+    const img = slide.querySelector("img[data-src]");
+    if (img?.dataset.src) {
+      img.src = img.dataset.src;
+      img.removeAttribute("data-src");
+    }
+
+    slide.dataset.loaded = "true";
+  };
+
+  const initHeroSlider = () => {
+    const hero = document.querySelector("[data-hero]");
+    if (!hero) return;
+
+    const slides = Array.from(hero.querySelectorAll(".hero-slide"));
+    if (slides.length <= 1) return;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      slides.forEach(loadHeroSlide);
+      return;
+    }
+
+    let current = slides.findIndex((slide) =>
+      slide.classList.contains("is-active"),
+    );
+    if (current < 0) current = 0;
+
+    window.setInterval(() => {
+      slides[current]?.classList.remove("is-active");
+      current = (current + 1) % slides.length;
+      const next = slides[current];
+      loadHeroSlide(next);
+      next.classList.add("is-active");
+    }, 9000);
+  };
+
+  const initReveal = () => {
+    const targets = document.querySelectorAll("[data-reveal]");
+    if (targets.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          obs.unobserve(entry.target);
+        });
       },
-      { passive: true },
+      { rootMargin: "0px 0px -10% 0px", threshold: 0.2 },
     );
 
-    pageTopLink?.addEventListener("click", (e) => {
-      e.preventDefault();
+    targets.forEach((target) => observer.observe(target));
+  };
+
+  const initServiceRandomReveal = () => {
+    const grid = document.querySelector(".service-grid");
+    if (!grid) return;
+
+    const links = Array.from(grid.querySelectorAll(".service-link"));
+    if (links.length === 0) return;
+
+    const shuffled = [...links].sort(() => Math.random() - 0.5);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          shuffled.forEach((link, i) => {
+            window.setTimeout(() => {
+              link.classList.add("is-visible");
+            }, i * 120);
+          });
+
+          observer.disconnect();
+        });
+      },
+      { threshold: 0.3 },
+    );
+
+    observer.observe(grid);
+  };
+
+  const initTimelineReveal = () => {
+    const items = document.querySelectorAll(".timeline-item");
+    if (items.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          obs.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.4 },
+    );
+
+    items.forEach((item) => observer.observe(item));
+  };
+
+  const initPageTop = () => {
+    const button = document.querySelector("[data-page-top]");
+    if (!button) return;
+
+    const toggleVisibility = () => {
+      button.classList.toggle("is-visible", window.scrollY > 500);
+    };
+
+    window.addEventListener("scroll", toggleVisibility, { passive: true });
+    toggleVisibility();
+
+    button.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   };
 
-  /* 初期化 */
   window.addEventListener("load", () => {
     initSplash();
-    initNavigation();
-    initGalleryFilter();
-    initLightbox();
-    initScrollLinks();
+    initNavPopover();
+    initHeaderAutoHide();
+    initHeroSlider();
+    initReveal();
+    initServiceRandomReveal();
+    initTimelineReveal();
+    initPageTop();
   });
 })();

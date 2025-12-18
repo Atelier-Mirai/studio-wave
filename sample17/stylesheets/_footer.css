@@ -2,23 +2,63 @@
   フッター
 =====================================================================*/
 #footer {
-  position: relative;
-  padding: 60px 40px;
-  background-color: var(--sumi);
-  color: var(--shiro);
-  text-align: center;
+  background: url("../images/bg-footer.webp") no-repeat center top / cover
+    var(--matsubairo);
+  color: var(--gofun);
+  padding: 60px 20px 30px;
 }
 
-.footer-logo {
-  font-family: "Lato", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 900;
-  margin-block-end: 20px;
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  max-inline-size: 1200px;
+  margin-inline: auto;
+  margin-block-end: 40px;
+
+  @media (width <= 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  @media (width <= 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer-nav {
+  a {
+    display: block;
+    padding: 5px 0;
+    color: var(--gofun);
+    font-size: 0.85rem;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.footer-info {
+  dt {
+    font-size: 1.2rem;
+    margin-block-end: 15px;
+  }
+
+  dd {
+    font-size: 0.85rem;
+    margin-block-end: 10px;
+
+    a {
+      color: var(--gofun);
+    }
+  }
 }
 
 .copyright {
+  text-align: center;
   font-size: 0.8rem;
-  color: var(--hai);
+  opacity: 0.8;
 }
 
 #page-top {
@@ -29,14 +69,16 @@
 
   a {
     display: block;
-    padding: 15px;
-    background-color: var(--sumi);
-    color: var(--shiro);
-    font-size: 0.8rem;
-    transition: opacity 0.3s;
+    padding: 15px 10px;
+    background-color: var(--wakakusa);
+    color: var(--gofun);
+    font-size: 0.7rem;
+    text-align: center;
+    border-radius: 8px;
+    line-height: 1.3;
 
     &:hover {
-      opacity: 0.8;
+      background-color: var(--matsubairo);
     }
   }
 }

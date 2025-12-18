@@ -2,422 +2,334 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <title>Car King - 輸入車販売・整備</title>
+    <title>Ryoko Kubota - Photographer</title>
     <meta
       name="description"
-      content="輸入車の販売・整備・パーツ販売を行うカーキング"
+      content="フォトグラファー久保田涼子のポートフォリオサイト"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Oswald:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Italianno&family=Marcellus&display=swap"
       rel="stylesheet"
     />
-
-    <!-- スタイルシート -->
     <link rel="stylesheet" href="stylesheets/master.css" />
-
-    <!-- JavaScript -->
     <script src="javascripts/main.js" defer></script>
   </head>
 
   <body>
     <!-- ローディング画面 -->
     <div id="splash">
-      <div class="loader"></div>
+      <div class="splash-text"></div>
     </div>
-    <div class="splash-bg"></div>
 
-    <div id="container">
-      <!-- ヘッダー -->
-      <header id="header">
-        <h1><a href="#">Car King</a></h1>
-
-        <button class="menu-toggle" aria-label="メニューを開く">
-          <div class="toggle-inner">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </button>
-
-        <nav id="global-nav">
-          <ul class="nav-list">
-            <li><a href="#">Top</a></li>
-            <li><a href="#">Auto Parts</a></li>
-            <li class="has-child">
-              <a href="#">Auto Sales</a>
-              <ul>
-                <li><a href="#">New Cars</a></li>
-                <li><a href="#">Classic Cars</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Auto Repair</a></li>
-            <li><a href="#">Company</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </nav>
-
-        <button class="search-toggle" aria-label="検索を開く"></button>
-      </header>
-
-      <!-- 検索オーバーレイ -->
-      <div id="search-overlay">
-        <button class="search-close" aria-label="閉じる">
-          <span></span>
-          <span></span>
-        </button>
-        <form class="search-form" role="search" method="get" action="">
-          <input
-            type="text"
-            class="search-input"
-            name="s"
-            placeholder="search"
-          />
-          <button type="submit" class="search-submit">検索</button>
-        </form>
+    <!-- ヘッダー -->
+    <header id="header">
+      <div class="hero-slideshow">
+        <img src="images/hero01.webp" alt="" class="is-active" />
+        <img src="images/hero02.webp" alt="" />
+        <img src="images/hero03.webp" alt="" />
       </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="random-text">Ryoko Kubota</h1>
+        <p class="random-text">Photographer</p>
+      </div>
+      <ul class="social-links">
+        <li>
+          <a href="#"><img src="svg/icon-x.svg" alt="X" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="svg/icon-instagram.svg" alt="Instagram" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="svg/icon-facebook.svg" alt="Facebook" /></a>
+        </li>
+      </ul>
+    </header>
 
-      <!-- ビジュアルエリア -->
-      <section id="visual-area">
-        <div class="slider-area bg-extend-right">
-          <div class="content-appear">
-            <div class="hero-slideshow"></div>
-          </div>
-        </div>
+    <!-- ナビゲーション -->
+    <button class="menu-toggle" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="global-nav">
+      <ul class="nav-list">
+        <li><a href="#">Top</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
 
-        <h2>
-          <span class="typing-text">Import Car Sales</span><br />
-          <span class="typing-text">and Service</span>
-        </h2>
+    <div class="wrapper">
+      <!-- フィルターボタン -->
+      <ul class="filter-buttons">
+        <li><button data-filter="all" class="is-active">All</button></li>
+        <li><button data-filter="landscape">Landscape</button></li>
+        <li><button data-filter="women">Women</button></li>
+        <li><button data-filter="flower">Flower</button></li>
+      </ul>
 
-        <dl class="social-links">
-          <dt>Follow Us</dt>
-          <dd>
-            <ul>
-              <li>
-                <a href="#"
-                  ><img src="images/icon-x.svg" alt="X" loading="lazy"
-                /></a>
-              </li>
-              <li>
-                <a href="#"
-                  ><img
-                    src="images/icon-instagram.svg"
-                    alt="Instagram"
-                    loading="lazy"
-                /></a>
-              </li>
-              <li>
-                <a href="#"
-                  ><img
-                    src="images/icon-facebook.svg"
-                    alt="Facebook"
-                    loading="lazy"
-                /></a>
-              </li>
-            </ul>
-          </dd>
-        </dl>
-
-        <div class="scroll-indicator"><span>Scroll</span></div>
-      </section>
-
-      <!-- メインエリア -->
-      <main id="main-area">
-        <!-- サービスセクション -->
-        <section id="service">
-          <h2 class="typing-text">Service</h2>
-          <p class="service-lead">
-            <span class="bg-extend-right">
-              <span class="content-appear"
-                >カーキングでは、輸入車向けの自動車部品の販売や、<br />輸入車の整備・販売を行っております。</span
-              >
-            </span>
-          </p>
-
-          <div class="service-grid">
-            <article class="service-card bg-extend-left">
-              <div class="content-appear">
-                <header>
-                  <h3>Auto parts sales</h3>
-                  <p>輸入車向けの自動車部品の販売</p>
-                </header>
-                <p>
-                  国内では手に入りづらいパーツもお任せください。輸入者向けの各種パーツをそろえてお待ちしております
-                </p>
-                <a href="#" class="btn-line"><span>More</span></a>
-              </div>
-            </article>
-
-            <article class="service-card bg-extend-left">
-              <div class="content-appear">
-                <header>
-                  <h3>Auto sales &amp; repair</h3>
-                  <p>輸入車の販売・整備</p>
-                </header>
-                <p>
-                  ニューモデルから希少なクラシックカーまで、お客様のご要望を伺い直接輸入・整備をしております。
-                </p>
-                <a href="#" class="btn-line"><span>More</span></a>
-              </div>
-            </article>
-
-            <div class="service-image-wrapper bg-extend-left">
-              <div class="content-appear">
-                <div class="service-image"></div>
-              </div>
+      <!-- ギャラリー -->
+      <ul id="gallery" class="gallery-grid">
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery01.webp" data-caption="Ocean 2019"
+            ><div class="gallery-image">
+              <img src="images/gallery01.webp" alt="" loading="lazy" />
             </div>
-          </div>
-        </section>
-
-        <!-- ニュース背景画像 -->
-        <div class="news-image-wrapper bg-extend-right">
-          <div class="content-appear">
-            <div class="news-image"></div>
-          </div>
-        </div>
-
-        <!-- ニュースセクション -->
-        <section id="news">
-          <h2 class="typing-text">News</h2>
-          <div class="tab-container bg-extend-left">
-            <div class="content-appear">
-              <ul class="tab-list">
-                <li class="is-active"><a href="#topics">Topics</a></li>
-                <li><a href="#parts">Parts</a></li>
-                <li><a href="#cars">Cars</a></li>
-              </ul>
-              <div class="tab-content">
-                <div id="topics" class="tab-panel is-active">
-                  <ul class="news-list">
-                    <li>
-                      <a href="#"
-                        ><time datetime="2025-12-23">2025.12.23</time
-                        >年始年末の営業日のお知らせ。</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#"
-                        ><time datetime="2025-11-01">2025.11.01</time
-                        >TV「アサカツタイム」で放送されました。</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#"
-                        ><time datetime="2025-10-01">2025.10.01</time
-                        >弊社がメンテナンスを行った車がレースで優勝！</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-                <div id="parts" class="tab-panel">
-                  <ul class="news-list">
-                    <li>
-                      <a href="#"
-                        ><time datetime="2025-09-23">2025.09.23</time
-                        >新パーツ入荷しました</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#"
-                        ><time datetime="2025-07-15">2025.07.15</time
-                        >フランスから輸入したパーツのご紹介</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#"
-                        ><time datetime="2025-05-12">2025.05.12</time
-                        >新パーツ入荷しました</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-                <div id="cars" class="tab-panel">
-                  <ul class="news-list">
-                    <li>
-                      <a href="#"
-                        ><time datetime="2025-11-11">2025.11.11</time
-                        >インポートカーお披露目</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#"
-                        ><time datetime="2025-06-07">2025.06.07</time
-                        >ドイツ・フランス車フェア</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#"
-                        ><time datetime="2025-03-01">2025.03.01</time
-                        >買い替えをご検討中の方へ</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </div>
+            <span class="gallery-caption">Ocean 2019</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="flower">
+          <a href="images/gallery02.webp" data-caption="Flower 2018"
+            ><div class="gallery-image">
+              <img src="images/gallery02.webp" alt="" loading="lazy" />
             </div>
-          </div>
-        </section>
-
-        <!-- ギャラリー -->
-        <ul id="gallery">
-          <li class="gallery-item bg-extend-left zoom-rotate">
-            <div class="content-appear">
-              <a
-                href="images/gallery01-large.webp"
-                data-title="2025.11.03 新車が入荷しました！"
-              >
-                <img src="images/gallery01.webp" alt="" loading="lazy" />
-              </a>
+            <span class="gallery-caption">Flower 2018</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery03.webp" data-caption="Desk 2020"
+            ><div class="gallery-image">
+              <img src="images/gallery03.webp" alt="" loading="lazy" />
             </div>
-          </li>
-          <li class="gallery-item bg-extend-left zoom-rotate">
-            <div class="content-appear">
-              <a
-                href="images/gallery02-large.webp"
-                data-title="2025.11.03 新車が入荷しました！"
-              >
-                <img src="images/gallery02.webp" alt="" loading="lazy" />
-              </a>
+            <span class="gallery-caption">Desk 2020</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="women">
+          <a href="images/gallery04.webp" data-caption="Woman 2018"
+            ><div class="gallery-image">
+              <img src="images/gallery04.webp" alt="" loading="lazy" />
             </div>
-          </li>
-          <li class="gallery-item bg-extend-left zoom-rotate">
-            <div class="content-appear">
-              <a
-                href="images/gallery03-large.webp"
-                data-title="2025.11.03 新車が入荷しました！"
-              >
-                <img src="images/gallery03.webp" alt="" loading="lazy" />
-              </a>
+            <span class="gallery-caption">Woman 2018</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="women">
+          <a href="images/gallery05.webp" data-caption="Woman 2021"
+            ><div class="gallery-image">
+              <img src="images/gallery05.webp" alt="" loading="lazy" />
             </div>
-          </li>
-          <li class="gallery-item bg-extend-left zoom-rotate">
-            <div class="content-appear">
-              <a
-                href="images/gallery04-large.webp"
-                data-title="2025.11.03 新車が入荷しました！"
-              >
-                <img src="images/gallery04.webp" alt="" loading="lazy" />
-              </a>
+            <span class="gallery-caption">Woman 2021</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="women">
+          <a href="images/gallery06.webp" data-caption="Woman 2020"
+            ><div class="gallery-image">
+              <img src="images/gallery06.webp" alt="" loading="lazy" />
             </div>
-          </li>
-          <li class="gallery-item bg-extend-left zoom-rotate">
-            <div class="content-appear">
-              <a
-                href="images/gallery05-large.webp"
-                data-title="2025.11.03 新車が入荷しました！"
-              >
-                <img src="images/gallery05.webp" alt="" loading="lazy" />
-              </a>
+            <span class="gallery-caption">Woman 2020</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="women">
+          <a href="images/gallery07.webp" data-caption="Group 2010"
+            ><div class="gallery-image">
+              <img src="images/gallery07.webp" alt="" loading="lazy" />
             </div>
-          </li>
-          <li class="gallery-item bg-extend-left zoom-rotate">
-            <div class="content-appear">
-              <a
-                href="images/gallery06-large.webp"
-                data-title="2025.11.03 新車が入荷しました！"
-              >
-                <img src="images/gallery06.webp" alt="" loading="lazy" />
-              </a>
+            <span class="gallery-caption">Group 2010</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="flower">
+          <a href="images/gallery08.webp" data-caption="Flower 2019"
+            ><div class="gallery-image">
+              <img src="images/gallery08.webp" alt="" loading="lazy" />
             </div>
-          </li>
-          <li class="gallery-item bg-extend-left zoom-rotate">
-            <div class="content-appear">
-              <a
-                href="images/gallery07-large.webp"
-                data-title="2025.11.03 新車が入荷しました！"
-              >
-                <img src="images/gallery07.webp" alt="" loading="lazy" />
-              </a>
+            <span class="gallery-caption">Flower 2019</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery09.webp" data-caption="Coffee 2019"
+            ><div class="gallery-image">
+              <img src="images/gallery09.webp" alt="" loading="lazy" />
             </div>
-          </li>
-          <li class="gallery-item bg-extend-left zoom-rotate">
-            <div class="content-appear">
-              <a
-                href="images/gallery08-large.webp"
-                data-title="2025.11.03 新車が入荷しました！"
-              >
-                <img src="images/gallery08.webp" alt="" loading="lazy" />
-              </a>
+            <span class="gallery-caption">Coffee 2019</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery-10.webp" data-caption="Ocean 2019"
+            ><div class="gallery-image">
+              <img src="images/gallery-10.webp" alt="" loading="lazy" />
             </div>
-          </li>
-        </ul>
-
-        <!-- ライトボックスオーバーレイ -->
-        <div id="lightbox-overlay" class="lightbox-overlay">
-          <div class="lightbox-content">
-            <img src="" alt="" />
-            <button class="lightbox-close" aria-label="閉じる"></button>
-            <button class="lightbox-prev" aria-label="前へ"></button>
-            <button class="lightbox-next" aria-label="次へ"></button>
-            <p class="lightbox-caption"></p>
-          </div>
-        </div>
-
-        <!-- お問い合わせ -->
-        <div class="bg-extend-left">
-          <div class="content-appear">
-            <section id="contact">
-              <div class="contact-detail">
-                <h2>Contact</h2>
-                <p>お電話・メールにてお気軽にお問い合わせください。</p>
-              </div>
-              <div class="contact-actions">
-                <p><a href="tel:03-1234-5678">Tel:03-1234-5678</a></p>
-                <p>
-                  <a href="#">お問い合わせ<br />フォーム</a>
-                </p>
-              </div>
-            </section>
-          </div>
-        </div>
-      </main>
-
-      <!-- フッター -->
-      <footer id="footer">
-        <div class="footer-info">
-          <p class="footer-logo">Car King</p>
-          <address>〒111-111 東京都中央区 1-1-1</address>
-          <ul>
-            <li>
-              <dl>
-                <dt>TEL</dt>
-                <dd><a href="tel:03-1234-5678">03-1234-5678</a></dd>
-              </dl>
-            </li>
-            <li>
-              <dl>
-                <dt>営業時間</dt>
-                <dd>平日 9:30～18:00</dd>
-                <dd>土・日・祝日 10:30～19:00</dd>
-              </dl>
-            </li>
-          </ul>
-        </div>
-
-        <nav class="footer-nav">
-          <ul>
-            <li><a href="#">Top</a></li>
-            <li><a href="#">Auto Parts</a></li>
-            <li><a href="#">Auto Sales</a></li>
-            <li><a href="#">Auto Repair</a></li>
-            <li><a href="#">Company</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </nav>
-
-        <p id="page-top" class="initially-hidden">
-          <a href="#"><span></span></a>
-        </p>
-
-        <small class="copyright"
-          >Copyright &copy; Car King All rights Reserved.</small
-        >
-      </footer>
+            <span class="gallery-caption">Ocean 2019</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery-11.webp" data-caption="Table 2025"
+            ><div class="gallery-image">
+              <img src="images/gallery-11.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Table 2025</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery-12.webp" data-caption="Ocean 2025"
+            ><div class="gallery-image">
+              <img src="images/gallery-12.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Ocean 2025</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery-13.webp" data-caption="Mountain 2002"
+            ><div class="gallery-image">
+              <img src="images/gallery-13.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Mountain 2002</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="women">
+          <a href="images/gallery-14.webp" data-caption="Woman 2024"
+            ><div class="gallery-image">
+              <img src="images/gallery-14.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Woman 2024</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery-15.webp" data-caption="Art 2021"
+            ><div class="gallery-image">
+              <img src="images/gallery-15.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Art 2021</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery-16.webp" data-caption="Winter 2023"
+            ><div class="gallery-image">
+              <img src="images/gallery-16.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Winter 2023</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery-17.webp" data-caption="Table 2023"
+            ><div class="gallery-image">
+              <img src="images/gallery-17.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Table 2023</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="flower">
+          <a href="images/gallery-18.webp" data-caption="Flower 2020"
+            ><div class="gallery-image">
+              <img src="images/gallery-18.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Flower 2020</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="women">
+          <a href="images/gallery-19.webp" data-caption="Woman 2023"
+            ><div class="gallery-image">
+              <img src="images/gallery-19.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Woman 2023</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery-20.webp" data-caption="Table 2025"
+            ><div class="gallery-image">
+              <img src="images/gallery-20.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Table 2025</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="women">
+          <a href="images/gallery-21.webp" data-caption="Woman 2024"
+            ><div class="gallery-image">
+              <img src="images/gallery-21.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Woman 2024</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery-22.webp" data-caption="Summer 2007"
+            ><div class="gallery-image">
+              <img src="images/gallery-22.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Summer 2007</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="women">
+          <a href="images/gallery-23.webp" data-caption="Woman 2014"
+            ><div class="gallery-image">
+              <img src="images/gallery-23.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Woman 2014</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery-24.webp" data-caption="Steps 2025"
+            ><div class="gallery-image">
+              <img src="images/gallery-24.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Steps 2025</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="women">
+          <a href="images/gallery-25.webp" data-caption="Woman 2018"
+            ><div class="gallery-image">
+              <img src="images/gallery-25.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Woman 2018</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="women">
+          <a href="images/gallery-26.webp" data-caption="Woman 2010"
+            ><div class="gallery-image">
+              <img src="images/gallery-26.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Woman 2010</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="women">
+          <a href="images/gallery-27.webp" data-caption="Woman 2013"
+            ><div class="gallery-image">
+              <img src="images/gallery-27.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Woman 2013</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery-28.webp" data-caption="Ocean 2010"
+            ><div class="gallery-image">
+              <img src="images/gallery-28.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Ocean 2010</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery-29.webp" data-caption="Winter 2006"
+            ><div class="gallery-image">
+              <img src="images/gallery-29.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Winter 2006</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="flower">
+          <a href="images/gallery-30.webp" data-caption="Flower 2014"
+            ><div class="gallery-image">
+              <img src="images/gallery-30.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Flower 2014</span></a
+          >
+        </li>
+      </ul>
     </div>
+
+    <!-- ライトボックス -->
+    <div id="lightbox-overlay" class="lightbox-overlay">
+      <div class="lightbox-content">
+        <img src="" alt="" />
+        <button class="lightbox-close" aria-label="閉じる"></button>
+        <button class="lightbox-nav prev" aria-label="前へ"></button>
+        <button class="lightbox-nav next" aria-label="次へ"></button>
+        <p class="lightbox-caption"></p>
+      </div>
+    </div>
+
+    <!-- フッター -->
+    <footer id="footer">
+      <p class="scroll-link"><a href="#gallery">Scroll</a></p>
+      <small class="copyright">&copy; Ryoko Kubota All Rights Reserved.</small>
+      <p class="page-top-link"><a href="#">Page Top</a></p>
+    </footer>
   </body>
 </html>

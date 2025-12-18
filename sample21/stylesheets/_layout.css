@@ -1,23 +1,13 @@
-/*=====================================================================
-  レイアウト
-=====================================================================*/
-body {
-  margin: 0;
-  padding: 0;
-  min-block-size: 100vh;
-  overflow-x: hidden;
-}
+.pancake {
+  display: grid;
+  grid-template-columns: minmax(0, auto);
+  grid-template-rows: auto 1fr auto;
+  min-height: 100svh;
 
-/* スクロールを発生させるためのダミー領域
-   通常フローに配置してページ全体の高さを作る */
-#scroll-wrapper {
-  inline-size: 100%;
-  block-size: 600vh; /* 6セクション分のスクロール量 */
-}
-
-/* 分割スクロール本体は画面に固定 */
-#container {
-  position: fixed;
-  inset: 0;
-  z-index: 2;
+  > .main {
+    justify-self: center;
+    width: 100%;
+    max-width: 672px;
+    padding: 16px 16px 80px;
+  }
 }

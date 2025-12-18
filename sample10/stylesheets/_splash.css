@@ -1,0 +1,66 @@
+/*=====================================================================
+  ローディング画面
+=====================================================================*/
+#splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background-color: var(--kiiro);
+  color: var(--sumi);
+  text-align: center;
+}
+
+.splash-logo {
+  img {
+    inline-size: 80px;
+    margin-block-end: 10px;
+  }
+}
+
+.splash-bg {
+  display: none;
+}
+
+body.appear .splash-bg {
+  display: block;
+  position: fixed;
+  z-index: 9998;
+  inset: 0;
+  background-color: var(--sora);
+  transform: scaleY(0);
+  animation: page-wipe-y 0.6s ease-in-out forwards;
+}
+
+@keyframes page-wipe-y {
+  0% {
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+  50% {
+    transform-origin: top;
+    transform: scaleY(1);
+  }
+  50.001% {
+    transform-origin: bottom;
+  }
+  100% {
+    transform-origin: bottom;
+    transform: scaleY(0);
+  }
+}
+
+#container {
+  opacity: 0;
+}
+
+body.appear #container {
+  animation: fade-in 0.8s 0.5s forwards;
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}

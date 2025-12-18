@@ -2,11 +2,13 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <title>Seaside - Music Artist</title>
-    <meta name="description" content="アーティスト Seaside の公式サイト" />
+    <title>新橋料亭 お江戸</title>
+    <meta name="description" content="東京新橋で二百年続く老舗料亭" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="stylesheets/master.css" />
@@ -14,93 +16,329 @@
   </head>
 
   <body>
-    <!-- ローディング画面（SVG描画アニメーション） -->
     <div id="splash">
-      <div class="splash-logo">
-        <svg
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 739 258.9"
-        >
-          <image
-            href="svg/text.svg"
-            width="739"
-            height="258.9"
-            mask="url(#clipmask)"
-          ></image>
-          <mask id="clipmask" maskUnits="objectBoundingBox">
-            <path
-              d="M124.9,73.4c0,0,57.3-46.5,22.9-66.6c-35.2-20.7-87,8.9-90.1,55.4c-3.1,46.6,48.4,84.2,34.7,130.7
-          s-59.6,47.3-79.7,39.8c-20.1-7.4-14.9-75.1,5.8-79.5l147.1,10.8c0,0,39.2-11.3,38.4-31.1c-0.8-19.8-4.4-35.8-13-35.7
-          c-25.3,0.3-45.7,63.3-51.4,95.7c-6,34.8,3,35.9,22.5,29c19.5-6.9,102.7-186.4,133.4-79.5c-20-19.8-51.6-34.7-59.9-0.3
-          c-8.3,34.4-33.7,68.2-6,68s87-105.9,85.5-98C299.1,153.4,265.3,228,298,221.9c32.7-6.1,74.4-118.2,74.4-118.2
-          c4.2,56.7,21.2,122.4,0,133.3c-21.2,10.9-51.2,37.6-47.6,9.6c3.6-27.9,126.1-113.8,131.5-118.6c-16.2,48.5-21.8,70.8-0.3,64.9
-          s46.7-83.1,69.7-71.6c22.9,11.5,27.1,16.3,27.1,16.3s-70.8,32-62.3,72.6s143.6-109.4,151.2-147c7.6-37.7,17.8-50.1-10.8-50.1
-          c-34.5,0-107.4,268.4-65.2,224c41.9-44.1,140.1-100.1,141.2-124.8c1.1-24.7-11.1-15-25.2-8.5c-14.1,6.5-48.7,31.3-42.3,62.8
-          s2.8,66.1,26,55.4s73.6-79.8,73.6-79.8"
-            />
-            <line x1="490.5" y1="50.6" x2="459.9" y2="103.6" />
-          </mask>
+      <div class="splash-logo" aria-label="ロゴアニメーション">
+        <svg viewBox="0 0 507.8 589.9" aria-hidden="true" focusable="false">
+          <path
+            d="M0,147.5v295l253.9,147.5l253.9-147.5v-295L253.9,0L0,147.5z M485.3,429.5L253.9,563.8L22.5,429.5V160.7
+                L253.9,26.1l231.4,134.3V429.5z"
+          />
+          <path
+            d="M234.4,303.3h-52.8c-4.5,0-8.4-3.6-8.4-8.4c0-4.5,3.6-8.4,8.4-8.4h52.5c-14.7-18-50.4-56.1-78.8-35.7
+                c-10.2,7.2-10.8,14.4-5.7,20.4c-20.4-1.2-36.3,3.6-36.3,22.2c0,19.2,17.4,24,39,22.5c-7.8,6.9-8.7,14.7,3,23.1
+                C183.7,359.1,219.7,321.3,234.4,303.3z"
+          />
+          <path
+            d="M262.3,314.4v29.7c0,4.5-3.6,8.4-8.1,8.4c-4.5,0-8.4-3.6-8.4-8.4v-29.7c-18,12-55.5,41.7-35.7,65
+                c7.2,8.4,14.1,9,20.4,4.5c-1.5,17.1,3.3,30.6,21.9,30.6c19.5,0,24-14.7,22.5-33c6.9,6.6,14.7,7.2,23.1-2.4
+                C317.7,356.1,280,326.7,262.3,314.4z"
+          />
+          <path
+            d="M273.7,286.6h52.5c4.5,0,8.1,3.6,8.1,8.4c0,4.5-3.6,8.4-8.1,8.4h-52.5c14.7,18,50.4,56.1,78.8,35.7
+                c10.2-7.2,10.8-14.4,5.7-20.4c20.4,1.2,36.3-3.6,36.3-22.2c0-19.2-17.4-24-39-22.5c7.8-6.9,8.7-14.7-3-23.1
+                C324,230.8,288.4,268.6,273.7,286.6z"
+          />
+          <path
+            d="M41.1,171.5v247.3l212.8,123.5l212.8-123.5V171.5L253.9,48L41.1,171.5z M429.2,396.9L253.9,498.8L78.5,396.9
+                V193L253.9,91.1L429.2,193V396.9z"
+          />
+          <path
+            d="M233.2,208c-6.9-6.6-14.7-7.2-23.1,2.4c-20.1,23.4,17.7,52.8,35.7,65v-29.7c0-4.5,3.6-8.4,8.4-8.4
+                c4.5,0,8.1,3.6,8.1,8.4v29.7c18-12,55.5-41.7,35.7-65c-7.2-8.4-14.1-9-20.4-4.5c1.5-17.1-3.3-30.6-21.9-30.6
+                C235.9,175.1,231.4,189.7,233.2,208z"
+          />
         </svg>
       </div>
     </div>
-    <div class="splash-bg"></div>
+    <div class="splash-transition" aria-hidden="true"></div>
 
     <div id="container">
-      <!-- ヘッダー -->
-      <header id="header">
-        <h1 class="fade-down">
-          <a href="#"><img src="svg/text-white.svg" alt="Seaside" /></a>
-        </h1>
-        <button class="menu-toggle fade-down" aria-label="メニュー">
-          <span></span><span></span><span></span>
-        </button>
-        <nav id="global-nav">
-          <ul class="nav-list">
-            <li class="current"><a href="#">Home</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Sounds</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="circle-bg"></div>
+      <header class="site-header" id="header">
+        <div class="header-inner">
+          <h1 class="site-title">新橋料亭<span>お江戸</span></h1>
+          <p class="site-tagline">東京新橋で<br />二百年続く老舗料亭</p>
+        </div>
+        <ul class="sns-links" aria-label="SNS">
+          <li>
+            <a href="#" aria-label="X"
+              ><img src="images/icon-x.svg" alt="" loading="lazy"
+            /></a>
+          </li>
+          <li>
+            <a href="#" aria-label="Instagram"
+              ><img src="images/icon-instagram.svg" alt="" loading="lazy"
+            /></a>
+          </li>
+          <li>
+            <a href="#" aria-label="Facebook"
+              ><img src="images/icon-facebook.svg" alt="" loading="lazy"
+            /></a>
+          </li>
+        </ul>
       </header>
 
-      <!-- ヒーロータイトル -->
-      <p class="hero-title slide-in"><span>Music Man</span></p>
-
-      <!-- 背景動画 -->
-      <div id="video-area">
-        <video
-          id="video"
-          poster="images/video-poster.webp"
-          playsinline
-          muted
-          autoplay
-          loop
+      <div id="content-area">
+        <button
+          type="button"
+          class="nav-toggle"
+          popovertarget="global-nav"
+          popovertargetaction="toggle"
+          aria-label="メニュー"
+          aria-expanded="false"
         >
-          <source src="video/movie.mp4" type="video/mp4" />
-          <source src="video/movie.ogv" type="video/ogv" />
-          <source src="video/movie.webm" type="video/webm" />
-          <p>動画を再生できる環境ではありません。</p>
-        </video>
-      </div>
+          <span class="nav-toggle-line" aria-hidden="true"></span>
+          <span class="nav-toggle-text" aria-hidden="true">Menu</span>
+          <span class="nav-toggle-line" aria-hidden="true"></span>
+        </button>
 
-      <!-- 再生ボタン -->
-      <button class="play-button" aria-label="PVを再生"></button>
-    </div>
+        <div class="main-nav" data-main-nav>
+          <nav class="site-nav" aria-label="グローバルナビゲーション">
+            <ul>
+              <li class="is-current"><a href="#">トップ</a></li>
+              <li><a href="#menu">お品書き</a></li>
+              <li><a href="#lead">こだわり</a></li>
+              <li><a href="#access">交通アクセス</a></li>
+            </ul>
+          </nav>
 
-    <!-- 動画モーダル -->
-    <div id="video-modal" class="modal-overlay">
-      <div class="modal-content">
-        <button class="modal-close" aria-label="閉じる"></button>
-        <video poster="images/video-poster.webp" playsinline controls>
-          <source src="video/movie.mp4" type="video/mp4" />
-          <source src="video/movie.ogv" type="video/ogv" />
-          <source src="video/movie.webm" type="video/webm" />
-          <p>動画を再生できる環境ではありません。</p>
-        </video>
-        <p>Music Man PV ※音は再生しません</p>
+          <div class="nav-circle" aria-hidden="true"></div>
+
+          <div class="nav-reserve-tel" data-reserve-tel>
+            <p class="reserve-label">ご予約・お問い合わせ</p>
+            <p class="reserve-number">
+              <a href="tel:03-1234-5678">03-1234-5678</a>
+            </p>
+          </div>
+        </div>
+
+        <nav id="global-nav" class="nav-popover" popover>
+          <div class="nav-popover-bg" aria-hidden="true"></div>
+          <div class="nav-popover-inner">
+            <ul class="nav-popover-list">
+              <li><a href="#">トップ</a></li>
+              <li><a href="#menu">お品書き</a></li>
+              <li><a href="#lead">こだわり</a></li>
+              <li><a href="#access">交通アクセス</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <section class="hero" aria-label="メインビジュアル">
+          <div class="hero-slides" data-hero>
+            <img
+              src="images/slider01.webp"
+              alt=""
+              class="hero-slide is-active"
+              decoding="async"
+            />
+            <img
+              src="images/slider02.webp"
+              alt=""
+              class="hero-slide"
+              decoding="async"
+              loading="lazy"
+            />
+            <img
+              src="images/slider03.webp"
+              alt=""
+              class="hero-slide"
+              decoding="async"
+              loading="lazy"
+            />
+          </div>
+          <span class="scroll-indicator" aria-hidden="true"></span>
+        </section>
+
+        <main id="main">
+          <section id="lead" class="lead" data-reveal="blur">
+            <div class="lead-grid">
+              <div class="lead-heading">
+                <h2>繊細な<br />日本料理に<br />舌鼓を打つ</h2>
+              </div>
+              <div class="lead-desc">
+                <p>
+                  すき焼き、天ぷら、寿司。伝統的な日本料理を私たちは二百年前から、こだわりを持って作り続けています。
+                </p>
+                <p>
+                  東京新橋の片隅にある日本家屋で、こだわりの料理に舌鼓を打ちながら、どうぞごゆっくりお過ごしください。
+                </p>
+                <p><a href="#" class="button">お江戸のこだわり</a></p>
+              </div>
+            </div>
+            <div class="lead-mark" data-reveal="blur">
+              <svg
+                viewBox="0 0 507.8 589.9"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M0,147.5v295l253.9,147.5l253.9-147.5v-295L253.9,0L0,147.5z M485.3,429.5L253.9,563.8L22.5,429.5V160.7
+                      L253.9,26.1l231.4,134.3V429.5z"
+                />
+                <path
+                  d="M234.4,303.3h-52.8c-4.5,0-8.4-3.6-8.4-8.4c0-4.5,3.6-8.4,8.4-8.4h52.5c-14.7-18-50.4-56.1-78.8-35.7
+                      c-10.2,7.2-10.8,14.4-5.7,20.4c-20.4-1.2-36.3,3.6-36.3,22.2c0,19.2,17.4,24,39,22.5c-7.8,6.9-8.7,14.7,3,23.1
+                      C183.7,359.1,219.7,321.3,234.4,303.3z"
+                />
+                <path
+                  d="M262.3,314.4v29.7c0,4.5-3.6,8.4-8.1,8.4c-4.5,0-8.4-3.6-8.4-8.4v-29.7c-18,12-55.5,41.7-35.7,65
+                      c7.2,8.4,14.1,9,20.4,4.5c-1.5,17.1,3.3,30.6,21.9,30.6c19.5,0,24-14.7,22.5-33c6.9,6.6,14.7,7.2,23.1-2.4
+                      C317.7,356.1,280,326.7,262.3,314.4z"
+                />
+                <path
+                  d="M273.7,286.6h52.5c4.5,0,8.1,3.6,8.1,8.4c0,4.5-3.6,8.4-8.1,8.4h-52.5c14.7,18,50.4,56.1,78.8,35.7
+                      c10.2-7.2,10.8-14.4,5.7-20.4c20.4,1.2,36.3-3.6,36.3-22.2c0-19.2-17.4-24-39-22.5c7.8-6.9,8.7-14.7-3-23.1
+                      C324,230.8,288.4,268.6,273.7,286.6z"
+                />
+                <path
+                  d="M41.1,171.5v247.3l212.8,123.5l212.8-123.5V171.5L253.9,48L41.1,171.5z M429.2,396.9L253.9,498.8L78.5,396.9
+                      V193L253.9,91.1L429.2,193V396.9z"
+                />
+                <path
+                  d="M233.2,208c-6.9-6.6-14.7-7.2-23.1,2.4c-20.1,23.4,17.7,52.8,35.7,65v-29.7c0-4.5,3.6-8.4,8.4-8.4
+                      c4.5,0,8.1,3.6,8.1,8.4v29.7c18-12,55.5-41.7,35.7-65c-7.2-8.4-14.1-9-20.4-4.5c1.5-17.1-3.3-30.6-21.9-30.6
+                      C235.9,175.1,231.4,189.7,233.2,208z"
+                />
+              </svg>
+            </div>
+          </section>
+
+          <section id="menu" class="menu">
+            <div class="menu-bg" aria-hidden="true"></div>
+            <div class="heading-block">
+              <h2 data-reveal="blur">お品書き</h2>
+            </div>
+
+            <div class="menu-list">
+              <article class="menu-item" data-reveal="line">
+                <div class="menu-media">
+                  <img
+                    src="images/menu01.webp"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="menu-box" data-reveal="blur">
+                  <h3>前　菜</h3>
+                  <p>
+                    料理人が一品一品真心を込めて四季折々の食材でおつくりする前菜。盛り付けにも遊び心を加えています。
+                  </p>
+                </div>
+              </article>
+
+              <article class="menu-item" data-reveal="line">
+                <div class="menu-media">
+                  <img
+                    src="images/menu02.webp"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="menu-box" data-reveal="blur">
+                  <h3>向付け</h3>
+                  <p>
+                    お江戸の食材は、料理長自ら毎朝豊洲市場まで買い付けにいきます。旬のお魚をお楽しみください。
+                  </p>
+                </div>
+              </article>
+
+              <article class="menu-item" data-reveal="line">
+                <div class="menu-media">
+                  <img
+                    src="images/menu03.webp"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="menu-box" data-reveal="blur">
+                  <h3>お凌ぎ</h3>
+                  <p>
+                    お寿司や茶そばをご用意しております。お蕎麦は新潟からそば粉を取り寄せ、厨房で打ってお出ししております。
+                  </p>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section id="access" class="access">
+            <div class="access-bg" aria-hidden="true"></div>
+            <div class="heading-block">
+              <h2 data-reveal="blur">アクセス</h2>
+            </div>
+
+            <div class="access-grid">
+              <div class="access-map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6481.525736426524!2d139.77115757614774!3d35.682840470775645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601889570025d10b%3A0xd0bd62fa491c487a!2z44CSMTAzLTAwMjcg5p2x5Lqs6YO95Lit5aSu5Yy65pel5pys5qmL77yR5LiB55uu!5e0!3m2!1sja!2sjp!4v1577177573320!5m2!1sja!2sjp"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="access-box" data-reveal="blur">
+                <h3>新橋料亭 お江戸</h3>
+                <p>
+                  〒 111-0000<br />東京都中央区1-1-1<br />JR新橋駅より徒歩5分
+                </p>
+                <p><a href="#" class="button">Google Mapで見る</a></p>
+              </div>
+            </div>
+          </section>
+
+          <section class="reserve" data-reveal="line">
+            <div class="reserve-inner">
+              <h2>ご予約・お問い合わせ</h2>
+              <p class="reserve-tel">
+                <a href="tel:03-1234-5678">03-1234-5678</a>
+              </p>
+              <p>営業時間：17:00-22:00<br />（最終入店 20:00）</p>
+            </div>
+          </section>
+        </main>
+
+        <footer id="footer" class="site-footer">
+          <div class="footer-inner">
+            <p class="footer-logo">新橋料亭<span>お江戸</span></p>
+            <div class="footer-links">
+              <ul>
+                <li><a href="#">トップ</a></li>
+                <li><a href="#menu">お品書き</a></li>
+                <li><a href="#lead">こだわり</a></li>
+                <li><a href="#access">交通アクセス</a></li>
+              </ul>
+              <ul class="sns-links" aria-label="SNS">
+                <li>
+                  <a href="#" aria-label="X"
+                    ><img src="images/icon-x.svg" alt="" loading="lazy"
+                  /></a>
+                </li>
+                <li>
+                  <a href="#" aria-label="Instagram"
+                    ><img src="images/icon-instagram.svg" alt="" loading="lazy"
+                  /></a>
+                </li>
+                <li>
+                  <a href="#" aria-label="Facebook"
+                    ><img src="images/icon-facebook.svg" alt="" loading="lazy"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <small>&copy; Oedo all rights Reserved.</small>
+
+          <button
+            type="button"
+            class="page-top"
+            data-page-top
+            aria-label="ページトップへ"
+          >
+            <span aria-hidden="true"></span>
+          </button>
+        </footer>
       </div>
     </div>
   </body>

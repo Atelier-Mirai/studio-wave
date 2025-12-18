@@ -1,0 +1,139 @@
+/*=====================================================================
+  アニメーション
+  スクロールトリガーのアニメーション効果
+=====================================================================*/
+
+/* フェードイン（その場で） */
+.fade-in {
+  animation: fade-in-up 2s forwards;
+  opacity: 0;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ズームアウト（拡大から縮小） */
+.zoom-out {
+  animation: zoom-out 0.5s forwards;
+}
+
+@keyframes zoom-out {
+  from {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* トリガー要素の初期状態 */
+.fade-trigger,
+.zoom-trigger {
+  opacity: 0;
+}
+
+/* テキストスライドイン（左から右） */
+.slide-in {
+  overflow: hidden;
+  display: inline-block;
+  padding-inline: 10px;
+}
+
+.slide-in-inner {
+  display: inline-block;
+}
+
+.slide-left,
+.slide-right {
+  opacity: 0;
+}
+
+.slide-left.is-animated {
+  animation: slide-from-left 0.8s forwards;
+}
+
+.slide-left.is-animated .slide-in-inner {
+  animation: slide-from-right 0.8s forwards;
+}
+
+@keyframes slide-from-left {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-from-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* テキストぼかしから出現 */
+.blur-in {
+  animation: blur-in 1s forwards;
+}
+
+@keyframes blur-in {
+  from {
+    filter: blur(10px);
+    transform: scale(1.02);
+    opacity: 0;
+  }
+  to {
+    filter: blur(0);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.blur-trigger {
+  opacity: 0;
+}
+
+/* テキストが光りながら出現 */
+.glow-text span {
+  opacity: 0;
+}
+
+.glow-text.is-glowing span {
+  animation: glow 1s ease-out forwards;
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0;
+    text-shadow:
+      0 0 0 var(--gofun),
+      0 0 0 var(--gofun);
+  }
+  50% {
+    opacity: 1;
+    text-shadow:
+      0 0 10px var(--gofun),
+      0 0 15px var(--gofun);
+  }
+  100% {
+    opacity: 1;
+    text-shadow:
+      0 0 0 var(--gofun),
+      0 0 0 var(--gofun);
+  }
+}

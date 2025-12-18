@@ -1,50 +1,57 @@
 /*=====================================================================
-  お問い合わせセクション
+  お問い合わせ
 =====================================================================*/
 #contact {
-  padding: 100px 20px;
-  text-align: center;
-  background: linear-gradient(135deg, var(--rurikon), var(--kon));
+  max-inline-size: 600px;
+  margin-inline: auto;
+  background-color: var(--kinari);
+}
 
-  h2 {
-    font-size: 2rem;
-    margin-block-end: 10px;
+.form-list {
+  li {
+    margin-block-end: 25px;
+  }
 
-    span {
-      display: block;
-      font-size: 0.9rem;
-      color: var(--ai);
-      margin-block-start: 10px;
+  label {
+    display: block;
+    margin-block-end: 8px;
+    font-size: 0.9rem;
+  }
+
+  input,
+  textarea {
+    inline-size: 100%;
+    padding: 15px;
+    border: 1px solid var(--sumi-10);
+    font-size: 1rem;
+    transition: border-color 0.3s;
+
+    &:focus {
+      border-color: var(--sumi);
+      outline: none;
     }
   }
 
-  > p {
-    color: var(--hai);
-    margin-block-end: 30px;
+  textarea {
+    min-block-size: 150px;
+    resize: vertical;
   }
 }
 
-.contact-info {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-block-end: 40px;
+.submit-btn {
+  text-align: center;
 
-  dl {
-    display: flex;
-    gap: 10px;
-  }
-
-  dt {
-    color: var(--ai);
-  }
-
-  a {
+  input {
+    padding: 15px 60px;
+    background-color: var(--sumi);
+    border: none;
     color: var(--shiro);
-  }
+    font-size: 1rem;
+    cursor: pointer;
+    transition: opacity 0.3s;
 
-  @media (width <= 480px) {
-    flex-direction: column;
-    gap: 15px;
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }

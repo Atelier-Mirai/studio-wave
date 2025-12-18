@@ -2,333 +2,235 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <title>Beautiful Days - 女性向けエステサロン</title>
+    <title>Science Labo - 科学研究所</title>
     <meta
       name="description"
-      content="白金台にある癒しのエステサロン Beautiful Days"
+      content="サイエンスラボは科学の力で社会を豊かにする研究を行っています"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Parisienne&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
-
-    <!-- スタイルシート -->
     <link rel="stylesheet" href="stylesheets/master.css" />
-
-    <!-- JavaScript -->
     <script src="javascripts/main.js" defer></script>
   </head>
 
   <body>
     <!-- ローディング画面 -->
     <div id="splash">
-      <p class="splash-logo">
-        <span class="slide-in">
-          <span class="slide-in-inner">Beautiful Days</span>
-        </span>
-      </p>
+      <div class="splash-text"></div>
     </div>
-    <div class="splash-bg-left"></div>
-    <div class="splash-bg-right"></div>
+
+    <!-- パーティクル背景 -->
+    <div id="particles-js"></div>
 
     <div id="wrapper">
       <!-- ヘッダー -->
-      <header id="header">
+      <header id="header" class="fade-down">
+        <h1 class="smooth-appear"><a href="#">Science Labo</a></h1>
         <div class="header-content">
-          <p class="glow-text">白金台にある<br />癒しのエステサロン</p>
-          <h1 class="glow-text">Beautiful Days</h1>
+          <ul class="header-contact">
+            <li>
+              <dl>
+                <dt>Tel</dt>
+                <dd><a href="tel:03-1234-5678">03-1234-5678</a></dd>
+              </dl>
+            </li>
+            <li>
+              <dl>
+                <dt>Fax</dt>
+                <dd>03-1234-5678</dd>
+              </dl>
+            </li>
+          </ul>
+          <a href="#contact" class="header-button"><span>Contact</span></a>
         </div>
-        <div class="scroll-indicator"><span>Scroll</span></div>
-        <div class="header-bg"></div>
       </header>
 
-      <!-- ハンバーガーメニュー -->
-      <button class="menu-toggle" aria-label="メニューを開く">
-        <span></span>
-        <span></span>
+      <!-- ナビゲーション -->
+      <button class="menu-toggle" aria-label="メニュー">
+        <span></span><span></span><span></span>
       </button>
-
-      <!-- グローバルナビゲーション -->
       <nav id="global-nav">
         <ul class="nav-list">
-          <li><a href="#" class="nav-logo glow-text">Beautiful Days</a></li>
-          <li class="blur-trigger"><a href="#">Top</a></li>
-          <li class="blur-trigger"><a href="#">About</a></li>
-          <li class="blur-trigger"><a href="#">Menu</a></li>
-          <li class="blur-trigger"><a href="#">Contact</a></li>
-          <li class="blur-trigger"><a href="#">Blog</a></li>
+          <li><a href="#">Top</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#topics">Topics</a></li>
+          <li><a href="#statistics">Statistics</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
 
-      <!-- メインコンテンツ -->
-      <main id="container">
-        <!-- リードセクション -->
-        <article id="lead" class="inner zoom-trigger">
-          <div class="lead-image fade-trigger"></div>
-          <div class="lead-content fade-trigger">
-            <h2>白金台にある<br />癒しの<br />プライベート空間</h2>
-            <p>
-              エステサロン<br />ビューティフルデイズは、<br />がんばるあなたが<br />ちょっと疲れた時に<br />立ち寄れる<br />ほっとする時間を<br />つくります。
-            </p>
-            <div class="lead-button">
-              <a href="#" class="btn-outline"><span>お店のご紹介</span></a>
+      <div id="container">
+        <main>
+          <!-- フルードエリア -->
+          <section class="fluid-section">
+            <div class="fluid-block smooth-appear">
+              <div class="fluid"></div>
             </div>
-          </div>
-        </article>
+            <div class="fluid-content">
+              <h2>
+                <span class="random-text">Our Technology</span><br />
+                <span class="random-text">for making future</span>
+              </h2>
+              <p class="smooth-appear">
+                サイエンスラボは科学の力を信じ、<br />社会を豊かにするため<br />研究を重ねています
+              </p>
+            </div>
+          </section>
 
-        <!-- メニューセクション -->
-        <section id="menu">
-          <h2 class="section-title">
-            <span class="slide-in slide-left">
-              <span class="slide-in-inner">Menu</span>
-            </span>
-          </h2>
-          <div class="slider-container">
-            <div class="slider-track">
-              <article class="menu-card fade-trigger">
+          <!-- トピックス -->
+          <section id="topics">
+            <div class="smooth-appear">
+              <h2 class="heading">
+                T<span class="en">opics</span><span class="jp">更新情報</span>
+              </h2>
+            </div>
+            <div class="topics-grid">
+              <article class="topic-card smooth-appear">
                 <a href="#">
-                  <figure class="circle-mask">
-                    <img
-                      src="images/menu01.webp"
-                      alt="ハンドケア"
-                      loading="lazy"
-                    />
+                  <figure class="topic-image zoom-out">
+                    <img src="images/topics01.webp" alt="" loading="lazy" />
                   </figure>
-                  <div class="menu-info">
-                    <h3>ハンドケア / フットケア</h3>
-                    <p>3,000 yen～</p>
+                  <div class="topic-content">
+                    <time datetime="2025-10-01">2025.10.01</time>
+                    <h3>海外メディアで紹介されました。</h3>
                   </div>
                 </a>
               </article>
-              <article class="menu-card fade-trigger">
+              <article class="topic-card smooth-appear">
                 <a href="#">
-                  <figure class="circle-mask">
-                    <img
-                      src="images/menu02.webp"
-                      alt="ウェディングメニュー"
-                      loading="lazy"
-                    />
+                  <figure class="topic-image zoom-out">
+                    <img src="images/topics02.webp" alt="" loading="lazy" />
                   </figure>
-                  <div class="menu-info">
-                    <h3>ウェディングメニュー</h3>
-                    <p>12,000 yen～</p>
+                  <div class="topic-content">
+                    <time datetime="2025-11-10">2025.11.10</time>
+                    <h3>杉山研究員による最新技術の考察</h3>
                   </div>
                 </a>
               </article>
-              <article class="menu-card fade-trigger">
+              <article class="topic-card smooth-appear">
                 <a href="#">
-                  <figure class="circle-mask">
-                    <img
-                      src="images/menu03.webp"
-                      alt="ボディトリートメント"
-                      loading="lazy"
-                    />
+                  <figure class="topic-image zoom-out">
+                    <img src="images/topics03.webp" alt="" loading="lazy" />
                   </figure>
-                  <div class="menu-info">
-                    <h3>ボディトリートメント</h3>
-                    <p>8,000 yen～</p>
+                  <div class="topic-content">
+                    <time datetime="2025-12-25">2025.12.25</time>
+                    <h3>研究施設の見学会を実施しました</h3>
                   </div>
                 </a>
               </article>
-              <article class="menu-card fade-trigger">
+              <article class="topic-card smooth-appear">
                 <a href="#">
-                  <figure class="circle-mask">
-                    <img
-                      src="images/menu04.webp"
-                      alt="フェイシャル"
-                      loading="lazy"
-                    />
+                  <figure class="topic-image zoom-out">
+                    <img src="images/topics04.webp" alt="" loading="lazy" />
                   </figure>
-                  <div class="menu-info">
-                    <h3>フェイシャル</h3>
-                    <p>5,000 yen～</p>
-                  </div>
-                </a>
-              </article>
-              <article class="menu-card fade-trigger">
-                <a href="#">
-                  <figure class="circle-mask">
-                    <img
-                      src="images/menu05.webp"
-                      alt="メイク / セット"
-                      loading="lazy"
-                    />
-                  </figure>
-                  <div class="menu-info">
-                    <h3>メイク / セット</h3>
-                    <p>3,000 yen～</p>
+                  <div class="topic-content">
+                    <time datetime="2025-12-29">2025.12.29</time>
+                    <h3>才能ある研究者を募集いたします</h3>
                   </div>
                 </a>
               </article>
             </div>
-            <button class="slider-prev" aria-label="前へ"></button>
-            <button class="slider-next" aria-label="次へ"></button>
-            <div class="slider-dots"></div>
-          </div>
-          <div class="menu-button fade-trigger">
-            <a href="#" class="btn-outline"><span>メニュー一覧を見る</span></a>
-          </div>
-        </section>
-
-        <!-- コンタクトセクション -->
-        <section id="contact" class="inner">
-          <div class="contact-image fade-trigger"></div>
-          <div class="contact-info fade-trigger">
-            <h2>ご予約方法</h2>
-            <dl>
-              <dt><a href="tel:03-1234-5678">TEL 03-1234-5678</a></dt>
-              <dd>（営業時間：10:00-20:00）</dd>
-            </dl>
-            <a href="#" class="btn-outline"><span>お問い合わせ</span></a>
-          </div>
-        </section>
-
-        <!-- ブログセクション -->
-        <article id="blog" class="inner">
-          <h2 class="section-title">
-            <span class="slide-in slide-left">
-              <span class="slide-in-inner">Blog</span>
-            </span>
-          </h2>
-          <div class="blog-grid">
-            <!-- メイン記事 -->
-            <article class="blog-main blog-card fade-trigger">
-              <a href="#">
-                <figure>
-                  <img src="images/blog01.webp" alt="" loading="lazy" />
-                  <time datetime="2021-03-04">2021.3.4</time>
-                </figure>
-                <div class="overlay">
-                  <time datetime="2021-03-04">2021.3.4</time>
-                  <h3>お得なコスメキャンペーンを実施中！</h3>
-                  <p>
-                    エステサロンビューティフルデイズの<br />春のコスメキャンペーンがスタートしました。...
-                  </p>
-                  <span class="read-more">Read More</span>
-                </div>
-              </a>
-            </article>
-
-            <!-- サブ記事グリッド -->
-            <div class="blog-sub-grid">
-              <article class="blog-card fade-trigger">
-                <a href="#">
-                  <figure>
-                    <img src="images/blog02.webp" alt="" loading="lazy" />
-                    <time datetime="2021-01-04">2021.1.4</time>
-                  </figure>
-                  <div class="overlay">
-                    <h3>新春のご挨拶</h3>
-                    <span class="read-more">Read More</span>
-                  </div>
-                </a>
-              </article>
-              <article class="blog-card fade-trigger">
-                <a href="#">
-                  <figure>
-                    <img src="images/blog04.webp" alt="" loading="lazy" />
-                    <time datetime="2020-12-25">2020.12.25</time>
-                  </figure>
-                  <div class="overlay">
-                    <h3>本日のお客様</h3>
-                    <span class="read-more">Read More</span>
-                  </div>
-                </a>
-              </article>
-              <article class="blog-card fade-trigger">
-                <a href="#">
-                  <figure>
-                    <img src="images/blog03.webp" alt="" loading="lazy" />
-                    <time datetime="2020-12-24">2020.12.24</time>
-                  </figure>
-                  <div class="overlay">
-                    <h3>クリスマスイブの準備はおすみですか？</h3>
-                    <span class="read-more">Read More</span>
-                  </div>
-                </a>
-              </article>
-              <article class="blog-card fade-trigger">
-                <a href="#">
-                  <figure>
-                    <img src="images/blog05.webp" alt="" loading="lazy" />
-                    <time datetime="2020-11-09">2020.11.09</time>
-                  </figure>
-                  <div class="overlay">
-                    <h3>美容に良い食べ物のご紹介！</h3>
-                    <span class="read-more">Read More</span>
-                  </div>
-                </a>
-              </article>
-              <article class="blog-card fade-trigger">
-                <a href="#">
-                  <figure>
-                    <img src="images/blog06.webp" alt="" loading="lazy" />
-                    <time datetime="2020-08-09">2020.8.9</time>
-                  </figure>
-                  <div class="overlay">
-                    <h3>夏のイチオシコスメ！</h3>
-                    <span class="read-more">Read More</span>
-                  </div>
-                </a>
-              </article>
-              <article class="blog-card fade-trigger">
-                <a href="#">
-                  <figure>
-                    <img src="images/blog07.webp" alt="" loading="lazy" />
-                    <time datetime="2020-07-07">2020.7.7</time>
-                  </figure>
-                  <div class="overlay">
-                    <h3>ブログはじめました</h3>
-                    <span class="read-more">Read More</span>
-                  </div>
-                </a>
-              </article>
+            <div class="topics-button smooth-appear">
+              <a href="#" class="btn-border"><span>一覧</span></a>
             </div>
-          </div>
-        </article>
-      </main>
+          </section>
 
-      <!-- フッター -->
-      <footer id="footer" class="inner">
-        <dl class="footer-info">
-          <dt>
-            <span class="slide-in slide-left">
-              <span class="slide-in-inner">白金台の癒しのエステサロン</span>
-            </span>
-          </dt>
-          <dd>
-            <span class="slide-in slide-left">
-              <span class="slide-in-inner">Beautiful Days</span>
-            </span>
-          </dd>
-        </dl>
-        <nav class="footer-nav">
-          <div class="slide-in slide-left">
-            <div class="slide-in-inner">
-              <ul>
-                <li><a href="#">Top</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Blog</a></li>
-              </ul>
+          <!-- 代表ご挨拶 -->
+          <section id="greeting">
+            <div class="greeting-grid">
+              <figure class="greeting-image smooth-appear">
+                <img
+                  src="images/greeting.webp"
+                  alt="代表 久保田 涼子"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="greeting-content">
+                <h2 class="heading smooth-appear">
+                  G<span class="en">reeting</span
+                  ><span class="jp">代表ご挨拶</span>
+                </h2>
+                <p class="lead smooth-appear">
+                  サイエンスラボは、未来志向の<br />これからの社会をつくるラボです
+                </p>
+                <p class="smooth-appear">
+                  私たちのまわりには、目に見えないところでテクノロジーが活用されており、日々進化しています。
+                </p>
+                <p class="smooth-appear">
+                  サイエンスラボは、みなさんの暮らしを豊かにする研究と、若手研究者の育成にも力を入れています。
+                </p>
+                <p class="signature text-right smooth-appear">
+                  サイエンスラボ<br />代表　久保田 涼子
+                </p>
+              </div>
             </div>
-          </div>
-        </nav>
-        <p id="page-top" class="initially-hidden">
-          <a href="#"><span></span></a>
-        </p>
-        <small class="copyright">
-          <span class="slide-in slide-left">
-            <span class="slide-in-inner">&copy; Beautiful Days</span>
-          </span>
-        </small>
-      </footer>
+          </section>
+
+          <!-- 統計データ -->
+          <section id="statistics">
+            <div class="smooth-appear">
+              <h2 class="heading">
+                S<span class="en">tatistics</span
+                ><span class="jp">統計データ</span>
+              </h2>
+            </div>
+            <div class="count-up-area smooth-appear">
+              <p class="count-label">
+                年間の実験回数 約<span class="count-number" data-count="395"
+                  >0</span
+                >回
+              </p>
+              <p class="count-description">
+                サイエンスラボでは日々様々な実験が行われています
+              </p>
+            </div>
+            <div class="chart-grid">
+              <div class="chart-container smooth-appear">
+                <canvas id="chart-pie" width="300" height="300"></canvas>
+              </div>
+              <div class="chart-container smooth-appear">
+                <canvas id="chart-bar" width="400" height="300"></canvas>
+              </div>
+            </div>
+          </section>
+
+          <!-- お問い合わせ -->
+          <section id="contact">
+            <h2 class="smooth-appear">Contact<span>お問い合わせ</span></h2>
+            <p class="smooth-appear">10:00-19:00（平日）</p>
+            <ul class="contact-info smooth-appear">
+              <li>
+                <dl>
+                  <dt>Tel</dt>
+                  <dd><a href="tel:03-1234-5678">03-1234-5678</a></dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>Fax</dt>
+                  <dd>03-1234-5678</dd>
+                </dl>
+              </li>
+            </ul>
+            <a href="#" class="btn-glow smooth-appear"
+              ><span>お問い合わせフォームへ</span></a
+            >
+          </section>
+        </main>
+
+        <!-- フッター -->
+        <footer id="footer">
+          <small class="copyright">&copy; Science Labo</small>
+        </footer>
+
+        <!-- 波形キャンバス -->
+        <canvas id="wave-canvas"></canvas>
+      </div>
     </div>
+
+    <p id="page-top"><a href="#"></a></p>
   </body>
 </html>

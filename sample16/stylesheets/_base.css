@@ -2,11 +2,9 @@
   ベーススタイル
 =====================================================================*/
 body {
-  font-family: "Baskervville", serif;
+  font-family: "Rammetto One", cursive;
   color: var(--shiro);
-  font-size: 1rem;
-  line-height: 1.8;
-  background-color: var(--kuro);
+  background-color: var(--sumi);
   overflow: hidden;
 }
 
@@ -18,15 +16,4 @@ a {
 img {
   max-inline-size: 100%;
   block-size: auto;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-h1,
-h2 {
-  font-family: "La Belle Aurore", cursive;
 }

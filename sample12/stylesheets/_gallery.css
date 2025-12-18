@@ -1,142 +1,88 @@
 /*=====================================================================
   ギャラリー
-  画像一覧とライトボックス
 =====================================================================*/
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-block-end: 40px;
+  flex-wrap: wrap;
 
-#gallery {
+  button {
+    padding: 10px 25px;
+    background: transparent;
+    border: 1px solid var(--hai);
+    color: var(--shiro);
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover,
+    &.is-active {
+      background-color: var(--shiro);
+      color: var(--kuro);
+    }
+  }
+}
+
+.gallery-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  margin-block-end: 5%;
-
-  @media (width <= 768px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (width <= 480px) {
-    grid-template-columns: 1fr;
-  }
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
 }
 
 .gallery-item {
   overflow: hidden;
 
+  &[hidden] {
+    display: none;
+  }
+
   a {
     display: block;
+    position: relative;
   }
+}
+
+.gallery-image {
+  aspect-ratio: 1;
+  overflow: hidden;
 
   img {
     inline-size: 100%;
     block-size: 100%;
     object-fit: cover;
-    opacity: 0.5;
-    transition: all 0.3s;
+    transition: transform 0.5s;
   }
 
-  &:hover img {
-    opacity: 1;
-    transform: scale(1.05) rotate(2deg);
+  .gallery-item:hover & img {
+    transform: scale(1.1);
   }
 }
 
-/* ライトボックスのカスタムスタイル */
-.lightbox-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: none;
-  place-items: center;
-  background-color: var(--kuro-80);
-
-  &.is-active {
-    display: grid;
-  }
-}
-
-.lightbox-content {
-  position: relative;
-  max-inline-size: 90vw;
-  max-block-size: 90vh;
-
-  img {
-    max-inline-size: 100%;
-    max-block-size: 90vh;
-    object-fit: contain;
-  }
-}
-
-.lightbox-close {
+.gallery-caption {
   position: absolute;
-  inset-block-start: -40px;
-  inset-inline-end: 0;
-  inline-size: 30px;
-  block-size: 30px;
-  cursor: pointer;
-  background: transparent;
-  border: none;
-
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    inset-inline-start: 50%;
-    inset-block-start: 50%;
-    inline-size: 100%;
-    block-size: 2px;
-    background-color: var(--gofun);
-  }
-
-  &::before {
-    transform: translate(-50%, -50%) rotate(45deg);
-  }
-
-  &::after {
-    transform: translate(-50%, -50%) rotate(-45deg);
-  }
-}
-
-.lightbox-prev,
-.lightbox-next {
-  position: absolute;
-  inset-block-start: 50%;
-  transform: translateY(-50%);
-  inline-size: 40px;
-  block-size: 40px;
-  cursor: pointer;
-  background: transparent;
-  border: none;
-
-  &::before {
-    content: "";
-    display: block;
-    inline-size: 15px;
-    block-size: 15px;
-    border-block-start: 2px solid var(--gofun);
-    border-inline-start: 2px solid var(--gofun);
-  }
-}
-
-.lightbox-prev {
-  inset-inline-start: -60px;
-
-  &::before {
-    transform: rotate(-45deg);
-  }
-}
-
-.lightbox-next {
-  inset-inline-end: -60px;
-
-  &::before {
-    transform: rotate(135deg);
-  }
-}
-
-.lightbox-caption {
-  position: absolute;
-  inset-block-end: -40px;
-  inset-inline-start: 0;
-  inline-size: 100%;
-  text-align: center;
-  color: var(--gofun);
+  inset-block-end: 0;
+  inset-inline: 0;
+  padding: 15px;
+  background: linear-gradient(transparent, var(--kuro-70));
+  color: var(--shiro);
   font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  .gallery-item:hover & {
+    opacity: 1;
+  }
+}
+
+/* 遅延アニメーション（JSで animation-delay を設定） */
+.gallery-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

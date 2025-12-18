@@ -1,18 +1,64 @@
 /*=====================================================================
   アニメーション
 =====================================================================*/
-.fade-down {
-  opacity: 0;
-  transform: translateY(-30px);
-  transition: all 0.8s;
+/* 背景が伸びて文字出現 */
+.bg-extend {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--sumi);
+    transform: scaleX(0);
+    transform-origin: left;
+    z-index: 1;
+  }
+
+  span {
+    display: inline-block;
+    opacity: 0;
+  }
 
   &.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+    &::before {
+      animation: bg-extend 0.8s forwards;
+    }
+
+    span {
+      animation: text-appear 0.1s 0.4s forwards;
+    }
   }
 }
 
-.smooth-appear {
+@keyframes bg-extend {
+  0% {
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  50% {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+  50.001% {
+    transform-origin: right;
+  }
+  100% {
+    transform-origin: right;
+    transform: scaleX(0);
+  }
+}
+
+@keyframes text-appear {
+  to {
+    opacity: 1;
+  }
+}
+
+/* フェードアップ */
+.fade-up {
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s;
@@ -23,31 +69,14 @@
   }
 }
 
-.zoom-out {
-  overflow: hidden;
-
-  img {
-    transform: scale(1.2);
-    transition: transform 0.8s;
-  }
-
-  &.is-visible img {
-    transform: scale(1);
-  }
-}
-
-/* ランダムテキスト出現 */
-.random-text span {
-  display: inline-block;
+/* フリップ */
+.flip-in {
   opacity: 0;
-}
+  transform: perspective(400px) rotateY(-90deg);
+  transition: all 0.8s;
 
-.random-text.is-visible span {
-  animation: random-appear 0.5s forwards;
-}
-
-@keyframes random-appear {
-  to {
+  &.is-visible {
     opacity: 1;
+    transform: perspective(400px) rotateY(0);
   }
 }

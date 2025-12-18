@@ -1,5 +1,5 @@
 /*=====================================================================
-  キッズサイト（学習塾） - メインスクリプト
+  ポートフォリオサイト - メインスクリプト
 =====================================================================*/
 
 (() => {
@@ -11,104 +11,128 @@
     if (!splash) return;
 
     setTimeout(() => {
-      splash.style.transition = "opacity 0.5s";
-      splash.style.opacity = "0";
+      document.body.classList.add("loaded");
       setTimeout(() => {
-        splash.style.display = "none";
-        document.body.classList.add("appear");
-        handleScrollAnimations();
-      }, 500);
+        initSectionAnimations();
+      }, 800);
     }, 1500);
   };
 
-  /* ナビゲーション */
-  const initNavigation = () => {
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.getElementById("global-nav");
-    const circleBg = document.querySelector(".circle-bg");
-    const links = nav?.querySelectorAll("a");
+  /* セクションナビ */
+  const initSectionNav = () => {
+    const sections = document.querySelectorAll(".section, #header");
+    const navLinks = document.querySelectorAll(".section-nav a");
 
-    if (!toggle || !nav) return;
+    const updateNav = () => {
+      const scrollPos = window.scrollY + window.innerHeight / 2;
 
-    toggle.addEventListener("click", () => {
-      toggle.classList.toggle("is-active");
-      nav.classList.toggle("is-active");
-      circleBg?.classList.toggle("is-active");
-    });
+      sections.forEach((section, i) => {
+        const top = section.offsetTop;
+        const bottom = top + section.offsetHeight;
 
-    links?.forEach((link) => {
-      link.addEventListener("click", () => {
-        toggle.classList.remove("is-active");
-        nav.classList.remove("is-active");
-        circleBg?.classList.remove("is-active");
+        if (scrollPos >= top && scrollPos < bottom) {
+          navLinks.forEach((link) => link.classList.remove("is-active"));
+          navLinks[i]?.classList.add("is-active");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", updateNav, { passive: true });
+    updateNav();
+
+    navLinks.forEach((link, i) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        sections[i]?.scrollIntoView({ behavior: "smooth" });
       });
     });
   };
 
-  /* ヒーロースライダー */
-  const initHeroSlider = () => {
-    const slides = document.querySelectorAll(".hero-slide");
-    if (slides.length <= 1) return;
-
-    let current = 0;
-    slides[0]?.classList.add("is-active");
-
-    setInterval(() => {
-      slides[current].classList.remove("is-active");
-      current = (current + 1) % slides.length;
-      slides[current].classList.add("is-active");
-    }, 4000);
-  };
-
-  /* ギャラリースライダー（無限スクロール） */
-  const initGallerySlider = () => {
-    const track = document.querySelector(".gallery-track");
-    if (!track) return;
-
-    // 画像を複製して無限スクロール
-    const items = track.innerHTML;
-    track.innerHTML = items + items;
-  };
-
-  /* スクロールアニメーション */
-  const handleScrollAnimations = () => {
-    const triggers = document.querySelectorAll(
-      ".fade-in, .fade-up, .zoom-in, .flip-in",
+  /* セクションアニメーション */
+  const initSectionAnimations = () => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target
+              .querySelectorAll(".blur-in, .text-animate")
+              .forEach((el, i) => {
+                setTimeout(() => el.classList.add("is-visible"), i * 200);
+              });
+          }
+        });
+      },
+      { threshold: 0.3 },
     );
-    const windowH = window.innerHeight;
 
-    triggers.forEach((el) => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < windowH - 50) {
-        el.classList.add("is-visible");
+    document.querySelectorAll(".section, #header").forEach((section) => {
+      observer.observe(section);
+    });
+  };
+
+  /* テキストアニメーション準備 */
+  const initTextAnimate = () => {
+    document.querySelectorAll(".text-animate").forEach((el) => {
+      const text = el.textContent || "";
+      el.innerHTML = text
+        .split("")
+        .map(
+          (char, i) =>
+            `<span style="animation-delay: ${i * 0.05}s">${char === " " ? "&nbsp;" : char}</span>`,
+        )
+        .join("");
+    });
+  };
+
+  /* モーダル */
+  const initModals = () => {
+    const triggers = document.querySelectorAll("[data-modal]");
+    const closeButtons = document.querySelectorAll(".modal-close");
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener("click", (e) => {
+        e.preventDefault();
+        const modalId = trigger.dataset.modal;
+        const modal = document.getElementById(modalId);
+        modal?.classList.add("is-active");
+        document.body.style.overflow = "hidden";
+      });
+    });
+
+    closeButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const modal = btn.closest(".modal-overlay");
+        modal?.classList.remove("is-active");
+        document.body.style.overflow = "";
+      });
+    });
+
+    document.querySelectorAll(".modal-overlay").forEach((modal) => {
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.classList.remove("is-active");
+          document.body.style.overflow = "";
+        }
+      });
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        document
+          .querySelectorAll(".modal-overlay.is-active")
+          .forEach((modal) => {
+            modal.classList.remove("is-active");
+            document.body.style.overflow = "";
+          });
       }
     });
   };
 
-  /* ページトップ */
-  const initPageTop = () => {
-    const btn = document.getElementById("page-top");
-    if (!btn) return;
-
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  };
-
   /* 初期化 */
-  const init = () => {
-    initNavigation();
-    initHeroSlider();
-    initGallerySlider();
-    initPageTop();
-    window.addEventListener("scroll", handleScrollAnimations, {
-      passive: true,
-    });
-  };
-
   window.addEventListener("load", () => {
+    initTextAnimate();
     initSplash();
-    init();
+    initSectionNav();
+    initModals();
   });
 })();

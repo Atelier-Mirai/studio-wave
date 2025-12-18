@@ -1,23 +1,67 @@
-/*=====================================================================
-  レイアウト
-=====================================================================*/
-#wrapper {
+.holy {
   display: grid;
-  grid-template-columns: 1fr 280px;
-  gap: 40px;
-  max-inline-size: 1200px;
-  margin-inline: auto;
-  padding: 40px 20px;
+  grid-template-areas:
+    "header header header"
+    "side-a main side-b"
+    "footer footer footer";
+  grid-template-columns: auto 1fr min-content;
+  grid-template-rows: auto 1fr auto;
+  gap: 16px;
+  height: 100svh;
+  padding: 16px;
 
-  @media (width <= 960px) {
-    grid-template-columns: 1fr;
+  > .header {
+    grid-area: header;
   }
-}
 
-main {
-  min-inline-size: 0;
-}
+  > .main {
+    grid-area: main;
+    overflow-y: auto;
+  }
 
-section {
-  margin-block-end: 60px;
+  > .side-a {
+    grid-area: side-a;
+    overflow-y: auto;
+    padding: 16px 8px;
+    background-color: rgb(255 255 255 / 80%);
+    border-radius: 8px;
+  }
+
+  > .side-b {
+    grid-area: side-b;
+    overflow-y: auto;
+
+    > .cards > button {
+      grid-column: 1 / -1;
+    }
+  }
+
+  > .footer {
+    grid-area: footer;
+  }
+
+  @media (width <= 1024px) {
+    grid-template-areas:
+      "header header"
+      "side-a main"
+      "side-a side-b"
+      "footer footer";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto minmax(500px, 1fr) auto auto;
+    height: auto;
+    min-height: 100svh;
+  }
+
+  @media (width <= 768px) {
+    grid-template-areas:
+      "header"
+      "main"
+      "side-a"
+      "side-b"
+      "footer";
+    grid-template-columns: auto;
+    grid-template-rows: auto minmax(500px, 1fr) auto auto auto;
+    height: auto;
+    min-height: 100svh;
+  }
 }

@@ -1,5 +1,5 @@
 /*=====================================================================
-  科学的なサイト - メインスタイルシート
+  ミニマルな企業サイト - メインスタイルシート
 =====================================================================*/
 @layer reset, base, layout, components, animations, utilities;
 
@@ -10,15 +10,15 @@ layer(reset);
 @import "_layout.css" layer(layout);
 @import "_splash.css" layer(components);
 @import "_header.css" layer(components);
-@import "_navigation.css" layer(components);
-@import "_fluid.css" layer(components);
+@import "_hero.css" layer(components);
 @import "_topics.css" layer(components);
-@import "_greeting.css" layer(components);
-@import "_statistics.css" layer(components);
+@import "_vision.css" layer(components);
+@import "_service.css" layer(components);
+@import "_about.css" layer(components);
+@import "_faq.css" layer(components);
 @import "_contact.css" layer(components);
 @import "_footer.css" layer(layout);
 @import "_buttons.css" layer(components);
-@import "_particles.css" layer(components);
-@import "_wave.css" layer(components);
+@import "_navigation.css" layer(components);
 @import "_animations.css" layer(animations);
 @import "_utilities.css" layer(utilities);

@@ -2,14 +2,14 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <title>Science Labo - 科学研究所</title>
+    <title>Happycome - コンサルティング会社</title>
     <meta
       name="description"
-      content="サイエンスラボは科学の力で社会を豊かにする研究を行っています"
+      content="ハピカム株式会社は経営・システムコンサルティングを行っています"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Noto+Sans+JP&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="stylesheets/master.css" />
@@ -19,218 +19,282 @@
   <body>
     <!-- ローディング画面 -->
     <div id="splash">
-      <div class="splash-text"></div>
+      <p class="splash-logo bg-extend"><span>Happycome</span></p>
     </div>
-
-    <!-- パーティクル背景 -->
-    <div id="particles-js"></div>
+    <div class="splash-bg"></div>
 
     <div id="wrapper">
       <!-- ヘッダー -->
-      <header id="header" class="fade-down">
-        <h1 class="smooth-appear"><a href="#">Science Labo</a></h1>
-        <div class="header-content">
-          <ul class="header-contact">
-            <li>
-              <dl>
-                <dt>Tel</dt>
-                <dd><a href="tel:03-1234-5678">03-1234-5678</a></dd>
-              </dl>
-            </li>
-            <li>
-              <dl>
-                <dt>Fax</dt>
-                <dd>03-1234-5678</dd>
-              </dl>
-            </li>
+      <header id="header">
+        <h1><a href="#">Happycome</a></h1>
+        <nav class="pc-nav">
+          <ul>
+            <li><a href="#vision">Vision</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
-          <a href="#contact" class="header-button"><span>Contact</span></a>
-        </div>
+        </nav>
       </header>
 
-      <!-- ナビゲーション -->
-      <button class="menu-toggle" aria-label="メニュー">
-        <span></span><span></span><span></span>
-      </button>
-      <nav id="global-nav">
-        <ul class="nav-list">
-          <li><a href="#">Top</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#topics">Topics</a></li>
-          <li><a href="#statistics">Statistics</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+      <!-- ヒーロー -->
+      <section id="hero">
+        <p class="hero-lead bg-extend">
+          <span>HAPPY<br />Company is<br />Making Future</span>
+        </p>
+      </section>
 
       <div id="container">
+        <!-- トピックス -->
+        <section id="topics">
+          <h2 class="bg-extend"><span>Topics</span></h2>
+          <div class="news-ticker">
+            <ul>
+              <li>
+                <a href="#"
+                  ><time datetime="2025-11-01">2025.11.01</time
+                  >TV「アサカツデジ」で放送されました。</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><time datetime="2025-11-02">2025.11.02</time
+                  >杉山商事様でセミナーを行いました</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><time datetime="2025-11-03">2025.11.03</time>中途採用情報</a
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+
         <main>
-          <!-- フルードエリア -->
-          <section class="fluid-section">
-            <div class="fluid-block smooth-appear">
-              <div class="fluid"></div>
-            </div>
-            <div class="fluid-content">
-              <h2>
-                <span class="random-text">Our Technology</span><br />
-                <span class="random-text">for making future</span>
-              </h2>
-              <p class="smooth-appear">
-                サイエンスラボは科学の力を信じ、<br />社会を豊かにするため<br />研究を重ねています
+          <!-- ビジョン -->
+          <section id="vision">
+            <div class="vision-image flip-in"></div>
+            <div class="vision-content flip-in">
+              <h2 class="bg-extend"><span>Vision</span></h2>
+              <p class="lead bg-extend">
+                <span
+                  >企業が笑顔だと未来は明るい<br />迅速な対応をモットーにしています</span
+                >
+              </p>
+              <p>
+                ハピカム株式会社は、<br />経営やシステムに関するコンサルティングや<br />プロジェクトマネージメントを行っています
+              </p>
+              <p>
+                あなたの「わくわくすること」を<br />私たちに教えてください。
               </p>
             </div>
           </section>
 
-          <!-- トピックス -->
-          <section id="topics">
-            <div class="smooth-appear">
-              <h2 class="heading">
-                T<span class="en">opics</span><span class="jp">更新情報</span>
-              </h2>
-            </div>
-            <div class="topics-grid">
-              <article class="topic-card smooth-appear">
-                <a href="#">
-                  <figure class="topic-image zoom-out">
-                    <img src="images/topics01.webp" alt="" loading="lazy" />
-                  </figure>
-                  <div class="topic-content">
-                    <time datetime="2025-10-01">2025.10.01</time>
-                    <h3>海外メディアで紹介されました。</h3>
-                  </div>
-                </a>
-              </article>
-              <article class="topic-card smooth-appear">
-                <a href="#">
-                  <figure class="topic-image zoom-out">
-                    <img src="images/topics02.webp" alt="" loading="lazy" />
-                  </figure>
-                  <div class="topic-content">
-                    <time datetime="2025-11-10">2025.11.10</time>
-                    <h3>杉山研究員による最新技術の考察</h3>
-                  </div>
-                </a>
-              </article>
-              <article class="topic-card smooth-appear">
-                <a href="#">
-                  <figure class="topic-image zoom-out">
-                    <img src="images/topics03.webp" alt="" loading="lazy" />
-                  </figure>
-                  <div class="topic-content">
-                    <time datetime="2025-12-25">2025.12.25</time>
-                    <h3>研究施設の見学会を実施しました</h3>
-                  </div>
-                </a>
-              </article>
-              <article class="topic-card smooth-appear">
-                <a href="#">
-                  <figure class="topic-image zoom-out">
-                    <img src="images/topics04.webp" alt="" loading="lazy" />
-                  </figure>
-                  <div class="topic-content">
-                    <time datetime="2025-12-29">2025.12.29</time>
-                    <h3>才能ある研究者を募集いたします</h3>
-                  </div>
-                </a>
-              </article>
-            </div>
-            <div class="topics-button smooth-appear">
-              <a href="#" class="btn-border"><span>一覧</span></a>
-            </div>
-          </section>
-
-          <!-- 代表ご挨拶 -->
-          <section id="greeting">
-            <div class="greeting-grid">
-              <figure class="greeting-image smooth-appear">
-                <img
-                  src="images/greeting.webp"
-                  alt="代表 久保田 涼子"
-                  loading="lazy"
-                />
-              </figure>
-              <div class="greeting-content">
-                <h2 class="heading smooth-appear">
-                  G<span class="en">reeting</span
-                  ><span class="jp">代表ご挨拶</span>
-                </h2>
-                <p class="lead smooth-appear">
-                  サイエンスラボは、未来志向の<br />これからの社会をつくるラボです
-                </p>
-                <p class="smooth-appear">
-                  私たちのまわりには、目に見えないところでテクノロジーが活用されており、日々進化しています。
-                </p>
-                <p class="smooth-appear">
-                  サイエンスラボは、みなさんの暮らしを豊かにする研究と、若手研究者の育成にも力を入れています。
-                </p>
-                <p class="signature text-right smooth-appear">
-                  サイエンスラボ<br />代表　久保田 涼子
-                </p>
+          <!-- サービス -->
+          <section id="service">
+            <div class="inner">
+              <h2 class="bg-extend"><span>Service</span></h2>
+              <div class="service-item">
+                <figure class="service-image flip-in">
+                  <img src="images/service01.webp" alt="" loading="lazy" />
+                </figure>
+                <div class="service-content flip-in">
+                  <h3><span>Consulting</span>コンサルティング事業</h3>
+                  <p>
+                    経営・システム・デジタルマーケティングの目線でのコンサルティングを行います。
+                  </p>
+                  <a href="#" class="btn-line">Detail</a>
+                </div>
+              </div>
+              <div class="service-item">
+                <figure class="service-image flip-in">
+                  <img src="images/service02.webp" alt="" loading="lazy" />
+                </figure>
+                <div class="service-content flip-in">
+                  <h3><span>Development</span>受託開発事業</h3>
+                  <p>
+                    プロジェクト/プロダクトマネージメントの観点からのご支援を致します。
+                  </p>
+                  <a href="#" class="btn-line">Detail</a>
+                </div>
+              </div>
+              <div class="service-item">
+                <figure class="service-image flip-in">
+                  <img src="images/service03.webp" alt="" loading="lazy" />
+                </figure>
+                <div class="service-content flip-in">
+                  <h3><span>Education</span>教育事業</h3>
+                  <p>
+                    エンジニアやデザイナーの養成、新人研修・プログラミング研修などを行っています。
+                  </p>
+                  <a href="#" class="btn-line">Detail</a>
+                </div>
               </div>
             </div>
           </section>
 
-          <!-- 統計データ -->
-          <section id="statistics">
-            <div class="smooth-appear">
-              <h2 class="heading">
-                S<span class="en">tatistics</span
-                ><span class="jp">統計データ</span>
-              </h2>
-            </div>
-            <div class="count-up-area smooth-appear">
-              <p class="count-label">
-                年間の実験回数 約<span class="count-number" data-count="395"
-                  >0</span
-                >回
-              </p>
-              <p class="count-description">
-                サイエンスラボでは日々様々な実験が行われています
-              </p>
-            </div>
-            <div class="chart-grid">
-              <div class="chart-container smooth-appear">
-                <canvas id="chart-pie" width="300" height="300"></canvas>
-              </div>
-              <div class="chart-container smooth-appear">
-                <canvas id="chart-bar" width="400" height="300"></canvas>
-              </div>
-            </div>
+          <!-- 会社概要 -->
+          <section id="about">
+            <h2 class="bg-extend"><span>About</span></h2>
+            <ul class="about-list fade-up">
+              <li>
+                <dl>
+                  <dt>会社名</dt>
+                  <dd>ハピカム株式会社</dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>設立</dt>
+                  <dd>2020年7月</dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>資本金</dt>
+                  <dd>2000万円</dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>代表</dt>
+                  <dd>久保田涼子</dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>所在地</dt>
+                  <dd>〒104-0000 東京都中央区1丁目1番1号</dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>電話</dt>
+                  <dd>03-1234-5678</dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>主な取引先</dt>
+                  <dd>杉山商事<br />Y&amp;YCorporation<br />コテツ株式会社</dd>
+                </dl>
+              </li>
+            </ul>
+          </section>
+
+          <div class="fade-up">
+            <div class="faq-bg"></div>
+          </div>
+
+          <!-- FAQ -->
+          <section id="faq">
+            <h2 class="bg-extend"><span>FAQ</span></h2>
+            <ul class="accordion-list">
+              <li class="fade-up">
+                <div class="accordion-item">
+                  <h3 class="accordion-title">
+                    お見積もりの目安を教えてください。
+                  </h3>
+                  <div class="accordion-content">
+                    <p>
+                      内容によって変化いたしますのでまずはお問い合わせフォームよりご相談ください。
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="fade-up">
+                <div class="accordion-item">
+                  <h3 class="accordion-title">
+                    地方ですが発注は可能でしょうか
+                  </h3>
+                  <div class="accordion-content">
+                    <p>可能です。お気軽にご相談ください。</p>
+                  </div>
+                </div>
+              </li>
+              <li class="fade-up">
+                <div class="accordion-item">
+                  <h3 class="accordion-title">
+                    セミナーやイベントの出演を依頼したいのですが
+                  </h3>
+                  <div class="accordion-content">
+                    <p>
+                      お問い合わせフォームより日時や内容などをご記入いただきご相談ください。
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="fade-up">
+                <div class="accordion-item">
+                  <h3 class="accordion-title">
+                    WEBメディアに記事を書いて頂くことは可能でしょうか？
+                  </h3>
+                  <div class="accordion-content">
+                    <p>
+                      ご相談内容によっては可能です。まずはお気軽にお問い合わせフォームよりご相談ください。
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </section>
 
           <!-- お問い合わせ -->
           <section id="contact">
-            <h2 class="smooth-appear">Contact<span>お問い合わせ</span></h2>
-            <p class="smooth-appear">10:00-19:00（平日）</p>
-            <ul class="contact-info smooth-appear">
-              <li>
-                <dl>
-                  <dt>Tel</dt>
-                  <dd><a href="tel:03-1234-5678">03-1234-5678</a></dd>
-                </dl>
-              </li>
-              <li>
-                <dl>
-                  <dt>Fax</dt>
-                  <dd>03-1234-5678</dd>
-                </dl>
-              </li>
-            </ul>
-            <a href="#" class="btn-glow smooth-appear"
-              ><span>お問い合わせフォームへ</span></a
-            >
+            <h2 class="bg-extend"><span>Contact</span></h2>
+            <form method="post" action="">
+              <ul class="form-list fade-up">
+                <li>
+                  <label for="division">会社名・部署名</label
+                  ><input type="text" name="division" id="division" />
+                </li>
+                <li>
+                  <label for="name">ご担当者名</label
+                  ><input type="text" name="name" id="name" />
+                </li>
+                <li>
+                  <label for="email">メールアドレス</label
+                  ><input type="email" name="email" id="email" />
+                </li>
+                <li>
+                  <label for="tel">電話番号</label
+                  ><input type="tel" name="tel" id="tel" />
+                </li>
+                <li>
+                  <label for="message">お問い合わせ内容</label
+                  ><textarea name="message" id="message"></textarea>
+                </li>
+              </ul>
+              <div class="submit-btn fade-up">
+                <input type="submit" value="確認" />
+              </div>
+            </form>
           </section>
         </main>
-
-        <!-- フッター -->
-        <footer id="footer">
-          <small class="copyright">&copy; Science Labo</small>
-        </footer>
-
-        <!-- 波形キャンバス -->
-        <canvas id="wave-canvas"></canvas>
       </div>
+
+      <!-- フッター -->
+      <footer id="footer">
+        <p class="footer-logo">Happycome</p>
+        <small class="copyright">&copy; Happycome</small>
+      </footer>
     </div>
 
-    <p id="page-top"><a href="#"></a></p>
+    <!-- モバイルナビ -->
+    <button class="menu-toggle">Menu</button>
+    <nav id="global-nav">
+      <ul class="nav-list">
+        <li><a href="#vision">Vision</a></li>
+        <li><a href="#service">Service</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="tel:03-1234-5678">TEL : 03-1234-5678</a></li>
+      </ul>
+    </nav>
+
+    <p id="page-top"><a href="#">Top</a></p>
   </body>
 </html>

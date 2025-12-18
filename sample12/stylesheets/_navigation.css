@@ -1,151 +1,81 @@
 /*=====================================================================
   ナビゲーション
-  ドロップダウンメニューとモバイルメニュー
 =====================================================================*/
-
-/* ハンバーガーボタン */
 .menu-toggle {
   position: fixed;
   z-index: 9999;
-  inset-block-start: 10px;
-  inset-inline-end: 60px;
+  inset-block-start: 20px;
+  inset-inline-end: 20px;
   inline-size: 50px;
   block-size: 50px;
   cursor: pointer;
   background: transparent;
   border: none;
-  padding: 0;
-
-  .toggle-inner {
-    position: relative;
-    display: block;
-    inline-size: 100%;
-    block-size: 100%;
-  }
 
   span {
     display: block;
     position: absolute;
     inset-inline-start: 10px;
     inline-size: 30px;
-    block-size: 3px;
-    background-color: var(--shironezumi);
-    transition: all 0.4s;
+    block-size: 2px;
+    background-color: var(--shiro);
+    transition: all 0.3s;
 
     &:nth-of-type(1) {
-      inset-block-start: 15px;
+      inset-block-start: 16px;
     }
     &:nth-of-type(2) {
       inset-block-start: 24px;
-      inline-size: 20px;
     }
     &:nth-of-type(3) {
-      inset-block-start: 33px;
-      inline-size: 25px;
+      inset-block-start: 32px;
     }
   }
 
   &.is-active span {
     &:nth-of-type(1) {
       inset-block-start: 24px;
-      transform: rotate(-45deg);
+      transform: rotate(45deg);
     }
     &:nth-of-type(2) {
       opacity: 0;
     }
     &:nth-of-type(3) {
       inset-block-start: 24px;
-      inline-size: 30px;
-      transform: rotate(45deg);
+      transform: rotate(-45deg);
     }
   }
 }
 
-/* グローバルナビ（デスクトップ） */
 #global-nav {
   position: fixed;
-  z-index: -1;
-  inset-block-start: 0;
-  inline-size: 100%;
-  block-size: 100vh;
-  block-size: 100dvh;
-  background-color: var(--kuro-80);
+  z-index: 998;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background-color: var(--kuro-70);
   opacity: 0;
+  visibility: hidden;
   transition: all 0.3s;
 
   &.is-active {
-    z-index: 998;
     opacity: 1;
+    visibility: visible;
   }
 }
 
-/* ナビリスト */
 .nav-list {
-  display: none;
-  position: absolute;
-  z-index: 999;
-  inset-inline-start: 50%;
-  inset-block-start: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
-
-  #global-nav.is-active & {
-    display: block;
-  }
-
-  ul {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
 
   a {
     display: block;
-    padding: 20px 35px;
-    color: var(--shironezumi);
-    text-transform: uppercase;
-    transition: color 0.3s;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+    transition: opacity 0.3s;
 
     &:hover {
-      color: var(--gofun);
+      opacity: 0.7;
     }
-  }
-}
-
-/* ドロップダウン（子メニュー） */
-.has-child {
-  position: relative;
-
-  > ul {
-    display: none;
-    padding-inline-start: 20px;
-  }
-
-  &.is-open > ul {
-    display: block;
-  }
-
-  /* 矢印 */
-  &::before {
-    content: "";
-    position: absolute;
-    inset-inline-start: 15px;
-    inset-block-start: 30px;
-    inline-size: 6px;
-    block-size: 6px;
-    border-block-end: 2px solid var(--hai);
-    border-inline-end: 2px solid var(--hai);
-    transform: rotate(45deg);
-    transition: transform 0.3s;
-  }
-
-  &.is-open::before {
-    transform: rotate(-135deg);
-  }
-}
-
-@media (width <= 1200px) {
-  .nav-list a {
-    padding: 20px;
   }
 }

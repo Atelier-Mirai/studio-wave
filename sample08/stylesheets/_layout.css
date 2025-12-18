@@ -1,0 +1,23 @@
+/*=====================================================================
+  レイアウト
+  ページ全体の構造とコンテナ
+=====================================================================*/
+
+/* メインコンテナ */
+#container {
+  position: relative;
+  z-index: 3;
+  overflow-x: hidden;
+  background-color: var(--shironeri);
+}
+
+/* 汎用インナーコンテナ */
+.inner {
+  inline-size: 100%;
+  margin-inline: auto;
+  padding: 70px;
+
+  @media (width <= 940px) {
+    padding: 30px;
+  }
+}

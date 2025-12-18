@@ -1,0 +1,82 @@
+/*=====================================================================
+  モーダル（ギャラリー）
+=====================================================================*/
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  place-items: center;
+  background-color: var(--kuro-70);
+  overflow-y: auto;
+  padding: 40px;
+
+  &.is-active {
+    display: grid;
+  }
+}
+
+.modal-content {
+  position: relative;
+  max-inline-size: 1000px;
+  margin-inline: auto;
+}
+
+.modal-close {
+  position: fixed;
+  inset-block-start: 20px;
+  inset-inline-end: 20px;
+  inline-size: 40px;
+  block-size: 40px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    inset-inline-start: 50%;
+    inset-block-start: 50%;
+    inline-size: 100%;
+    block-size: 2px;
+    background-color: var(--shiro);
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+
+  img {
+    inline-size: 100%;
+    block-size: auto;
+    transition: transform 0.3s;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
+.gallery-caption {
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline: 0;
+  padding: 10px;
+  background: linear-gradient(transparent, var(--kuro-70));
+  font-size: 0.85rem;
+}

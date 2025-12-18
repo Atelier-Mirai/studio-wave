@@ -1,25 +1,9 @@
 /*=====================================================================
-  ミニマルな企業サイト - メインスクリプト
+  ECサイト（フラワーショップ） - メインスクリプト
 =====================================================================*/
 
 (() => {
   "use strict";
-
-  /* ローディング画面 */
-  const initSplash = () => {
-    const splash = document.getElementById("splash");
-    if (!splash) return;
-
-    setTimeout(() => {
-      splash.style.transition = "opacity 0.5s";
-      splash.style.opacity = "0";
-      setTimeout(() => {
-        splash.style.display = "none";
-        document.body.classList.add("appear");
-        handleScrollAnimations();
-      }, 500);
-    }, 1500);
-  };
 
   /* ナビゲーション */
   const initNavigation = () => {
@@ -30,23 +14,62 @@
     if (!toggle || !nav) return;
 
     toggle.addEventListener("click", () => {
+      toggle.classList.toggle("is-active");
       nav.classList.toggle("is-active");
     });
 
     links?.forEach((link) => {
       link.addEventListener("click", () => {
+        toggle.classList.remove("is-active");
         nav.classList.remove("is-active");
       });
     });
   };
 
-  /* ニュースティッカー */
-  const initNewsTicker = () => {
-    const ticker = document.querySelector(".news-ticker ul");
-    if (!ticker) return;
+  /* セールモーダル */
+  const initSaleModal = () => {
+    const trigger = document.querySelector(".sale-trigger");
+    const modal = document.getElementById("sale-modal");
+    const closeBtn = modal?.querySelector(".modal-close");
 
-    // コンテンツを複製して無限スクロール
-    ticker.innerHTML += ticker.innerHTML;
+    if (!trigger || !modal) return;
+
+    // 初回訪問時に自動表示（セッションストレージで制御）
+    if (!sessionStorage.getItem("saleModalShown")) {
+      setTimeout(() => {
+        modal.classList.add("is-active");
+        sessionStorage.setItem("saleModalShown", "true");
+      }, 1000);
+    }
+
+    trigger.addEventListener("click", () => {
+      modal.classList.add("is-active");
+    });
+
+    closeBtn?.addEventListener("click", () => {
+      modal.classList.remove("is-active");
+    });
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.remove("is-active");
+      }
+    });
+  };
+
+  /* タブ切替 */
+  const initTabs = () => {
+    const tabs = document.querySelectorAll(".tab-item");
+    const contents = document.querySelectorAll(".tab-content");
+
+    tabs.forEach((tab, i) => {
+      tab.addEventListener("click", () => {
+        tabs.forEach((t) => t.classList.remove("is-active"));
+        contents.forEach((c) => c.classList.remove("is-active"));
+        tab.classList.add("is-active");
+        contents[i]?.classList.add("is-active");
+      });
+    });
   };
 
   /* アコーディオン */
@@ -56,28 +79,30 @@
     titles.forEach((title) => {
       title.addEventListener("click", () => {
         const item = title.closest(".accordion-item");
-        const isOpen = item?.classList.contains("is-open");
-
-        // 他を閉じる
-        document.querySelectorAll(".accordion-item").forEach((el) => {
-          el.classList.remove("is-open");
-        });
-
-        // クリックしたものを開く/閉じる
-        if (!isOpen) {
-          item?.classList.add("is-open");
-        }
+        item?.classList.toggle("is-open");
       });
     });
+  };
 
-    // 最初のアイテムを開く
-    document.querySelector(".accordion-item")?.classList.add("is-open");
+  /* サムネイルギャラリー */
+  const initGallery = () => {
+    const thumbs = document.querySelectorAll(".thumb-item");
+    const mainImages = document.querySelectorAll(".gallery-main img");
+
+    thumbs.forEach((thumb, i) => {
+      thumb.addEventListener("click", () => {
+        thumbs.forEach((t) => t.classList.remove("is-active"));
+        mainImages.forEach((img) => img.classList.remove("is-active"));
+        thumb.classList.add("is-active");
+        mainImages[i]?.classList.add("is-active");
+      });
+    });
   };
 
   /* スクロールアニメーション */
   const handleScrollAnimations = () => {
     const triggers = document.querySelectorAll(
-      ".bg-extend, .fade-up, .flip-in",
+      ".fade-up, .fade-down, .rotate-in",
     );
     const windowH = window.innerHeight;
 
@@ -100,28 +125,15 @@
     });
   };
 
-  /* スムーススクロール */
-  const initSmoothScroll = () => {
-    document.querySelectorAll('a[href^="#"]').forEach((link) => {
-      link.addEventListener("click", (e) => {
-        const href = link.getAttribute("href");
-        if (!href || href === "#") return;
-
-        e.preventDefault();
-        const target = document.querySelector(href);
-        target?.scrollIntoView({ behavior: "smooth" });
-      });
-    });
-  };
-
   /* 初期化 */
-  window.addEventListener("load", () => {
-    initSplash();
+  window.addEventListener("DOMContentLoaded", () => {
     initNavigation();
-    initNewsTicker();
+    initSaleModal();
+    initTabs();
     initAccordion();
+    initGallery();
     initPageTop();
-    initSmoothScroll();
+    handleScrollAnimations();
     window.addEventListener("scroll", handleScrollAnimations, {
       passive: true,
     });

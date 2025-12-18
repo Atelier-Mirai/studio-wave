@@ -43,11 +43,12 @@
 
     <!-- 自分で作ったスタイルシート -->
     <link rel="stylesheet" href="stylesheets/master.css" />
-
+  
     <!-- 自分で作ったJavaScript -->
     <script src="javascripts/hero-slideshow.js" defer></script>
     <script src="javascripts/glow-text.js" defer></script>
     <script src="javascripts/page-top.js" defer></script>
+    <script src="include.js"></script>
   </head>
 
   <!-- 表示したい内容・出し物・コンテンツを記述します -->
@@ -219,54 +220,10 @@
             <h3>動物園・海の思い出</h3>
           </a>
         </article>
-        <article>
-          <a href="sample01/index.html">
-            <figure>
-              <img src="images/sample01.webp" alt="" />
-            </figure>
-            <h3>サンプル01</h3>
-          </a>
-        </article>
-        <article>
-          <a href="sample02/index.html">
-            <figure>
-              <img src="images/sample02.webp" alt="" />
-            </figure>
-            <h3>サンプル02</h3>
-          </a>
-        </article>
-        <article>
-          <a href="sample03/index.html">
-            <figure>
-              <img src="images/sample03.webp" alt="" />
-            </figure>
-            <h3>サンプル03</h3>
-          </a>
-        </article>
-        <article>
-          <a href="sample04/index.html">
-            <figure>
-              <img src="images/sample04.webp" alt="" />
-            </figure>
-            <h3>サンプル04</h3>
-          </a>
-        </article>
-        <article>
-          <a href="sample05/index.html">
-            <figure>
-              <img src="images/sample05.webp" alt="" />
-            </figure>
-            <h3>サンプル05</h3>
-          </a>
-        </article>
-        <article>
-          <a href="sample06/index.html">
-            <figure>
-              <img src="images/sample06.webp" alt="" />
-            </figure>
-            <h3>サンプル06</h3>
-          </a>
-        </article>
+        <div id="sample_card"></div>
+        <script>
+          includeRange("sample_card", 1, 25);
+        </script>
       </section>
     </main>
 

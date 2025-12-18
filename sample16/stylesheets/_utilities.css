@@ -12,3 +12,7 @@
   white-space: nowrap;
   border: 0;
 }
+
+.hide-area {
+  display: none;
+}

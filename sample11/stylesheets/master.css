@@ -1,74 +1,24 @@
 /*=====================================================================
-  女性向けエステサロンサイト - メインスタイルシート
-  各部品CSSをレイヤー順に読み込む
+  科学的なサイト - メインスタイルシート
 =====================================================================*/
 @layer reset, base, layout, components, animations, utilities;
 
-/* Reset CSS
------------------------------------------------ */
 @import url("https://cdn.jsdelivr.net/npm/@acab/reset.css@0.11.0/index.min.css")
 layer(reset);
-
-/* カラーパレット（和の色ベース）
------------------------------------------------ */
 @import "_colors.css" layer(base);
-
-/* ベーススタイル（タイポグラフィなど）
------------------------------------------------ */
 @import "_base.css" layer(base);
-
-/* レイアウト
------------------------------------------------ */
 @import "_layout.css" layer(layout);
-
-/* ローディング画面
------------------------------------------------ */
 @import "_splash.css" layer(components);
-
-/* ヘッダー
------------------------------------------------ */
 @import "_header.css" layer(components);
-
-/* ナビゲーション
------------------------------------------------ */
 @import "_navigation.css" layer(components);
-
-/* リードセクション
------------------------------------------------ */
-@import "_lead.css" layer(components);
-
-/* メニューセクション
------------------------------------------------ */
-@import "_menu.css" layer(components);
-
-/* お問い合わせセクション
------------------------------------------------ */
+@import "_fluid.css" layer(components);
+@import "_topics.css" layer(components);
+@import "_greeting.css" layer(components);
+@import "_statistics.css" layer(components);
 @import "_contact.css" layer(components);
-
-/* ブログセクション
------------------------------------------------ */
-@import "_blog.css" layer(components);
-
-/* フッター
------------------------------------------------ */
 @import "_footer.css" layer(layout);
-
-/* ボタン
------------------------------------------------ */
 @import "_buttons.css" layer(components);
-
-/* スライダー
------------------------------------------------ */
-@import "_slider.css" layer(components);
-
-/* ページトップボタン
------------------------------------------------ */
-@import "_page-top.css" layer(components);
-
-/* アニメーション
------------------------------------------------ */
+@import "_particles.css" layer(components);
+@import "_wave.css" layer(components);
 @import "_animations.css" layer(animations);
-
-/* ユーティリティ
------------------------------------------------ */
 @import "_utilities.css" layer(utilities);

@@ -1,0 +1,142 @@
+/*=====================================================================
+  ギャラリー
+  画像一覧とライトボックス
+=====================================================================*/
+
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-block-end: 5%;
+
+  @media (width <= 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (width <= 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gallery-item {
+  overflow: hidden;
+
+  a {
+    display: block;
+  }
+
+  img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    transition: all 0.3s;
+  }
+
+  &:hover img {
+    opacity: 1;
+    transform: scale(1.05) rotate(2deg);
+  }
+}
+
+/* ライトボックスのカスタムスタイル */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  place-items: center;
+  background-color: var(--kuro-80);
+
+  &.is-active {
+    display: grid;
+  }
+}
+
+.lightbox-content {
+  position: relative;
+  max-inline-size: 90vw;
+  max-block-size: 90vh;
+
+  img {
+    max-inline-size: 100%;
+    max-block-size: 90vh;
+    object-fit: contain;
+  }
+}
+
+.lightbox-close {
+  position: absolute;
+  inset-block-start: -40px;
+  inset-inline-end: 0;
+  inline-size: 30px;
+  block-size: 30px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    inset-inline-start: 50%;
+    inset-block-start: 50%;
+    inline-size: 100%;
+    block-size: 2px;
+    background-color: var(--gofun);
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}
+
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  inline-size: 40px;
+  block-size: 40px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+
+  &::before {
+    content: "";
+    display: block;
+    inline-size: 15px;
+    block-size: 15px;
+    border-block-start: 2px solid var(--gofun);
+    border-inline-start: 2px solid var(--gofun);
+  }
+}
+
+.lightbox-prev {
+  inset-inline-start: -60px;
+
+  &::before {
+    transform: rotate(-45deg);
+  }
+}
+
+.lightbox-next {
+  inset-inline-end: -60px;
+
+  &::before {
+    transform: rotate(135deg);
+  }
+}
+
+.lightbox-caption {
+  position: absolute;
+  inset-block-end: -40px;
+  inset-inline-start: 0;
+  inline-size: 100%;
+  text-align: center;
+  color: var(--gofun);
+  font-size: 0.9rem;
+}

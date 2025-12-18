@@ -1,138 +1,91 @@
 /*=====================================================================
-  ポートフォリオサイト - メインスクリプト
+  音楽サイト - メインスクリプト
 =====================================================================*/
 
 (() => {
   "use strict";
 
-  /* ローディング画面 */
+  /* ローディング画面（SVG描画） */
   const initSplash = () => {
     const splash = document.getElementById("splash");
     if (!splash) return;
 
     setTimeout(() => {
-      document.body.classList.add("loaded");
+      splash.style.opacity = "0";
+      document.body.classList.add("appear");
       setTimeout(() => {
-        initSectionAnimations();
+        splash.style.display = "none";
+        initAnimations();
       }, 800);
-    }, 1500);
+    }, 3500);
   };
 
-  /* セクションナビ */
-  const initSectionNav = () => {
-    const sections = document.querySelectorAll(".section, #header");
-    const navLinks = document.querySelectorAll(".section-nav a");
+  /* ナビゲーション */
+  const initNavigation = () => {
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.getElementById("global-nav");
+    const links = nav?.querySelectorAll("a");
 
-    const updateNav = () => {
-      const scrollPos = window.scrollY + window.innerHeight / 2;
+    if (!toggle || !nav) return;
 
-      sections.forEach((section, i) => {
-        const top = section.offsetTop;
-        const bottom = top + section.offsetHeight;
+    toggle.addEventListener("click", () => {
+      toggle.classList.toggle("is-active");
+      nav.classList.toggle("is-active");
+    });
 
-        if (scrollPos >= top && scrollPos < bottom) {
-          navLinks.forEach((link) => link.classList.remove("is-active"));
-          navLinks[i]?.classList.add("is-active");
-        }
-      });
-    };
-
-    window.addEventListener("scroll", updateNav, { passive: true });
-    updateNav();
-
-    navLinks.forEach((link, i) => {
-      link.addEventListener("click", (e) => {
-        e.preventDefault();
-        sections[i]?.scrollIntoView({ behavior: "smooth" });
+    links?.forEach((link) => {
+      link.addEventListener("click", () => {
+        toggle.classList.remove("is-active");
+        nav.classList.remove("is-active");
       });
     });
   };
 
-  /* セクションアニメーション */
-  const initSectionAnimations = () => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target
-              .querySelectorAll(".blur-in, .text-animate")
-              .forEach((el, i) => {
-                setTimeout(() => el.classList.add("is-visible"), i * 200);
-              });
-          }
-        });
-      },
-      { threshold: 0.3 },
-    );
+  /* 動画モーダル */
+  const initVideoModal = () => {
+    const playBtn = document.querySelector(".play-button");
+    const modal = document.getElementById("video-modal");
+    const closeBtn = modal?.querySelector(".modal-close");
+    const video = modal?.querySelector("video");
 
-    document.querySelectorAll(".section, #header").forEach((section) => {
-      observer.observe(section);
-    });
-  };
+    if (!playBtn || !modal) return;
 
-  /* テキストアニメーション準備 */
-  const initTextAnimate = () => {
-    document.querySelectorAll(".text-animate").forEach((el) => {
-      const text = el.textContent || "";
-      el.innerHTML = text
-        .split("")
-        .map(
-          (char, i) =>
-            `<span style="animation-delay: ${i * 0.05}s">${char === " " ? "&nbsp;" : char}</span>`,
-        )
-        .join("");
-    });
-  };
-
-  /* モーダル */
-  const initModals = () => {
-    const triggers = document.querySelectorAll("[data-modal]");
-    const closeButtons = document.querySelectorAll(".modal-close");
-
-    triggers.forEach((trigger) => {
-      trigger.addEventListener("click", (e) => {
-        e.preventDefault();
-        const modalId = trigger.dataset.modal;
-        const modal = document.getElementById(modalId);
-        modal?.classList.add("is-active");
-        document.body.style.overflow = "hidden";
-      });
+    playBtn.addEventListener("click", () => {
+      modal.classList.add("is-active");
+      video?.play();
     });
 
-    closeButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const modal = btn.closest(".modal-overlay");
-        modal?.classList.remove("is-active");
-        document.body.style.overflow = "";
-      });
+    closeBtn?.addEventListener("click", () => {
+      modal.classList.remove("is-active");
+      video?.pause();
     });
 
-    document.querySelectorAll(".modal-overlay").forEach((modal) => {
-      modal.addEventListener("click", (e) => {
-        if (e.target === modal) {
-          modal.classList.remove("is-active");
-          document.body.style.overflow = "";
-        }
-      });
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.remove("is-active");
+        video?.pause();
+      }
     });
 
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        document
-          .querySelectorAll(".modal-overlay.is-active")
-          .forEach((modal) => {
-            modal.classList.remove("is-active");
-            document.body.style.overflow = "";
-          });
+      if (e.key === "Escape" && modal.classList.contains("is-active")) {
+        modal.classList.remove("is-active");
+        video?.pause();
       }
+    });
+  };
+
+  /* アニメーション初期化 */
+  const initAnimations = () => {
+    document.querySelectorAll(".fade-down, .slide-in").forEach((el, i) => {
+      setTimeout(() => el.classList.add("is-visible"), i * 150);
     });
   };
 
   /* 初期化 */
   window.addEventListener("load", () => {
-    initTextAnimate();
     initSplash();
-    initSectionNav();
-    initModals();
+    initNavigation();
+    initVideoModal();
   });
 })();

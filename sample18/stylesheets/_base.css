@@ -1,43 +1,30 @@
-html {
-  scroll-behavior: smooth;
-}
-
+/*=====================================================================
+  ベーススタイル
+=====================================================================*/
 body {
-  font-family: var(--font-sans);
-  font-size: 1rem;
-  line-height: 1.85;
-  letter-spacing: 0.04em;
-  color: var(--color-ink);
-  background: var(--color-brand);
-  text-rendering: optimizeLegibility;
-}
-
-body.appear {
-  background: var(--color-paper-2);
+  font-family: "Oswald", sans-serif;
+  color: var(--gofun);
+  background-color: var(--sumi);
 }
 
 a {
-  color: inherit;
+  color: var(--gofun);
   text-decoration: none;
-}
-
-a:where(:hover, :focus-visible) {
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
 }
 
 img {
   max-inline-size: 100%;
   block-size: auto;
-  vertical-align: bottom;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 h1,
-h2,
-h3 {
-  line-height: 1.2;
-}
-
-address {
-  font-style: normal;
+h2 {
+  font-weight: 400;
+  letter-spacing: 0.1em;
 }

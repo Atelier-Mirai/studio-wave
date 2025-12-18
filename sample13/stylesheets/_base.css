@@ -2,15 +2,16 @@
   ベーススタイル
 =====================================================================*/
 body {
-  font-family: "Kosugi Maru", sans-serif;
-  color: var(--sumi);
+  font-family: "Baskervville", serif;
+  color: var(--shiro);
   font-size: 1rem;
-  line-height: 1.85;
-  background-color: var(--kinari);
+  line-height: 1.8;
+  background-color: var(--kuro);
+  overflow: hidden;
 }
 
 a {
-  color: var(--sora);
+  color: var(--shiro);
   text-decoration: none;
 }
 
@@ -26,26 +27,6 @@ ul {
 }
 
 h1,
-h2,
-h3 {
-  font-family: "Lato", "Kosugi Maru", sans-serif;
-}
-
 h2 {
-  font-size: 1.8rem;
-  text-align: center;
-  margin-block-end: 40px;
-
-  span {
-    display: block;
-    font-size: 0.9rem;
-    color: var(--sora);
-    margin-block-end: 5px;
-  }
-}
-
-.inner {
-  max-inline-size: 1000px;
-  margin-inline: auto;
-  padding: 60px 20px;
+  font-family: "La Belle Aurore", cursive;
 }

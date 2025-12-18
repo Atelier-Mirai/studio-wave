@@ -1,5 +1,5 @@
 /*=====================================================================
-  キッズサイト（学習塾） - メインスタイルシート
+  ポートフォリオサイト - メインスタイルシート
 =====================================================================*/
 @layer reset, base, layout, components, animations, utilities;
 
@@ -10,16 +10,9 @@ layer(reset);
 @import "_layout.css" layer(layout);
 @import "_splash.css" layer(components);
 @import "_header.css" layer(components);
-@import "_navigation.css" layer(components);
-@import "_concept.css" layer(components);
-@import "_news.css" layer(components);
-@import "_course.css" layer(components);
-@import "_gallery.css" layer(components);
-@import "_contact.css" layer(components);
+@import "_sections.css" layer(components);
+@import "_modal.css" layer(components);
+@import "_form.css" layer(components);
 @import "_footer.css" layer(layout);
-@import "_buttons.css" layer(components);
-@import "_badge.css" layer(components);
-@import "_slider.css" layer(components);
-@import "_page-top.css" layer(components);
 @import "_animations.css" layer(animations);
 @import "_utilities.css" layer(utilities);

@@ -1,11 +1,8 @@
 /*=====================================================================
-  レイアウト - フルスクリーンスナップスクロール
+  レイアウト
 =====================================================================*/
-html {
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-}
-
-body {
-  overflow-y: scroll;
+#container {
+  position: relative;
+  min-block-size: 100vh;
+  min-block-size: 100dvh;
 }

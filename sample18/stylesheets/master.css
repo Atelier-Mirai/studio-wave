@@ -1,14 +1,17 @@
-@layer reset, theme, base, layout, components, animations, utilities;
+/*=====================================================================
+  ファッションサイト - メインスタイルシート
+=====================================================================*/
+@layer reset, base, layout, components, animations, utilities;
 
 @import url("https://cdn.jsdelivr.net/npm/@acab/reset.css@0.11.0/index.min.css")
 layer(reset);
-@import "_theme.css" layer(theme);
+@import "_colors.css" layer(base);
 @import "_base.css" layer(base);
 @import "_layout.css" layer(layout);
+@import "_splash.css" layer(components);
 @import "_header.css" layer(components);
-@import "_nav.css" layer(components);
-@import "_hero.css" layer(components);
-@import "_sections.css" layer(components);
+@import "_split-scroll.css" layer(components);
+@import "_particles.css" layer(components);
 @import "_footer.css" layer(layout);
 @import "_animations.css" layer(animations);
 @import "_utilities.css" layer(utilities);

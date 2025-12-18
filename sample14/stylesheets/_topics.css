@@ -1,75 +1,52 @@
 /*=====================================================================
-  トピックスセクション
+  トピックス（ニュースティッカー）
 =====================================================================*/
 #topics {
-  padding: 100px 20px;
-}
-
-.topics-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  align-items: center;
   gap: 30px;
-  max-inline-size: 1200px;
-  margin-inline: auto;
-  margin-block-end: 50px;
+  padding: 20px 40px;
+  border-block: 1px solid var(--sumi-10);
 
-  @media (width <= 960px) {
-    grid-template-columns: repeat(2, 1fr);
+  h2 {
+    font-size: 1rem;
+    margin: 0;
+    white-space: nowrap;
   }
 
-  @media (width <= 480px) {
-    grid-template-columns: 1fr;
+  @media (width <= 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
   }
 }
 
-.topic-card {
-  background-color: var(--shiro-10);
+.news-ticker {
+  flex: 1;
   overflow: hidden;
-  transition: transform 0.3s;
-
-  &:hover {
-    transform: translateY(-10px);
-  }
-
-  a {
-    display: block;
-    color: var(--shiro);
-  }
 }
 
-.topic-image {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 16 / 10;
-
-  img {
-    inline-size: 100%;
-    block-size: 100%;
-    object-fit: cover;
-    transition: transform 0.5s;
-  }
-
-  .topic-card:hover & img {
-    transform: scale(1.1);
-  }
+.news-ticker ul {
+  display: flex;
+  animation: ticker-scroll 20s linear infinite;
 }
 
-.topic-content {
-  padding: 20px;
-
-  time {
-    display: block;
-    color: var(--ai);
-    font-size: 0.85rem;
-    margin-block-end: 10px;
-  }
-
-  h3 {
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
+.news-ticker li {
+  white-space: nowrap;
+  padding-inline-end: 50px;
 }
 
-.topics-button {
-  text-align: center;
+.news-ticker time {
+  color: var(--hai);
+  margin-inline-end: 15px;
+}
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
