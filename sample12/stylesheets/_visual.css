@@ -31,8 +31,12 @@
 }
 
 @keyframes extend-left {
-  from { inline-size: 0; }
-  to { inline-size: 40%; }
+  from {
+    inline-size: 0;
+  }
+  to {
+    inline-size: 40%;
+  }
 }
 
 /* スライダーエリア */

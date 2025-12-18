@@ -10,8 +10,12 @@
 }
 
 @keyframes fade-in-up {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* ズームアウト（拡大から縮小） */
@@ -116,14 +120,20 @@
 @keyframes glow {
   0% {
     opacity: 0;
-    text-shadow: 0 0 0 var(--gofun), 0 0 0 var(--gofun);
+    text-shadow:
+      0 0 0 var(--gofun),
+      0 0 0 var(--gofun);
   }
   50% {
     opacity: 1;
-    text-shadow: 0 0 10px var(--gofun), 0 0 15px var(--gofun);
+    text-shadow:
+      0 0 10px var(--gofun),
+      0 0 15px var(--gofun);
   }
   100% {
     opacity: 1;
-    text-shadow: 0 0 0 var(--gofun), 0 0 0 var(--gofun);
+    text-shadow:
+      0 0 0 var(--gofun),
+      0 0 0 var(--gofun);
   }
 }

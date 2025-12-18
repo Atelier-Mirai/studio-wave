@@ -5,7 +5,8 @@
 
 /* Reset CSS をレイヤー内に取り込む
 -----------------------------------------------*/
-@import url('https://cdn.jsdelivr.net/npm/@acab/reset.css@0.11.0/index.min.css') layer(reset);
+@import url("https://cdn.jsdelivr.net/npm/@acab/reset.css@0.11.0/index.min.css")
+layer(reset);
 
 /* 日本の伝統色 和の色
 -----------------------------------------------*/

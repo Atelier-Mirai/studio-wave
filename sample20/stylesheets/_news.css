@@ -31,18 +31,18 @@
   cursor: pointer;
   font-size: 0.9rem;
   transition: background-color 0.3s;
-  
+
   &:hover {
     background-color: var(--wakakusa-20);
   }
-  
+
   &::after {
     content: "+";
     font-size: 1.2rem;
     color: var(--wakakusa);
     transition: transform 0.3s;
   }
-  
+
   .accordion-item.is-open &::after {
     transform: rotate(45deg);
   }
@@ -53,7 +53,7 @@
   padding: 15px 20px;
   background-color: var(--kinari);
   font-size: 0.9rem;
-  
+
   .accordion-item.is-open & {
     display: block;
   }

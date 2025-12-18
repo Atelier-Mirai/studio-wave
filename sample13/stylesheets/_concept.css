@@ -10,7 +10,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 30px;
   align-items: center;
-  
+
   @media (width <= 768px) {
     grid-template-columns: 1fr;
   }
@@ -26,7 +26,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
-  
+
   li {
     padding: 15px;
     background-color: var(--kiiro);
@@ -34,7 +34,7 @@
     text-align: center;
     font-weight: bold;
   }
-  
+
   @media (width <= 480px) {
     grid-template-columns: 1fr;
   }

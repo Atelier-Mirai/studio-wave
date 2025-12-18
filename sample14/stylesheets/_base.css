@@ -2,7 +2,7 @@
   ベーススタイル
 =====================================================================*/
 body {
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   color: var(--shiro);
   font-size: 1rem;
   line-height: 1.85;
@@ -25,20 +25,22 @@ ul {
   list-style: none;
 }
 
-h1, h2, h3 {
-  font-family: 'Roboto', sans-serif;
+h1,
+h2,
+h3 {
+  font-family: "Roboto", sans-serif;
 }
 
 /* 見出し共通 */
 .heading {
   text-align: center;
   margin-block-end: 50px;
-  
+
   .en {
     font-size: 2.5rem;
     letter-spacing: 0.1em;
   }
-  
+
   .jp {
     display: block;
     font-size: 0.9rem;

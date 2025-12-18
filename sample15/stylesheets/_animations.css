@@ -11,5 +11,7 @@
 }
 
 @keyframes random-fade {
-  to { opacity: 1; }
+  to {
+    opacity: 1;
+  }
 }

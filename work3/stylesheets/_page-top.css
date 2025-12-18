@@ -5,8 +5,8 @@
 /* 戻るボタンを右下に固定*/
 #page_top {
   position: fixed;
-  right:   10px;
-  bottom:  10px;
+  right: 10px;
+  bottom: 10px;
   z-index: 2000;
   opacity: 0; /*はじめは非表示*/
   transform: translateY(100px);

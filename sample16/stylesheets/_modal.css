@@ -10,7 +10,7 @@
   background-color: var(--kuro-70);
   overflow-y: auto;
   padding: 40px;
-  
+
   &.is-active {
     display: grid;
   }
@@ -31,7 +31,7 @@
   cursor: pointer;
   background: transparent;
   border: none;
-  
+
   &::before,
   &::after {
     content: "";
@@ -42,9 +42,13 @@
     block-size: 2px;
     background-color: var(--shiro);
   }
-  
-  &::before { transform: translate(-50%, -50%) rotate(45deg); }
-  &::after { transform: translate(-50%, -50%) rotate(-45deg); }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
 }
 
 .gallery-grid {
@@ -56,13 +60,13 @@
 .gallery-item {
   position: relative;
   overflow: hidden;
-  
+
   img {
     inline-size: 100%;
     block-size: auto;
     transition: transform 0.3s;
   }
-  
+
   &:hover img {
     transform: scale(1.05);
   }

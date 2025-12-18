@@ -5,7 +5,7 @@
 
 body {
   background-color: var(--kobaiiro);
-  font-family: 'Noto Serif JP', serif;
+  font-family: "Noto Serif JP", serif;
   color: var(--sumi);
   font-size: 1rem;
   line-height: 1.85;
@@ -44,7 +44,7 @@ h1,
 .section-title,
 .footer-logo,
 .splash-logo {
-  font-family: 'Parisienne', cursive;
+  font-family: "Parisienne", cursive;
 }
 
 /* セクション見出し共通 */

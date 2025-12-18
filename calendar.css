@@ -6,13 +6,13 @@
 ---------------------------------------------------------------------*/
 :root {
   --wakakusairo: #abc900;
-  --sorairo:     #a0d8ef;
-  --tokiiro:     #f4b3c2;
-  --botaniro:    #e7609e;
-  --hinomaru:    #bc012d;
-  --kinariiro:   #fbfaf5;
-  --kurobeni:    #302833;
-  --kurobeni_8:  #30283380;
+  --sorairo: #a0d8ef;
+  --tokiiro: #f4b3c2;
+  --botaniro: #e7609e;
+  --hinomaru: #bc012d;
+  --kinariiro: #fbfaf5;
+  --kurobeni: #302833;
+  --kurobeni_8: #30283380;
 }
 
 /* 暦の背景写真
@@ -32,18 +32,42 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  &[data-month= "1"] { background-image: url("calendar_images/snow.webp"); }
-  &[data-month= "2"] { background-image: url("calendar_images/grasslands.webp"); }
-  &[data-month= "3"] { background-image: url("calendar_images/hoursetail.webp"); }
-  &[data-month= "4"] { background-image: url("calendar_images/cherry.webp"); }
-  &[data-month= "5"] { background-image: url("calendar_images/leaves.webp"); }
-  &[data-month= "6"] { background-image: url("calendar_images/water.webp"); }
-  &[data-month= "7"] { background-image: url("calendar_images/sea.webp"); }
-  &[data-month= "8"] { background-image: url("calendar_images/sky.webp"); }
-  &[data-month= "9"] { background-image: url("calendar_images/light.webp"); }
-  &[data-month="10"] { background-image: url("calendar_images/deodora.webp"); }
-  &[data-month="11"] { background-image: url("calendar_images/maple.webp"); }
-  &[data-month="12"] { background-image: url("calendar_images/night.webp"); }
+  &[data-month="1"] {
+    background-image: url("calendar_images/snow.webp");
+  }
+  &[data-month="2"] {
+    background-image: url("calendar_images/grasslands.webp");
+  }
+  &[data-month="3"] {
+    background-image: url("calendar_images/hoursetail.webp");
+  }
+  &[data-month="4"] {
+    background-image: url("calendar_images/cherry.webp");
+  }
+  &[data-month="5"] {
+    background-image: url("calendar_images/leaves.webp");
+  }
+  &[data-month="6"] {
+    background-image: url("calendar_images/water.webp");
+  }
+  &[data-month="7"] {
+    background-image: url("calendar_images/sea.webp");
+  }
+  &[data-month="8"] {
+    background-image: url("calendar_images/sky.webp");
+  }
+  &[data-month="9"] {
+    background-image: url("calendar_images/light.webp");
+  }
+  &[data-month="10"] {
+    background-image: url("calendar_images/deodora.webp");
+  }
+  &[data-month="11"] {
+    background-image: url("calendar_images/maple.webp");
+  }
+  &[data-month="12"] {
+    background-image: url("calendar_images/night.webp");
+  }
 }
 
 /* 暦
@@ -52,12 +76,15 @@
   grid-column: 2;
   grid-row: 2;
 
-  width: min(calc(100vw - 20px - 20px), 345px); /* 左右の余白 20px を除いた全ての幅 */
+  width: min(
+    calc(100vw - 20px - 20px),
+    345px
+  ); /* 左右の余白 20px を除いた全ての幅 */
   background: var(--kinariiro);
   background: #fbfaf5c0;
   color: var(--kurobeni);
   border-radius: 10px;
-  font-family: 'Yuji Boku', serif;
+  font-family: "Yuji Boku", serif;
   font-size: 1.2em;
 
   /* 月ごとの暦の写真 */
@@ -65,18 +92,42 @@
     aspect-ratio: 16 / 9; /* 横16楯9に設定 */
     background-position: center center;
     background-size: cover;
-    &[data-month= "1"] { background-image: url("calendar_images/suisen.webp"); }
-    &[data-month= "2"] { background-image: url("calendar_images/nanohana.webp"); }
-    &[data-month= "3"] { background-image: url("calendar_images/momo.webp"); }
-    &[data-month= "4"] { background-image: url("calendar_images/sakura.webp"); }
-    &[data-month= "5"] { background-image: url("calendar_images/fuji.webp"); }
-    &[data-month= "6"] { background-image: url("calendar_images/ajisai.webp"); }
-    &[data-month= "7"] { background-image: url("calendar_images/hanabi.webp"); }
-    &[data-month= "8"] { background-image: url("calendar_images/himawari.webp"); }
-    &[data-month= "9"] { background-image: url("calendar_images/higanbana.webp"); }
-    &[data-month="10"] { background-image: url("calendar_images/kosumosu.webp"); }
-    &[data-month="11"] { background-image: url("calendar_images/susuki.webp"); }
-    &[data-month="12"] { background-image: url("calendar_images/tsubaki.webp"); }
+    &[data-month="1"] {
+      background-image: url("calendar_images/suisen.webp");
+    }
+    &[data-month="2"] {
+      background-image: url("calendar_images/nanohana.webp");
+    }
+    &[data-month="3"] {
+      background-image: url("calendar_images/momo.webp");
+    }
+    &[data-month="4"] {
+      background-image: url("calendar_images/sakura.webp");
+    }
+    &[data-month="5"] {
+      background-image: url("calendar_images/fuji.webp");
+    }
+    &[data-month="6"] {
+      background-image: url("calendar_images/ajisai.webp");
+    }
+    &[data-month="7"] {
+      background-image: url("calendar_images/hanabi.webp");
+    }
+    &[data-month="8"] {
+      background-image: url("calendar_images/himawari.webp");
+    }
+    &[data-month="9"] {
+      background-image: url("calendar_images/higanbana.webp");
+    }
+    &[data-month="10"] {
+      background-image: url("calendar_images/kosumosu.webp");
+    }
+    &[data-month="11"] {
+      background-image: url("calendar_images/susuki.webp");
+    }
+    &[data-month="12"] {
+      background-image: url("calendar_images/tsubaki.webp");
+    }
   }
 }
 
@@ -89,16 +140,37 @@
   text-align: center;
   vertical-align: middle;
   padding: 10px 10px 0px;
-  .prev  { grid-column: 1;  grid-row: 1; }
-  .year  { grid-column: 2;  grid-row: 1; }
-  .month { grid-column: 3;  grid-row: 1; }
-  .next  { grid-column: 4;  grid-row: 1; }
+  .prev {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .year {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .month {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .next {
+    grid-column: 4;
+    grid-row: 1;
+  }
   .prev,
-  .next  { color: var(--kurobeni_8); width: 2em; }
-  .prev:hover { transform: translateX(-5px); }
-  .next:hover { transform: translateX( 5px); }
+  .next {
+    color: var(--kurobeni_8);
+    width: 2em;
+  }
+  .prev:hover {
+    transform: translateX(-5px);
+  }
+  .next:hover {
+    transform: translateX(5px);
+  }
   .year,
-  .month { font-size: larger; }
+  .month {
+    font-size: larger;
+  }
 }
 
 /* 暦の本体
@@ -106,18 +178,47 @@
 
 /* _table.css が干渉した結果を、元に戻す */
 #calendar table {
-  th, td { border: none; padding: 0; }
-  td a { text-decoration: unset; color: unset; }
-  td a:hover { text-decoration: unset; }
-  th { width: unset; text-align: unset; text-align-last: unset }
-  tr:nth-child(odd)  th { background: unset; color: unset; }
-  tr:nth-child(even) th { background: unset; color: unset; }
-  tr:nth-child(odd)  td { background: unset; color: unset; }
-  tr:nth-child(even) td { background: unset; color: unset; }
+  th,
+  td {
+    border: none;
+    padding: 0;
+  }
+  td a {
+    text-decoration: unset;
+    color: unset;
+  }
+  td a:hover {
+    text-decoration: unset;
+  }
+  th {
+    width: unset;
+    text-align: unset;
+    text-align-last: unset;
+  }
+  tr:nth-child(odd) th {
+    background: unset;
+    color: unset;
+  }
+  tr:nth-child(even) th {
+    background: unset;
+    color: unset;
+  }
+  tr:nth-child(odd) td {
+    background: unset;
+    color: unset;
+  }
+  tr:nth-child(even) td {
+    background: unset;
+    color: unset;
+  }
 }
 
 /* aside.pickup の css を少し調整 */
-.inner .sidebar aside.pickup  { margin: 0; padding: 0; border: none; }
+.inner .sidebar aside.pickup {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
 
 /* 日付欄 */
 #calendar table {
@@ -130,7 +231,7 @@
     color: var(--kurobeni_8)
     tr th,
     tr td {
-      padding-bottom: .4em;
+      padding-bottom: 0.4em;
     }
   }
 
@@ -152,25 +253,35 @@
     &:hover {
       background: var(--botaniro);
       color: var(--kinariiro);
-      transition: .7s;
+      transition: 0.7s;
       transform: scale(1);
     }
   }
 
   /* 色を付ける */
-  .today    > a { background: var(--botaniro); color: var(--kinariiro); }
-  .sunday   > a { background: var(--tokiiro); }
-  .saturday > a { background: var(--sorairo); }
-  .holiday  > a { background: var(--hinomaru); color: var(--kinariiro); }
+  .today > a {
+    background: var(--botaniro);
+    color: var(--kinariiro);
+  }
+  .sunday > a {
+    background: var(--tokiiro);
+  }
+  .saturday > a {
+    background: var(--sorairo);
+  }
+  .holiday > a {
+    background: var(--hinomaru);
+    color: var(--kinariiro);
+  }
 
   /* ブログ執筆日 */
   .blogday a {
     outline: 6px double var(--wakakusairo); /* 若草色の輪郭線 */
 
     &:hover {
-      outline-offset: 7px;  /* 少し外側に 若草色の輪郭線 */
+      outline-offset: 7px; /* 少し外側に 若草色の輪郭線 */
       outline: 6px double var(--wakakusairo);
-      transition: .7s;
+      transition: 0.7s;
       transform: scale(1);
     }
   }
@@ -182,14 +293,16 @@
     padding: 0 50px;
     font-size: 1.15em;
     letter-spacing: 4px;
-    text-shadow: 3px 3px 3px var(--kurobeni_8), -1px -1px 1px var(--wakakusairo);
+    text-shadow:
+      3px 3px 3px var(--kurobeni_8),
+      -1px -1px 1px var(--wakakusairo);
   }
 
   /* ブログの一覧 */
   nav {
     width: calc(100% - 20px);
     height: 170px;
-    overflow-y: scroll;   /* 縦方向にスクロール */
+    overflow-y: scroll; /* 縦方向にスクロール */
     margin: 0 10px 10px 10px;
     border: 3px double var(--wakakusairo);
 
@@ -213,7 +326,7 @@
         &:hover {
           background: var(--wakakusairo);
           color: var(--kinariiro);
-          transition: .7s;
+          transition: 0.7s;
           transform: scale(1);
         }
       }

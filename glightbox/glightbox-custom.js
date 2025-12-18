@@ -11,21 +11,21 @@
  */
 const galleryConfigs = [
   {
-    selector: '.glightbox',
+    selector: ".glightbox",
     options: {
       touchNavigation: true,
       loop: true,
     },
   },
   {
-    selector: '.glightbox-with-description',
+    selector: ".glightbox-with-description",
     options: {
       touchNavigation: true,
       loop: true,
     },
   },
   {
-    selector: '.glightbox-videos-gallery',
+    selector: ".glightbox-videos-gallery",
     options: {
       touchNavigation: true,
       loop: true,
@@ -33,7 +33,7 @@ const galleryConfigs = [
     },
   },
   {
-    selector: '.glightbox-inline',
+    selector: ".glightbox-inline",
     options: {
       touchNavigation: true,
     },
@@ -53,8 +53,8 @@ const initGalleries = () => {
 };
 
 // DOM 読み込み完了後に初期化
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initGalleries);
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initGalleries);
 } else {
   initGalleries();
 }

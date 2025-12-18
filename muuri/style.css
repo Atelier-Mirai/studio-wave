@@ -24,14 +24,24 @@ body {
 
 /* ラーメンの種類に応じて枠線を付ける */
 div {
-  &[data-color="shoyu"]    { border: 5px solid #674196; }
-  &[data-color="miso"]     { border: 5px solid #f19072; }
-  &[data-color="shio"]     { border: 5px solid #2ca9e1; }
-  &[data-color="tonkotsu"] { border: 5px solid #ffec47; }
+  &[data-color="shoyu"] {
+    border: 5px solid #674196;
+  }
+  &[data-color="miso"] {
+    border: 5px solid #f19072;
+  }
+  &[data-color="shio"] {
+    border: 5px solid #2ca9e1;
+  }
+  &[data-color="tonkotsu"] {
+    border: 5px solid #ffec47;
+  }
 }
 
 /* Muuri 補正 */
-.item { transform: none !important; }
+.item {
+  transform: none !important;
+}
 
 /* ラーメンカードに適宜余白等設定 */
 .card {

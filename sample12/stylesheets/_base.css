@@ -5,7 +5,7 @@
 
 body {
   background-color: var(--kuro);
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   color: var(--shironezumi);
   font-size: 1rem;
   line-height: 1.85;
@@ -32,12 +32,14 @@ ul {
 }
 
 /* 英字フォント */
-h1, h2, h3,
+h1,
+h2,
+h3,
 .nav-list,
 .scroll-indicator span,
 .social-label,
 .footer-logo {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   letter-spacing: 0.2em;
 }
 

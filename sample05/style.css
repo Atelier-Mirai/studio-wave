@@ -4,8 +4,8 @@
     height: auto;
   }
 
-  --side-horizontal:20px;
-  --side-vertical:40px;
+  --side-horizontal: 20px;
+  --side-vertical: 40px;
   display: grid;
 
   grid-template: repeat(6, auto) / 1fr;
@@ -15,7 +15,6 @@
 
   margin: var(--side-vertical) var(--side-horizontal);
   font-family: "Noto Sans JP", sans-serif;
-
 
   &::after {
     grid-area: 4 / 1 / -1 / 1;
@@ -36,7 +35,7 @@
   }
 
   @media (width >= 1024px) {
-    --side-horizontal:calc( (100vw - 960px) / 2 );
+    --side-horizontal: calc((100vw - 960px) / 2);
   }
 }
 
@@ -73,7 +72,7 @@
     font-size: 42px;
     font-weight: 900;
     line-height: 1.2;
-    word-break: keep-all;  /* <wbr>で適宜改行 */
+    word-break: keep-all; /* <wbr>で適宜改行 */
   }
 
   p {
@@ -153,7 +152,6 @@
         width: 50%;
       }
     }
-
   }
 }
 

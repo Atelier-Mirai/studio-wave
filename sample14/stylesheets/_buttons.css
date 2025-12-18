@@ -9,7 +9,7 @@
   position: relative;
   overflow: hidden;
   transition: color 0.3s;
-  
+
   &::before {
     content: "";
     position: absolute;
@@ -21,10 +21,10 @@
     transition: inset-inline-start 0.3s;
     z-index: -1;
   }
-  
+
   &:hover {
     color: var(--kon);
-    
+
     &::before {
       inset-inline-start: 0;
     }
@@ -38,7 +38,7 @@
   color: var(--kon);
   font-weight: bold;
   transition: all 0.3s;
-  
+
   &:hover {
     box-shadow: 0 0 20px var(--ai-30);
     transform: translateY(-3px);

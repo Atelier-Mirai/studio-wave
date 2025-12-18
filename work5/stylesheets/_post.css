@@ -12,7 +12,7 @@ body.inner {
     ".    main    .   " auto
     ".    sidebar .   " auto
     "foot foot    foot" 140px /
-    20px  1fr     20px;
+    20px 1fr 20px;
   row-gap: var(--space-l);
 
   /* 画面幅が768px以上なら */
@@ -21,16 +21,13 @@ body.inner {
       ".    head head head head head    head    .    " 100px
       ".    main main main main sidebar sidebar .    " auto
       "foot foot foot foot foot foot    foot    foot " auto /
-      0.2fr 1fr  1fr  1fr  1fr  1fr     1fr     0.2fr;
+      0.2fr 1fr 1fr 1fr 1fr 1fr 1fr 0.2fr;
     column-gap: 5%;
   }
 
-  font-family: "Helvetica Neue",
-                Arial,
-                "Hiragino Kaku Gotic ProN",
-                "Hiragino Sans",
-                Meiryo,
-                sans-serif;
+  font-family:
+    "Helvetica Neue", Arial, "Hiragino Kaku Gotic ProN", "Hiragino Sans",
+    Meiryo, sans-serif;
 
   min-height: 100vh;
 
@@ -40,7 +37,7 @@ body.inner {
     background: var(--nibiiro);
     height: 2px;
     grid-column: 1 / -1;
-    grid-row:    2;
+    grid-row: 2;
     /* 画面幅が768px以上なら */
     @media (width >= 768px) {
       margin-block-start: -20px;
@@ -108,7 +105,7 @@ body.inner {
       margin-block-end: var(--space-l);
       color: var(--sanaeiro);
       font-weight: normal;
-      font-family: 'Yuji Boku', serif;
+      font-family: "Yuji Boku", serif;
     }
 
     /* 本文 */

@@ -95,13 +95,25 @@
 }
 
 @keyframes scroll-circle-move {
-  0% { inset-block-end: 45px; }
-  100% { inset-block-end: -5px; }
+  0% {
+    inset-block-end: 45px;
+  }
+  100% {
+    inset-block-end: -5px;
+  }
 }
 
 @keyframes scroll-circle-fade {
-  0% { opacity: 0; }
-  50% { opacity: 1; }
-  80% { opacity: 0.9; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+  }
 }

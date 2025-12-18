@@ -2,7 +2,7 @@
   ベーススタイル
 =====================================================================*/
 body {
-  font-family: 'Marcellus', serif;
+  font-family: "Marcellus", serif;
   color: var(--sumi);
   font-size: 1rem;
   line-height: 1.8;
@@ -26,5 +26,5 @@ ul {
 }
 
 h1 {
-  font-family: 'Italianno', cursive;
+  font-family: "Italianno", cursive;
 }

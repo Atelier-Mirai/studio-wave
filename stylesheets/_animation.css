@@ -9,11 +9,11 @@
 
 /* ヘッダー要素にアニメーション指定 */
 header {
-  animation-duration: 3s;          /* 継続時間 */
-  animation-name: slidein;         /* キーフレームの名前 */
-  animation-iteration-count: 5;    /* 繰り返し回数 */
-                                   /* 5に代えて infinite なら 無限 */
-  animation-direction: alternate;  /* 前後に移動 */
+  animation-duration: 3s; /* 継続時間 */
+  animation-name: slidein; /* キーフレームの名前 */
+  animation-iteration-count: 5; /* 繰り返し回数 */
+  /* 5に代えて infinite なら 無限 */
+  animation-direction: alternate; /* 前後に移動 */
 
   /* 一括指定 */
   /* animation: 3s 5 alternate slidein; */
@@ -40,7 +40,6 @@ header {
     width: 100%;
   }
 }
-
 
 /*
 CSS トランジションの使用

@@ -13,11 +13,11 @@
   padding: 20px 30px;
   background-color: transparent;
   transition: background-color 0.3s;
-  
+
   &.is-scrolled {
     background-color: var(--kon-90);
   }
-  
+
   @media (width <= 768px) {
     padding: 15px 20px;
   }
@@ -26,7 +26,7 @@
 #header h1 {
   font-size: 1.5rem;
   letter-spacing: 0.1em;
-  
+
   a {
     color: var(--shiro);
   }
@@ -36,7 +36,7 @@
   display: flex;
   align-items: center;
   gap: 30px;
-  
+
   @media (width <= 960px) {
     display: none;
   }
@@ -45,16 +45,16 @@
 .header-contact {
   display: flex;
   gap: 20px;
-  
+
   dl {
     display: flex;
     gap: 10px;
   }
-  
+
   dt {
     color: var(--ai);
   }
-  
+
   a {
     color: var(--shiro);
   }
@@ -66,7 +66,7 @@
   border: 1px solid var(--ai);
   color: var(--ai);
   transition: all 0.3s;
-  
+
   &:hover {
     background-color: var(--ai);
     color: var(--kon);

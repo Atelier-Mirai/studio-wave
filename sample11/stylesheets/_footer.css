@@ -32,7 +32,7 @@
 
 .footer-info dd {
   font-size: 2rem;
-  font-family: 'Parisienne', cursive;
+  font-family: "Parisienne", cursive;
 
   @media (width <= 768px) {
     font-size: 1.5rem;

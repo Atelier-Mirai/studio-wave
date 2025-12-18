@@ -21,7 +21,11 @@
 
   &:disabled,
   &.btn-accent:disabled {
-    background-color: color-mix(in srgb, var(--color-muted-2) 55%, var(--color-surface-strong));
+    background-color: color-mix(
+      in srgb,
+      var(--color-muted-2) 55%,
+      var(--color-surface-strong)
+    );
     color: color-mix(in srgb, var(--color-ink) 55%, var(--color-muted-2));
     text-shadow: none;
     cursor: not-allowed;

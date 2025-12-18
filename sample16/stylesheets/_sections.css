@@ -10,7 +10,7 @@
   background-size: cover;
   background-position: center;
   scroll-snap-align: start;
-  
+
   &::before {
     content: "";
     position: absolute;
@@ -23,7 +23,7 @@
   position: relative;
   text-align: center;
   padding: 40px;
-  
+
   h2 {
     font-size: clamp(2rem, 8vw, 4rem);
     margin-block-end: 30px;
@@ -33,29 +33,29 @@
 /* プロフィールセクション */
 .profile-content {
   max-inline-size: 600px;
-  
+
   h2 {
     font-size: 1.5rem;
     margin-block-end: 20px;
-    
+
     span {
       display: block;
       font-size: 2rem;
       margin-block-start: 10px;
     }
   }
-  
+
   p {
     margin-block-end: 20px;
     color: var(--hai);
   }
-  
+
   dl {
     dt {
       font-weight: bold;
       margin-block-end: 10px;
     }
-    
+
     dd {
       color: var(--hai);
       margin-block-end: 5px;
@@ -72,7 +72,7 @@
   font-size: 0.9rem;
   letter-spacing: 0.1em;
   transition: all 0.3s;
-  
+
   &:hover {
     background-color: var(--shiro);
     color: var(--kuro);
@@ -107,11 +107,11 @@
   inset-inline-end: 20px;
   inset-block-start: 50%;
   transform: translateY(-50%);
-  
+
   li {
     margin-block-end: 15px;
   }
-  
+
   a {
     display: block;
     inline-size: 12px;
@@ -119,7 +119,7 @@
     border: 1px solid var(--shiro);
     border-radius: 50%;
     transition: background-color 0.3s;
-    
+
     &.is-active,
     &:hover {
       background-color: var(--shiro);

@@ -2,7 +2,7 @@
   ベーススタイル
 =====================================================================*/
 body {
-  font-family: 'Baskervville', serif;
+  font-family: "Baskervville", serif;
   color: var(--shiro);
   font-size: 1rem;
   line-height: 1.8;
@@ -26,6 +26,7 @@ ul {
   list-style: none;
 }
 
-h1, h2 {
-  font-family: 'La Belle Aurore', cursive;
+h1,
+h2 {
+  font-family: "La Belle Aurore", cursive;
 }

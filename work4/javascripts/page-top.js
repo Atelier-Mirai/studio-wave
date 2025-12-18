@@ -4,43 +4,43 @@
 =====================================================================*/
 const pageTopAnimation = () => {
   // scroll という変数に、ウィンドウのスクロール量を取得して、代入する。
-  let scroll = document.querySelector("html").scrollTop
+  let scroll = document.querySelector("html").scrollTop;
   // 先頭へ戻る要素を取得
-  let page_top = document.querySelector("#page_top")
+  let page_top = document.querySelector("#page_top");
   // サイトヘッダー要素を取得
-  let siteHeader = document.querySelector(".site-header")
+  let siteHeader = document.querySelector(".site-header");
 
   // もしスクロール量が200px以上ならば
-  if (scroll >= 200){
+  if (scroll >= 200) {
     // #page_top要素からdownwardクラスを削除する
-    page_top.classList.remove("downward")
+    page_top.classList.remove("downward");
     // #page_top要素にupwardクラスを追加する
-    page_top.classList.add("upward")
+    page_top.classList.add("upward");
 
-  // そうではなくて、もし#page_topに upwardクラスが付与されていたら
+    // そうではなくて、もし#page_topに upwardクラスが付与されていたら
   } else if (page_top.classList.contains("upward")) {
     // #page_top要素からupwardクラスを削除する
-    page_top.classList.remove("upward")
+    page_top.classList.remove("upward");
     // #page_top要素にdownwardクラスを追加する
-    page_top.classList.add("downward")
+    page_top.classList.add("downward");
   }
 
   // 一定量スクロールしたらヘッダーとナビゲーションをまとめて表示する
   if (siteHeader) {
     if (scroll >= 200) {
-      siteHeader.classList.add("is-visible")
+      siteHeader.classList.add("is-visible");
     } else {
-      siteHeader.classList.remove("is-visible")
+      siteHeader.classList.remove("is-visible");
     }
   }
-}
+};
 
 // ページ読み込み時にも一度実行して状態を整える
 window.addEventListener("load", () => {
-  pageTopAnimation()
-})
+  pageTopAnimation();
+});
 
 // スクロールイベント発火で pageTopAnimation 関数を呼ぶ
 document.addEventListener("scroll", (event) => {
-  pageTopAnimation()
-})
+  pageTopAnimation();
+});

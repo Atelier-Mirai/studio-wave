@@ -22,15 +22,15 @@
 
   /* 書体の指定 */
   font-family: "Noto Sans JP", sans-serif; /* Noto Sans JP 書体 */
-  font-optical-sizing: auto;               /* 表示最適化の為に書体の形を変更 */
-  font-weight: normal;                     /* 書体の太さ */
-  font-style: normal;                      /* 通常normal または 斜体italic */
+  font-optical-sizing: auto; /* 表示最適化の為に書体の形を変更 */
+  font-weight: normal; /* 書体の太さ */
+  font-style: normal; /* 通常normal または 斜体italic */
 
   /* 錨マーク画像 */
   &::after {
     content: url(images/anchor.svg);
     opacity: 0.15;
-    width:  150px;
+    width: 150px;
     height: 150px;
     /* grid-row: 1;
        grid-column: 2; と同じ */
@@ -89,7 +89,7 @@
 
 /* 日付 */
 .date {
-  grid-area:  2 / 2;
+  grid-area: 2 / 2;
   place-self: end;
   margin-block-start: 2rem;
   @media (width >= 768px) {
@@ -176,8 +176,12 @@
 
   /* 前後のクォーテーション */
   quotes: "“" "”";
-  &::before { content: open-quote; }
-  &::after  { content: close-quote; }
+  &::before {
+    content: open-quote;
+  }
+  &::after {
+    content: close-quote;
+  }
   &::before,
   &::after {
     color: #aaa;
@@ -235,17 +239,17 @@
       row-gap: 20px;
     }
 
-	  a {
-	    font-size: 1.5rem;
-	    color: #aaa;
-	    text-decoration: none;
-	    text-align: center;
+    a {
+      font-size: 1.5rem;
+      color: #aaa;
+      text-decoration: none;
+      text-align: center;
       border: 1px solid #aaa;
-	    border-radius: 50%;
-	    display: block;
+      border-radius: 50%;
+      display: block;
       width: 2.5rem;
       height: 2.5rem;
       line-height: 2.5rem;
-	  }
-	}
+    }
+  }
 }

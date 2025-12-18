@@ -11,7 +11,7 @@ body.top {
     ".    head .   " 100px
     "main main main" auto
     "foot foot foot" 140px /
-    20px  1fr  20px;
+    20px 1fr 20px;
   row-gap: var(--space-l);
 
   /* 画面幅が768px以上なら */
@@ -20,23 +20,17 @@ body.top {
       ".    head head head head head head .   " 100px
       "main main main main main main main main" auto
       "foot foot foot foot foot foot foot foot" 140px /
-      0.2fr 1fr  1fr  1fr  1fr  1fr  1fr  0.2fr;
+      0.2fr 1fr 1fr 1fr 1fr 1fr 1fr 0.2fr;
     column-gap: 5%;
   }
 
-  font-family: "Helvetica Neue",
-                Arial,
-                "Hiragino Kaku Gotic ProN",
-                "Hiragino Sans",
-                Meiryo,
-                sans-serif;
+  font-family:
+    "Helvetica Neue", Arial, "Hiragino Kaku Gotic ProN", "Hiragino Sans",
+    Meiryo, sans-serif;
 
   /* 美しいグラデーション */
   /* https://uigradients.com/#CoolSky */
-  background: linear-gradient(to top,
-                              #FFFFFF80,
-                              #6DD5FA40,
-                              #2980B980);
+  background: linear-gradient(to top, #ffffff80, #6dd5fa40, #2980b980);
 
   height: 100vh;
 }
@@ -48,7 +42,7 @@ body.top {
     ".    title  .   " auto
     ".    sub    .   " auto
     ".    recent .   " auto /
-    20px  1fr    20px;
+    20px 1fr 20px;
   row-gap: var(--space-l);
 
   /* 画面幅が768px以上なら */
@@ -56,7 +50,7 @@ body.top {
     grid-template:
       ".    title  title  title  sub    sub    sub    .   " auto
       ".    recent recent recent recent recent recent .   " auto /
-      0.2fr 1fr    1fr    1fr    1fr    1fr    1fr    0.2fr;
+      0.2fr 1fr 1fr 1fr 1fr 1fr 1fr 0.2fr;
     column-gap: 5%;
   }
 }

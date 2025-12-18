@@ -17,7 +17,7 @@
 .splash-logo svg {
   inline-size: 100%;
   block-size: auto;
-  
+
   path {
     fill: none;
     stroke: var(--gofun);
@@ -29,7 +29,9 @@
 }
 
 @keyframes svg-draw {
-  to { stroke-dashoffset: 0; }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 .splash-bg {
@@ -46,5 +48,7 @@ body.appear .splash-bg {
 }
 
 @keyframes splash-fade {
-  to { opacity: 0; }
+  to {
+    opacity: 0;
+  }
 }

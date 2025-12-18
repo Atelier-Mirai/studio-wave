@@ -23,17 +23,19 @@
 /* 金塊のようなボタン */
 .gold.button {
   color: #b1921b;
-  border-right:   4px solid #cea82c;
+  border-right: 4px solid #cea82c;
   border-bottom: 10px solid #987c1e;
-  border-left:    4px solid #ffed8b;
+  border-left: 4px solid #ffed8b;
   border-radius: 0;
-  background: linear-gradient(-90deg,
-                              #ffd75b 0%,
-                              #fff5a0 30%,
-                              #fffabe 40%,
-                              #ffffdb 50%,
-                              #fff5a0 70%,
-                              #fdd456 100%);
+  background: linear-gradient(
+    -90deg,
+    #ffd75b 0%,
+    #fff5a0 30%,
+    #fffabe 40%,
+    #ffffdb 50%,
+    #fff5a0 70%,
+    #fdd456 100%
+  );
   text-shadow: -1px -1px 1px #ffffd9;
   padding: 0.4rem 0.6rem;
   letter-spacing: 0;
@@ -45,8 +47,8 @@
   &:hover {
     margin-block-start: 3px;
     color: #b1921b;
-    border-right:  4px solid #cea82c;
+    border-right: 4px solid #cea82c;
     border-bottom: 7px solid #987c1e;
-    border-left:   4px solid #ffed8b;
+    border-left: 4px solid #ffed8b;
   }
 }

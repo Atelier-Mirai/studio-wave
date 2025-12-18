@@ -1,15 +1,14 @@
 /* グリッド */
 .burger {
-  --side:20px;
+  --side: 20px;
   @media (width >= 1024px) {
-    --side: calc( (100vw - 960px) / 2 );
+    --side: calc((100vw - 960px) / 2);
   }
   display: grid;
   grid-template: auto 180px auto / 1fr auto;
   @media (width >= 768px) {
     grid-template: auto 180px / 100px 1fr auto;
   }
-
 
   gap: 30px 15px;
   margin-inline: var(--side);

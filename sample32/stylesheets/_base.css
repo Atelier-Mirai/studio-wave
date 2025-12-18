@@ -1,0 +1,71 @@
+@charset "utf-8";
+
+/* ================
+
+ベースCSS
+
+================ */
+
+/* フォント */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+
+body {
+  font-family: Inter, "Noto Sans JP", sans-serif;
+}
+
+/* カラー */
+:root {
+  --color-accent: #ffcd6d;
+  --blue-smoke: #b4d0d9;
+  --dark-blue-gray: #374151;
+  --light-blue-gray: #e2e8f0;
+}
+
+/* アイコン */
+:where(.vertical, .horizontal, .search-01, .search-02, .header) svg {
+  width: 24px;
+  height: 24px;
+}
+
+:where(
+    .with-icon-vertical,
+    .with-icon-horizontal,
+    .with-icon-double,
+    .with-icon-auto
+  )
+  svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* フォーム */
+[type="text"],
+[type="email"],
+[type="url"],
+[type="tel"],
+[type="search"],
+[type="password"],
+select,
+textarea {
+  padding: 12px;
+  background-color: white;
+  background-image: none;
+  border: solid 1px #888;
+  border-radius: 4px;
+}
+
+[type="submit"],
+[type="reset"] {
+  padding: 12px;
+  border-radius: 4px;
+}
+
+::placeholder {
+  color: #999;
+}
+
+:where(input, select, textarea, button):focus-visible {
+  outline: 2px solid black;
+}

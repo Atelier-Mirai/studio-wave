@@ -6,7 +6,7 @@
 .title {
   position: relative;
   padding: 1rem 1.5rem;
-  box-shadow: 0 2px 14px rgba(0, 0, 0, .1);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.1);
   text-align: center;
   font-weight: normal;
 
@@ -16,16 +16,22 @@
     inset-inline-start: 0;
     width: 100%;
     height: 4px;
-    content: '';
-    background-image: linear-gradient(135deg,
-                                      #704308 0%,
-                                      #ffce08 40%,
-                                      #e1ce08 60%,
-                                      #704308 100%);
+    content: "";
+    background-image: linear-gradient(
+      135deg,
+      #704308 0%,
+      #ffce08 40%,
+      #e1ce08 60%,
+      #704308 100%
+    );
   }
 
-  &::before { inset-block-start: 0; }
-  &::after  { inset-block-end: 0; }
+  &::before {
+    inset-block-start: 0;
+  }
+  &::after {
+    inset-block-end: 0;
+  }
 }
 
 /* 文字を光りながら出現させるためのCSS */
@@ -42,7 +48,22 @@
 }
 
 @keyframes glow_anime_on {
-    0% { opacity:0; text-shadow: 0 0    0 #fff, 0 0    0 #fff; }
-   50% { opacity:1; text-shadow: 0 0 10px #fff, 0 0 15px #fff; }
-  100% { opacity:1; text-shadow: 0 0    0 #fff, 0 0    0 #fff; }
+  0% {
+    opacity: 0;
+    text-shadow:
+      0 0 0 #fff,
+      0 0 0 #fff;
+  }
+  50% {
+    opacity: 1;
+    text-shadow:
+      0 0 10px #fff,
+      0 0 15px #fff;
+  }
+  100% {
+    opacity: 1;
+    text-shadow:
+      0 0 0 #fff,
+      0 0 0 #fff;
+  }
 }

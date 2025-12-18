@@ -11,13 +11,13 @@
  */
 const COLORS = {
   // メインカラー（線の色）
-  red: '#ff251e',
-  orange: '#f19072',
-  yellow: '#ffec47',
-  green: '#67a70c',
-  blue: '#2ca9e1',
-  purple: '#674196',
-  grey: '#9ea1a3',
+  red: "#ff251e",
+  orange: "#f19072",
+  yellow: "#ffec47",
+  green: "#67a70c",
+  blue: "#2ca9e1",
+  purple: "#674196",
+  grey: "#9ea1a3",
 };
 
 /**
@@ -37,28 +37,36 @@ const hexToRgba = (hex, alpha = 0.5) => {
  * チャートデータの定義
  */
 const chartData = {
-  labels: ['麺の味', '汁の味', '具の味', 'ラーメンの量', '価格', '雰囲気', '立地'],
+  labels: [
+    "麺の味",
+    "汁の味",
+    "具の味",
+    "ラーメンの量",
+    "価格",
+    "雰囲気",
+    "立地",
+  ],
   datasets: [
     {
-      label: '櫻幕ラーメン',
+      label: "櫻幕ラーメン",
       data: [75, 79, 90, 70, 100, 55, 40],
       fill: true,
       backgroundColor: hexToRgba(COLORS.orange, 0.5),
       borderColor: COLORS.orange,
       pointBackgroundColor: COLORS.orange,
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
+      pointBorderColor: "#fff",
+      pointHoverBackgroundColor: "#fff",
       pointHoverBorderColor: COLORS.orange,
     },
     {
-      label: '平均',
+      label: "平均",
       data: [58, 48, 40, 65, 56, 47, 50],
       fill: false,
       backgroundColor: hexToRgba(COLORS.blue, 0.5),
       borderColor: COLORS.blue,
       pointBackgroundColor: COLORS.blue,
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
+      pointBorderColor: "#fff",
+      pointHoverBackgroundColor: "#fff",
       pointHoverBorderColor: COLORS.blue,
     },
   ],
@@ -68,14 +76,14 @@ const chartData = {
  * チャート設定
  */
 const chartConfig = {
-  type: 'radar',
+  type: "radar",
   data: chartData,
   options: {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: 'bottom',
+        position: "bottom",
         labels: {
           font: {
             size: 14,
@@ -101,13 +109,13 @@ const chartConfig = {
         max: 100,
         ticks: {
           stepSize: 20,
-          backdropColor: 'transparent',
+          backdropColor: "transparent",
         },
         grid: {
-          color: 'rgba(0, 0, 0, 0.1)',
+          color: "rgba(0, 0, 0, 0.1)",
         },
         angleLines: {
-          color: 'rgba(0, 0, 0, 0.1)',
+          color: "rgba(0, 0, 0, 0.1)",
         },
         pointLabels: {
           font: {
@@ -123,15 +131,15 @@ const chartConfig = {
  * チャートを初期化
  */
 const initChart = () => {
-  const canvas = document.getElementById('myChart');
+  const canvas = document.getElementById("myChart");
   if (!canvas) return;
 
   new Chart(canvas, chartConfig);
 };
 
 // DOM 読み込み完了後に初期化
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initChart);
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initChart);
 } else {
   initChart();
 }

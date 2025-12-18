@@ -7,129 +7,132 @@
 *,
 *::before,
 *::after {
-	margin: 0; 							/* マージンは0に */
-	padding: 0; 						/* パディングも常に0に */
-	box-sizing: border-box; /* もちろん、より直感的なbox-sizingに設定 */
+  margin: 0; /* マージンは0に */
+  padding: 0; /* パディングも常に0に */
+  box-sizing: border-box; /* もちろん、より直感的なbox-sizingに設定 */
 }
 
-:where([hidden]:not([hidden='until-found'])) {
-	display: none !important;  			/* hiddenは非表示を意味します */
+:where([hidden]:not([hidden="until-found"])) {
+  display: none !important; /* hiddenは非表示を意味します */
 }
 
 :where(html) {
-	-webkit-text-size-adjust: none; /* iOSのランドスケープでテキストが調整されないようにする */
-	color-scheme: dark light; 			/* ユーザーがダークテーマを好む場合、自動的にダークテーマになる */
-	tab-size: 2;										/* タブ文字 (U+0009) の表示幅の指定 */
-	scrollbar-gutter: stable;				/* スクロールバー表示によるレイアウト変更を防ぐ */
+  -webkit-text-size-adjust: none; /* iOSのランドスケープでテキストが調整されないようにする */
+  color-scheme: dark light; /* ユーザーがダークテーマを好む場合、自動的にダークテーマになる */
+  tab-size: 2; /* タブ文字 (U+0009) の表示幅の指定 */
+  scrollbar-gutter: stable; /* スクロールバー表示によるレイアウト変更を防ぐ */
 }
 
 :where(html:has(dialog:modal[open])) {
-	overflow: clip; /* コンテンツが要素のパディングボックスからはみ出す場合に切り取る */
+  overflow: clip; /* コンテンツが要素のパディングボックスからはみ出す場合に切り取る */
 }
 
 @media (prefers-reduced-motion: no-preference) {
-	:where(html:focus-within) {
-		scroll-behavior: smooth; /* 何かにフォーカスがある場合のみスムーズスクロール */
-	}
+  :where(html:focus-within) {
+    scroll-behavior: smooth; /* 何かにフォーカスがある場合のみスムーズスクロール */
+  }
 }
 
 :where(body) {
-	line-height: 1.5; /* アクセシブルな行の高さ */
-	font-family: system-ui, sans-serif; /* timeの代わりにシステムフォントを使用 */
-	-webkit-font-smoothing: antialiased; /* テキストのレンダリングを改善 */
+  line-height: 1.5; /* アクセシブルな行の高さ */
+  font-family: system-ui, sans-serif; /* timeの代わりにシステムフォントを使用 */
+  -webkit-font-smoothing: antialiased; /* テキストのレンダリングを改善 */
 }
 
 :where(button) {
-	all: unset;			/* プロパティをリセットする。(親から自然に継承された場合は継承値、そうでなければ初期値を設定) */
+  all: unset; /* プロパティをリセットする。(親から自然に継承された場合は継承値、そうでなければ初期値を設定) */
 }
 
 :where(input, button, textarea, select) {
-	font: inherit; 	/* フォーム コントロールは親フォントを継承 */
-	color: inherit; /* カラーも継承 */
+  font: inherit; /* フォーム コントロールは親フォントを継承 */
+  color: inherit; /* カラーも継承 */
 }
 
 :where(textarea) {
-	resize: vertical; /* テキストエリアの水平リサイズを無効に */
-	resize: block;		/* ブロック方向にリサイズ可能 */
+  resize: vertical; /* テキストエリアの水平リサイズを無効に */
+  resize: block; /* ブロック方向にリサイズ可能 */
 }
 
-:where(button, label, select, summary, [role='button'], [role='option']) {
-	cursor: pointer; 	/* インタラクティブなものにカーソルを合わせる */
+:where(button, label, select, summary, [role="button"], [role="option"]) {
+  cursor: pointer; /* インタラクティブなものにカーソルを合わせる */
 }
 
 :where(:disabled) {
-	cursor: not-allowed; /* フォームコントロール無効時のカーソルを許可しない */
+  cursor: not-allowed; /* フォームコントロール無効時のカーソルを許可しない */
 }
 
 :where(label:has(> input:disabled), label:has(+ input:disabled)) {
-	cursor: not-allowed; /* ラベルにもカーソルを許可しない */
+  cursor: not-allowed; /* ラベルにもカーソルを許可しない */
 }
 
 :where(a) {
-	color: inherit;								/* 親要素から色を継承する */
-	text-underline-offset: 0.2ex; /* 下線の上にスペースを追加する */
+  color: inherit; /* 親要素から色を継承する */
+  text-underline-offset: 0.2ex; /* 下線の上にスペースを追加する */
 }
 
 :where(ul, ol) {
-	list-style: none; /* ビュレット(黒丸)を削除、必要に応じて手動で追加する */
+  list-style: none; /* ビュレット(黒丸)を削除、必要に応じて手動で追加する */
 }
 
 :where(img, svg, video, canvas, audio, iframe, embed, object) {
-	display: block; /* 置換された要素をより予測可能にする */
+  display: block; /* 置換された要素をより予測可能にする */
 }
 
 :where(img, picture, svg, video) {
-	max-inline-size: 100%; /* 画像は使用可能なスペースからはみ出さないようにする */
-	block-size: auto; /* アスペクト比を保持 */
+  max-inline-size: 100%; /* 画像は使用可能なスペースからはみ出さないようにする */
+  block-size: auto; /* アスペクト比を保持 */
 }
 
 :where(p, h1, h2, h3, h4, h5, h6) {
-	overflow-wrap: break-word; /* 長い単語は改行 */
+  overflow-wrap: break-word; /* 長い単語は改行 */
 }
 
 :where(h1, h2, h3) {
-	line-height: calc(1em + 0.5rem); /* 見出しの行の高さを減らす */
-	text-wrap: balance;	/* テキストは、各行の文字数を均等にする方法で折り返し、レイアウトの品質と読みやすさを向上させる。 */
+  line-height: calc(1em + 0.5rem); /* 見出しの行の高さを減らす */
+  text-wrap: balance; /* テキストは、各行の文字数を均等にする方法で折り返し、レイアウトの品質と読みやすさを向上させる。 */
 }
 
-:where(hr) { /* より一貫性のある、スタイリッシュなhr */
-	border: none;
-	border-block-start: 1px solid;
-	color: inherit;
-	block-size: 0;
-	overflow: visible;
+:where(hr) {
+  /* より一貫性のある、スタイリッシュなhr */
+  border: none;
+  border-block-start: 1px solid;
+  color: inherit;
+  block-size: 0;
+  overflow: visible;
 }
 
 :where(dialog, [popover]) {
-	border: none;
-	background: none;
-	color: inherit;
-	inset: unset;
-	max-width: unset;
-	max-height: unset;
+  border: none;
+  background: none;
+  color: inherit;
+  inset: unset;
+  max-width: unset;
+  max-height: unset;
 }
 
 :where(dialog:not([open], [popover]), [popover]:not(:popover-open)) {
-	display: none !important;
+  display: none !important;
 }
 
-:where(:focus-visible) { /* より一貫性のある、カスタマイズ可能なフォーカスのアウトライン */
-	outline: 3px solid ConvasText;
-	box-shadow: 0 0 0 5px Canvas;
-	outline-offset: 1px;
+:where(:focus-visible) {
+  /* より一貫性のある、カスタマイズ可能なフォーカスのアウトライン */
+  outline: 3px solid ConvasText;
+  box-shadow: 0 0 0 5px Canvas;
+  outline-offset: 1px;
 }
 
 :where(:focus-visible, :target) {
-	scroll-margin-block: 8vh;
+  scroll-margin-block: 8vh;
 }
 
-:where(.visually-hidden:not(:focus-within, .active)) { /* .visually-hiddenは後のカスケードレイヤーを上書きするために!importantを使用 */
-	clip-path: inset(50%) !important;
-	height: 1px !important;
-	width: 1px !important;
-	overflow: hidden !important;
-	position: absolute !important;
-	white-space: nowrap !important;
-	border: 0 !important;
-	user-select: none !important;
+:where(.visually-hidden:not(:focus-within, .active)) {
+  /* .visually-hiddenは後のカスケードレイヤーを上書きするために!importantを使用 */
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+  user-select: none !important;
 }

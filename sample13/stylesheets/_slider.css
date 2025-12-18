@@ -9,7 +9,7 @@
   inline-size: 60%;
   block-size: 100%;
   overflow: hidden;
-  
+
   @media (width <= 768px) {
     inline-size: 100%;
     block-size: 50%;
@@ -23,19 +23,19 @@
   inset: 0;
   opacity: 0;
   transition: opacity 1s;
-  
+
   &.is-active {
     opacity: 1;
   }
-  
+
   &.slide-01 {
     background: url("../images/hero01.webp") no-repeat center / cover;
   }
-  
+
   &.slide-02 {
     background: url("../images/hero02.webp") no-repeat center / cover;
   }
-  
+
   &.slide-03 {
     background: url("../images/hero03.webp") no-repeat center / cover;
   }

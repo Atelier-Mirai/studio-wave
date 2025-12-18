@@ -6,7 +6,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
-  
+
   @media (width <= 768px) {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -16,7 +16,7 @@
 .vision-image {
   background: url("../images/vision.webp") no-repeat center / cover;
   min-block-size: 400px;
-  
+
   @media (width <= 768px) {
     min-block-size: 250px;
   }
@@ -26,14 +26,14 @@
   h2 {
     margin-block-end: 30px;
   }
-  
+
   .lead {
     font-size: 1.3rem;
     font-weight: bold;
     margin-block-end: 30px;
     line-height: 2;
   }
-  
+
   p {
     margin-block-end: 20px;
     color: var(--hai);

@@ -13,7 +13,7 @@
   border: none;
   border-radius: 50%;
   box-shadow: 0 2px 10px rgb(0 0 0 / 20%);
-  
+
   span {
     display: block;
     position: absolute;
@@ -23,12 +23,18 @@
     background-color: var(--sumi);
     transform: translateX(-50%);
     transition: all 0.3s;
-    
-    &:nth-of-type(1) { inset-block-start: 17px; }
-    &:nth-of-type(2) { inset-block-start: 24px; }
-    &:nth-of-type(3) { inset-block-start: 31px; }
+
+    &:nth-of-type(1) {
+      inset-block-start: 17px;
+    }
+    &:nth-of-type(2) {
+      inset-block-start: 24px;
+    }
+    &:nth-of-type(3) {
+      inset-block-start: 31px;
+    }
   }
-  
+
   &.is-active span {
     &:nth-of-type(1) {
       inset-block-start: 24px;
@@ -56,7 +62,7 @@
   background-color: var(--sora);
   transform: scale(0);
   transition: transform 0.5s;
-  
+
   &.is-active {
     transform: scale(60);
   }
@@ -71,7 +77,7 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s;
-  
+
   &.is-active {
     opacity: 1;
     visibility: visible;
@@ -80,18 +86,18 @@
 
 .nav-list {
   text-align: center;
-  
+
   li {
     margin-block-end: 20px;
   }
-  
+
   a {
     display: block;
     padding: 10px 30px;
     color: var(--shiro);
     font-size: 1.2rem;
     transition: opacity 0.3s;
-    
+
     &:hover {
       opacity: 0.7;
     }

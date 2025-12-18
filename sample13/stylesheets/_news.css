@@ -6,10 +6,10 @@
   padding: 60px 20px;
   background-color: var(--sora);
   color: var(--shiro);
-  
+
   h2 {
     color: var(--shiro);
-    
+
     span {
       color: var(--kiiro);
     }
@@ -22,33 +22,33 @@
   background-color: var(--shiro);
   border-radius: 10px;
   overflow: hidden;
-  
+
   li {
     border-block-end: 1px solid var(--usuhai);
-    
+
     &:last-child {
       border: none;
     }
   }
-  
+
   a {
     display: block;
     padding: 20px;
     color: var(--sumi);
     transition: background-color 0.3s;
-    
+
     &:hover {
       background-color: var(--kinari);
     }
   }
-  
+
   time {
     display: block;
     color: var(--hai);
     font-size: 0.85rem;
     margin-block-end: 5px;
   }
-  
+
   h3 {
     font-size: 1rem;
   }
@@ -57,31 +57,31 @@
 /* マスコットアイコン */
 .mascot-icon {
   position: absolute;
-  
+
   img {
     inline-size: 60px;
   }
-  
+
   &.icon-01 {
     inset-block-start: 10%;
     inset-inline-start: 5%;
   }
-  
+
   &.icon-02 {
     inset-block-start: 20%;
     inset-inline-end: 5%;
   }
-  
+
   &.icon-03 {
     inset-block-end: 20%;
     inset-inline-start: 10%;
   }
-  
+
   &.icon-04 {
     inset-block-end: 10%;
     inset-inline-end: 10%;
   }
-  
+
   @media (width <= 768px) {
     display: none;
   }

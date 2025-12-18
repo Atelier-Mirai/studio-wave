@@ -15,7 +15,7 @@
     /* iPad や Mac では、二列 x 一行 で配置します */
     grid-template:
       "content note" auto /
-       2fr     1fr;
+      2fr 1fr;
   }
 
   /* 紹介文章を配置します */

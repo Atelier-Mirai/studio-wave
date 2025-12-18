@@ -204,16 +204,16 @@
 @media (width >= 768px) {
   /* 見出しの金色の斜め線 */
   .sec03 h2::before {
-     grid-area: 1 / 4;
-     place-self: stretch end;
-     margin-block-end: -10px;
-     margin-block-start: -50px;
-     z-index: 1;
-     transform: rotate(-22deg);
-     transform-origin: right bottom;
-     content: "";
-     display: block;
-     border: solid 4px gold;
+    grid-area: 1 / 4;
+    place-self: stretch end;
+    margin-block-end: -10px;
+    margin-block-start: -50px;
+    z-index: 1;
+    transform: rotate(-22deg);
+    transform-origin: right bottom;
+    content: "";
+    display: block;
+    border: solid 4px gold;
   }
 }
 

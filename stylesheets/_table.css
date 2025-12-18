@@ -28,7 +28,19 @@ table {
 }
 
 /*  奇数行と偶数行、それぞれで色を変える */
-tr:nth-child(odd)  th { background: #a1dfbc; color: black; }
-tr:nth-child(even) th { background: #00ba13; color: white; }
-tr:nth-child(odd)  td { background: #bfcdf5; color: black; }
-tr:nth-child(even) td { background: #4470ec; color: white; }
+tr:nth-child(odd) th {
+  background: #a1dfbc;
+  color: black;
+}
+tr:nth-child(even) th {
+  background: #00ba13;
+  color: white;
+}
+tr:nth-child(odd) td {
+  background: #bfcdf5;
+  color: black;
+}
+tr:nth-child(even) td {
+  background: #4470ec;
+  color: white;
+}

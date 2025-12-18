@@ -6,7 +6,8 @@
 
 /* Reset CSS
 ----------------------------------------------- */
-@import url('https://cdn.jsdelivr.net/npm/@acab/reset.css@0.11.0/index.min.css') layer(reset);
+@import url("https://cdn.jsdelivr.net/npm/@acab/reset.css@0.11.0/index.min.css")
+layer(reset);
 
 /* カラーパレット（和の色ベース）
 ----------------------------------------------- */

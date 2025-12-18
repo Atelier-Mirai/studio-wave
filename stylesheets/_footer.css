@@ -14,9 +14,9 @@ footer {
   /* 傘下の要素の為に、自身をグリッドコンテナにする */
   display: grid;
   grid-template:
-      "address"   auto
-      "copyright" auto /
-       1fr;
+    "address" auto
+    "copyright" auto /
+    1fr;
 
   line-height: 1.75;
   text-align: center;
@@ -26,11 +26,15 @@ footer {
     align-self: center;
 
     /* 桜色の影を作る */
-    .company_name, .address, .tel, .email {
-      text-shadow: 1px  1px 3px var(--sakurairo),
-                   1px -1px 3px var(--sakurairo),
-                  -1px  1px 3px var(--sakurairo),
-                  -1px -1px 3px var(--sakurairo);
+    .company_name,
+    .address,
+    .tel,
+    .email {
+      text-shadow:
+        1px 1px 3px var(--sakurairo),
+        1px -1px 3px var(--sakurairo),
+        -1px 1px 3px var(--sakurairo),
+        -1px -1px 3px var(--sakurairo);
     }
 
     .company_name {
@@ -38,7 +42,9 @@ footer {
       color: var(--utsushiiro);
     }
 
-    .address, .tel, .email {
+    .address,
+    .tel,
+    .email {
       font-size: medium;
       color: var(--kurohairo);
       a {

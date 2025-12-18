@@ -1,7 +1,13 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() : typeof define === 'function' && define.amd ? define(factory) : (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.ShuffleText = factory());
-}(this, (function () {
-  'use strict';
+  typeof exports === "object" && typeof module !== "undefined"
+    ? (module.exports = factory())
+    : typeof define === "function" && define.amd
+      ? define(factory)
+      : ((global =
+          typeof globalThis !== "undefined" ? globalThis : global || self),
+        (global.ShuffleText = factory()));
+})(this, function () {
+  "use strict";
   /**
    * ShuffleTextはDOMエレメント用ランダムテキストクラスです。
    * @author Yasunobu Ikeda
@@ -12,25 +18,28 @@
     function ShuffleText(element) {
       let _a;
       // シャッフル効果が日本語になるよう ポラーノの広場(宮沢賢治)に変更
-      this.sourceRandomCharacter = "あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波";
+      this.sourceRandomCharacter =
+        "あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波";
       // this.sourceRandomCharacter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-      this.emptyCharacter           = "-"; // 空白に用いる文字列です
-      this.duration                 = 600; // エフェクトの実行時間（ミリ秒）
-      this._isRunning               = false;
-      this._originalStr             = "";
-      this._originalLength          = 0;
-      this._timeCurrent             = 0;
-      this._timeStart               = 0;
-      this._randomIndex             = [];
-      this._element                 = null;
+      this.emptyCharacter = "-"; // 空白に用いる文字列です
+      this.duration = 600; // エフェクトの実行時間（ミリ秒）
+      this._isRunning = false;
+      this._originalStr = "";
+      this._originalLength = 0;
+      this._timeCurrent = 0;
+      this._timeStart = 0;
+      this._randomIndex = [];
+      this._element = null;
       this._requestAnimationFrameId = 0;
-      this._element                 = element;
-      this.setText((_a = element.textContent) !== null && _a !== void 0 ? _a : "");
+      this._element = element;
+      this.setText(
+        (_a = element.textContent) !== null && _a !== void 0 ? _a : "",
+      );
     }
 
     // シャッフル対象となるテキストを設定します。
     ShuffleText.prototype.setText = function (text) {
-      this._originalStr    = text;
+      this._originalStr = text;
       this._originalLength = text.length;
     };
     Object.defineProperty(ShuffleText.prototype, "isRunning", {
@@ -38,7 +47,7 @@
         return this._isRunning; // 再生中かどうかを示すブール値です。
       },
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     // Play effect. 再生を開始します。
@@ -71,14 +80,14 @@
     // メモリ解放のためインスタンスを破棄します。
     ShuffleText.prototype.dispose = function () {
       cancelAnimationFrame(this._requestAnimationFrameId);
-      this._isRunning               = false;
-      this.duration                 = 0;
-      this._originalStr             = "";
-      this._originalLength          = 0;
-      this._timeCurrent             = 0;
-      this._timeStart               = 0;
-      this._randomIndex             = [];
-      this._element                 = null;
+      this._isRunning = false;
+      this.duration = 0;
+      this._originalStr = "";
+      this._originalLength = 0;
+      this._timeCurrent = 0;
+      this._timeStart = 0;
+      this._randomIndex = [];
+      this._element = null;
       this._requestAnimationFrameId = 0;
     };
 
@@ -94,7 +103,9 @@
         } else if (percent < this._randomIndex[i] / 3) {
           str += this.emptyCharacter;
         } else {
-          str += this.sourceRandomCharacter.charAt(Math.floor(Math.random() * this.sourceRandomCharacter.length));
+          str += this.sourceRandomCharacter.charAt(
+            Math.floor(Math.random() * this.sourceRandomCharacter.length),
+          );
         }
       }
       if (percent > 1) {
@@ -111,6 +122,6 @@
       }
     };
     return ShuffleText;
-  }());
+  })();
   return ShuffleText;
-})));
+});

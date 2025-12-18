@@ -2,7 +2,7 @@
   ベーススタイル
 =====================================================================*/
 body {
-  font-family: 'Sawarabi Gothic', sans-serif;
+  font-family: "Sawarabi Gothic", sans-serif;
   color: var(--sumi);
   font-size: 1rem;
   line-height: 1.8;
@@ -13,7 +13,7 @@ a {
   color: var(--matsubairo);
   text-decoration: none;
   transition: opacity 0.3s;
-  
+
   &:hover {
     opacity: 0.7;
   }
@@ -33,7 +33,7 @@ ul {
 h2 {
   font-size: 1.5rem;
   margin-block-end: 30px;
-  
+
   span {
     display: block;
     font-size: 0.8rem;

@@ -1,234 +1,285 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <title>すぎやまゼミナール - 新宿駅徒歩1分の学習塾</title>
-  <meta name="description" content="新宿駅から徒歩1分。少人数個別指導のすぎやまゼミナール">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Kosugi+Maru&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="stylesheets/master.css">
-  <script src="javascripts/main.js" defer></script>
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <title>すぎやまゼミナール - 新宿駅徒歩1分の学習塾</title>
+    <meta
+      name="description"
+      content="新宿駅から徒歩1分。少人数個別指導のすぎやまゼミナール"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Kosugi+Maru&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="stylesheets/master.css" />
+    <script src="javascripts/main.js" defer></script>
+  </head>
 
-<body>
-  <!-- ローディング画面 -->
-  <div id="splash">
-    <div class="splash-logo">
-      <img src="images/icon-mascot01.webp" alt="" loading="lazy">
-      <p>Loading</p>
+  <body>
+    <!-- ローディング画面 -->
+    <div id="splash">
+      <div class="splash-logo">
+        <img src="images/icon-mascot01.webp" alt="" loading="lazy" />
+        <p>Loading</p>
+      </div>
     </div>
-  </div>
-  <div class="splash-bg"></div>
+    <div class="splash-bg"></div>
 
-  <div id="container">
-    <!-- ヘッダー -->
-    <header id="header">
-      <div class="header-content">
-        <h1>
-          <img src="images/identity.webp" alt="" loading="lazy">
-          <span>すぎやま</span>ゼミナール
-        </h1>
-        <p class="lead">
-          <span class="bg-white">新宿駅から<span class="border-yellow">徒歩1分！</span></span><br>
-          <span class="bg-white"><span class="border-yellow">少人数個別指導</span>の</span><br>
-          <span class="bg-white">すぎやまゼミナール</span>
-        </p>
-        <p class="address">
-          <span class="bg-white">〒160-0022</span><br>
-          <span class="bg-white">東京都新宿区新宿2丁目9</span>
-        </p>
-        <ul class="contact-list">
+    <div id="container">
+      <!-- ヘッダー -->
+      <header id="header">
+        <div class="header-content">
+          <h1>
+            <img src="images/identity.webp" alt="" loading="lazy" />
+            <span>すぎやま</span>ゼミナール
+          </h1>
+          <p class="lead">
+            <span class="bg-white"
+              >新宿駅から<span class="border-yellow">徒歩1分！</span></span
+            ><br />
+            <span class="bg-white"
+              ><span class="border-yellow">少人数個別指導</span>の</span
+            ><br />
+            <span class="bg-white">すぎやまゼミナール</span>
+          </p>
+          <p class="address">
+            <span class="bg-white">〒160-0022</span><br />
+            <span class="bg-white">東京都新宿区新宿2丁目9</span>
+          </p>
+          <ul class="contact-list">
+            <li>
+              <dl>
+                <dt>TEL</dt>
+                <dd><a href="tel:03-1234-5678">03-1234-5678</a></dd>
+              </dl>
+            </li>
+            <li>
+              <dl>
+                <dt>FAX</dt>
+                <dd>03-1234-5678</dd>
+              </dl>
+            </li>
+          </ul>
+        </div>
+
+        <!-- キャンペーンバッジ -->
+        <div class="campaign-badge">
+          <a href="#" class="badge-link">春の入塾<br />キャンペーン</a>
+          <div class="badge-bg"></div>
+        </div>
+
+        <!-- ヒーロースライダー -->
+        <div class="hero-slider">
+          <div class="hero-slide slide-01"></div>
+          <div class="hero-slide slide-02"></div>
+          <div class="hero-slide slide-03"></div>
+        </div>
+
+        <!-- ヘッダーユーティリティ -->
+        <ul class="header-utility">
+          <li><a href="#">資料請求</a></li>
           <li>
-            <dl><dt>TEL</dt><dd><a href="tel:03-1234-5678">03-1234-5678</a></dd></dl>
-          </li>
-          <li>
-            <dl><dt>FAX</dt><dd>03-1234-5678</dd></dl>
+            <a href="tel:03-1234-5678"
+              ><span class="pc-hidden">TEL</span
+              ><span class="sp-hidden">03-1234-5678</span></a
+            >
           </li>
         </ul>
-      </div>
+      </header>
 
-      <!-- キャンペーンバッジ -->
-      <div class="campaign-badge">
-        <a href="#" class="badge-link">春の入塾<br>キャンペーン</a>
-        <div class="badge-bg"></div>
-      </div>
+      <!-- ナビゲーション -->
+      <button class="menu-toggle" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="global-nav">
+        <ul class="nav-list">
+          <li><a href="#">トップ</a></li>
+          <li><a href="#">コース案内</a></li>
+          <li><a href="#">実績</a></li>
+          <li><a href="#">交通アクセス</a></li>
+          <li><a href="#">お知らせ</a></li>
+          <li><a href="#">資料請求</a></li>
+        </ul>
+      </nav>
+      <div class="circle-bg"></div>
 
-      <!-- ヒーロースライダー -->
-      <div class="hero-slider">
-        <div class="hero-slide slide-01"></div>
-        <div class="hero-slide slide-02"></div>
-        <div class="hero-slide slide-03"></div>
-      </div>
-
-      <!-- ヘッダーユーティリティ -->
-      <ul class="header-utility">
-        <li><a href="#">資料請求</a></li>
-        <li><a href="tel:03-1234-5678"><span class="pc-hidden">TEL</span><span class="sp-hidden">03-1234-5678</span></a></li>
-      </ul>
-    </header>
-
-    <!-- ナビゲーション -->
-    <button class="menu-toggle" aria-label="メニュー">
-      <span></span><span></span><span></span>
-    </button>
-    <nav id="global-nav">
-      <ul class="nav-list">
-        <li><a href="#">トップ</a></li>
-        <li><a href="#">コース案内</a></li>
-        <li><a href="#">実績</a></li>
-        <li><a href="#">交通アクセス</a></li>
-        <li><a href="#">お知らせ</a></li>
-        <li><a href="#">資料請求</a></li>
-      </ul>
-    </nav>
-    <div class="circle-bg"></div>
-
-    <main>
-      <!-- コンセプト -->
-      <section id="concept" class="inner">
-        <h2 class="flip-in"><span>Concept</span>すぎやまゼミのコンセプト</h2>
-        <div class="concept-grid">
-          <div class="concept-image zoom-in">
-            <img src="images/concept.webp" alt="授業風景" loading="lazy">
-          </div>
-          <div>
-            <ul class="concept-list">
-              <li class="fade-in">一流の講師陣！</li>
-              <li class="fade-in">有名校合格者多数！</li>
-              <li class="fade-in">四大模試受験可能！</li>
-              <li class="fade-in">個性を大切に！</li>
-              <li class="fade-in">考える力を伸ばす！</li>
-              <li class="fade-in">苦手意識を克服！</li>
-            </ul>
-            <div class="concept-button fade-up">
-              <a href="#" class="btn-primary">すぎやまゼミの特徴</a>
+      <main>
+        <!-- コンセプト -->
+        <section id="concept" class="inner">
+          <h2 class="flip-in"><span>Concept</span>すぎやまゼミのコンセプト</h2>
+          <div class="concept-grid">
+            <div class="concept-image zoom-in">
+              <img src="images/concept.webp" alt="授業風景" loading="lazy" />
+            </div>
+            <div>
+              <ul class="concept-list">
+                <li class="fade-in">一流の講師陣！</li>
+                <li class="fade-in">有名校合格者多数！</li>
+                <li class="fade-in">四大模試受験可能！</li>
+                <li class="fade-in">個性を大切に！</li>
+                <li class="fade-in">考える力を伸ばす！</li>
+                <li class="fade-in">苦手意識を克服！</li>
+              </ul>
+              <div class="concept-button fade-up">
+                <a href="#" class="btn-primary">すぎやまゼミの特徴</a>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- ニュース -->
-      <article id="news">
-        <h2 class="flip-in"><span>News</span>お知らせ</h2>
-        <div class="zoom-in">
-          <ul class="news-list">
-            <li><a href="#">
-              <article>
-                <time datetime="2025-08-09">2025.08.09</time>
-                <h3>夏期講習がスタートしました</h3>
-              </article>
-            </a></li>
-            <li><a href="#">
-              <article>
-                <time datetime="2025-04-11">2025.04.11</time>
-                <h3>春の入塾募集キャンペーンがスタート</h3>
-              </article>
-            </a></li>
-            <li><a href="#">
-              <article>
-                <time datetime="2024-11-09">2024.11.09</time>
-                <h3>センター試験対策講座を行いました</h3>
-              </article>
-            </a></li>
-            <li><a href="#">
-              <article>
-                <time datetime="2024-07-10">2024.07.10</time>
-                <h3>夏のすぎやまゼミ合宿が行われました</h3>
-              </article>
-            </a></li>
-          </ul>
-        </div>
-        <div class="mascot-icon icon-01 zoom-in"><img src="images/icon-mascot01.webp" alt="" loading="lazy"></div>
-        <div class="mascot-icon icon-02 zoom-in"><img src="images/icon-mascot02.webp" alt="" loading="lazy"></div>
-        <div class="mascot-icon icon-03 zoom-in"><img src="images/icon-mascot03.webp" alt="" loading="lazy"></div>
-        <div class="mascot-icon icon-04 zoom-in"><img src="images/icon-mascot04.webp" alt="" loading="lazy"></div>
-      </article>
-
-      <!-- コース -->
-      <section id="course" class="inner">
-        <h2 class="flip-in"><span>Course</span>コース案内</h2>
-        <div class="course-grid">
-          <article class="course-card flip-in">
-            <a href="#">
-              <div class="course-image course-01"></div>
-              <p class="grade">小4～小6</p>
-              <h3>中学受験科</h3>
-            </a>
-          </article>
-          <article class="course-card flip-in">
-            <a href="#">
-              <div class="course-image course-02"></div>
-              <p class="grade">小1～小6</p>
-              <h3>一般受験準備コース</h3>
-            </a>
-          </article>
-          <article class="course-card flip-in">
-            <a href="#">
-              <div class="course-image course-03"></div>
-              <p class="grade">小1～小6</p>
-              <h3>科目別選択コース</h3>
-            </a>
-          </article>
-        </div>
-      </section>
-
-      <!-- ギャラリー -->
-      <div class="gallery-slider fade-up">
-        <div class="gallery-track">
-          <img src="images/gallery01.webp" alt="" loading="lazy">
-          <img src="images/gallery02.webp" alt="" loading="lazy">
-          <img src="images/gallery03.webp" alt="" loading="lazy">
-          <img src="images/gallery04.webp" alt="" loading="lazy">
-          <img src="images/gallery05.webp" alt="" loading="lazy">
-          <img src="images/gallery06.webp" alt="" loading="lazy">
-          <img src="images/gallery07.webp" alt="" loading="lazy">
-          <img src="images/gallery08.webp" alt="" loading="lazy">
-        </div>
-      </div>
-
-      <!-- お問い合わせ -->
-      <section id="contact">
-        <div class="contact-content fade-up">
-          <h2>すぎやまゼミで<br>一緒に学びませんか？</h2>
-          <p>お気軽にお問い合わせください。</p>
-          <ul class="contact-buttons">
-            <li><a href="#" class="btn-arrow">資料請求</a></li>
-            <li><a href="#" class="btn-arrow">お問い合わせ</a></li>
-          </ul>
-        </div>
-      </section>
-    </main>
-
-    <!-- フッター -->
-    <footer id="footer">
-      <div class="inner">
-        <div class="footer-grid">
-          <dl class="school-info">
-            <dt>新宿徒歩1分の学習塾<span>すぎやまゼミナール</span></dt>
-            <dd>
-              <ul>
-                <li>〒160-0022<br>東京都新宿区新宿2丁目9</li>
-                <li><dl><dt>TEL</dt><dd><a href="tel:03-1234-5678">03-1234-5678</a></dd></dl></li>
-                <li><dl><dt>FAX</dt><dd>03-1234-5678</dd></dl></li>
-              </ul>
-            </dd>
-          </dl>
-          <nav class="footer-nav">
-            <ul>
-              <li><a href="#">トップ</a></li>
-              <li><a href="#">コース案内</a></li>
-              <li><a href="#">実績</a></li>
-              <li><a href="#">交通アクセス</a></li>
-              <li><a href="#">お知らせ</a></li>
-              <li><a href="#">資料請求</a></li>
+        <!-- ニュース -->
+        <article id="news">
+          <h2 class="flip-in"><span>News</span>お知らせ</h2>
+          <div class="zoom-in">
+            <ul class="news-list">
+              <li>
+                <a href="#">
+                  <article>
+                    <time datetime="2025-08-09">2025.08.09</time>
+                    <h3>夏期講習がスタートしました</h3>
+                  </article>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <article>
+                    <time datetime="2025-04-11">2025.04.11</time>
+                    <h3>春の入塾募集キャンペーンがスタート</h3>
+                  </article>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <article>
+                    <time datetime="2024-11-09">2024.11.09</time>
+                    <h3>センター試験対策講座を行いました</h3>
+                  </article>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <article>
+                    <time datetime="2024-07-10">2024.07.10</time>
+                    <h3>夏のすぎやまゼミ合宿が行われました</h3>
+                  </article>
+                </a>
+              </li>
             </ul>
-          </nav>
-        </div>
-        <small class="copyright">&copy; Sugiyama Academy .inc</small>
-      </div>
-    </footer>
+          </div>
+          <div class="mascot-icon icon-01 zoom-in">
+            <img src="images/icon-mascot01.webp" alt="" loading="lazy" />
+          </div>
+          <div class="mascot-icon icon-02 zoom-in">
+            <img src="images/icon-mascot02.webp" alt="" loading="lazy" />
+          </div>
+          <div class="mascot-icon icon-03 zoom-in">
+            <img src="images/icon-mascot03.webp" alt="" loading="lazy" />
+          </div>
+          <div class="mascot-icon icon-04 zoom-in">
+            <img src="images/icon-mascot04.webp" alt="" loading="lazy" />
+          </div>
+        </article>
 
-    <p id="page-top"><a href="#"><span>Page<br>Top</span></a></p>
-  </div>
-</body>
+        <!-- コース -->
+        <section id="course" class="inner">
+          <h2 class="flip-in"><span>Course</span>コース案内</h2>
+          <div class="course-grid">
+            <article class="course-card flip-in">
+              <a href="#">
+                <div class="course-image course-01"></div>
+                <p class="grade">小4～小6</p>
+                <h3>中学受験科</h3>
+              </a>
+            </article>
+            <article class="course-card flip-in">
+              <a href="#">
+                <div class="course-image course-02"></div>
+                <p class="grade">小1～小6</p>
+                <h3>一般受験準備コース</h3>
+              </a>
+            </article>
+            <article class="course-card flip-in">
+              <a href="#">
+                <div class="course-image course-03"></div>
+                <p class="grade">小1～小6</p>
+                <h3>科目別選択コース</h3>
+              </a>
+            </article>
+          </div>
+        </section>
+
+        <!-- ギャラリー -->
+        <div class="gallery-slider fade-up">
+          <div class="gallery-track">
+            <img src="images/gallery01.webp" alt="" loading="lazy" />
+            <img src="images/gallery02.webp" alt="" loading="lazy" />
+            <img src="images/gallery03.webp" alt="" loading="lazy" />
+            <img src="images/gallery04.webp" alt="" loading="lazy" />
+            <img src="images/gallery05.webp" alt="" loading="lazy" />
+            <img src="images/gallery06.webp" alt="" loading="lazy" />
+            <img src="images/gallery07.webp" alt="" loading="lazy" />
+            <img src="images/gallery08.webp" alt="" loading="lazy" />
+          </div>
+        </div>
+
+        <!-- お問い合わせ -->
+        <section id="contact">
+          <div class="contact-content fade-up">
+            <h2>すぎやまゼミで<br />一緒に学びませんか？</h2>
+            <p>お気軽にお問い合わせください。</p>
+            <ul class="contact-buttons">
+              <li><a href="#" class="btn-arrow">資料請求</a></li>
+              <li><a href="#" class="btn-arrow">お問い合わせ</a></li>
+            </ul>
+          </div>
+        </section>
+      </main>
+
+      <!-- フッター -->
+      <footer id="footer">
+        <div class="inner">
+          <div class="footer-grid">
+            <dl class="school-info">
+              <dt>新宿徒歩1分の学習塾<span>すぎやまゼミナール</span></dt>
+              <dd>
+                <ul>
+                  <li>〒160-0022<br />東京都新宿区新宿2丁目9</li>
+                  <li>
+                    <dl>
+                      <dt>TEL</dt>
+                      <dd><a href="tel:03-1234-5678">03-1234-5678</a></dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <dt>FAX</dt>
+                      <dd>03-1234-5678</dd>
+                    </dl>
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+            <nav class="footer-nav">
+              <ul>
+                <li><a href="#">トップ</a></li>
+                <li><a href="#">コース案内</a></li>
+                <li><a href="#">実績</a></li>
+                <li><a href="#">交通アクセス</a></li>
+                <li><a href="#">お知らせ</a></li>
+                <li><a href="#">資料請求</a></li>
+              </ul>
+            </nav>
+          </div>
+          <small class="copyright">&copy; Sugiyama Academy .inc</small>
+        </div>
+      </footer>
+
+      <p id="page-top">
+        <a href="#"
+          ><span>Page<br />Top</span></a
+        >
+      </p>
+    </div>
+  </body>
 </html>

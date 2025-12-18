@@ -11,13 +11,13 @@
   li {
     margin-block-end: 25px;
   }
-  
+
   label {
     display: block;
     margin-block-end: 8px;
     font-size: 0.9rem;
   }
-  
+
   input,
   textarea {
     inline-size: 100%;
@@ -25,13 +25,13 @@
     border: 1px solid var(--sumi-10);
     font-size: 1rem;
     transition: border-color 0.3s;
-    
+
     &:focus {
       border-color: var(--sumi);
       outline: none;
     }
   }
-  
+
   textarea {
     min-block-size: 150px;
     resize: vertical;
@@ -40,7 +40,7 @@
 
 .submit-btn {
   text-align: center;
-  
+
   input {
     padding: 15px 60px;
     background-color: var(--sumi);
@@ -49,7 +49,7 @@
     font-size: 1rem;
     cursor: pointer;
     transition: opacity 0.3s;
-    
+
     &:hover {
       opacity: 0.8;
     }

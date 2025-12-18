@@ -13,7 +13,7 @@
   max-inline-size: 1000px;
   margin-inline: auto;
   align-items: center;
-  
+
   @media (width <= 768px) {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -31,18 +31,18 @@
   h2 {
     margin-block-end: 30px;
   }
-  
+
   .lead {
     font-size: 1.3rem;
     margin-block-end: 20px;
     color: var(--ai);
   }
-  
+
   p {
     margin-block-end: 15px;
     color: var(--hai);
   }
-  
+
   .signature {
     text-align: end;
     margin-block-start: 30px;

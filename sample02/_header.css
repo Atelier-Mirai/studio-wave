@@ -18,7 +18,7 @@
     font-size: 35px;
     font-weight: 900;
     line-height: 1.2;
-    word-break: keep-all;  /* <wbr>で改行 */
+    word-break: keep-all; /* <wbr>で改行 */
 
     grid-area: 2 / 2 / 2 / -1;
 
@@ -45,7 +45,7 @@
     grid-area: 1 / 1 / 4 / 1;
     place-self: stretch / center;
     display: inline-block;
-    writing-mode: vertical-rl;  /* 縦書き */
+    writing-mode: vertical-rl; /* 縦書き */
     background-color: #000;
     color: #fff;
     font-size: 14px;
@@ -68,7 +68,9 @@
       row-gap: 8px;
       grid-area: 1 / 1 / 4 / 1;
       margin-block-end: -12px;
-      img { max-width: 30px; }
+      img {
+        max-width: 30px;
+      }
     }
   }
 
@@ -120,15 +122,15 @@
 
     ul {
       column-gap: 5px;
-  	  a {
-  	    display: block;
-  	    padding: 3px 10px;
-  	    border-radius: 5px;
-  	    background-color: #ccc;
-  	    font-size: 10px;
-  	  }
+      a {
+        display: block;
+        padding: 3px 10px;
+        border-radius: 5px;
+        background-color: #ccc;
+        font-size: 10px;
+      }
       margin-block-start: 5px;
-  	}
+    }
   }
 
   /* ヘッダー: SNSメニュー */
@@ -136,28 +138,38 @@
     grid-area: 3 / 3;
     ul {
       justify-content: space-between;
-  	  a {
+      a {
         font-size: 24px;
-  	    color: #fff;
-  	    text-align: center;
-  	    border-radius: 5px;
-  	    display: block;
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        display: block;
         width: 30px;
         line-height: 30px;
         @media (width >= 1024px) {
           width: 40px;
-    	    line-height: 35px;
+          line-height: 35px;
         }
-  	  }
-  	  li {
-        a:has(.fa-x-twitter) { background: #000000; }
-        a:has(.fa-facebook-f) { background: #1877f2; }
+      }
+      li {
+        a:has(.fa-x-twitter) {
+          background: #000000;
+        }
+        a:has(.fa-facebook-f) {
+          background: #1877f2;
+        }
         a:has(.fa-instagram) {
-          background: radial-gradient(circle at 33% 100%,
-          #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
+          background: radial-gradient(
+            circle at 33% 100%,
+            #fed373 4%,
+            #f15245 30%,
+            #d92e7f 62%,
+            #9b36b7 85%,
+            #515ecf
+          );
         }
-  	  }
-  	}
+      }
+    }
   }
 
   /* ヘッダー： 区切り線 */
@@ -179,5 +191,5 @@
       width: 80%;
       content: url("images/gourmet.svg");
     }
-  }  
+  }
 }

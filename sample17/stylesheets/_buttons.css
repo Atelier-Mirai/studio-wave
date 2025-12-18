@@ -10,7 +10,7 @@
   position: relative;
   overflow: hidden;
   transition: color 0.3s;
-  
+
   &::before {
     content: "";
     position: absolute;
@@ -21,10 +21,10 @@
     transition: transform 0.3s;
     z-index: -1;
   }
-  
+
   &:hover {
     color: var(--shiro);
-    
+
     &::before {
       transform: scaleX(1);
     }

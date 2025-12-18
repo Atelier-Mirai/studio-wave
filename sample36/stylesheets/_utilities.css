@@ -1,0 +1,165 @@
+.horizontal {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 24px;
+  justify-content: start;
+}
+
+.background-ivory {
+  background-color: #f4f0e9;
+}
+
+.background-whitesmoke {
+  background-color: #f5f5f5;
+}
+
+.background-bluesmoke {
+  background-color: var(--blue-smoke);
+}
+
+.background-bluegray {
+  background-color: var(--light-blue-gray);
+}
+
+.background-white {
+  background-color: #fff;
+}
+
+.background-lightgreen {
+  background-color: lightgreen;
+}
+
+.background-green {
+  background-color: #eeffde;
+}
+
+.background-red {
+  background-color: #fff0e5;
+}
+
+.background-yellow {
+  background-color: #feffcd;
+}
+
+.padding-small {
+  padding: 16px;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.sr-only {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.fill {
+  width: 100%;
+  height: 100%;
+}
+
+.img-fill {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.radius {
+  border-radius: 8px;
+}
+
+.text-xsmall {
+  font-size: 12px;
+}
+
+.text-small {
+  font-size: 14px;
+}
+
+.text {
+  line-height: 1.8;
+}
+
+@media (width < 500px) {
+  .text-xsmall-mobile * {
+    font-size: 10px !important;
+  }
+}
+
+.show-on-mobile {
+  @media (width > 980px) {
+    display: none !important;
+  }
+}
+
+.hide-on-mobile {
+  @media (width <= 980px) {
+    display: none !important;
+  }
+}
+
+.heading-center {
+  margin-block: 40px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.heading-large {
+  margin-block: 0 20px;
+  font-size: 28px;
+  color: #475569;
+}
+
+/* スクロールバー */
+@media (pointer: fine) {
+  .scrollbar {
+    /* スクロールバーの太さと背景色 */
+    &::-webkit-scrollbar,
+    &::-webkit-scrollbar-corner {
+      width: 8px;
+      height: 8px;
+      background: transparent;
+    }
+
+    /* 矢印ボタンのスペースを削除 */
+    &::-webkit-scrollbar-button {
+      width: 0;
+      height: 0;
+    }
+
+    /* ハンドルの最小の長さ、色、角丸半径 */
+    &::-webkit-scrollbar-thumb {
+      min-width: 48px;
+      min-height: 48px;
+      background: lightgray;
+      border-radius: 4px;
+    }
+  }
+
+  .holy .scrollbar {
+    /* スクロールバーの太さ */
+    &::-webkit-scrollbar,
+    &::-webkit-scrollbar-corner {
+      width: 4px;
+      height: 4px;
+    }
+
+    /* ハンドルの色 */
+    &::-webkit-scrollbar-thumb {
+      background: #94a3b8;
+    }
+  }
+}
+
+.border-bottom {
+  border-bottom: solid 1px rgb(0 0 0 / 20%);
+}

@@ -2,7 +2,7 @@
   ヘッダー
   モバイル版・デスクトップ版 共通の設定
 =============================================================================*/
-header  {
+header {
   grid-area: head;
   justify-self: center;
   /* 画面幅が768px以上なら */
@@ -18,14 +18,16 @@ header  {
   /* グラデーション */
   /* CSSでテキストを彩る装飾サンプル集 https://1-notes.com/css-text-design/ */
   color: transparent;
-  background: repeating-linear-gradient(45deg,
+  background: repeating-linear-gradient(
+    45deg,
     #e60012 0.1em 0.2em,
     #f39800 0.2em 0.3em,
     #fff100 0.3em 0.4em,
     #009944 0.4em 0.5em,
-    #0068B7 0.5em 0.6em,
+    #0068b7 0.5em 0.6em,
     #1d2088 0.7em 0.8em,
-    #cfa7cd 0.8em 0.9em);
+    #cfa7cd 0.8em 0.9em
+  );
   background-clip: text;
   font-weight: bold;
   letter-spacing: 10px;

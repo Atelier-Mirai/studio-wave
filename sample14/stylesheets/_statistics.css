@@ -10,22 +10,22 @@
   margin-inline: auto;
   margin-block-end: 60px;
   text-align: center;
-  
+
   .count-number {
     font-size: 4rem;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     color: var(--ai);
-    
+
     @media (width <= 480px) {
       font-size: 2.5rem;
     }
   }
-  
+
   .count-label {
     font-size: 1.2rem;
     margin-block-end: 10px;
   }
-  
+
   .count-description {
     color: var(--hai);
   }
@@ -37,7 +37,7 @@
   gap: 40px;
   max-inline-size: 1000px;
   margin-inline: auto;
-  
+
   @media (width <= 768px) {
     grid-template-columns: 1fr;
   }
@@ -47,7 +47,7 @@
   background-color: var(--shiro-10);
   padding: 30px;
   border-radius: 10px;
-  
+
   canvas {
     max-inline-size: 100%;
   }

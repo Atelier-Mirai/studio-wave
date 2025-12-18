@@ -25,21 +25,21 @@ const SWIPER_CONFIG = {
 
   // ページネーション（ドットインジケーター）
   pagination: {
-    el: '.swiper-pagination',
+    el: ".swiper-pagination",
     clickable: true,
     dynamicBullets: true,
   },
 
   // ナビゲーション矢印
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
 
   // アクセシビリティ
   a11y: {
-    prevSlideMessage: '前のスライド',
-    nextSlideMessage: '次のスライド',
+    prevSlideMessage: "前のスライド",
+    nextSlideMessage: "次のスライド",
   },
 
   // レスポンシブブレークポイント
@@ -66,17 +66,17 @@ const SWIPER_CONFIG = {
  * Swiper を初期化
  */
 const initSwiper = () => {
-  const swiperContainer = document.querySelector('.swiper');
+  const swiperContainer = document.querySelector(".swiper");
   if (!swiperContainer) return null;
 
-  return new Swiper('.swiper', SWIPER_CONFIG);
+  return new Swiper(".swiper", SWIPER_CONFIG);
 };
 
 // DOM 読み込み完了後に初期化
 let swiperInstance = null;
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", () => {
     swiperInstance = initSwiper();
   });
 } else {

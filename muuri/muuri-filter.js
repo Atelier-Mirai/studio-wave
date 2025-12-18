@@ -9,14 +9,14 @@
  */
 const CONFIG = {
   selectors: {
-    wrapper: '.grid-wrapper',
-    searchField: '.search-field',
-    filterField: '.filter-field',
-    grid: '.grid',
+    wrapper: ".grid-wrapper",
+    searchField: ".search-field",
+    filterField: ".filter-field",
+    grid: ".grid",
   },
   attributes: {
-    search: 'data-title',
-    filter: 'data-color',
+    search: "data-title",
+    filter: "data-color",
   },
 };
 
@@ -45,19 +45,19 @@ const initMuuriGrid = () => {
   });
 
   // 現在のフィルター値を保持
-  let currentSearchValue = searchField?.value.toLowerCase() ?? '';
-  let currentFilterValue = filterField?.value ?? '';
+  let currentSearchValue = searchField?.value.toLowerCase() ?? "";
+  let currentFilterValue = filterField?.value ?? "";
 
   /**
    * グリッドアイテムをフィルタリング
    */
   const applyFilter = () => {
-    currentFilterValue = filterField?.value ?? '';
+    currentFilterValue = filterField?.value ?? "";
 
     grid.filter((item) => {
       const element = item.getElement();
-      const titleText = element.getAttribute(CONFIG.attributes.search) ?? '';
-      const colorValue = element.getAttribute(CONFIG.attributes.filter) ?? '';
+      const titleText = element.getAttribute(CONFIG.attributes.search) ?? "";
+      const colorValue = element.getAttribute(CONFIG.attributes.filter) ?? "";
 
       // 検索マッチ判定
       const isSearchMatch =
@@ -74,7 +74,7 @@ const initMuuriGrid = () => {
 
   // 検索フィールドのイベント（デバウンス付き）
   let searchTimeout = null;
-  searchField?.addEventListener('input', (e) => {
+  searchField?.addEventListener("input", (e) => {
     clearTimeout(searchTimeout);
     searchTimeout = setTimeout(() => {
       const newValue = e.target.value.toLowerCase();
@@ -86,12 +86,12 @@ const initMuuriGrid = () => {
   });
 
   // フィルター選択のイベント
-  filterField?.addEventListener('change', applyFilter);
+  filterField?.addEventListener("change", applyFilter);
 };
 
 // DOM 読み込み完了後に初期化
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initMuuriGrid);
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initMuuriGrid);
 } else {
   initMuuriGrid();
 }

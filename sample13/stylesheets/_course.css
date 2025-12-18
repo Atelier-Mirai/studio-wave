@@ -9,7 +9,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  
+
   @media (width <= 768px) {
     grid-template-columns: 1fr;
     max-inline-size: 400px;
@@ -23,11 +23,11 @@
   overflow: hidden;
   box-shadow: 0 4px 15px rgb(0 0 0 / 10%);
   transition: transform 0.3s;
-  
+
   &:hover {
     transform: translateY(-5px);
   }
-  
+
   a {
     display: block;
     color: var(--sumi);
@@ -38,15 +38,15 @@
   block-size: 180px;
   background-size: cover;
   background-position: center;
-  
+
   &.course-01 {
     background-image: url("../images/course01.webp");
   }
-  
+
   &.course-02 {
     background-image: url("../images/course02.webp");
   }
-  
+
   &.course-03 {
     background-image: url("../images/course03.webp");
   }

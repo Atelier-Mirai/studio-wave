@@ -25,7 +25,7 @@
     filter: brightness(0.6);
 
     @media (width >= 768px) {
-      filter: unset;  /* 解除 */
+      filter: unset; /* 解除 */
     }
   }
 }
@@ -47,7 +47,7 @@
   /* テキストのグリッド */
   display: grid;
   row-gap: 15px;
-  justify-items: end;  /* 縦書きなので、「下」揃えになる */
+  justify-items: end; /* 縦書きなので、「下」揃えになる */
 
   h2 {
     padding-block-end: 20px;

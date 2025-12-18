@@ -29,18 +29,18 @@
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s;
-  
+
   &:hover {
     background-color: var(--kinari);
   }
-  
+
   &::after {
     content: "+";
     font-size: 1.5rem;
     color: var(--hai);
     transition: transform 0.3s;
   }
-  
+
   .accordion-item.is-open &::after {
     transform: rotate(45deg);
   }
@@ -50,7 +50,7 @@
   display: none;
   padding: 0 20px 20px;
   color: var(--hai);
-  
+
   .accordion-item.is-open & {
     display: block;
   }

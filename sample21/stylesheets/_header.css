@@ -15,17 +15,17 @@
 .header-nav {
   display: flex;
   gap: 40px;
-  
+
   a {
     font-size: 0.9rem;
     letter-spacing: 0.1em;
     transition: opacity 0.3s;
-    
+
     &:hover {
       opacity: 0.6;
     }
   }
-  
+
   @media (width <= 768px) {
     gap: 20px;
     font-size: 0.8rem;

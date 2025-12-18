@@ -11,7 +11,7 @@
   cursor: pointer;
   background: transparent;
   border: none;
-  
+
   span {
     display: block;
     position: absolute;
@@ -20,12 +20,18 @@
     block-size: 2px;
     background-color: var(--shiro);
     transition: all 0.3s;
-    
-    &:nth-of-type(1) { inset-block-start: 16px; }
-    &:nth-of-type(2) { inset-block-start: 24px; }
-    &:nth-of-type(3) { inset-block-start: 32px; }
+
+    &:nth-of-type(1) {
+      inset-block-start: 16px;
+    }
+    &:nth-of-type(2) {
+      inset-block-start: 24px;
+    }
+    &:nth-of-type(3) {
+      inset-block-start: 32px;
+    }
   }
-  
+
   &.is-active span {
     &:nth-of-type(1) {
       inset-block-start: 24px;
@@ -51,7 +57,7 @@
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s;
-  
+
   &.is-active {
     opacity: 1;
     visibility: visible;
@@ -60,11 +66,11 @@
 
 .nav-list {
   text-align: center;
-  
+
   li {
     margin-block-end: 20px;
   }
-  
+
   a {
     display: block;
     padding: 15px 40px;
@@ -72,7 +78,7 @@
     font-size: 1.2rem;
     letter-spacing: 0.1em;
     transition: color 0.3s;
-    
+
     &:hover {
       color: var(--ai);
     }

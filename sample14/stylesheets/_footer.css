@@ -19,7 +19,7 @@
   z-index: 10;
   inset-inline-end: 20px;
   inset-block-end: 20px;
-  
+
   a {
     display: grid;
     place-items: center;
@@ -28,7 +28,7 @@
     background-color: var(--ai);
     border-radius: 50%;
     transition: all 0.3s;
-    
+
     &::before {
       content: "";
       inline-size: 10px;
@@ -37,7 +37,7 @@
       border-inline-start: 2px solid var(--kon);
       transform: rotate(45deg) translateY(3px);
     }
-    
+
     &:hover {
       background-color: var(--asagi);
       transform: translateY(-5px);

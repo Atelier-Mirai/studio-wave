@@ -1,44 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
   <!-- サイトに関する設定事項を記述します -->
   <head>
     <!-- 文字コードの指定 -->
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
 
     <!-- ページのタイトル -->
     <title>WAVE</title>
 
     <!-- ビューポート(視点)の指定 -->
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width" />
 
     <!-- ファビコンの指定 https://ao-system.net/favicongenerator/ -->
-    <link rel="icon"
-          href="images/favicon.ico"
-          type="image/ico">
-    <link rel="apple-touch-icon"
-          href="images/apple-touch-icon-180x180.png"
-          type="image/png"
-          sizes="180x180">
+    <link rel="icon" href="images/favicon.ico" type="image/ico" />
+    <link
+      rel="apple-touch-icon"
+      href="images/apple-touch-icon-180x180.png"
+      type="image/png"
+      sizes="180x180"
+    />
 
     <!-- 検索時に表示される、ウェブサイトの要約文 -->
-    <meta name="description" content="概ね80文字前後のサイトの
-    紹介文が、検索時に表示されます。">
+    <meta
+      name="description"
+      content="概ね80文字前後のサイトの
+    紹介文が、検索時に表示されます。"
+    />
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap"
+    />
 
     <!-- Font Awesome -->
-    <link rel="stylesheet"
-          href="https://use.fontawesome.com/releases/v7.1.0/css/all.css">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v7.1.0/css/all.css"
+    />
 
     <!-- Reset CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@acab/reset.css@0.10.0/index.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@acab/reset.css@0.10.0/index.min.css"
+    />
 
     <!-- 自分で作ったスタイルシート -->
-    <link rel="stylesheet" href="stylesheets/master.css">
+    <link rel="stylesheet" href="stylesheets/master.css" />
 
     <!-- 先頭へ戻るボタンの為のJavaScript -->
     <script src="javascripts/page-top.js" defer></script>
@@ -47,7 +57,7 @@
     <script src="include.js"></script>
 
     <!-- 暦の為の CSS & JS 読み込み -->
-    <link rel="stylesheet" href="calendar.css">
+    <link rel="stylesheet" href="calendar.css" />
     <script type="module" defer src="calendar.js"></script>
   </head>
 
@@ -55,11 +65,15 @@
   <body class="inner">
     <!-- ヘッダー(サイト名) -->
     <header id="header"></header>
-    <script>include("header")</script>
+    <script>
+      include("header");
+    </script>
 
     <!-- ナビゲーションメニュー -->
     <nav id="navigation"></nav>
-    <script>include("navigation")</script>
+    <script>
+      include("navigation");
+    </script>
 
     <!-- 主要なコンテンツ -->
     <main>
@@ -73,12 +87,12 @@
         </time>
 
         <figure class="sepia rotate-3 frame" id="image">
-          <img src="images/aozora-to-sakura.webp" alt="青空と櫻">
+          <img src="images/aozora-to-sakura.webp" alt="青空と櫻" />
         </figure>
 
         <p id="paragraph">
-          令和六年元旦。新しい年の始まりです。<br>
-          初日の出を拝み、良い年であるようにと祈ります。<br>
+          令和六年元旦。新しい年の始まりです。<br />
+          初日の出を拝み、良い年であるようにと祈ります。<br />
           お節料理にお屠蘇、お雑煮をいただきます。
         </p>
       </article>
@@ -90,7 +104,7 @@
       <aside class="profile">
         <h2>PROFILE</h2>
         <figure>
-          <img src="images/profile.webp" alt="WAVEの管理人" class="circular">
+          <img src="images/profile.webp" alt="WAVEの管理人" class="circular" />
         </figure>
         <p>
           海辺の生活が好きな小さなアトリエの住人です。アトリエで絵を描いたり、浜辺を散歩したり、波音のそばで過ごす静かな時間を楽しんでいます。
@@ -108,6 +122,8 @@
 
     <!-- フッター -->
     <footer id="footer"></footer>
-    <script>include("footer")</script>
+    <script>
+      include("footer");
+    </script>
   </body>
 </html>

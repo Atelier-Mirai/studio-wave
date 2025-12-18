@@ -1,113 +1,335 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <title>Ryoko Kubota - Photographer</title>
-  <meta name="description" content="フォトグラファー久保田涼子のポートフォリオサイト">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Marcellus&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="stylesheets/master.css">
-  <script src="javascripts/main.js" defer></script>
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <title>Ryoko Kubota - Photographer</title>
+    <meta
+      name="description"
+      content="フォトグラファー久保田涼子のポートフォリオサイト"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Italianno&family=Marcellus&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="stylesheets/master.css" />
+    <script src="javascripts/main.js" defer></script>
+  </head>
 
-<body>
-  <!-- ローディング画面 -->
-  <div id="splash">
-    <div class="splash-text"></div>
-  </div>
-
-  <!-- ヘッダー -->
-  <header id="header">
-    <div class="hero-slideshow">
-      <img src="images/hero01.webp" alt="" class="is-active">
-      <img src="images/hero02.webp" alt="">
-      <img src="images/hero03.webp" alt="">
+  <body>
+    <!-- ローディング画面 -->
+    <div id="splash">
+      <div class="splash-text"></div>
     </div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1 class="random-text">Ryoko Kubota</h1>
-      <p class="random-text">Photographer</p>
+
+    <!-- ヘッダー -->
+    <header id="header">
+      <div class="hero-slideshow">
+        <img src="images/hero01.webp" alt="" class="is-active" />
+        <img src="images/hero02.webp" alt="" />
+        <img src="images/hero03.webp" alt="" />
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="random-text">Ryoko Kubota</h1>
+        <p class="random-text">Photographer</p>
+      </div>
+      <ul class="social-links">
+        <li>
+          <a href="#"><img src="svg/icon-x.svg" alt="X" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="svg/icon-instagram.svg" alt="Instagram" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="svg/icon-facebook.svg" alt="Facebook" /></a>
+        </li>
+      </ul>
+    </header>
+
+    <!-- ナビゲーション -->
+    <button class="menu-toggle" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="global-nav">
+      <ul class="nav-list">
+        <li><a href="#">Top</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="wrapper">
+      <!-- フィルターボタン -->
+      <ul class="filter-buttons">
+        <li><button data-filter="all" class="is-active">All</button></li>
+        <li><button data-filter="landscape">Landscape</button></li>
+        <li><button data-filter="women">Women</button></li>
+        <li><button data-filter="flower">Flower</button></li>
+      </ul>
+
+      <!-- ギャラリー -->
+      <ul id="gallery" class="gallery-grid">
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery01.webp" data-caption="Ocean 2019"
+            ><div class="gallery-image">
+              <img src="images/gallery01.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Ocean 2019</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="flower">
+          <a href="images/gallery02.webp" data-caption="Flower 2018"
+            ><div class="gallery-image">
+              <img src="images/gallery02.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Flower 2018</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery03.webp" data-caption="Desk 2020"
+            ><div class="gallery-image">
+              <img src="images/gallery03.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Desk 2020</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="women">
+          <a href="images/gallery04.webp" data-caption="Woman 2018"
+            ><div class="gallery-image">
+              <img src="images/gallery04.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Woman 2018</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="women">
+          <a href="images/gallery05.webp" data-caption="Woman 2021"
+            ><div class="gallery-image">
+              <img src="images/gallery05.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Woman 2021</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="women">
+          <a href="images/gallery06.webp" data-caption="Woman 2020"
+            ><div class="gallery-image">
+              <img src="images/gallery06.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Woman 2020</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="women">
+          <a href="images/gallery07.webp" data-caption="Group 2010"
+            ><div class="gallery-image">
+              <img src="images/gallery07.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Group 2010</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="flower">
+          <a href="images/gallery08.webp" data-caption="Flower 2019"
+            ><div class="gallery-image">
+              <img src="images/gallery08.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Flower 2019</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery09.webp" data-caption="Coffee 2019"
+            ><div class="gallery-image">
+              <img src="images/gallery09.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Coffee 2019</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery-10.webp" data-caption="Ocean 2019"
+            ><div class="gallery-image">
+              <img src="images/gallery-10.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Ocean 2019</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery-11.webp" data-caption="Table 2025"
+            ><div class="gallery-image">
+              <img src="images/gallery-11.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Table 2025</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery-12.webp" data-caption="Ocean 2025"
+            ><div class="gallery-image">
+              <img src="images/gallery-12.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Ocean 2025</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery-13.webp" data-caption="Mountain 2002"
+            ><div class="gallery-image">
+              <img src="images/gallery-13.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Mountain 2002</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="women">
+          <a href="images/gallery-14.webp" data-caption="Woman 2024"
+            ><div class="gallery-image">
+              <img src="images/gallery-14.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Woman 2024</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery-15.webp" data-caption="Art 2021"
+            ><div class="gallery-image">
+              <img src="images/gallery-15.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Art 2021</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery-16.webp" data-caption="Winter 2023"
+            ><div class="gallery-image">
+              <img src="images/gallery-16.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Winter 2023</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery-17.webp" data-caption="Table 2023"
+            ><div class="gallery-image">
+              <img src="images/gallery-17.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Table 2023</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="flower">
+          <a href="images/gallery-18.webp" data-caption="Flower 2020"
+            ><div class="gallery-image">
+              <img src="images/gallery-18.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Flower 2020</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="women">
+          <a href="images/gallery-19.webp" data-caption="Woman 2023"
+            ><div class="gallery-image">
+              <img src="images/gallery-19.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Woman 2023</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery-20.webp" data-caption="Table 2025"
+            ><div class="gallery-image">
+              <img src="images/gallery-20.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Table 2025</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="women">
+          <a href="images/gallery-21.webp" data-caption="Woman 2024"
+            ><div class="gallery-image">
+              <img src="images/gallery-21.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Woman 2024</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery-22.webp" data-caption="Summer 2007"
+            ><div class="gallery-image">
+              <img src="images/gallery-22.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Summer 2007</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="women">
+          <a href="images/gallery-23.webp" data-caption="Woman 2014"
+            ><div class="gallery-image">
+              <img src="images/gallery-23.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Woman 2014</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery-24.webp" data-caption="Steps 2025"
+            ><div class="gallery-image">
+              <img src="images/gallery-24.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Steps 2025</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="women">
+          <a href="images/gallery-25.webp" data-caption="Woman 2018"
+            ><div class="gallery-image">
+              <img src="images/gallery-25.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Woman 2018</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="women">
+          <a href="images/gallery-26.webp" data-caption="Woman 2010"
+            ><div class="gallery-image">
+              <img src="images/gallery-26.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Woman 2010</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="women">
+          <a href="images/gallery-27.webp" data-caption="Woman 2013"
+            ><div class="gallery-image">
+              <img src="images/gallery-27.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Woman 2013</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery-28.webp" data-caption="Ocean 2010"
+            ><div class="gallery-image">
+              <img src="images/gallery-28.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Ocean 2010</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="landscape">
+          <a href="images/gallery-29.webp" data-caption="Winter 2006"
+            ><div class="gallery-image">
+              <img src="images/gallery-29.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Winter 2006</span></a
+          >
+        </li>
+        <li class="gallery-item" data-category="flower">
+          <a href="images/gallery-30.webp" data-caption="Flower 2014"
+            ><div class="gallery-image">
+              <img src="images/gallery-30.webp" alt="" loading="lazy" />
+            </div>
+            <span class="gallery-caption">Flower 2014</span></a
+          >
+        </li>
+      </ul>
     </div>
-    <ul class="social-links">
-      <li><a href="#"><img src="svg/icon-x.svg" alt="X"></a></li>
-      <li><a href="#"><img src="svg/icon-instagram.svg" alt="Instagram"></a></li>
-      <li><a href="#"><img src="svg/icon-facebook.svg" alt="Facebook"></a></li>
-    </ul>
-  </header>
 
-  <!-- ナビゲーション -->
-  <button class="menu-toggle" aria-label="メニュー">
-    <span></span><span></span><span></span>
-  </button>
-  <nav id="global-nav">
-    <ul class="nav-list">
-      <li><a href="#">Top</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Service</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-
-  <div class="wrapper">
-    <!-- フィルターボタン -->
-    <ul class="filter-buttons">
-      <li><button data-filter="all" class="is-active">All</button></li>
-      <li><button data-filter="landscape">Landscape</button></li>
-      <li><button data-filter="women">Women</button></li>
-      <li><button data-filter="flower">Flower</button></li>
-    </ul>
-
-    <!-- ギャラリー -->
-    <ul id="gallery" class="gallery-grid">
-      <li class="gallery-item" data-category="landscape"><a href="images/gallery01.webp" data-caption="Ocean 2019"><div class="gallery-image"><img src="images/gallery01.webp" alt="" loading="lazy"></div><span class="gallery-caption">Ocean 2019</span></a></li>
-      <li class="gallery-item" data-category="flower"><a href="images/gallery02.webp" data-caption="Flower 2018"><div class="gallery-image"><img src="images/gallery02.webp" alt="" loading="lazy"></div><span class="gallery-caption">Flower 2018</span></a></li>
-      <li class="gallery-item" data-category="landscape"><a href="images/gallery03.webp" data-caption="Desk 2020"><div class="gallery-image"><img src="images/gallery03.webp" alt="" loading="lazy"></div><span class="gallery-caption">Desk 2020</span></a></li>
-      <li class="gallery-item" data-category="women"><a href="images/gallery04.webp" data-caption="Woman 2018"><div class="gallery-image"><img src="images/gallery04.webp" alt="" loading="lazy"></div><span class="gallery-caption">Woman 2018</span></a></li>
-      <li class="gallery-item" data-category="women"><a href="images/gallery05.webp" data-caption="Woman 2021"><div class="gallery-image"><img src="images/gallery05.webp" alt="" loading="lazy"></div><span class="gallery-caption">Woman 2021</span></a></li>
-      <li class="gallery-item" data-category="women"><a href="images/gallery06.webp" data-caption="Woman 2020"><div class="gallery-image"><img src="images/gallery06.webp" alt="" loading="lazy"></div><span class="gallery-caption">Woman 2020</span></a></li>
-      <li class="gallery-item" data-category="women"><a href="images/gallery07.webp" data-caption="Group 2010"><div class="gallery-image"><img src="images/gallery07.webp" alt="" loading="lazy"></div><span class="gallery-caption">Group 2010</span></a></li>
-      <li class="gallery-item" data-category="flower"><a href="images/gallery08.webp" data-caption="Flower 2019"><div class="gallery-image"><img src="images/gallery08.webp" alt="" loading="lazy"></div><span class="gallery-caption">Flower 2019</span></a></li>
-      <li class="gallery-item" data-category="landscape"><a href="images/gallery09.webp" data-caption="Coffee 2019"><div class="gallery-image"><img src="images/gallery09.webp" alt="" loading="lazy"></div><span class="gallery-caption">Coffee 2019</span></a></li>
-      <li class="gallery-item" data-category="landscape"><a href="images/gallery-10.webp" data-caption="Ocean 2019"><div class="gallery-image"><img src="images/gallery-10.webp" alt="" loading="lazy"></div><span class="gallery-caption">Ocean 2019</span></a></li>
-      <li class="gallery-item" data-category="landscape"><a href="images/gallery-11.webp" data-caption="Table 2025"><div class="gallery-image"><img src="images/gallery-11.webp" alt="" loading="lazy"></div><span class="gallery-caption">Table 2025</span></a></li>
-      <li class="gallery-item" data-category="landscape"><a href="images/gallery-12.webp" data-caption="Ocean 2025"><div class="gallery-image"><img src="images/gallery-12.webp" alt="" loading="lazy"></div><span class="gallery-caption">Ocean 2025</span></a></li>
-      <li class="gallery-item" data-category="landscape"><a href="images/gallery-13.webp" data-caption="Mountain 2002"><div class="gallery-image"><img src="images/gallery-13.webp" alt="" loading="lazy"></div><span class="gallery-caption">Mountain 2002</span></a></li>
-      <li class="gallery-item" data-category="women"><a href="images/gallery-14.webp" data-caption="Woman 2024"><div class="gallery-image"><img src="images/gallery-14.webp" alt="" loading="lazy"></div><span class="gallery-caption">Woman 2024</span></a></li>
-      <li class="gallery-item" data-category="landscape"><a href="images/gallery-15.webp" data-caption="Art 2021"><div class="gallery-image"><img src="images/gallery-15.webp" alt="" loading="lazy"></div><span class="gallery-caption">Art 2021</span></a></li>
-      <li class="gallery-item" data-category="landscape"><a href="images/gallery-16.webp" data-caption="Winter 2023"><div class="gallery-image"><img src="images/gallery-16.webp" alt="" loading="lazy"></div><span class="gallery-caption">Winter 2023</span></a></li>
-      <li class="gallery-item" data-category="landscape"><a href="images/gallery-17.webp" data-caption="Table 2023"><div class="gallery-image"><img src="images/gallery-17.webp" alt="" loading="lazy"></div><span class="gallery-caption">Table 2023</span></a></li>
-      <li class="gallery-item" data-category="flower"><a href="images/gallery-18.webp" data-caption="Flower 2020"><div class="gallery-image"><img src="images/gallery-18.webp" alt="" loading="lazy"></div><span class="gallery-caption">Flower 2020</span></a></li>
-      <li class="gallery-item" data-category="women"><a href="images/gallery-19.webp" data-caption="Woman 2023"><div class="gallery-image"><img src="images/gallery-19.webp" alt="" loading="lazy"></div><span class="gallery-caption">Woman 2023</span></a></li>
-      <li class="gallery-item" data-category="landscape"><a href="images/gallery-20.webp" data-caption="Table 2025"><div class="gallery-image"><img src="images/gallery-20.webp" alt="" loading="lazy"></div><span class="gallery-caption">Table 2025</span></a></li>
-      <li class="gallery-item" data-category="women"><a href="images/gallery-21.webp" data-caption="Woman 2024"><div class="gallery-image"><img src="images/gallery-21.webp" alt="" loading="lazy"></div><span class="gallery-caption">Woman 2024</span></a></li>
-      <li class="gallery-item" data-category="landscape"><a href="images/gallery-22.webp" data-caption="Summer 2007"><div class="gallery-image"><img src="images/gallery-22.webp" alt="" loading="lazy"></div><span class="gallery-caption">Summer 2007</span></a></li>
-      <li class="gallery-item" data-category="women"><a href="images/gallery-23.webp" data-caption="Woman 2014"><div class="gallery-image"><img src="images/gallery-23.webp" alt="" loading="lazy"></div><span class="gallery-caption">Woman 2014</span></a></li>
-      <li class="gallery-item" data-category="landscape"><a href="images/gallery-24.webp" data-caption="Steps 2025"><div class="gallery-image"><img src="images/gallery-24.webp" alt="" loading="lazy"></div><span class="gallery-caption">Steps 2025</span></a></li>
-      <li class="gallery-item" data-category="women"><a href="images/gallery-25.webp" data-caption="Woman 2018"><div class="gallery-image"><img src="images/gallery-25.webp" alt="" loading="lazy"></div><span class="gallery-caption">Woman 2018</span></a></li>
-      <li class="gallery-item" data-category="women"><a href="images/gallery-26.webp" data-caption="Woman 2010"><div class="gallery-image"><img src="images/gallery-26.webp" alt="" loading="lazy"></div><span class="gallery-caption">Woman 2010</span></a></li>
-      <li class="gallery-item" data-category="women"><a href="images/gallery-27.webp" data-caption="Woman 2013"><div class="gallery-image"><img src="images/gallery-27.webp" alt="" loading="lazy"></div><span class="gallery-caption">Woman 2013</span></a></li>
-      <li class="gallery-item" data-category="landscape"><a href="images/gallery-28.webp" data-caption="Ocean 2010"><div class="gallery-image"><img src="images/gallery-28.webp" alt="" loading="lazy"></div><span class="gallery-caption">Ocean 2010</span></a></li>
-      <li class="gallery-item" data-category="landscape"><a href="images/gallery-29.webp" data-caption="Winter 2006"><div class="gallery-image"><img src="images/gallery-29.webp" alt="" loading="lazy"></div><span class="gallery-caption">Winter 2006</span></a></li>
-      <li class="gallery-item" data-category="flower"><a href="images/gallery-30.webp" data-caption="Flower 2014"><div class="gallery-image"><img src="images/gallery-30.webp" alt="" loading="lazy"></div><span class="gallery-caption">Flower 2014</span></a></li>
-    </ul>
-  </div>
-
-  <!-- ライトボックス -->
-  <div id="lightbox-overlay" class="lightbox-overlay">
-    <div class="lightbox-content">
-      <img src="" alt="">
-      <button class="lightbox-close" aria-label="閉じる"></button>
-      <button class="lightbox-nav prev" aria-label="前へ"></button>
-      <button class="lightbox-nav next" aria-label="次へ"></button>
-      <p class="lightbox-caption"></p>
+    <!-- ライトボックス -->
+    <div id="lightbox-overlay" class="lightbox-overlay">
+      <div class="lightbox-content">
+        <img src="" alt="" />
+        <button class="lightbox-close" aria-label="閉じる"></button>
+        <button class="lightbox-nav prev" aria-label="前へ"></button>
+        <button class="lightbox-nav next" aria-label="次へ"></button>
+        <p class="lightbox-caption"></p>
+      </div>
     </div>
-  </div>
 
-  <!-- フッター -->
-  <footer id="footer">
-    <p class="scroll-link"><a href="#gallery">Scroll</a></p>
-    <small class="copyright">&copy; Ryoko Kubota All Rights Reserved.</small>
-    <p class="page-top-link"><a href="#">Page Top</a></p>
-  </footer>
-</body>
+    <!-- フッター -->
+    <footer id="footer">
+      <p class="scroll-link"><a href="#gallery">Scroll</a></p>
+      <small class="copyright">&copy; Ryoko Kubota All Rights Reserved.</small>
+      <p class="page-top-link"><a href="#">Page Top</a></p>
+    </footer>
+  </body>
 </html>

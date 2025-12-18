@@ -33,12 +33,12 @@
   font-size: 0.85rem;
   text-align: center;
   transition: all 0.3s;
-  
+
   &:hover {
     border-color: var(--wakakusa);
     background-color: var(--wakakusa-20);
   }
-  
+
   img {
     inline-size: 20px;
   }
@@ -86,7 +86,7 @@
   font-size: 0.85rem;
   border-block-end: 3px solid transparent;
   transition: all 0.3s;
-  
+
   &.is-active {
     background-color: var(--gofun);
     border-color: var(--wakakusa);
@@ -96,17 +96,17 @@
 .tab-content {
   display: none;
   padding: 20px;
-  
+
   &.is-active {
     display: block;
   }
-  
+
   a {
     display: block;
     padding: 8px 0;
     border-block-end: 1px dotted var(--usuhai);
     font-size: 0.85rem;
-    
+
     &:last-child {
       border: none;
     }

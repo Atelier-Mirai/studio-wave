@@ -6,57 +6,57 @@ const HERO_IMAGES = [
   { src: "images/sea05.webp", alt: "海の写真5" },
   { src: "images/sea06.webp", alt: "海の写真6" },
   { src: "images/sea07.webp", alt: "海の写真7" },
-]
+];
 
-const HERO_SLIDE_INTERVAL = 5000 // ミリ秒: 1枚あたりの表示時間
+const HERO_SLIDE_INTERVAL = 5000; // ミリ秒: 1枚あたりの表示時間
 
 window.addEventListener("load", () => {
-  const hero = document.querySelector(".hero")
-  if (!hero || HERO_IMAGES.length === 0) return
+  const hero = document.querySelector(".hero");
+  if (!hero || HERO_IMAGES.length === 0) return;
 
   // 既存の静的画像はスライドショーに置き換える
-  hero.innerHTML = ""
+  hero.innerHTML = "";
 
   HERO_IMAGES.forEach((info, index) => {
-    const img = document.createElement("img")
-    img.alt = info.alt
+    const img = document.createElement("img");
+    img.alt = info.alt;
     if (index === 0) {
       // 1枚目だけ最初から読み込んで表示
-      img.src = info.src
-      img.classList.add("is-active")
-      img.dataset.loaded = "true"
+      img.src = info.src;
+      img.classList.add("is-active");
+      img.dataset.loaded = "true";
     } else {
       // 2枚目以降は data-src に入れておき、必要になったタイミングで読み込む
-      img.dataset.src = info.src
-      img.dataset.loaded = "false"
+      img.dataset.src = info.src;
+      img.dataset.loaded = "false";
     }
-    hero.appendChild(img)
-  })
+    hero.appendChild(img);
+  });
 
-  const slides = hero.querySelectorAll("img")
-  if (slides.length <= 1) return
+  const slides = hero.querySelectorAll("img");
+  if (slides.length <= 1) return;
 
   // 現在表示しているスライドのインデックス
-  let current = 0
+  let current = 0;
 
   // 一定間隔ごとに次の画像へ切り替える
   setInterval(() => {
-    const currentSlide = slides[current]
+    const currentSlide = slides[current];
     // 表示中のスライドを非表示にする
-    currentSlide.classList.remove("is-active")
+    currentSlide.classList.remove("is-active");
 
     // 次に表示するスライドのインデックスを計算
-    current = (current + 1) % slides.length
-    const nextSlide = slides[current]
+    current = (current + 1) % slides.length;
+    const nextSlide = slides[current];
     // 初めて表示するときにだけ src を設定して読み込む
     if (nextSlide.dataset.loaded !== "true") {
-      const dataSrc = nextSlide.dataset.src
+      const dataSrc = nextSlide.dataset.src;
       if (dataSrc) {
-        nextSlide.src = dataSrc
+        nextSlide.src = dataSrc;
       }
-      nextSlide.dataset.loaded = "true"
+      nextSlide.dataset.loaded = "true";
     }
     // 次のスライドを表示状態にする
-    nextSlide.classList.add("is-active")
-  }, HERO_SLIDE_INTERVAL)
-})
+    nextSlide.classList.add("is-active");
+  }, HERO_SLIDE_INTERVAL);
+});

@@ -2,15 +2,15 @@
   よく使う余白と影のトークン
 --------------------------------------------------------------*/
 :root {
-  --space-s:           4px;
-  --space-m:           10px;
-  --space-l:           20px;
-  --space-xl:          30px;
+  --space-s: 4px;
+  --space-m: 10px;
+  --space-l: 20px;
+  --space-xl: 30px;
 
-  --shadow-soft:       3px 3px 5px var(--amairo);
+  --shadow-soft: 3px 3px 5px var(--amairo);
 
-  --radius-s:          5px;
-  --radius-m:          10px;
+  --radius-s: 5px;
+  --radius-m: 10px;
 
   --transition-normal: 0.5s;
 }

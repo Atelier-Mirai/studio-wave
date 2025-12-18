@@ -8,7 +8,7 @@
   display: none;
   place-items: center;
   background-color: var(--kuro-70);
-  
+
   &.is-active {
     display: grid;
   }
@@ -18,7 +18,7 @@
   position: relative;
   max-inline-size: 90vw;
   max-block-size: 90vh;
-  
+
   img {
     max-inline-size: 100%;
     max-block-size: 85vh;
@@ -35,7 +35,7 @@
   cursor: pointer;
   background: transparent;
   border: none;
-  
+
   &::before,
   &::after {
     content: "";
@@ -46,9 +46,13 @@
     block-size: 2px;
     background-color: var(--shiro);
   }
-  
-  &::before { transform: translate(-50%, -50%) rotate(45deg); }
-  &::after { transform: translate(-50%, -50%) rotate(-45deg); }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
 }
 
 .lightbox-nav {
@@ -60,7 +64,7 @@
   cursor: pointer;
   background: transparent;
   border: none;
-  
+
   &::before {
     content: "";
     display: block;
@@ -69,15 +73,19 @@
     border-block-start: 2px solid var(--shiro);
     border-inline-start: 2px solid var(--shiro);
   }
-  
+
   &.prev {
     inset-inline-start: -60px;
-    &::before { transform: rotate(-45deg); }
+    &::before {
+      transform: rotate(-45deg);
+    }
   }
-  
+
   &.next {
     inset-inline-end: -60px;
-    &::before { transform: rotate(135deg); }
+    &::before {
+      transform: rotate(135deg);
+    }
   }
 }
 

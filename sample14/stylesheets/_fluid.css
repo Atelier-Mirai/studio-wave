@@ -8,7 +8,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  
+
   @media (width <= 768px) {
     grid-template-columns: 1fr;
     min-block-size: auto;
@@ -21,7 +21,7 @@
   inline-size: 300px;
   block-size: 300px;
   margin-inline: auto;
-  
+
   @media (width <= 768px) {
     inline-size: 200px;
     block-size: 200px;
@@ -38,7 +38,8 @@
 }
 
 @keyframes fluid-morph {
-  0%, 100% {
+  0%,
+  100% {
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   }
   50% {
@@ -48,13 +49,13 @@
 
 .fluid-content {
   padding: 40px;
-  
+
   h2 {
     font-size: clamp(1.5rem, 4vw, 2.5rem);
     line-height: 1.5;
     margin-block-end: 30px;
   }
-  
+
   p {
     color: var(--hai);
     line-height: 2;

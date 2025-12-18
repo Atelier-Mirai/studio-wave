@@ -4,7 +4,7 @@
 .wrapper {
   padding: 40px;
   background-color: var(--kuro);
-  
+
   @media (width <= 768px) {
     padding: 20px;
   }

@@ -5,8 +5,7 @@
 .hero {
   block-size: 40.625rem;
   /* 画像を中央寄せし、画面サイズに合わせてトリミングしながら表示 */
-  background:
-    url("../images/hero.jpg") center / cover no-repeat;
+  background: url("../images/hero.jpg") center / cover no-repeat;
 
   .hero-container {
     /* grid を使うと、中央寄せ（縦横）をシンプルに書けます */

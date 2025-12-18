@@ -2,7 +2,7 @@
   ベーススタイル
 =====================================================================*/
 body {
-  font-family: 'Kosugi Maru', sans-serif;
+  font-family: "Kosugi Maru", sans-serif;
   color: var(--sumi);
   font-size: 1rem;
   line-height: 1.85;
@@ -25,15 +25,17 @@ ul {
   list-style: none;
 }
 
-h1, h2, h3 {
-  font-family: 'Lato', 'Kosugi Maru', sans-serif;
+h1,
+h2,
+h3 {
+  font-family: "Lato", "Kosugi Maru", sans-serif;
 }
 
 h2 {
   font-size: 1.8rem;
   text-align: center;
   margin-block-end: 40px;
-  
+
   span {
     display: block;
     font-size: 0.9rem;

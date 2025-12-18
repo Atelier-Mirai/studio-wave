@@ -1,13 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
     <title>GLightbox</title>
 
     <!-- CDNよりGLightbox用CSSとJavaScriptを読み込む -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"
+      defer
+    ></script>
     <!-- GLightboxをカスタマイズするの為のJavaScriptを読み込む -->
     <script src="glightbox-custom.js" defer></script>
   </head>
@@ -17,123 +23,152 @@
 
     <h3>基本的な画像ギャラリー</h3>
     <a href="images/sakura1.webp" class="glightbox">
-      <img src="images/sakura1-thumb.webp" alt="桜">
+      <img src="images/sakura1-thumb.webp" alt="桜" />
     </a>
     <a href="images/sakura2.webp" class="glightbox">
-      <img src="images/sakura2-thumb.webp" alt="桜">
+      <img src="images/sakura2-thumb.webp" alt="桜" />
     </a>
     <a href="images/sakura3.webp" class="glightbox">
-      <img src="images/sakura3-thumb.webp" alt="桜">
+      <img src="images/sakura3-thumb.webp" alt="桜" />
     </a>
 
     <h3>説明付きの画像ギャラリー</h3>
 
     <!-- 短い説明文の例 -->
-    <a href="images/sea1.webp"
-       class="glightbox-with-description"
-       data-glightbox="descPosition: top; title:タイトルです; description: 説明書きです <a href=https://www.beiz.jp/素材/海/00141.html>写真: BEIZ images</a>">
-      <img src="images/sea1-thumb.webp" alt="断崖絶壁の海岸">
+    <a
+      href="images/sea1.webp"
+      class="glightbox-with-description"
+      data-glightbox="descPosition: top; title:タイトルです; description: 説明書きです <a href=https://www.beiz.jp/素材/海/00141.html>写真: BEIZ images</a>"
+    >
+      <img src="images/sea1-thumb.webp" alt="断崖絶壁の海岸" />
     </a>
 
     <!-- <div>タグに説明文をいろいろ記した例（われは海の子） -->
-    <a href="images/sea2.webp"
-       class="glightbox-with-description"
-       data-glightbox="descPosition: right; title: 説明書きは右に配置します; description: .custom-description-warehauminoko;">
-      <img src="images/sea2-thumb.webp" alt="幻想的な朝焼けに包まれる海">
+    <a
+      href="images/sea2.webp"
+      class="glightbox-with-description"
+      data-glightbox="descPosition: right; title: 説明書きは右に配置します; description: .custom-description-warehauminoko;"
+    >
+      <img src="images/sea2-thumb.webp" alt="幻想的な朝焼けに包まれる海" />
     </a>
     <div class="glightbox-desc custom-description-warehauminoko">
       <p>
         幻想的な朝焼けに包まれる海の写真です。
-        <a href="https://www.beiz.jp/素材/海/00119.html" target="_blank" style="text-decoration: underline; font-weight: bold">写真: BEIZ images</a>
+        <a
+          href="https://www.beiz.jp/素材/海/00119.html"
+          target="_blank"
+          style="text-decoration: underline; font-weight: bold"
+          >写真: BEIZ images</a
+        >
       </p>
-      <figure style="margin: 0;">
+      <figure style="margin: 0">
         <figcaption>われは海の子</figcaption>
-        <ul style="list-style-type: japanese-formal;">
-          <li>我は海の子白浪の
-              さわぐいそべの松原に
-              煙たなびくとまやこそ
-              我がなつかしき住家なれ。</li>
-          <li>生まれてしほに浴して
-              浪を子守の歌と聞き
-              千里寄せくる海の氣を
-              吸ひてわらべとなりにけり。</li>
-          <li>高く鼻つくいその香に
-              不斷の花のかをりあり。
-              なぎさの松に吹く風を
-              いみじき樂と我は聞く。</li>
-          <li>丈餘のろかい操りて
-              行手定めぬ浪まくら
-              百尋千尋海の底
-              遊びなれたる庭廣し。</li>
-          <li>幾年こゝにきたへたる
-              鐵より堅きかひなあり。
-              吹く鹽風に黑みたる
-              はだは赤銅さながらに。</li>
-          <li>浪にたゞよふ氷山も
-              來らば來れ恐れんや。
-              海まき上ぐるたつまきも
-              起らば起れ驚かじ。</li>
-          <li>いで大船を乘出して
-              我は拾はん海の富。
-              いで軍艦に乘組みて
-              我は護らん海の國。</li>
+        <ul style="list-style-type: japanese-formal">
+          <li>
+            我は海の子白浪の さわぐいそべの松原に 煙たなびくとまやこそ
+            我がなつかしき住家なれ。
+          </li>
+          <li>
+            生まれてしほに浴して 浪を子守の歌と聞き 千里寄せくる海の氣を
+            吸ひてわらべとなりにけり。
+          </li>
+          <li>
+            高く鼻つくいその香に 不斷の花のかをりあり。 なぎさの松に吹く風を
+            いみじき樂と我は聞く。
+          </li>
+          <li>
+            丈餘のろかい操りて 行手定めぬ浪まくら 百尋千尋海の底
+            遊びなれたる庭廣し。
+          </li>
+          <li>
+            幾年こゝにきたへたる 鐵より堅きかひなあり。 吹く鹽風に黑みたる
+            はだは赤銅さながらに。
+          </li>
+          <li>
+            浪にたゞよふ氷山も 來らば來れ恐れんや。 海まき上ぐるたつまきも
+            起らば起れ驚かじ。
+          </li>
+          <li>
+            いで大船を乘出して 我は拾はん海の富。 いで軍艦に乘組みて
+            我は護らん海の國。
+          </li>
         </ul>
       </figure>
     </div>
 
     <!-- <div>タグに説明文をいろいろ記した例 (浜辺の歌)-->
-    <a href="images/sea3.webp"
-       class="glightbox-with-description"
-       data-glightbox="descPosition: left; title: 説明書きは左に配置します; description: .custom-description-hamabenouta;">
-      <img src="images/sea3-thumb.webp" alt="青い海と綺麗な砂浜">
+    <a
+      href="images/sea3.webp"
+      class="glightbox-with-description"
+      data-glightbox="descPosition: left; title: 説明書きは左に配置します; description: .custom-description-hamabenouta;"
+    >
+      <img src="images/sea3-thumb.webp" alt="青い海と綺麗な砂浜" />
     </a>
     <div class="glightbox-desc custom-description-hamabenouta">
       <p>
         青い海と綺麗な砂浜の写真です。
-        <a href="https://www.beiz.jp/素材/海/00033.html" target="_blank" style="text-decoration: underline; font-weight: bold">写真: BEIZ images</a>
+        <a
+          href="https://www.beiz.jp/素材/海/00033.html"
+          target="_blank"
+          style="text-decoration: underline; font-weight: bold"
+          >写真: BEIZ images</a
+        >
       </p>
-      <figure style="margin: 0;">
+      <figure style="margin: 0">
         <figcaption>浜辺の歌</figcaption>
-        <ul style="list-style-type: japanese-formal;">
-          <li>あした浜辺をさまよえば昔のことぞしのばるる
-              風の音よ雲のさまよ寄する波も貝の色も</li>
-          <li>ゆうべ浜辺をもとおれば昔の人ぞしのばるる
-              寄する波よ返す波よ月の色も星のかげも</li>
-          <li>はやちたちまち波を吹き赤裳のすそぞぬれひじし
-              病みし我はすでにいえて浜の真砂まなごいまは</li>
+        <ul style="list-style-type: japanese-formal">
+          <li>
+            あした浜辺をさまよえば昔のことぞしのばるる
+            風の音よ雲のさまよ寄する波も貝の色も
+          </li>
+          <li>
+            ゆうべ浜辺をもとおれば昔の人ぞしのばるる
+            寄する波よ返す波よ月の色も星のかげも
+          </li>
+          <li>
+            はやちたちまち波を吹き赤裳のすそぞぬれひじし
+            病みし我はすでにいえて浜の真砂まなごいまは
+          </li>
         </ul>
       </figure>
     </div>
 
     <h3>動画ギャラリー</h3>
-    <a href="https://vimeo.com/115041822"
-       class="glightbox-videos-gallery">
-      <img src="images/vimeo-logo.webp" alt="vimeo">
+    <a href="https://vimeo.com/115041822" class="glightbox-videos-gallery">
+      <img src="images/vimeo-logo.webp" alt="vimeo" />
     </a>
 
-    <a href="https://www.youtube-nocookie.com/embed/Ga6RYejo6Hk"
-       class="glightbox-videos-gallery">
-      <img src="images/youtube-logo.webp" alt="youtube">
+    <a
+      href="https://www.youtube-nocookie.com/embed/Ga6RYejo6Hk"
+      class="glightbox-videos-gallery"
+    >
+      <img src="images/youtube-logo.webp" alt="youtube" />
     </a>
 
-    <a href="https://biati-digital.github.io/glightbox/demo/pexels-video-1550080.mp4"
-       class="glightbox-videos-gallery">
-      <img src="images/mp4-logo.webp" alt="mp4">
+    <a
+      href="https://biati-digital.github.io/glightbox/demo/pexels-video-1550080.mp4"
+      class="glightbox-videos-gallery"
+    >
+      <img src="images/mp4-logo.webp" alt="mp4" />
     </a>
 
     <h3>iframeとインライン要素</h3>
 
     <h4>地図(Google Map)</h4>
-    <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3274.763025247525!2d134.6931975884683!3d34.837050266980405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3554e003a23324b3%3A0x7a4f8c2f6eba81b1!2z5aer6Lev5Z-O!5e0!3m2!1sja!2sjp!4v1692601028619!5m2!1sja!2sjp"
-      class="glightbox-inline">
-      <img src="images/himejijo-thumb.webp" alt="姫路城">
+    <a
+      href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3274.763025247525!2d134.6931975884683!3d34.837050266980405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3554e003a23324b3%3A0x7a4f8c2f6eba81b1!2z5aer6Lev5Z-O!5e0!3m2!1sja!2sjp!4v1692601028619!5m2!1sja!2sjp"
+      class="glightbox-inline"
+    >
+      <img src="images/himejijo-thumb.webp" alt="姫路城" />
     </a>
 
     <h4>インライン要素</h4>
-    <a href="#inline-aoisora"
-       class="glightbox-inline"
-       data-glightbox="width: 75vw; height: auto;">
-      <img src="images/sky-thumb.webp" alt="青い空">
+    <a
+      href="#inline-aoisora"
+      class="glightbox-inline"
+      data-glightbox="width: 75vw; height: auto;"
+    >
+      <img src="images/sky-thumb.webp" alt="青い空" />
     </a>
     <div id="inline-aoisora" style="display: none">
       <div class="inline-inner">
@@ -142,25 +177,27 @@
           <figure>
             <figcaption>青い空</figcaption>
             <p>
-              なんにもない空<br>
-              青い空、<br>
-              波のない日の<br>
-              海のよう。<br>
-              <br>
-              あのまん中へ<br>
-              とび込んで、<br>
-              ずんずん泳いで<br>
-              ゆきたいな。<br>
-              <br>
-              ひとすじ立てる<br>
-              白い泡、<br>
-              そのまま雲に<br>
-              なるだろう。<br>
+              なんにもない空<br />
+              青い空、<br />
+              波のない日の<br />
+              海のよう。<br />
+              <br />
+              あのまん中へ<br />
+              とび込んで、<br />
+              ずんずん泳いで<br />
+              ゆきたいな。<br />
+              <br />
+              ひとすじ立てる<br />
+              白い泡、<br />
+              そのまま雲に<br />
+              なるだろう。<br />
             </p>
           </figure>
 
           <small>
-            <a href="https://www.beiz.jp/素材/空/00165.html">澄み切った青空に綿雲が浮かぶ(BEIZ images)</a>
+            <a href="https://www.beiz.jp/素材/空/00165.html"
+              >澄み切った青空に綿雲が浮かぶ(BEIZ images)</a
+            >
           </small>
         </div>
       </div>

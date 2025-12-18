@@ -8,7 +8,7 @@
   --side-horizontal: 20px;
   --side-vertical: 40px;
   @media (width >= 960px) {
-    --side-horizontal: calc( (100vw - 920px) / 2 );
+    --side-horizontal: calc((100vw - 920px) / 2);
   }
 
   display: grid;

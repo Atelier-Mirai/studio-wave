@@ -8,10 +8,11 @@
   body {
     grid-template-columns: 0.2fr repeat(6, 1fr) 0.2fr;
     column-gap: 5%;
-    grid-template-rows: [head]      100px
-                        [title sub] auto
-                        [recent]    auto
-                        [foot]      auto;
+    grid-template-rows:
+      [head] 100px
+      [title sub] auto
+      [recent] auto
+      [foot] auto;
   }
 
   /* ヘッダー */

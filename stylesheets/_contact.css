@@ -7,31 +7,36 @@
 
 /* form 要素を対象に 装飾指定する */
 form {
-  padding-block-start: 30px;    /* 上に空白を設ける */
+  padding-block-start: 30px; /* 上に空白を設ける */
   font-family: "Hachi Maru Pop", cursive; /* はちまるポップ体 */
 
   /* form 内の p 要素を対象に 装飾指定する */
-  p { margin-block-end: 20px; }
+  p {
+    margin-block-end: 20px;
+  }
 
   /* hidden(隠し)クラス属性を付けた要素を対象に 装飾指定する */
-  .hidden { display: none;  /* 非表示にする */ }
+  .hidden {
+    display: none; /* 非表示にする */
+  }
 
   /* 入力枠、長文入力枠への装飾指定 */
   input,
   textarea,
   select {
-    width: 100%;            /* 幅 */
+    width: 100%; /* 幅 */
     box-sizing: border-box; /* padding込で幅を指定する */
-    padding: 10px;          /* 空白を設ける */
-    font-size: 16px;        /* iOS では 16px 未満だと自動拡大されるため、
+    padding: 10px; /* 空白を設ける */
+    font-size: 16px; /* iOS では 16px 未満だと自動拡大されるため、
                                書体の大きさを 16px に設定 */
 
     outline: none;
     border: 1px solid var(--nibiiro);
     border-radius: var(--radius-s);
     color: var(--kurohairo);
-    transition: box-shadow 0.1s ease,
-                border-color 0.1s ease;
+    transition:
+      box-shadow 0.1s ease,
+      border-color 0.1s ease;
     box-shadow: none;
 
     /* ホバー、フォーカス、必須属性時の装飾 */
@@ -56,13 +61,15 @@ form {
     color: var(--ayameiro);
   }
 
-  textarea { height: 120px; /* 高さを指定 */ }
+  textarea {
+    height: 120px; /* 高さを指定 */
+  }
 
   /* <input type="submit"> の要素を対象に装飾を指定 */
   input[type="submit"] {
-    background: var(--shinonomeiro);  /* 東雲色 */
-    border: none;                     /* 枠線無し */
-    -webkit-appearance: none;         /* ブラウザによる送信ボタン装飾無し */
+    background: var(--shinonomeiro); /* 東雲色 */
+    border: none; /* 枠線無し */
+    -webkit-appearance: none; /* ブラウザによる送信ボタン装飾無し */
 
     /* 画面幅が768px以上なら */
     @media (width >= 768px) {
@@ -72,15 +79,15 @@ form {
 
   /* label要素が、required 属性のあるinput要素かtextarea要素を持つならば、
     擬似要素を使って、赤い【必須】を付ける */
-    label:has(+ input[required])::after,
-    label:has(+ textarea[required])::after {
+  label:has(+ input[required])::after,
+  label:has(+ textarea[required])::after {
     content: "【必須】";
     color: var(--kyohiiro);
   }
 
   /* ラベル表示 */
   label {
-    font-size: 14px;    /* 書体の大きさを指定 */
-    padding: 7px;       /* 空白を設ける */
+    font-size: 14px; /* 書体の大きさを指定 */
+    padding: 7px; /* 空白を設ける */
   }
 }

@@ -3,15 +3,21 @@
   display: grid;
 
   --side: 20px;
-  grid-template: auto 40px auto 50px auto 50px auto 40px auto / var(--side) 1fr var(--side);
+  grid-template:
+    auto 40px auto 50px auto 50px auto 40px auto / var(--side)
+    1fr var(--side);
 
   @media (width >= 768px) {
-    grid-template: auto 30px auto 40px auto 30px auto / var(--side) 1fr 50px 1fr var(--side);
+    grid-template:
+      auto 30px auto 40px auto 30px auto / var(--side)
+      1fr 50px 1fr var(--side);
   }
 
   @media (width >= 1024px) {
-    --side: calc( (100vw - 960px) / 2 );
-    grid-template: auto 30px auto 40px auto 30px auto / var(--side) 1fr 50px 1fr var(--side);
+    --side: calc((100vw - 960px) / 2);
+    grid-template:
+      auto 30px auto 40px auto 30px auto / var(--side)
+      1fr 50px 1fr var(--side);
   }
 
   font-family: "Hiragino Kaku Gothic Pro", sans-serif;

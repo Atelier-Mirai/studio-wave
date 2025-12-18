@@ -6,8 +6,9 @@
   z-index: 0;
   border: 8px solid var(--sakurairo); /* 桜色の枠線を付ける */
   /* 二つの影を付けることもできる */
-  box-shadow: 0 0 0 1px #ccc,         /* 灰色と黒い影を付ける */
-              1px 3px 8px 0 #25252555;
+  box-shadow:
+    0 0 0 1px #ccc,
+    /* 灰色と黒い影を付ける */ 1px 3px 8px 0 #25252555;
 
   &.sepia img {
     /* セピア色にする */

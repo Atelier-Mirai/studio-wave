@@ -1,84 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <title>Seaside - Music Artist</title>
-  <meta name="description" content="アーティスト Seaside の公式サイト">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="stylesheets/master.css">
-  <script src="javascripts/main.js" defer></script>
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <title>Seaside - Music Artist</title>
+    <meta name="description" content="アーティスト Seaside の公式サイト" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="stylesheets/master.css" />
+    <script src="javascripts/main.js" defer></script>
+  </head>
 
-<body>
-  <!-- ローディング画面（SVG描画アニメーション） -->
-  <div id="splash">
-    <div class="splash-logo">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 739 258.9">
-        <image href="svg/text.svg" width="739" height="258.9" mask="url(#clipmask)"></image>
-        <mask id="clipmask" maskUnits="objectBoundingBox">
-          <path d="M124.9,73.4c0,0,57.3-46.5,22.9-66.6c-35.2-20.7-87,8.9-90.1,55.4c-3.1,46.6,48.4,84.2,34.7,130.7
+  <body>
+    <!-- ローディング画面（SVG描画アニメーション） -->
+    <div id="splash">
+      <div class="splash-logo">
+        <svg
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 739 258.9"
+        >
+          <image
+            href="svg/text.svg"
+            width="739"
+            height="258.9"
+            mask="url(#clipmask)"
+          ></image>
+          <mask id="clipmask" maskUnits="objectBoundingBox">
+            <path
+              d="M124.9,73.4c0,0,57.3-46.5,22.9-66.6c-35.2-20.7-87,8.9-90.1,55.4c-3.1,46.6,48.4,84.2,34.7,130.7
           s-59.6,47.3-79.7,39.8c-20.1-7.4-14.9-75.1,5.8-79.5l147.1,10.8c0,0,39.2-11.3,38.4-31.1c-0.8-19.8-4.4-35.8-13-35.7
           c-25.3,0.3-45.7,63.3-51.4,95.7c-6,34.8,3,35.9,22.5,29c19.5-6.9,102.7-186.4,133.4-79.5c-20-19.8-51.6-34.7-59.9-0.3
           c-8.3,34.4-33.7,68.2-6,68s87-105.9,85.5-98C299.1,153.4,265.3,228,298,221.9c32.7-6.1,74.4-118.2,74.4-118.2
           c4.2,56.7,21.2,122.4,0,133.3c-21.2,10.9-51.2,37.6-47.6,9.6c3.6-27.9,126.1-113.8,131.5-118.6c-16.2,48.5-21.8,70.8-0.3,64.9
           s46.7-83.1,69.7-71.6c22.9,11.5,27.1,16.3,27.1,16.3s-70.8,32-62.3,72.6s143.6-109.4,151.2-147c7.6-37.7,17.8-50.1-10.8-50.1
           c-34.5,0-107.4,268.4-65.2,224c41.9-44.1,140.1-100.1,141.2-124.8c1.1-24.7-11.1-15-25.2-8.5c-14.1,6.5-48.7,31.3-42.3,62.8
-          s2.8,66.1,26,55.4s73.6-79.8,73.6-79.8"/>
-          <line x1="490.5" y1="50.6" x2="459.9" y2="103.6"/>
-        </mask>
-      </svg>
+          s2.8,66.1,26,55.4s73.6-79.8,73.6-79.8"
+            />
+            <line x1="490.5" y1="50.6" x2="459.9" y2="103.6" />
+          </mask>
+        </svg>
+      </div>
     </div>
-  </div>
-  <div class="splash-bg"></div>
+    <div class="splash-bg"></div>
 
-  <div id="container">
-    <!-- ヘッダー -->
-    <header id="header">
-      <h1 class="fade-down"><a href="#"><img src="svg/text-white.svg" alt="Seaside"></a></h1>
-      <button class="menu-toggle fade-down" aria-label="メニュー">
-        <span></span><span></span><span></span>
-      </button>
-      <nav id="global-nav">
-        <ul class="nav-list">
-          <li class="current"><a href="#">Home</a></li>
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Sounds</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="circle-bg"></div>
-    </header>
+    <div id="container">
+      <!-- ヘッダー -->
+      <header id="header">
+        <h1 class="fade-down">
+          <a href="#"><img src="svg/text-white.svg" alt="Seaside" /></a>
+        </h1>
+        <button class="menu-toggle fade-down" aria-label="メニュー">
+          <span></span><span></span><span></span>
+        </button>
+        <nav id="global-nav">
+          <ul class="nav-list">
+            <li class="current"><a href="#">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Sounds</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="circle-bg"></div>
+      </header>
 
-    <!-- ヒーロータイトル -->
-    <p class="hero-title slide-in"><span>Music Man</span></p>
+      <!-- ヒーロータイトル -->
+      <p class="hero-title slide-in"><span>Music Man</span></p>
 
-    <!-- 背景動画 -->
-    <div id="video-area">
-      <video id="video" poster="images/video-poster.webp" playsinline muted autoplay loop>
-        <source src="video/movie.mp4" type="video/mp4">
-        <source src="video/movie.ogv" type="video/ogv">
-        <source src="video/movie.webm" type="video/webm">
-        <p>動画を再生できる環境ではありません。</p>
-      </video>
+      <!-- 背景動画 -->
+      <div id="video-area">
+        <video
+          id="video"
+          poster="images/video-poster.webp"
+          playsinline
+          muted
+          autoplay
+          loop
+        >
+          <source src="video/movie.mp4" type="video/mp4" />
+          <source src="video/movie.ogv" type="video/ogv" />
+          <source src="video/movie.webm" type="video/webm" />
+          <p>動画を再生できる環境ではありません。</p>
+        </video>
+      </div>
+
+      <!-- 再生ボタン -->
+      <button class="play-button" aria-label="PVを再生"></button>
     </div>
 
-    <!-- 再生ボタン -->
-    <button class="play-button" aria-label="PVを再生"></button>
-  </div>
-
-  <!-- 動画モーダル -->
-  <div id="video-modal" class="modal-overlay">
-    <div class="modal-content">
-      <button class="modal-close" aria-label="閉じる"></button>
-      <video poster="images/video-poster.webp" playsinline controls>
-        <source src="video/movie.mp4" type="video/mp4">
-        <source src="video/movie.ogv" type="video/ogv">
-        <source src="video/movie.webm" type="video/webm">
-        <p>動画を再生できる環境ではありません。</p>
-      </video>
-      <p>Music Man PV ※音は再生しません</p>
+    <!-- 動画モーダル -->
+    <div id="video-modal" class="modal-overlay">
+      <div class="modal-content">
+        <button class="modal-close" aria-label="閉じる"></button>
+        <video poster="images/video-poster.webp" playsinline controls>
+          <source src="video/movie.mp4" type="video/mp4" />
+          <source src="video/movie.ogv" type="video/ogv" />
+          <source src="video/movie.webm" type="video/webm" />
+          <p>動画を再生できる環境ではありません。</p>
+        </video>
+        <p>Music Man PV ※音は再生しません</p>
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>

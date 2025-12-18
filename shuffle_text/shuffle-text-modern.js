@@ -12,16 +12,16 @@
 class ShuffleText {
   // シャッフル時に表示するランダム文字列（宮沢賢治「ポラーノの広場」より）
   static DEFAULT_RANDOM_CHARS =
-    'あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波';
+    "あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波";
 
   // 空白を表す文字
-  static DEFAULT_EMPTY_CHAR = '-';
+  static DEFAULT_EMPTY_CHAR = "-";
 
   // デフォルトのアニメーション時間（ミリ秒）
   static DEFAULT_DURATION = 600;
 
   #element;
-  #originalStr = '';
+  #originalStr = "";
   #originalLength = 0;
   #isRunning = false;
   #timeStart = 0;
@@ -34,11 +34,12 @@ class ShuffleText {
    */
   constructor(element, options = {}) {
     this.#element = element;
-    this.sourceRandomCharacter = options.randomChars ?? ShuffleText.DEFAULT_RANDOM_CHARS;
+    this.sourceRandomCharacter =
+      options.randomChars ?? ShuffleText.DEFAULT_RANDOM_CHARS;
     this.emptyCharacter = options.emptyChar ?? ShuffleText.DEFAULT_EMPTY_CHAR;
     this.duration = options.duration ?? ShuffleText.DEFAULT_DURATION;
 
-    this.setText(element?.textContent ?? '');
+    this.setText(element?.textContent ?? "");
   }
 
   /**
@@ -72,7 +73,9 @@ class ShuffleText {
 
     // 初期表示（空白文字で埋める）
     if (this.#element) {
-      this.#element.textContent = this.emptyCharacter.repeat(this.#originalLength);
+      this.#element.textContent = this.emptyCharacter.repeat(
+        this.#originalLength,
+      );
     }
 
     this.#timeStart = performance.now();
@@ -94,7 +97,7 @@ class ShuffleText {
   dispose() {
     this.stop();
     this.#element = null;
-    this.#originalStr = '';
+    this.#originalStr = "";
     this.#originalLength = 0;
     this.#randomIndex = [];
   }
@@ -117,11 +120,11 @@ class ShuffleText {
       } else {
         // ランダム文字を表示
         const randomCharIndex = Math.floor(
-          Math.random() * this.sourceRandomCharacter.length
+          Math.random() * this.sourceRandomCharacter.length,
         );
         return this.sourceRandomCharacter.charAt(randomCharIndex);
       }
-    }).join('');
+    }).join("");
 
     if (this.#element) {
       this.#element.textContent = str;
@@ -140,7 +143,7 @@ class ShuffleText {
 }
 
 // グローバルに公開（UMD互換）
-if (typeof window !== 'undefined') {
+if (typeof window !== "undefined") {
   window.ShuffleText = ShuffleText;
 }
 

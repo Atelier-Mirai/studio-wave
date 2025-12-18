@@ -5,7 +5,7 @@
   position: fixed;
   inset: 0;
   z-index: 0;
-  
+
   &::before {
     content: "";
     position: absolute;
@@ -39,7 +39,7 @@
   place-items: center;
   border: none;
   transition: all 0.3s;
-  
+
   &::before {
     content: "";
     inline-size: 0;
@@ -48,12 +48,12 @@
     border-inline-start: 20px solid var(--shiro);
     margin-inline-start: 5px;
   }
-  
+
   &:hover {
     transform: translateX(-50%) scale(1.1);
     box-shadow: 0 0 30px var(--aoi);
   }
-  
+
   /* 波紋エフェクト */
   &::after {
     content: "";

@@ -11,7 +11,7 @@
 }
 
 .splash-text {
-  font-family: 'La Belle Aurore', cursive;
+  font-family: "La Belle Aurore", cursive;
   font-size: 2rem;
   color: var(--shiro);
 }
@@ -22,12 +22,12 @@
   z-index: 9998;
   block-size: 50%;
   background-color: var(--kuro);
-  
+
   &.cover-up {
     inset-block-start: 0;
     transform-origin: top;
   }
-  
+
   &.cover-down {
     inset-block-end: 0;
     transform-origin: bottom;
@@ -40,7 +40,7 @@ body.loaded {
     visibility: hidden;
     transition: all 0.5s;
   }
-  
+
   .loader-cover {
     transform: scaleY(0);
     transition: transform 0.8s 0.3s;

@@ -12,7 +12,8 @@
 
 @layer reset, base, layout, components, utilities;
 
-@import url('https://cdn.jsdelivr.net/npm/@acab/reset.css@0.11.0/index.min.css') layer(reset);
+@import url("https://cdn.jsdelivr.net/npm/@acab/reset.css@0.11.0/index.min.css")
+layer(reset);
 
 @import "_tokens.css" layer(base);
 @import "_base.css" layer(base);

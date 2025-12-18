@@ -1,304 +1,334 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <title>Beautiful Days - 女性向けエステサロン</title>
-  <meta name="description" content="白金台にある癒しのエステサロン Beautiful Days">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <title>Beautiful Days - 女性向けエステサロン</title>
+    <meta
+      name="description"
+      content="白金台にある癒しのエステサロン Beautiful Days"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Parisienne&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Parisienne&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- スタイルシート -->
-  <link rel="stylesheet" href="stylesheets/master.css">
+    <!-- スタイルシート -->
+    <link rel="stylesheet" href="stylesheets/master.css" />
 
-  <!-- JavaScript -->
-  <script src="javascripts/main.js" defer></script>
-</head>
+    <!-- JavaScript -->
+    <script src="javascripts/main.js" defer></script>
+  </head>
 
-<body>
-  <!-- ローディング画面 -->
-  <div id="splash">
-    <p class="splash-logo">
-      <span class="slide-in">
-        <span class="slide-in-inner">Beautiful Days</span>
-      </span>
-    </p>
-  </div>
-  <div class="splash-bg-left"></div>
-  <div class="splash-bg-right"></div>
-
-  <div id="wrapper">
-    <!-- ヘッダー -->
-    <header id="header">
-      <div class="header-content">
-        <p class="glow-text">白金台にある<br>癒しのエステサロン</p>
-        <h1 class="glow-text">Beautiful Days</h1>
-      </div>
-      <div class="scroll-indicator"><span>Scroll</span></div>
-      <div class="header-bg"></div>
-    </header>
-
-    <!-- ハンバーガーメニュー -->
-    <button class="menu-toggle" aria-label="メニューを開く">
-      <span></span>
-      <span></span>
-    </button>
-
-    <!-- グローバルナビゲーション -->
-    <nav id="global-nav">
-      <ul class="nav-list">
-        <li><a href="#" class="nav-logo glow-text">Beautiful Days</a></li>
-        <li class="blur-trigger"><a href="#">Top</a></li>
-        <li class="blur-trigger"><a href="#">About</a></li>
-        <li class="blur-trigger"><a href="#">Menu</a></li>
-        <li class="blur-trigger"><a href="#">Contact</a></li>
-        <li class="blur-trigger"><a href="#">Blog</a></li>
-      </ul>
-    </nav>
-
-    <!-- メインコンテンツ -->
-    <main id="container">
-      <!-- リードセクション -->
-      <article id="lead" class="inner zoom-trigger">
-        <div class="lead-image fade-trigger"></div>
-        <div class="lead-content fade-trigger">
-          <h2>白金台にある<br>癒しの<br>プライベート空間</h2>
-          <p>エステサロン<br>ビューティフルデイズは、<br>がんばるあなたが<br>ちょっと疲れた時に<br>立ち寄れる<br>ほっとする時間を<br>つくります。</p>
-          <div class="lead-button">
-            <a href="#" class="btn-outline"><span>お店のご紹介</span></a>
-          </div>
-        </div>
-      </article>
-
-      <!-- メニューセクション -->
-      <section id="menu">
-        <h2 class="section-title">
-          <span class="slide-in slide-left">
-            <span class="slide-in-inner">Menu</span>
-          </span>
-        </h2>
-        <div class="slider-container">
-          <div class="slider-track">
-            <article class="menu-card fade-trigger">
-              <a href="#">
-                <figure class="circle-mask">
-                  <img src="images/menu01.webp" alt="ハンドケア" loading="lazy">
-                </figure>
-                <div class="menu-info">
-                  <h3>ハンドケア / フットケア</h3>
-                  <p>3,000 yen～</p>
-                </div>
-              </a>
-            </article>
-            <article class="menu-card fade-trigger">
-              <a href="#">
-                <figure class="circle-mask">
-                  <img src="images/menu02.webp" alt="ウェディングメニュー" loading="lazy">
-                </figure>
-                <div class="menu-info">
-                  <h3>ウェディングメニュー</h3>
-                  <p>12,000 yen～</p>
-                </div>
-              </a>
-            </article>
-            <article class="menu-card fade-trigger">
-              <a href="#">
-                <figure class="circle-mask">
-                  <img src="images/menu03.webp" alt="ボディトリートメント" loading="lazy">
-                </figure>
-                <div class="menu-info">
-                  <h3>ボディトリートメント</h3>
-                  <p>8,000 yen～</p>
-                </div>
-              </a>
-            </article>
-            <article class="menu-card fade-trigger">
-              <a href="#">
-                <figure class="circle-mask">
-                  <img src="images/menu04.webp" alt="フェイシャル" loading="lazy">
-                </figure>
-                <div class="menu-info">
-                  <h3>フェイシャル</h3>
-                  <p>5,000 yen～</p>
-                </div>
-              </a>
-            </article>
-            <article class="menu-card fade-trigger">
-              <a href="#">
-                <figure class="circle-mask">
-                  <img src="images/menu05.webp" alt="メイク / セット" loading="lazy">
-                </figure>
-                <div class="menu-info">
-                  <h3>メイク / セット</h3>
-                  <p>3,000 yen～</p>
-                </div>
-              </a>
-            </article>
-          </div>
-          <button class="slider-prev" aria-label="前へ"></button>
-          <button class="slider-next" aria-label="次へ"></button>
-          <div class="slider-dots"></div>
-        </div>
-        <div class="menu-button fade-trigger">
-          <a href="#" class="btn-outline"><span>メニュー一覧を見る</span></a>
-        </div>
-      </section>
-
-      <!-- コンタクトセクション -->
-      <section id="contact" class="inner">
-        <div class="contact-image fade-trigger"></div>
-        <div class="contact-info fade-trigger">
-          <h2>ご予約方法</h2>
-          <dl>
-            <dt><a href="tel:03-1234-5678">TEL 03-1234-5678</a></dt>
-            <dd>（営業時間：10:00-20:00）</dd>
-          </dl>
-          <a href="#" class="btn-outline"><span>お問い合わせ</span></a>
-        </div>
-      </section>
-
-      <!-- ブログセクション -->
-      <article id="blog" class="inner">
-        <h2 class="section-title">
-          <span class="slide-in slide-left">
-            <span class="slide-in-inner">Blog</span>
-          </span>
-        </h2>
-        <div class="blog-grid">
-          <!-- メイン記事 -->
-          <article class="blog-main blog-card fade-trigger">
-            <a href="#">
-              <figure>
-                <img src="images/blog01.webp" alt="" loading="lazy">
-                <time datetime="2021-03-04">2021.3.4</time>
-              </figure>
-              <div class="overlay">
-                <time datetime="2021-03-04">2021.3.4</time>
-                <h3>お得なコスメキャンペーンを実施中！</h3>
-                <p>エステサロンビューティフルデイズの<br>春のコスメキャンペーンがスタートしました。...</p>
-                <span class="read-more">Read More</span>
-              </div>
-            </a>
-          </article>
-
-          <!-- サブ記事グリッド -->
-          <div class="blog-sub-grid">
-            <article class="blog-card fade-trigger">
-              <a href="#">
-                <figure>
-                  <img src="images/blog02.webp" alt="" loading="lazy">
-                  <time datetime="2021-01-04">2021.1.4</time>
-                </figure>
-                <div class="overlay">
-                  <h3>新春のご挨拶</h3>
-                  <span class="read-more">Read More</span>
-                </div>
-              </a>
-            </article>
-            <article class="blog-card fade-trigger">
-              <a href="#">
-                <figure>
-                  <img src="images/blog04.webp" alt="" loading="lazy">
-                  <time datetime="2020-12-25">2020.12.25</time>
-                </figure>
-                <div class="overlay">
-                  <h3>本日のお客様</h3>
-                  <span class="read-more">Read More</span>
-                </div>
-              </a>
-            </article>
-            <article class="blog-card fade-trigger">
-              <a href="#">
-                <figure>
-                  <img src="images/blog03.webp" alt="" loading="lazy">
-                  <time datetime="2020-12-24">2020.12.24</time>
-                </figure>
-                <div class="overlay">
-                  <h3>クリスマスイブの準備はおすみですか？</h3>
-                  <span class="read-more">Read More</span>
-                </div>
-              </a>
-            </article>
-            <article class="blog-card fade-trigger">
-              <a href="#">
-                <figure>
-                  <img src="images/blog05.webp" alt="" loading="lazy">
-                  <time datetime="2020-11-09">2020.11.09</time>
-                </figure>
-                <div class="overlay">
-                  <h3>美容に良い食べ物のご紹介！</h3>
-                  <span class="read-more">Read More</span>
-                </div>
-              </a>
-            </article>
-            <article class="blog-card fade-trigger">
-              <a href="#">
-                <figure>
-                  <img src="images/blog06.webp" alt="" loading="lazy">
-                  <time datetime="2020-08-09">2020.8.9</time>
-                </figure>
-                <div class="overlay">
-                  <h3>夏のイチオシコスメ！</h3>
-                  <span class="read-more">Read More</span>
-                </div>
-              </a>
-            </article>
-            <article class="blog-card fade-trigger">
-              <a href="#">
-                <figure>
-                  <img src="images/blog07.webp" alt="" loading="lazy">
-                  <time datetime="2020-07-07">2020.7.7</time>
-                </figure>
-                <div class="overlay">
-                  <h3>ブログはじめました</h3>
-                  <span class="read-more">Read More</span>
-                </div>
-              </a>
-            </article>
-          </div>
-        </div>
-      </article>
-    </main>
-
-    <!-- フッター -->
-    <footer id="footer" class="inner">
-      <dl class="footer-info">
-        <dt>
-          <span class="slide-in slide-left">
-            <span class="slide-in-inner">白金台の癒しのエステサロン</span>
-          </span>
-        </dt>
-        <dd>
-          <span class="slide-in slide-left">
-            <span class="slide-in-inner">Beautiful Days</span>
-          </span>
-        </dd>
-      </dl>
-      <nav class="footer-nav">
-        <div class="slide-in slide-left">
-          <div class="slide-in-inner">
-            <ul>
-              <li><a href="#">Top</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Menu</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">Blog</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <p id="page-top" class="initially-hidden">
-        <a href="#"><span></span></a>
-      </p>
-      <small class="copyright">
-        <span class="slide-in slide-left">
-          <span class="slide-in-inner">&copy; Beautiful Days</span>
+  <body>
+    <!-- ローディング画面 -->
+    <div id="splash">
+      <p class="splash-logo">
+        <span class="slide-in">
+          <span class="slide-in-inner">Beautiful Days</span>
         </span>
-      </small>
-    </footer>
-  </div>
-</body>
+      </p>
+    </div>
+    <div class="splash-bg-left"></div>
+    <div class="splash-bg-right"></div>
+
+    <div id="wrapper">
+      <!-- ヘッダー -->
+      <header id="header">
+        <div class="header-content">
+          <p class="glow-text">白金台にある<br />癒しのエステサロン</p>
+          <h1 class="glow-text">Beautiful Days</h1>
+        </div>
+        <div class="scroll-indicator"><span>Scroll</span></div>
+        <div class="header-bg"></div>
+      </header>
+
+      <!-- ハンバーガーメニュー -->
+      <button class="menu-toggle" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- グローバルナビゲーション -->
+      <nav id="global-nav">
+        <ul class="nav-list">
+          <li><a href="#" class="nav-logo glow-text">Beautiful Days</a></li>
+          <li class="blur-trigger"><a href="#">Top</a></li>
+          <li class="blur-trigger"><a href="#">About</a></li>
+          <li class="blur-trigger"><a href="#">Menu</a></li>
+          <li class="blur-trigger"><a href="#">Contact</a></li>
+          <li class="blur-trigger"><a href="#">Blog</a></li>
+        </ul>
+      </nav>
+
+      <!-- メインコンテンツ -->
+      <main id="container">
+        <!-- リードセクション -->
+        <article id="lead" class="inner zoom-trigger">
+          <div class="lead-image fade-trigger"></div>
+          <div class="lead-content fade-trigger">
+            <h2>白金台にある<br />癒しの<br />プライベート空間</h2>
+            <p>
+              エステサロン<br />ビューティフルデイズは、<br />がんばるあなたが<br />ちょっと疲れた時に<br />立ち寄れる<br />ほっとする時間を<br />つくります。
+            </p>
+            <div class="lead-button">
+              <a href="#" class="btn-outline"><span>お店のご紹介</span></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- メニューセクション -->
+        <section id="menu">
+          <h2 class="section-title">
+            <span class="slide-in slide-left">
+              <span class="slide-in-inner">Menu</span>
+            </span>
+          </h2>
+          <div class="slider-container">
+            <div class="slider-track">
+              <article class="menu-card fade-trigger">
+                <a href="#">
+                  <figure class="circle-mask">
+                    <img
+                      src="images/menu01.webp"
+                      alt="ハンドケア"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <div class="menu-info">
+                    <h3>ハンドケア / フットケア</h3>
+                    <p>3,000 yen～</p>
+                  </div>
+                </a>
+              </article>
+              <article class="menu-card fade-trigger">
+                <a href="#">
+                  <figure class="circle-mask">
+                    <img
+                      src="images/menu02.webp"
+                      alt="ウェディングメニュー"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <div class="menu-info">
+                    <h3>ウェディングメニュー</h3>
+                    <p>12,000 yen～</p>
+                  </div>
+                </a>
+              </article>
+              <article class="menu-card fade-trigger">
+                <a href="#">
+                  <figure class="circle-mask">
+                    <img
+                      src="images/menu03.webp"
+                      alt="ボディトリートメント"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <div class="menu-info">
+                    <h3>ボディトリートメント</h3>
+                    <p>8,000 yen～</p>
+                  </div>
+                </a>
+              </article>
+              <article class="menu-card fade-trigger">
+                <a href="#">
+                  <figure class="circle-mask">
+                    <img
+                      src="images/menu04.webp"
+                      alt="フェイシャル"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <div class="menu-info">
+                    <h3>フェイシャル</h3>
+                    <p>5,000 yen～</p>
+                  </div>
+                </a>
+              </article>
+              <article class="menu-card fade-trigger">
+                <a href="#">
+                  <figure class="circle-mask">
+                    <img
+                      src="images/menu05.webp"
+                      alt="メイク / セット"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <div class="menu-info">
+                    <h3>メイク / セット</h3>
+                    <p>3,000 yen～</p>
+                  </div>
+                </a>
+              </article>
+            </div>
+            <button class="slider-prev" aria-label="前へ"></button>
+            <button class="slider-next" aria-label="次へ"></button>
+            <div class="slider-dots"></div>
+          </div>
+          <div class="menu-button fade-trigger">
+            <a href="#" class="btn-outline"><span>メニュー一覧を見る</span></a>
+          </div>
+        </section>
+
+        <!-- コンタクトセクション -->
+        <section id="contact" class="inner">
+          <div class="contact-image fade-trigger"></div>
+          <div class="contact-info fade-trigger">
+            <h2>ご予約方法</h2>
+            <dl>
+              <dt><a href="tel:03-1234-5678">TEL 03-1234-5678</a></dt>
+              <dd>（営業時間：10:00-20:00）</dd>
+            </dl>
+            <a href="#" class="btn-outline"><span>お問い合わせ</span></a>
+          </div>
+        </section>
+
+        <!-- ブログセクション -->
+        <article id="blog" class="inner">
+          <h2 class="section-title">
+            <span class="slide-in slide-left">
+              <span class="slide-in-inner">Blog</span>
+            </span>
+          </h2>
+          <div class="blog-grid">
+            <!-- メイン記事 -->
+            <article class="blog-main blog-card fade-trigger">
+              <a href="#">
+                <figure>
+                  <img src="images/blog01.webp" alt="" loading="lazy" />
+                  <time datetime="2021-03-04">2021.3.4</time>
+                </figure>
+                <div class="overlay">
+                  <time datetime="2021-03-04">2021.3.4</time>
+                  <h3>お得なコスメキャンペーンを実施中！</h3>
+                  <p>
+                    エステサロンビューティフルデイズの<br />春のコスメキャンペーンがスタートしました。...
+                  </p>
+                  <span class="read-more">Read More</span>
+                </div>
+              </a>
+            </article>
+
+            <!-- サブ記事グリッド -->
+            <div class="blog-sub-grid">
+              <article class="blog-card fade-trigger">
+                <a href="#">
+                  <figure>
+                    <img src="images/blog02.webp" alt="" loading="lazy" />
+                    <time datetime="2021-01-04">2021.1.4</time>
+                  </figure>
+                  <div class="overlay">
+                    <h3>新春のご挨拶</h3>
+                    <span class="read-more">Read More</span>
+                  </div>
+                </a>
+              </article>
+              <article class="blog-card fade-trigger">
+                <a href="#">
+                  <figure>
+                    <img src="images/blog04.webp" alt="" loading="lazy" />
+                    <time datetime="2020-12-25">2020.12.25</time>
+                  </figure>
+                  <div class="overlay">
+                    <h3>本日のお客様</h3>
+                    <span class="read-more">Read More</span>
+                  </div>
+                </a>
+              </article>
+              <article class="blog-card fade-trigger">
+                <a href="#">
+                  <figure>
+                    <img src="images/blog03.webp" alt="" loading="lazy" />
+                    <time datetime="2020-12-24">2020.12.24</time>
+                  </figure>
+                  <div class="overlay">
+                    <h3>クリスマスイブの準備はおすみですか？</h3>
+                    <span class="read-more">Read More</span>
+                  </div>
+                </a>
+              </article>
+              <article class="blog-card fade-trigger">
+                <a href="#">
+                  <figure>
+                    <img src="images/blog05.webp" alt="" loading="lazy" />
+                    <time datetime="2020-11-09">2020.11.09</time>
+                  </figure>
+                  <div class="overlay">
+                    <h3>美容に良い食べ物のご紹介！</h3>
+                    <span class="read-more">Read More</span>
+                  </div>
+                </a>
+              </article>
+              <article class="blog-card fade-trigger">
+                <a href="#">
+                  <figure>
+                    <img src="images/blog06.webp" alt="" loading="lazy" />
+                    <time datetime="2020-08-09">2020.8.9</time>
+                  </figure>
+                  <div class="overlay">
+                    <h3>夏のイチオシコスメ！</h3>
+                    <span class="read-more">Read More</span>
+                  </div>
+                </a>
+              </article>
+              <article class="blog-card fade-trigger">
+                <a href="#">
+                  <figure>
+                    <img src="images/blog07.webp" alt="" loading="lazy" />
+                    <time datetime="2020-07-07">2020.7.7</time>
+                  </figure>
+                  <div class="overlay">
+                    <h3>ブログはじめました</h3>
+                    <span class="read-more">Read More</span>
+                  </div>
+                </a>
+              </article>
+            </div>
+          </div>
+        </article>
+      </main>
+
+      <!-- フッター -->
+      <footer id="footer" class="inner">
+        <dl class="footer-info">
+          <dt>
+            <span class="slide-in slide-left">
+              <span class="slide-in-inner">白金台の癒しのエステサロン</span>
+            </span>
+          </dt>
+          <dd>
+            <span class="slide-in slide-left">
+              <span class="slide-in-inner">Beautiful Days</span>
+            </span>
+          </dd>
+        </dl>
+        <nav class="footer-nav">
+          <div class="slide-in slide-left">
+            <div class="slide-in-inner">
+              <ul>
+                <li><a href="#">Top</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Blog</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <p id="page-top" class="initially-hidden">
+          <a href="#"><span></span></a>
+        </p>
+        <small class="copyright">
+          <span class="slide-in slide-left">
+            <span class="slide-in-inner">&copy; Beautiful Days</span>
+          </span>
+        </small>
+      </footer>
+    </div>
+  </body>
 </html>

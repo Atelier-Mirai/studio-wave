@@ -10,7 +10,7 @@
  * シャッフルエフェクトを初期化
  */
 const initShuffleEffects = () => {
-  const elements = document.querySelectorAll('.shuffle');
+  const elements = document.querySelectorAll(".shuffle");
   if (elements.length === 0) return;
 
   // 各要素に ShuffleText インスタンスを紐付け
@@ -18,8 +18,8 @@ const initShuffleEffects = () => {
     const effect = new ShuffleText(element);
 
     // マウスイベントでエフェクトを再生
-    element.addEventListener('mouseenter', () => effect.start());
-    element.addEventListener('mouseleave', () => effect.start());
+    element.addEventListener("mouseenter", () => effect.start());
+    element.addEventListener("mouseleave", () => effect.start());
 
     return effect;
   });
@@ -31,8 +31,8 @@ const initShuffleEffects = () => {
 };
 
 // DOM 読み込み完了後に初期化
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initShuffleEffects);
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initShuffleEffects);
 } else {
   initShuffleEffects();
 }

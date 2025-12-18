@@ -75,7 +75,8 @@
     }
 
     button.btn:focus-visible {
-      outline: 3px solid color-mix(in srgb, var(--color-accent) 60%, transparent);
+      outline: 3px solid
+        color-mix(in srgb, var(--color-accent) 60%, transparent);
       outline-offset: 2px;
     }
   }
@@ -131,9 +132,14 @@
 }
 
 .contact-accordion details {
-  border: 1px solid color-mix(in srgb, var(--color-brand) 22%, var(--color-muted-2));
+  border: 1px solid
+    color-mix(in srgb, var(--color-brand) 22%, var(--color-muted-2));
   border-radius: var(--radius-s);
-  background-color: color-mix(in srgb, var(--color-brand) 6%, var(--color-surface-strong));
+  background-color: color-mix(
+    in srgb,
+    var(--color-brand) 6%,
+    var(--color-surface-strong)
+  );
   overflow: clip;
   transition: border-color 160ms ease;
 }
@@ -146,7 +152,11 @@
   padding: 1rem 1rem;
   cursor: pointer;
   font-weight: 700;
-  background-color: color-mix(in srgb, var(--color-brand) 10%, var(--color-surface-strong));
+  background-color: color-mix(
+    in srgb,
+    var(--color-brand) 10%,
+    var(--color-surface-strong)
+  );
   transition: background-color 160ms ease;
 }
 
@@ -162,13 +172,23 @@
   display: grid;
   place-items: center;
   border-radius: 999px;
-  background-color: color-mix(in srgb, var(--color-accent) 14%, var(--color-surface-strong));
+  background-color: color-mix(
+    in srgb,
+    var(--color-accent) 14%,
+    var(--color-surface-strong)
+  );
   color: var(--color-accent);
-  transition: background-color 160ms ease, color 160ms ease;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
 }
 
 .contact-accordion details[open] {
-  border-color: color-mix(in srgb, var(--color-accent) 40%, var(--color-muted-2));
+  border-color: color-mix(
+    in srgb,
+    var(--color-accent) 40%,
+    var(--color-muted-2)
+  );
 }
 
 .contact-accordion details[open] summary::after {

@@ -4,6 +4,9 @@
 
 - HTML / CSS / JavaScript をモダンな形でリファクタリングしてください。
 - 対象環境は、最新〜過去 1〜2 年のモダンブラウザのみで OK です（古い環境のためのベンダープリフィックス等は不要）。
+- インデント幅は次のように統一してください。
+  - ✅ HTML/CSS/JavaScript → スペース2つ（Google推奨、業界標準）
+  - ✅ Ruby → スペース2つ（Rubyコミュニティの標準）
 - HTML はセマンティクス（意味）を優先し、最低限のアクセシビリティを満たすようにしてください。
   - 可能な限り `header` / `nav` / `main` / `footer` などのセマンティック要素を用いる
   - 見出し（`h1`〜`h6`）のレベルを飛ばさない（`h2` の次が `h4` などにならないようにする）
@@ -65,6 +68,7 @@
 ## 6. 画像
 
 - `img/` ディレクトリは `images/` ディレクトリにリネームしてください。
+- `png` / `jpg` / `jpeg` / `gif` 形式の画像は、可能な限り `webp` にコンバートしてください。
 - 画像ファイル名も kebab-case を用いるようにリネームしてください。
   - ここでは画像ファイル名を例にしていますが、kebab-case の考え方自体はクラス名や（Ruby ファイルを除く）ファイル名・ディレクトリ名にも適用してください。
 
@@ -81,6 +85,7 @@
       - `flower-01.webp`（意味のない分割）
       - `red-flower-01.webp`（連番の直前に `-` を入れている）
       - `flower-image-01.webp`（連番の直前に `-` を入れている）
+
 - 可能な限り、画像の表示品質とパフォーマンスにも配慮してください。
   - `img` には `width` / `height` を指定してレイアウトシフトを防ぐ
   - 適切に `loading="lazy"` を利用する（ただしファーストビューの画像は例外）
@@ -89,7 +94,10 @@
 
 ```html
 <!-- Font Awesome -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.1.0/css/all.css">
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v7.1.0/css/all.css"
+/>
 ```
 
 を用いて、v7.1.0 にしてください。

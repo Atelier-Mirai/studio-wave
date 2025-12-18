@@ -2,7 +2,7 @@
   ベーススタイル
 =====================================================================*/
 body {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   color: var(--gofun);
   background-color: var(--sumi);
 }
@@ -23,7 +23,8 @@ ul {
   list-style: none;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: 400;
   letter-spacing: 0.1em;
 }

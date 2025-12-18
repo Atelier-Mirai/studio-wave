@@ -5,7 +5,7 @@
   opacity: 0;
   transform: translateY(-30px);
   transition: all 0.8s;
-  
+
   &.is-visible {
     opacity: 1;
     transform: translateY(0);
@@ -16,7 +16,7 @@
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s;
-  
+
   &.is-visible {
     opacity: 1;
     transform: translateY(0);
@@ -25,12 +25,12 @@
 
 .zoom-out {
   overflow: hidden;
-  
+
   img {
     transform: scale(1.2);
     transition: transform 0.8s;
   }
-  
+
   &.is-visible img {
     transform: scale(1);
   }

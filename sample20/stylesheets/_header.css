@@ -11,9 +11,10 @@
   align-items: center;
   gap: 10px 20px;
   padding: 15px 30px 10px;
-  background: url("../images/bg-header.webp") repeat-x center bottom var(--gofun);
+  background: url("../images/bg-header.webp") repeat-x center bottom
+    var(--gofun);
   box-shadow: 0 2px 10px rgb(0 0 0 / 5%);
-  
+
   @media (width <= 768px) {
     grid-template-columns: 1fr auto;
     padding: 10px 15px 8px;
@@ -23,7 +24,7 @@
 #header h1 {
   grid-column: 1 / -1;
   justify-self: center;
-  
+
   img {
     block-size: 60px;
     inline-size: auto;
@@ -35,21 +36,22 @@
   grid-row: 2;
   grid-column: 1;
   max-inline-size: 320px;
-  
+
   input {
     inline-size: 100%;
     padding: 10px 15px;
     border: 1px solid var(--usuhai);
     border-radius: 20px;
     font-size: 0.9rem;
-    background: url("../images/icon-search.svg") no-repeat right 15px center / 16px;
-    
+    background: url("../images/icon-search.svg") no-repeat right 15px center /
+      16px;
+
     &:focus {
       border-color: var(--wakakusa);
       outline: none;
     }
   }
-  
+
   @media (width <= 768px) {
     display: none;
   }
@@ -70,6 +72,11 @@
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
 }

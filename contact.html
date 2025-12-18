@@ -1,44 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
   <!-- サイトに関する設定事項を記述します -->
   <head id="head">
     <!-- 文字コードの指定 -->
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
 
     <!-- ページのタイトル -->
     <title>お問い合わせ - WAVE</title>
 
     <!-- ビューポート(視点)の指定 -->
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width" />
 
     <!-- ファビコンの指定 https://ao-system.net/favicongenerator/ -->
-    <link rel="icon"
-          href="images/favicon.ico"
-          type="image/ico">
-    <link rel="apple-touch-icon"
-          href="images/apple-touch-icon-180x180.png"
-          type="image/png"
-          sizes="180x180">
+    <link rel="icon" href="images/favicon.ico" type="image/ico" />
+    <link
+      rel="apple-touch-icon"
+      href="images/apple-touch-icon-180x180.png"
+      type="image/png"
+      sizes="180x180"
+    />
 
     <!-- 検索時に表示される、ウェブサイトの要約文 -->
-    <meta name="description" content="概ね80文字前後のサイトの
-    紹介文が、検索時に表示されます。">
+    <meta
+      name="description"
+      content="概ね80文字前後のサイトの
+    紹介文が、検索時に表示されます。"
+    />
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap"
+    />
 
     <!-- Font Awesome -->
-    <link rel="stylesheet"
-          href="https://use.fontawesome.com/releases/v7.1.0/css/all.css">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v7.1.0/css/all.css"
+    />
 
     <!-- Reset CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@acab/reset.css@0.10.0/index.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@acab/reset.css@0.10.0/index.min.css"
+    />
 
     <!-- 自分で作ったスタイルシート -->
-    <link rel="stylesheet" href="stylesheets/master.css">
+    <link rel="stylesheet" href="stylesheets/master.css" />
 
     <!-- 先頭へ戻るボタンの為のJavaScript -->
     <script src="javascripts/page-top.js" defer></script>
@@ -47,20 +57,26 @@
     <script src="include.js"></script>
 
     <!-- モーダルウィンドウ用のJavaScript -->
-    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js" defer></script>
+    <script
+      src="https://unpkg.com/micromodal/dist/micromodal.min.js"
+      defer
+    ></script>
     <script src="javascripts/modal.js" defer></script>
   </head>
-
 
   <!-- 表示したい内容・出し物・コンテンツを記述します -->
   <body class="inner">
     <!-- ヘッダー(サイト名) -->
     <header id="header"></header>
-    <script>include("header")</script>
+    <script>
+      include("header");
+    </script>
 
     <!-- ナビゲーションメニュー -->
     <nav id="navigation"></nav>
-    <script>include("navigation")</script>
+    <script>
+      include("navigation");
+    </script>
 
     <!-- 主要なコンテンツ -->
     <main>
@@ -86,15 +102,16 @@
           method="POST"
           netlify-honeypot="bot-field"
           data-netlify-recaptcha="true"
-          data-netlify="true">
-
+          data-netlify="true"
+        >
           <!-- Netlify honeypot -->
           <!-- hidden(隠し)クラスにしているので、人の目からはこの入力枠は見えない。
                それでも入力枠に文字入力されているならば、ボット（コンピュータプログラム）
                による投稿なので、Netlify により、スパム(迷惑)として扱われる -->
           <p class="hidden">
-            <label>Don’t fill this out if you're human:
-              <input name="bot-field">
+            <label
+              >Don’t fill this out if you're human:
+              <input name="bot-field" />
             </label>
           </p>
 
@@ -102,14 +119,20 @@
           <!-- Netlifyから送られるメールの「件名」と
               「問い合わせ前に見ていたURL」を指定している -->
           <label class="hidden" for="subject">件名</label>
-          <input type="hidden"
-                 id="subject"
-                 name="subject"
-                 data-remove-prefix="true"
-                 value="Webサイトから「お問い合わせ」がありました。">
-          <label class="hidden" for="referrer_url">お問い合わせ前に見ていたURL</label>
-          <input type="hidden" id="referrer_url" name="referrer_url">
-          <script>document.getElementById("referrer_url").value = document.referrer</script>
+          <input
+            type="hidden"
+            id="subject"
+            name="subject"
+            data-remove-prefix="true"
+            value="Webサイトから「お問い合わせ」がありました。"
+          />
+          <label class="hidden" for="referrer_url"
+            >お問い合わせ前に見ていたURL</label
+          >
+          <input type="hidden" id="referrer_url" name="referrer_url" />
+          <script>
+            document.getElementById("referrer_url").value = document.referrer;
+          </script>
 
           <p>
             <!-- 長文用の文字入力枠 -->
@@ -127,7 +150,9 @@
               autocorrect="off"
               id="message"
               name="message"
-              placeholder="とっても為になりました。ありがとうございます。" required="required"></textarea>
+              placeholder="とっても為になりました。ありがとうございます。"
+              required="required"
+            ></textarea>
           </p>
 
           <p>
@@ -142,7 +167,8 @@
               id="name"
               name="name"
               placeholder="山田 太郎"
-              required="required">
+              required="required"
+            />
           </p>
 
           <p>
@@ -157,7 +183,8 @@
               id="email"
               name="email"
               placeholder="taro@example.com"
-              required="required">
+              required="required"
+            />
           </p>
 
           <p>
@@ -177,7 +204,8 @@
               minlength="7"
               name="tel"
               pattern="^(\d|-|\(|\))*$"
-              placeholder="0523734649">
+              placeholder="0523734649"
+            />
           </p>
 
           <!-- Netlify が提供する「キャプチャ機能」を用いるには
@@ -190,44 +218,71 @@
             <button
               type="button"
               class="simple button"
-              data-micromodal-trigger="privacy-modal">
+              data-micromodal-trigger="privacy-modal"
+            >
               お預かりする情報の取り扱い
             </button>
           </p>
 
           <!-- 送信ボタン -->
           <!-- type="submit" で、送信ボタンになる -->
-          <input type="submit" value="送信">
+          <input type="submit" value="送信" />
         </form>
 
         <!-- お預かりする情報の取り扱い（モーダル） -->
         <div class="modal" id="privacy-modal" aria-hidden="true">
           <div class="modal-overlay" tabindex="-1" data-micromodal-close>
-            <div class="modal-container" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title">
+            <div
+              class="modal-container"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="privacy-modal-title"
+            >
               <header class="modal-header">
-                <h2 class="modal-title" id="privacy-modal-title">お預かりする情報の取り扱い</h2>
-                <button class="modal-close" aria-label="閉じる" data-micromodal-close>&times;</button>
+                <h2 class="modal-title" id="privacy-modal-title">
+                  お預かりする情報の取り扱い
+                </h2>
+                <button
+                  class="modal-close"
+                  aria-label="閉じる"
+                  data-micromodal-close
+                >
+                  &times;
+                </button>
               </header>
               <div class="modal-content" id="privacy-modal-content">
-                <p>このお問い合わせフォームで入力いただいた内容は、回答およびご連絡の目的にのみ使用します。</p>
-                <p>取得した個人情報を第三者に提供することはありません（法令に基づく場合を除きます）。</p>
+                <p>
+                  このお問い合わせフォームで入力いただいた内容は、回答およびご連絡の目的にのみ使用します。
+                </p>
+                <p>
+                  取得した個人情報を第三者に提供することはありません（法令に基づく場合を除きます）。
+                </p>
               </div>
               <footer class="modal-footer">
-                <button class="simple button" type="button" data-micromodal-close>閉じる</button>
+                <button
+                  class="simple button"
+                  type="button"
+                  data-micromodal-close
+                >
+                  閉じる
+                </button>
               </footer>
             </div>
           </div>
         </div>
-
       </article>
     </main>
 
     <!-- サイドバー -->
     <div id="sidebar" class="sidebar"></div>
-    <script>include("sidebar")</script>
+    <script>
+      include("sidebar");
+    </script>
 
     <!-- フッター -->
     <footer id="footer"></footer>
-    <script>include("footer")</script>
+    <script>
+      include("footer");
+    </script>
   </body>
 </html>

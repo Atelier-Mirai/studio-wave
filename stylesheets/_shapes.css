@@ -16,9 +16,8 @@
 .oval {
   width: 120px;
   height: 120px;
-                 /* top-left top-right bottom-left bottom-right */
-  border-radius:    40%      70%       50%         30%    /* 横の値 */
-                  / 50%      50%       50%         50%;   /* 縦の値 */
+  /* top-left top-right bottom-left bottom-right */
+  border-radius: 40% 70% 50% 30% /* 横の値 */ / 50% 50% 50% 50%; /* 縦の値 */
   object-fit: cover;
 }
 
@@ -59,5 +58,7 @@
 .heart {
   width: 140px;
   height: 130px;
-  clip-path: path('M15,45 A30,30,0,0,1,75,45 A30,30,0,0,1,135,45 Q135,90,75,130 Q15,90,15,45 Z')
+  clip-path: path(
+    "M15,45 A30,30,0,0,1,75,45 A30,30,0,0,1,135,45 Q135,90,75,130 Q15,90,15,45 Z"
+  );
 }
