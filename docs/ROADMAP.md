@@ -51,6 +51,15 @@
   - `javascripts/swiper-custom.js`
   - `javascripts/page-top.js`
 
+#### 参考: Muuri の保守状況
+
+- `muuri/index.html` ではドラッグ＆ソートレイアウトに [Muuri](https://muuri.dev/) v0.9.5 を使用中。
+- GitHub 公式リポジトリの最新安定リリースは **2021-07-09 公開の v0.9.5** で、それ以降は新しいタグが出ておらず、積極的なメンテナンスは停止状態と見られる。
+- 新機能追加やブラウザ仕様変更への追随は期待しにくいため、今後も使い続ける場合は以下を想定しておく。
+  - 自前でフォークしてバグ修正・調整ができる体制を用意する。
+  - 代替ライブラリ（Shuffle.js、Gridstack、Sortable + Masonry 等）の調査を並行して進める。
+  - 重要な画面では E2E/UI テストを用意し、将来のブラウザアップデートによる破綻を早期に検知する。
+
 ### JavaScript: 各ファイルがやっていること（概要）
 
 - `javascripts/hero-slideshow.js`
