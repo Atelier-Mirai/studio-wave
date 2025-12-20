@@ -1,54 +1,35 @@
 <!doctype html>
 <html lang="ja">
-  <!-- サイトに関する設定事項を記述します -->
+<!-- サイトに関する設定事項を記述します -->
+
   <head>
     <!-- 文字コードの指定 -->
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
 
     <!-- ページのタイトル -->
     <title>WAVE</title>
 
     <!-- ビューポート(視点)の指定 -->
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- ファビコンの指定 https://ao-system.net/favicongenerator/ -->
-    <link rel="icon" href="images/favicon.ico" type="image/ico" />
-    <link
-      rel="apple-touch-icon"
-      href="images/apple-touch-icon-180x180.png"
-      type="image/png"
-      sizes="180x180"
-    />
+    <!-- ファビコン https://ao-system.net/favicongenerator/ -->
+    <link rel="icon" href="images/icon-32x32.png" type="image/png">
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
 
     <!-- 検索時に表示される、ウェブサイトの要約文 -->
-    <meta
-      name="description"
-      content="概ね80文字前後のサイトの
-    紹介文が、検索時に表示されます。"
-    />
+    <meta name="description" content="概ね80文字前後のサイトの紹介文が、検索時に表示されます。">
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap">
 
     <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v7.1.0/css/all.css"
-    />
-
-    <!-- Reset CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@acab/reset.css@0.10.0/index.min.css"
-    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.1.0/css/all.css">
 
     <!-- 自分で作ったスタイルシート -->
-    <link rel="stylesheet" href="stylesheets/master.css" />
+    <link rel="stylesheet" href="stylesheets/master.css">
 
     <!-- 先頭へ戻るボタンの為のJavaScript -->
     <script src="javascripts/page-top.js" defer></script>
@@ -87,37 +68,24 @@
         </time>
 
         <figure class="sepia rotate-3 frame" id="image">
-          <img src="images/aozora-to-sakura.webp" alt="青空と櫻" />
+          <img src="images/aozora-to-sakura.webp" alt="青空と櫻">
         </figure>
 
         <p id="paragraph">
-          令和六年元旦。新しい年の始まりです。<br />
-          初日の出を拝み、良い年であるようにと祈ります。<br />
-          お節料理にお屠蘇、お雑煮をいただきます。
+          令和八年元旦。新しい年の始まりです。<br>
+          海岸に出て初日の出を拝み、潮の香りと冷たい風の中で深呼吸しました。<br>
+          静かな波音を聞きながら、今年は『毎日少しだけ丁寧に』を合言葉にしようと決めます。<br>
+          帰宅したらお節料理にお屠蘇、お雑煮。湯気の立つ椀を両手で包むと、体の芯まで温まりました。
         </p>
       </article>
     </main>
 
     <!-- サイドバー -->
     <div class="sidebar">
-      <!-- プロフィール -->
-      <aside class="profile">
-        <h2>PROFILE</h2>
-        <figure>
-          <img src="images/profile.webp" alt="WAVEの管理人" class="circular" />
-        </figure>
-        <p>
-          海辺の生活が好きな小さなアトリエの住人です。アトリエで絵を描いたり、浜辺を散歩したり、波音のそばで過ごす静かな時間を楽しんでいます。
-        </p>
-      </aside>
-
-      <!-- ピックアップ記事 -->
-      <aside class="pickup">
-        <!-- JavaScript により 暦要素を生成 -->
-        <div id="wallpaper">
-          <div id="calendar"></div>
-        </div>
-      </aside>
+      <!-- JavaScript により 暦要素を生成 -->
+      <div id="wallpaper">
+        <div id="calendar"></div>
+      </div>
     </div>
 
     <!-- フッター -->

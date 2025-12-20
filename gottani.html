@@ -20,8 +20,6 @@
 
       /* ナビゲーションメニュー
       ---------------------------------------------------------------------*/
-      /* ボタンの為のCSSを読み込む */
-      @import "stylesheets/_button.css";
       ul {
         list-style: none;
         display: grid;
@@ -31,39 +29,6 @@
       /* 余白を無しに （リセットCSS）
       ---------------------------------------------------------------------*/
       * { margin: 0; }
-
-      /* section の装飾
-      ---------------------------------------------------------------------*/
-      section { height: 50vh; }
-      /* グラデーションの例 */
-      /* https://developer.mozilla.org/ja/docs/Web/CSS/CSS_images/Using_CSS_gradients */
-      section:nth-of-type(1) {
-        /* 線形グラデーション (Linear Gradient) */
-        background: linear-gradient(to right, #fef4f4, #f19072); }
-      section:nth-of-type(2) {
-        /* 縦方向の線形グラデーション */
-        background: linear-gradient(to bottom, var(--sakurairo), var(--nanohanairo)); }
-      section:nth-of-type(3) {
-        /* 複数色の線形グラデーション */
-        background: linear-gradient(-45deg, #ff7f50 15%, #1e90ff 30%, #32cd32 45%, #ff1493 60%); }
-      section:nth-of-type(4) {
-        /* 放射状グラデーション (Radial Gradient) */
-        background: radial-gradient(circle, var(--momijiiro), var(--sakurairo)); }
-      section:nth-of-type(5) {
-        /* 楕円形のグラデーション */
-        background: radial-gradient(
-          ellipse farthest-corner at 50% 80%,
-          red,
-          yellow 10%,
-          #1e90ff 50%,
-          beige); }
-      section:nth-of-type(6) {
-        /* 扇形のグラデーション */
-        background: conic-gradient(
-          at 0% 30%,
-          red 10%,
-          yellow 30%,
-          #1e90ff 50%); }
 
       /* スムーススクロールの為に
       ---------------------------------------------------------------------*/
@@ -100,10 +65,10 @@
       body {
         display: grid;
         grid-template:
-          "header " 100px
-          "main   " auto
-          "footer " 45px /
-          auto;
+          "header header" 100px
+          "main   main" auto
+          "footer footer" 45px /
+          1fr 1fr;
       }
       header { grid-area: header; }
       nav    { grid-area: nav; }
@@ -117,191 +82,508 @@
         scroll-snap-type: y mandatory;
         overflow: scroll;
       }
-      section { scroll-snap-align: start; }
+      section {
+        scroll-snap-align: start;
+        padding: 32px;
+        border-radius: 24px;
+        background: color-mix(in srgb, var(--nanohanairo) 20%, #fff);
+        box-shadow: 0 10px 25px #0000000f;
+      }
+
+      /* 田の字レイアウト用
+      ---------------------------------------------------------------------*/
+      .showcase-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+        gap: 24px;
+        margin-top: 24px;
+        height: auto;
+      }
+      .showcase-card {
+        background: #ffffffd9;
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 10px 30px #0001;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 12px;
+          object-fit: cover;
+        }
+        h2 {
+          margin: 0;
+          font-size: clamp(1rem, 1.5vw, 1.2rem);
+        }
+        a {
+          color: #0041c4;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      .showcase-gradient {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        border-radius: 16px;
+        background:
+          radial-gradient(circle at 20% 20%, #ffecd2, transparent 45%),
+          radial-gradient(circle at 80% 30%, #fcb69f, transparent 40%),
+          radial-gradient(circle at 40% 80%, #90caf9, transparent 50%),
+          linear-gradient(135deg, #fc5c7d, #6a82fb);
+        box-shadow: inset 0 0 40px #ffffff40, 0 15px 35px #0000001a;
+      }
+
+      /* 縦書テキスト用
+      ---------------------------------------------------------------------*/
+      .vertical-text-box {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        border-radius: 16px;
+        background: #ffffffc0;
+        padding: 16px;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: auto;
+        gap: 0;
+        box-shadow: inset 0 0 20px #00000012;
+        overflow: hidden;
+        .vertical-text {
+          writing-mode: vertical-rl;
+          text-orientation: upright;
+          text-align: start;
+          text-indent: 1em;
+          line-height: 1.8;
+          inline-size: 100%;
+          block-size: 100%;
+          overflow-wrap: anywhere;
+          overflow: hidden;
+          line-break: strict;
+        }
+      }
+
+      /* 学習ガイド用
+      ---------------------------------------------------------------------*/
+      .learning-section {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+        gap: 24px;
+        align-items: start;
+        margin-block: 32px;
+        text-align: start;
+        .learning-visual img {
+          width: 100%;
+          border-radius: 16px;
+          box-shadow: 0 10px 30px #0001;
+        }
+        .learning-content {
+          display: grid;
+          gap: 1rem;
+        }
+        h2 {
+          margin: 0;
+          font-size: clamp(1.5rem, 3vw, 2.4rem);
+        }
+        h3 {
+          margin-block: 0.5rem;
+        }
+        blockquote {
+          margin: 0;
+          padding: 0.75rem 1rem;
+          border-inline-start: 4px solid var(--nanohanairo);
+          background: #ffffffb3;
+          border-radius: 8px;
+          font-style: italic;
+        }
+        ul {
+          margin: 0;
+          padding-inline-start: 1.2rem;
+          display: grid;
+          gap: 0.25rem;
+        }
+      }
+
+      /* シャッフルテキスト用
+      ---------------------------------------------------------------------*/
+      .shuffle-text-section {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+        gap: 24px;
+        align-items: start;
+        margin-block: 32px;
+        text-align: start;
+        .shuffle-visual img {
+          width: 100%;
+          border-radius: 16px;
+          box-shadow: 0 10px 25px #0001;
+        }
+        .shuffle-content {
+          display: grid;
+          gap: 1rem;
+        }
+        .shuffle-content h1 {
+          margin: 0;
+          font-size: clamp(1.6rem, 3vw, 2.2rem);
+        }
+        .shuffle-list {
+          margin: 0;
+          padding-inline-start: 1.5rem;
+          display: grid;
+          gap: 0.5rem;
+        }
+        button {
+          padding: 0.6rem 1.2rem;
+          border-radius: 999px;
+          border: none;
+          background: var(--nanohanairo);
+          color: #222;
+          font-weight: 600;
+          cursor: pointer;
+          transition: opacity 200ms ease;
+          justify-self: start;
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+
+      /* タイピングレッスン用
+      ---------------------------------------------------------------------*/
+      .typing-section {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+        gap: 24px;
+        align-items: start;
+        margin-block: 32px;
+        img {
+          width: 100%;
+          border-radius: 16px;
+          object-fit: cover;
+          box-shadow: 0 10px 30px #0001;
+        }
+        .typing-content {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          h2 {
+            margin: 0;
+            font-size: clamp(1.4rem, 2vw, 1.8rem);
+          }
+          p {
+            margin: 0;
+          }
+          ol {
+            margin: 0;
+            padding-inline-start: 1.25rem;
+            display: grid;
+            gap: 0.5rem;
+          }
+        }
+      }
+
+      @media (width <= 768px) {
+        .learning-section,
+        .typing-section {
+          grid-template-columns: 1fr;
+        }
+      }
     </style>
+    <script src="shuffle_text/shuffle-text.js" defer></script>
+    <script src="shuffle_text/shuffle-text-custom.js" defer></script>
   </head>
 
   <!-- 表示したい内容・出し物・コンテンツを記述します -->
   <body>
     <!-- ヘッダー(サイト名) -->
     <header>
-      <button type="button" name="button">
-        <a href="index.html">戻る</a>
-      </button>
+      <a href="index.html">WAVE</a>
 
       <!-- ナビゲーションメニュー -->
       <nav>
         <ul>
-          <!-- ページ内リンク #section1へ跳ぶ -->
-          <li><a href="#section1" class="simple button">
-              <span>Section 1</span></a></li>
-          <li><a href="#section2" class="gradient button">
-              <span>Section 2</span></a></li>
-          <li><a href="#section3" class="gold button">
-              <span>Section 3</span></a></li>
-          <li><a href="#section4" class="circle button">
-              <i class="fas fa-arrow-down"></i></a></li>
-          <li><button class="gold urushi">
-              <a href="#section5">
-                <span>Section 5</span></a></button></li>
-          <li><a href="#section6" class="fuwafuwa button">Section 6</a></li>
+          <!-- ページ内リンク -->
+          <li><a href="#section0">主題・文法・道具</a></li>
+          <li><a href="#section1">Shuffle Text</a></li>
+          <li><a href="#section2">Showcase</a></li>
+          <li><a href="#section3">Typing Lessons</a></li>
         </ul>
       </nav>
     </header>
 
     <!-- 主要なコンテンツ -->
     <main>
-      <section id="section1">
-        <h1>ごった煮</h1>
-        <p>
-          いろいろ紹介しています。
-          <ul style="list-style-type: '\1F338';">
-            <li>「🌸」印の箇条書き項目</li>
-            <li>様々なボタン</li>
-            <li>固定ヘッダーとフッター</li>
-            <li>様々なグラデーション</li>
-            <li>スムーズスクロールとぴたっとスクロール</li>
-            <li>縦書き</li>
+
+      <!-- 主題・文法・道具 -->
+      <section id="section0" class="learning-section">
+        <div class="learning-visual">
+          <img src="images/spiral-staircase-learning.svg" alt="螺旋階段のイラスト">
+        </div>
+        <div class="learning-content">
+          <h2>ウェブ制作を学ぶための3つのステップ</h2>
+          <p>
+            技術を身につけるには、<strong>3つの大切な要素</strong>があります。小説を書くことに例えると、わかりやすいですよ。
+          </p>
+
+          <article>
+            <h3>1. 主題：何を作るか考えよう</h3>
+            <p>
+              小説なら「どんな物語を書くか」を決めますよね。切ない恋愛小説にするのか、ワクワクする冒険物語にするのか。登場人物は誰で、どんな展開にするのか…
+            </p>
+            <p>
+              ウェブ制作も同じです。「趣味を登録できるサイトを作ろう」「ネットショッピングサイトを作ろう」というように、どんな機能を持たせて、どんな写真や文章を載せるかを考えます。これを「要件定義」といいます。
+            </p>
+          </article>
+
+          <article>
+            <h3>2. 文法：ルールを覚えよう</h3>
+            <p>
+              日本語には、名詞や動詞、漢字やひらがな、句読点の使い方など、たくさんのルールがありますね。私たちは自然に使えていますが、実はとても複雑なんです。
+            </p>
+            <blockquote>
+              「日本では五月一日は令和の始まり、今日は五月五日で日曜日で祝日、こどもの日です。」
+            </blockquote>
+            <p>
+              同じ「日」という文字が、「にち」「ついたち」「いつか」「にちようび」と、いろんな読み方をしていますよね。外国の方にとっては大変です！
+            </p>
+            <p>
+              ウェブ制作にも「文法」があります。<strong>HTML、CSS、JavaScript</strong>という言語を学びます。それぞれにルールがあって、正しく書かないとブラウザがうまく表示してくれません。でも心配しないでください。少しずつ慣れていきますよ。
+            </p>
+          </article>
+
+          <article>
+            <h3>3. 道具：使い方をマスターしよう</h3>
+            <p>
+              小説を書くには、原稿用紙と鉛筆が必要です。鉛筆の持ち方や削り方も、最初は練習が必要でしたよね。
+            </p>
+            <p>
+              ウェブ制作では、<strong>Windsurf</strong>（エディタ）や<strong>Firefox</strong>（ブラウザ）といった道具を使います。最初は戸惑うかもしれませんが、使っているうちに自然と手に馴染んできます。
+            </p>
+            <p>
+              <strong>便利なポイント</strong>：WindsurfやFirefoxには<strong>AIアシスタント機能</strong>が搭載されています。わからないことがあったら、AIに質問できるので安心です！「このコードはどういう意味？」「エラーが出たんだけど…」と気軽に聞いてみましょう。
+            </p>
+          </article>
+
+          <article>
+            <h3>螺旋階段を登るように</h3>
+            <p>
+              この<strong>1〜3の要素を織り交ぜながら</strong>、ちょうど螺旋（らせん）階段のように、少しずつ高みへと昇っていきましょう。
+            </p>
+            <p>
+              最初は難しく感じるかもしれませんが、一歩ずつ進めば、必ず自分だけのウェブサイトが作れるようになります。焦らず、楽しみながら学んでいきましょう！
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="section1" class="shuffle-text-section">
+        <div class="shuffle-visual">
+          <img src="shuffle_text/shuffle-text.webp" alt="shuffle text demo">
+        </div>
+
+        <div class="shuffle-content">
+          <h2>Shuffle Text 紹介</h2>
+          <p>
+            shuffle-textはテキストシャッフル（文字列がランダムで切り替わる演出）の表現を行うためのライブラリです。ウェブサイトでマウスが触れたときに演出ができます。詳細は、
+            <a href="https://ics.media/entry/15498/">こちら</a>をご覧ください。
+          </p>
+
+          <h3>使い方</h3>
+          <p>シャッフルしたい要素に <code>class="shuffle"</code> とクラス名を付与します。</p>
+
+          <ul class="shuffle-list">
+            <li class="shuffle">01/01 「トップページ」更新しました。</li>
+            <li class="shuffle">01/02 「会社案内」更新しました。</li>
+            <li class="shuffle">01/03 「お問い合わせ」更新しました。</li>
+            <li class="shuffle">01/04 「最新情報」更新しました。</li>
           </ul>
-        </p>
-      </section>
-      <section id="section2" style="writing-mode: vertical-rl; block-size: 100%;">
-        <h2>第二章</h2>
-        <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波<br>
-        またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう。</p>
-      </section>
-      <section id="section3"><h2>Section 3</h2></section>
-      <section id="section4"><h2>Section 4</h2></section>
-      <section id="section5"><h2>Section 5</h2></section>
-      <section id="section6"><h2>Section 6</h2></section>
-      <section>
-        <h2>
-          <a href="https://qiita.com/shiozaki/items/0e42e101b7483df13c8f">
-            ✨安い！！お得！！激安CSS！！✨
-          </a>
-        </h2>
-        <style>
-        @import url(https://fonts.googleapis.com/css?family=Poppins:700);
-        .price {
-          color: #c70506;
-          text-shadow:  2px 0 0 #fff,
-                        0 2px 0 #fff,
-                       -2px 0 0 #fff,
-                       0 -2px 0 #fff,
-                       5px 4px 3px #0008;
-          font-weight: bold;
-          font-family: Poppins;
-          letter-spacing: -3px;
-        }
-        .price1 {
-          font-size: 78px;
-          margin-right: -5px;
-          font-style: italic;
-        }
-        .price2 {
-          font-size: 59px;
-          margin-right: 10px;
-          font-style: italic;
-        }
-        .yen {
-          font-size: 40px;
-        }
-        </style>
-        <span class="price">
-          <span class="price1">19</span><span class="price2">,800</span>
-          <span class="yen">円</span>
-        </span>
 
-        <details>
-          <summary>ソースコードを見る</summary>
-          <pre>
-            <code>
-              &lt;span class="price"&gt;
-                &lt;span class="price1"&gt;19&lt;/span&gt;&lt;span class="price2"&gt;,800&lt;/span&gt;
-                &lt;span class="yen"&gt;円&lt;/span&gt;
-              &lt;/span&gt;
-
-              @import url(https://fonts.googleapis.com/css?family=Poppins:700);
-              .price {
-                color: #c70506;
-                text-shadow:  2px 0 0 #fff,
-                              0 2px 0 #fff,
-                             -2px 0 0 #fff,
-                             0 -2px 0 #fff,
-                             5px 4px 3px #0008;
-                font-weight: bold;
-                font-family: Poppins;
-                letter-spacing: -3px;
-              }
-              .price1 {
-                font-size: 78px;
-                margin-right: -5px;
-                font-style: italic;
-              }
-              .price2 {
-                font-size: 59px;
-                margin-right: 10px;
-                font-style: italic;
-              }
-              .yen {
-                font-size: 40px;
-              }
-            </code>
-          </pre>
-        </details>
-
-        <h2>
-          <a href="https://qiita.com/nishihara_zari/items/d893650b4c6484abd2f1">
-            HTML + CSSでリアルなタピオカを作る
-          </a>
-        </h2>
-        <img src="images/tapioca.png" alt="">
-
-        <h2>
-          <a href="https://qiita.com/nishihara_zari/items/d7dad5fbe2eb81301938">
-            HTML + CSSでリアルな目玉焼きを作る
-          </a>
-        </h2>
-        <img src="images/sunny-side-up-fried-eggs.png" alt="">
-
-        <h2>
-          <a href="https://qiita.com/ichimonji_haji/items/b6362aa808ae351affdc">
-            リアルな眼球を描く。HTMLとCSSだけで。
-          </a>
-        </h2>
-        <img src="images/eye.png" alt="">
-
-        <h2>
-          <a href="https://www.typing.com/student/lessons">Typing Lessons </a>
-        </h2>
-        <p>
-          「Ｆ」「Ｊ」のホームポジションから始まり、数字や記号に至るまで滑らかに入力できるよう練習できるサイトです。
-        </p>
-        <br>
-        <p>
-          タイピングを習得する利点は以下の通りです。
-        </p>
-
-        <ol>
-          <li>効率的な作業: タイピング速度が向上することで、文書作成やデータ入力が迅速に行えます。</li>
-          <li>コミュニケーションの向上: メールやチャットなど、オンラインでのコミュニケーションがスムーズになります。</li>
-          <li>集中力の向上: 視線を画面に向けたままタイピングができるため、書くことに集中しやすくなります。</li>
-          <li>職業的なスキル: 多くの職場で求められる基本的なスキルであり、就職やキャリアアップに役立ちます。</li>
-          <li>学習の効率化: レポート作成や研究の際に、情報を速やかにまとめることができ、学習効果が向上します。</li>
-          <li>自己表現の向上: アイデアや考えを素早く文章にすることで、自己表現がしやすくなります。</li>
-          <li>コードの迅速な入力: プログラミングではコードを書く速度が重要です。</li>
-          <li>エラーチェックの効率化: タイピングスピードが向上すると、コードの修正やデバッグ作業が迅速に行えます。</li>
-          <li>文法の理解: タイピングを通じてプログラミング言語の文法や構文に慣れることができます。</li>
-          <li>アルゴリズムの実装: 複雑なアルゴリズムを実装する際、速やかにコードを書くことができるため、試行錯誤がしやすくなります。</li>
-          <li>プロジェクトの効率化: チームでの共同作業やコードレビューがスムーズになり、プロジェクト全体の効率が向上します。</li>
-        </ol>
-        </h2>
+          <button id="reload" type="button">再読み込み</button>
+        </div>
+        <script>
+          document
+            .getElementById("reload")
+            .addEventListener("click", () => location.reload());
+        </script>
       </section>
 
-      <section>
+      <!-- 田の字レイアウト -->
+      <section id="section2" class="showcase-grid">
+        <article class="showcase-card">
+          <h2>
+            <a href="https://qiita.com/shiozaki/items/0e42e101b7483df13c8f">
+              ✨安い！！お得！！激安CSS！！✨
+            </a>
+          </h2>
+          <style>
+          @import url(https://fonts.googleapis.com/css?family=Poppins:700);
+          .price {
+            color: #c70506;
+            text-shadow:  2px 0 0 #fff,
+                          0 2px 0 #fff,
+                          -2px 0 0 #fff,
+                          0 -2px 0 #fff,
+                          5px 4px 3px #0008;
+            font-weight: bold;
+            font-family: Poppins;
+            letter-spacing: -3px;
+          }
+          .price1 {
+            font-size: 78px;
+            margin-right: -5px;
+            font-style: italic;
+          }
+          .price2 {
+            font-size: 59px;
+            margin-right: 10px;
+            font-style: italic;
+          }
+          .yen {
+            font-size: 40px;
+          }
+          </style>
+          <span class="price">
+            <span class="price1">19</span><span class="price2">,800</span>
+            <span class="yen">円</span>
+          </span>
+          <details>
+            <summary>ソースコードを見る</summary>
+            <pre>
+              <code>
+                &lt;span class="price"&gt;
+                  &lt;span class="price1"&gt;19&lt;/span&gt;&lt;span class="price2"&gt;,800&lt;/span&gt;
+                  &lt;span class="yen"&gt;円&lt;/span&gt;
+                &lt;/span&gt;
+
+                @import url(https://fonts.googleapis.com/css?family=Poppins:700);
+                .price {
+                  color: #c70506;
+                  text-shadow:  2px 0 0 #fff,
+                                0 2px 0 #fff,
+                                -2px 0 0 #fff,
+                                0 -2px 0 #fff,
+                                5px 4px 3px #0008;
+                  font-weight: bold;
+                  font-family: Poppins;
+                  letter-spacing: -3px;
+                }
+                .price1 {
+                  font-size: 78px;
+                  margin-right: -5px;
+                  font-style: italic;
+                }
+                .price2 {
+                  font-size: 59px;
+                  margin-right: 10px;
+                  font-style: italic;
+                }
+                .yen {
+                  font-size: 40px;
+                }
+              </code>
+            </pre>
+          </details>
+        </article>
+
+        <article class="showcase-card">
+          <h2>
+            <a href="https://qiita.com/nishihara_zari/items/d893650b4c6484abd2f1">
+              HTML + CSSでリアルなタピオカを作る
+            </a>
+          </h2>
+          <img src="images/tapioca.png" alt="タピオカ">
+        </article>
+
+        <article class="showcase-card">
+          <h2>
+            <a href="https://qiita.com/nishihara_zari/items/d7dad5fbe2eb81301938">
+              HTML + CSSでリアルな目玉焼きを作る
+            </a>
+          </h2>
+          <img src="images/sunny-side-up-fried-eggs.png" alt="目玉焼き">
+        </article>
+
+        <article class="showcase-card">
+          <h2>
+            <a href="https://qiita.com/ichimonji_haji/items/b6362aa808ae351affdc">
+              リアルな眼球を描く。HTMLとCSSだけで。
+            </a>
+          </h2>
+          <img src="images/eye.png" alt="眼球">
+        </article>
+
+        <article class="showcase-card">
+          <h2>
+            <a href="https://jajaaan.co.jp/css/css-headline/">
+              CSS見出しデザイン参考100選
+            </a>
+          </h2>
+          <img src="images/headline-1024x633.webp" alt="見出し">
+        </article>
+
+        <article class="showcase-card">
+          <h2>
+            <a href="https://jajaaan.co.jp/css/button/">
+              CSSボタンデザイン120個
+            </a>
+          </h2>
+          <img src="images/css-button-1024x633.webp" alt="CSSボタン">
+        </article>
+
+        <article class="showcase-card">
+          <h2>
+            グラデーション
+          </h2>
+          <div class="showcase-gradient"></div>
+        </article>
+
+        <article class="showcase-card">
+          <h2>
+            縦書き
+          </h2>
+          <div class="vertical-text-box">
+            <p class="vertical-text">
+              またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう。
+            </p>
+            <p class="vertical-text">
+              あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波
+            </p>
+          </div>
+        </article>
       </section>
 
+      <section id="section3" class="typing-section">
+        <img src="images/typing.webp" alt="typing illustration">
 
+        <div class="typing-content">
+          <h2>
+            <a href="https://www.typing.com/student/lessons">Typing Lessons </a>
+          </h2>
+
+          <p>
+            「Ｆ」「Ｊ」のホームポジションから始まり、数字や記号に至るまで滑らかに入力できるよう練習できるサイトです。
+          </p>
+          <p>
+            タイピングを習得する利点は以下の通りです。
+          </p>
+
+          <ol>
+            <li>効率的な作業: タイピング速度が向上することで、文書作成やデータ入力が迅速に行えます。</li>
+            <li>コミュニケーションの向上: メールやチャットなど、オンラインでのコミュニケーションがスムーズになります。</li>
+            <li>集中力の向上: 視線を画面に向けたままタイピングができるため、書くことに集中しやすくなります。</li>
+            <li>職業的なスキル: 多くの職場で求められる基本的なスキルであり、就職やキャリアアップに役立ちます。</li>
+            <li>学習の効率化: レポート作成や研究の際に、情報を速やかにまとめることができ、学習効果が向上します。</li>
+            <li>自己表現の向上: アイデアや考えを素早く文章にすることで、自己表現がしやすくなります。</li>
+            <li>コードの迅速な入力: プログラミングではコードを書く速度が重要です。</li>
+            <li>エラーチェックの効率化: タイピングスピードが向上すると、コードの修正やデバッグ作業が迅速に行えます。</li>
+            <li>文法の理解: タイピングを通じてプログラミング言語の文法や構文に慣れることができます。</li>
+            <li>アルゴリズムの実装: 複雑なアルゴリズムを実装する際、速やかにコードを書くことができるため、試行錯誤がしやすくなります。</li>
+          </ol>
+        </div>
+      </section>
     </main>
 
     <footer>

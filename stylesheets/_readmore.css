@@ -8,8 +8,8 @@
 
   .readmore-container {
     overflow: hidden;
-    height: 250px; /* 開く前に見えている部分の高さ */
-    transition: all 0.5s;
+    max-height: 250px; /* 開く前に見えている部分の高さ */
+    transition: max-height 0.35s ease-in;
   }
 
   label {
@@ -55,24 +55,22 @@
     }
   }
 
+  label.is-open,
+  label.is-closing {
+    background: inherit;
+
+    &::after {
+      content: "\f139  閉じる";
+    }
+  }
+
   input {
     display: none;
 
-    &:checked + label {
-      background: inherit; /* 開いた時にグラデーションを消す */
-
-      /* 閉じるボタン */
-      &:after {
-        font-family: "Font Awesome 6 Free";
-        content: "\f139  閉じる";
-        font-weight: bold;
-      }
-
-      ~ .readmore-container {
-        height: auto;
-        padding-bottom: 80px; /* 閉じるボタンのbottomからの位置 */
-        transition: all 0.5s;
-      }
+    &:checked ~ .readmore-container {
+      max-height: 2000px;
+      padding-bottom: 80px; /* 閉じるボタンのbottomからの位置 */
+      transition: max-height 0.85s ease-out;
     }
   }
 }

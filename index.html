@@ -3,46 +3,32 @@
   <!-- サイトに関する設定事項を記述します -->
   <head>
     <!-- 文字コードの指定 -->
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
 
     <!-- ページのタイトル -->
     <title>WAVE</title>
 
     <!-- ビューポート(視点)の指定 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- ファビコン https://ao-system.net/favicongenerator/ -->
-    <link rel="icon" href="images/icon-32x32.png" type="image/png" />
+    <link rel="icon" href="images/icon-32x32.png" type="image/png">
     <!-- Apple Touch Icon -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="images/apple-touch-icon-180x180.png"
-    />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
 
     <!-- 検索時に表示される、ウェブサイトの要約文 -->
-    <meta
-      name="description"
-      content="概ね80文字前後のサイトの
-    紹介文が、検索時に表示されます。"
-    />
+    <meta name="description" content="概ね80文字前後のサイトの紹介文が、検索時に表示されます。">
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap">
 
     <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v7.1.0/css/all.css"
-    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.1.0/css/all.css">
 
     <!-- 自分で作ったスタイルシート -->
-    <link rel="stylesheet" href="stylesheets/master.css" />
+    <link rel="stylesheet" href="stylesheets/master.css">
   
     <!-- 自分で作ったJavaScript -->
     <script src="javascripts/hero-slideshow.js" defer></script>
@@ -189,14 +175,6 @@
           </a>
         </article>
         <article>
-          <a href="shuffle_text/index.html">
-            <figure>
-              <img src="images/shuffle-text.webp" alt="" />
-            </figure>
-            <h3>シャッフルテキスト</h3>
-          </a>
-        </article>
-        <article>
           <a href="muuri/index.html">
             <figure>
               <img src="images/muuri.webp" alt="" />
@@ -213,13 +191,23 @@
           </a>
         </article>
         <article>
-          <a href="zoo-sea.html">
+          <a href="zoo.html">
             <figure>
-              <img src="images/tora-s.webp" alt="" />
+              <img src="images/tora-s.webp" alt="虎の写真" />
             </figure>
-            <h3>動物園・海の思い出</h3>
+            <h3>動物園の思い出</h3>
           </a>
         </article>
+        <article>
+          <a href="sea.html">
+            <figure>
+              <img src="images/sea01-thumbnail.webp" alt="海の写真" />
+            </figure>
+            <h3>海の思い出</h3>
+          </a>
+        </article>
+
+        <!-- サンプルカード -->
         <div id="sample_card"></div>
         <script>
           includeRange("sample_card", 1, 25);

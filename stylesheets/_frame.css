@@ -2,8 +2,6 @@
   写真の枠とその効果
 =============================================================================*/
 .frame {
-  position: relative;
-  z-index: 0;
   border: 8px solid var(--sakurairo); /* 桜色の枠線を付ける */
   /* 二つの影を付けることもできる */
   box-shadow:
@@ -37,11 +35,11 @@
 
   &.rotate3 {
     /* 右下に少し回転 */
-    transform: rotate(3deg);
+    transform: rotate(2deg) scale(0.88);
   }
 
   &.rotate-3 {
     /* 右上に少し回転 */
-    transform: rotate(-3deg);
+    transform: rotate(-2deg) scale(0.88);
   }
 }

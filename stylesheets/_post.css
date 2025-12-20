@@ -4,26 +4,49 @@
 
 /* レイアウト */
 body.inner {
-  /* overflow: hidden; */
-
   display: grid;
   grid-template:
-    ".    head    .   " 100px
-    ".    main    .   " auto
+    ".    head .   " 100px
+    ".    main .   " auto
     ".    sidebar .   " auto
-    "foot foot    foot" 140px /
+    "foot foot foot" 140px /
     20px 1fr 20px;
-  row-gap: var(--space-l);
 
-  /* 画面幅が768px以上なら */
-  @media (width >= 768px) {
+  /* 画面幅が768px以上なら12カラムレイアウト */
+  /* @media (width >= 768px) {
     grid-template:
-      ".    head head head head head    head    .    " 100px
-      ".    main main main main sidebar sidebar .    " auto
-      "foot foot foot foot foot foot    foot    foot " auto /
-      0.2fr 1fr 1fr 1fr 1fr 1fr 1fr 0.2fr;
-    column-gap: 5%;
+      ".    head head head head head head head head head    head    head    head    ." 100px
+      ".    main main main main main main main main sidebar sidebar sidebar sidebar ." auto
+      "foot foot foot foot foot foot foot foot foot foot    foot    foot    foot    foot" auto /
+      0.2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.2fr;
+      column-gap: 2%;
+  } */
+  @media (width >=768px) {
+    grid-template-areas:
+      ".    head head    ."
+      ".    main sidebar ."
+      "foot foot foot    foot ";
+    grid-template-rows: 100px auto 140px;
+    grid-template-columns: 20px minmax(0, 8fr) minmax(384px, 1fr) 20px;
+    column-gap: 2%;
   }
+  /* @media (width >= 768px) {
+    grid-template:
+      ".    head head head head head head head head head    head    head    head    ." 100px
+      ".    main main main main main main main main sidebar sidebar sidebar sidebar ." auto
+      "foot foot foot foot foot foot foot foot foot foot    foot    foot    foot    foot" auto /
+      0.2fr repeat(8, minmax(0, 1fr)) minmax(320px, 1fr);
+    column-gap: 2%;
+  } */
+
+  /* @media (width >=768px) {
+    grid-template:
+      ".    head head head head head head head head head    head    head    head    ." 100px 
+      ".    main main main main main main main main sidebar sidebar sidebar sidebar ." auto "foot foot foot foot foot foot foot foot foot foot    foot    foot    foot    foot" auto /
+      0.2fr repeat(8, minmax(0, 1fr)) minmax(320px, 1fr);
+  } */
+
+  row-gap: var(--space-l);
 
   font-family:
     "Helvetica Neue", Arial, "Hiragino Kaku Gotic ProN", "Hiragino Sans",
@@ -35,8 +58,14 @@ body.inner {
   /* overflow: hidden; */
 }
 
+.inner header,
+.inner #header {
+  grid-area: head;
+}
+
 .inner main,
-.inner .sidebar {
+.inner .sidebar,
+.inner #sidebar {
   margin-block-start: var(--space-l);
 }
 
@@ -46,12 +75,6 @@ body.inner {
 
   /* 投稿記事 */
   article {
-    /* 配下の要素の余白指定 */
-    /* > * {
-      margin-block: 1em;
-      display: block;
-    } */
-
     /* 見出し */
     h1 {
       font-family: "Yuji Boku", serif;
@@ -74,22 +97,30 @@ body.inner {
   }
 }
 
+.inner footer,
+.inner #footer {
+  grid-area: foot;
+}
+
 /* サイドバー */
 .inner .sidebar {
   grid-area: sidebar;
+  width: 100%;
 
   /* aside 要素に枠線などの装飾を指定する */
   aside {
+    width: 100%;
+    max-width: 420px;
     border: solid 1px var(--amairo);
     padding: var(--space-l);
-    margin-block: var(--space-xl);
+    margin-block-end: var(--space-xl);
     margin-inline: 0;
     text-align: center;
 
     /* 見出し */
     h2 {
-      border-bottom: solid 2px var(--sanaeiro);
-      padding-bottom: var(--space-l);
+      border-block-end: solid 2px var(--sanaeiro);
+      padding-block-end: var(--space-l);
       margin-block-end: var(--space-l);
       color: var(--sanaeiro);
       font-weight: normal;
@@ -116,7 +147,7 @@ body.inner {
       gap: 20px 10px;
       list-style: none;
       padding: 0;
-      text-align: left;
+      text-align: start;
 
       /* リンク */
       a {

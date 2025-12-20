@@ -7,7 +7,7 @@
   gap: 20px 10px;
 
   @media (width >= 768px) {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto auto;
     column-gap: 20px;
   }

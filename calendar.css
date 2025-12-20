@@ -22,12 +22,16 @@
         Pixabay https://pixabay.com/ja/
 ---------------------------------------------------------------------*/
 #wallpaper {
-  min-width: 345px;
-  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 32px;
+  height: auto;
 
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  justify-content: center;
+  container-type: inline-size;
 
+  /* 背景写真 */
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
@@ -73,13 +77,7 @@
 /* 暦
 ---------------------------------------------------------------------*/
 #calendar {
-  grid-column: 2;
-  grid-row: 2;
-
-  width: min(
-    calc(100vw - 20px - 20px),
-    345px
-  ); /* 左右の余白 20px を除いた全ての幅 */
+  width: min(100%, 320px);
   background: var(--kinariiro);
   background: #fbfaf5c0;
   color: var(--kurobeni);
@@ -186,6 +184,7 @@
   td a {
     text-decoration: unset;
     color: unset;
+    margin-inline: 0;
   }
   td a:hover {
     text-decoration: unset;
@@ -213,48 +212,34 @@
   }
 }
 
-/* aside.pickup の css を少し調整 */
-.inner .sidebar aside.pickup {
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-
 /* 日付欄 */
 #calendar table {
-  min-width: 345px;
-  height: 346px;
-  padding: 10px 10px;
+  width: 320px;
   text-align: center;
 
   thead {
-    color: var(--kurobeni_8)
-    tr th,
-    tr td {
-      padding-bottom: 0.4em;
-    }
+    color: var(--kurobeni_8);
   }
 
-  a {
-    /* 色 */
-    color: #333;
-    text-decoration: none;
-    display: block;
-    margin: 0 auto;
-    cursor: pointer;
+  tbody tr {
+    height: 40px;
+  }
 
-    /* 日付を円形にする */
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    border-radius: 50%;
-
-    /* カーソルを載せるとほんのり染める */
-    &:hover {
-      background: var(--botaniro);
-      color: var(--kinariiro);
-      transition: 0.7s;
-      transform: scale(1);
+  td {
+    a {
+      display: block;
+      width: 30px;
+      height: 30px;
+      margin-inline: auto;
+      line-height: 30px;
+      border-radius: 50%;
+      /* カーソルを載せるとほんのり染める */
+      &:hover {
+        background: var(--botaniro);
+        color: var(--kinariiro);
+        transition: 0.7s;
+        transform: scale(1);
+      }
     }
   }
 
