@@ -62,10 +62,329 @@
       defer
     ></script>
     <script src="javascripts/modal.js" defer></script>
+
+    <!-- Google reCAPTCHA v3 -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lda9vArAAAAADeKagqVWNV8PEZKND3-TjOnDUZ9" async defer></script>
+
+    <style>
+      /* ===== Contact Page Layout ===== */
+      body.contact-page {
+        --surface: #ffffff;
+        --surface-alt: #f8f9fc;
+        --accent: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --accent-solid: #667eea;
+        --text: #1a1a2e;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+        --radius: 20px;
+        --shadow: 0 4px 24px rgba(0,0,0,0.06);
+        --shadow-lg: 0 20px 60px rgba(0,0,0,0.1);
+        --success: #10b981;
+        --error: #ef4444;
+
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+      }
+
+      body.contact-page main {
+        flex: 1;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: clamp(1rem, 4vw, 3rem);
+      }
+
+      body.contact-page article {
+        display: grid;
+        gap: clamp(1.5rem, 4vw, 2.5rem);
+      }
+
+      /* ===== Hero Section ===== */
+      body.contact-page .contact-hero {
+        text-align: center;
+        padding: clamp(2rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
+        background: var(--surface);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      body.contact-page .contact-hero h1 {
+        font-family: "Yuji Boku", serif;
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        background: var(--accent);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin: 0 0 1rem;
+      }
+
+      body.contact-page .contact-hero p {
+        color: var(--text-muted);
+        line-height: 1.8;
+        max-width: 50ch;
+        margin: 0 auto;
+      }
+
+      body.contact-page .contact-hero .icon-circle {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 1.5rem;
+        background: var(--accent);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: #fff;
+      }
+
+      /* ===== Form Card ===== */
+      body.contact-page .form-card {
+        background: var(--surface);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: clamp(1.5rem, 4vw, 2.5rem);
+      }
+
+      body.contact-page form {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      /* ===== Form Groups ===== */
+      body.contact-page .form-group {
+        position: relative;
+      }
+
+      body.contact-page .form-group label {
+        display: block;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 0.5rem;
+        font-size: 0.95rem;
+      }
+
+      body.contact-page .form-group label .required {
+        color: var(--error);
+        margin-left: 0.25rem;
+      }
+
+      body.contact-page .form-group input,
+      body.contact-page .form-group textarea {
+        width: 100%;
+        padding: 1rem 1.25rem;
+        border: 2px solid var(--border);
+        border-radius: 12px;
+        font-size: 1rem;
+        font-family: inherit;
+        background: var(--surface);
+        color: var(--text);
+        transition: all 0.2s ease;
+      }
+
+      body.contact-page .form-group input:focus,
+      body.contact-page .form-group textarea:focus {
+        outline: none;
+        border-color: var(--accent-solid);
+        box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+      }
+
+      body.contact-page .form-group textarea {
+        min-height: 180px;
+        resize: vertical;
+      }
+
+      body.contact-page .form-group input::placeholder,
+      body.contact-page .form-group textarea::placeholder {
+        color: #a0aec0;
+      }
+
+      /* ===== Validation States ===== */
+      body.contact-page .form-group.valid input,
+      body.contact-page .form-group.valid textarea {
+        border-color: var(--success);
+      }
+
+      body.contact-page .form-group.invalid input,
+      body.contact-page .form-group.invalid textarea {
+        border-color: var(--error);
+      }
+
+      body.contact-page .form-group .message {
+        display: none;
+        font-size: 0.85rem;
+        margin-top: 0.5rem;
+        padding-left: 0.25rem;
+      }
+
+      body.contact-page .form-group .message.error {
+        color: var(--error);
+      }
+
+      body.contact-page .form-group .message.success {
+        color: var(--success);
+      }
+
+      body.contact-page .form-group.invalid .message.error {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+      }
+
+      body.contact-page .form-group.valid .message.success {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+      }
+
+      /* ===== Submit Button ===== */
+      body.contact-page .submit-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        padding: 1rem 2.5rem;
+        background: #9ca3af;
+        color: #fff;
+        border: none;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: not-allowed;
+        transition: all 0.3s ease;
+        box-shadow: none;
+        margin-top: 1rem;
+      }
+
+      body.contact-page .submit-btn.enabled {
+        background: var(--accent);
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+      }
+
+      body.contact-page .submit-btn.enabled:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+      }
+
+      body.contact-page .submit-btn.enabled:active {
+        transform: translateY(0);
+      }
+
+      body.contact-page .submit-btn:disabled {
+        background: #9ca3af;
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: none;
+      }
+
+      /* ===== Privacy Button ===== */
+      body.contact-page .privacy-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        background: var(--surface-alt);
+        color: var(--text-muted);
+        border: 2px solid var(--border);
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      body.contact-page .privacy-btn:hover {
+        border-color: var(--accent-solid);
+        color: var(--accent-solid);
+      }
+
+      /* ===== Form Footer ===== */
+      body.contact-page .form-footer {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--border);
+      }
+
+      body.contact-page .form-note {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        max-width: 35ch;
+      }
+
+      /* ===== reCAPTCHA ===== */
+      body.contact-page .recaptcha-wrapper {
+        display: flex;
+        justify-content: center;
+        margin: 1rem 0;
+      }
+
+      /* ===== Modal Styling ===== */
+      body.contact-page .modal-overlay {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1rem;
+      }
+
+      body.contact-page .modal-container {
+        border-radius: var(--radius);
+        max-width: 500px;
+        background: var(--surface);
+        margin: auto;
+      }
+
+      body.contact-page .modal-header {
+        background: var(--surface-alt);
+        border-radius: var(--radius) var(--radius) 0 0;
+        padding: 1rem 1.5rem;
+      }
+
+      body.contact-page .modal-title {
+        font-family: "Yuji Boku", serif;
+      }
+
+      body.contact-page .modal-content {
+        padding: 1.5rem;
+        background: var(--surface);
+      }
+
+      body.contact-page .modal-content p {
+        margin-bottom: 1rem;
+        line-height: 1.8;
+        color: var(--text);
+      }
+
+      body.contact-page .modal-content p:last-child {
+        margin-bottom: 0;
+      }
+
+      body.contact-page .modal-footer {
+        padding: 1rem 1.5rem;
+        background: var(--surface-alt);
+        border-radius: 0 0 var(--radius) var(--radius);
+      }
+
+      /* ===== Footer ===== */
+      body.contact-page #footer {
+        margin-top: auto;
+      }
+
+      /* ===== Hidden ===== */
+      body.contact-page .hidden {
+        display: none !important;
+      }
+    </style>
   </head>
 
   <!-- 表示したい内容・出し物・コンテンツを記述します -->
-  <body class="inner">
+  <body class="contact-page">
     <!-- ヘッダー(サイト名) -->
     <header id="header"></header>
     <script>
@@ -82,152 +401,150 @@
     <main>
       <!-- 投稿記事 -->
       <article>
-        <h1>お問い合わせ</h1>
-        <p>
-          ご意見・ご感想など、以下の欄にご記入の上、送信してください。
-          記事に関するご質問などもお気軽にお寄せください。
-        </p>
-
-        <!-- お問い合わせフォーム -->
-        <!-- 各種属性の意味は次の通り -->
-        <!--  name="contact"    サーバ処理時に、contact という名前のフォームとして扱う
-              action="/success" 送信ボタンを押すと、success.html を表示する
-              method="POST"     form送信の際の約束事として、こう記述する
-              netlify-honeypot="bot-field"   ボット対策(プログラムによる自動投稿対策)
-              data-netlify-recaptcha="true"  車の絵を選べなどの「キャプチャ」機能を用いる
-              data-netlify="true">           Netlify でフォーム処理を行う -->
-        <form
-          name="contact"
-          action="/success"
-          method="POST"
-          netlify-honeypot="bot-field"
-          data-netlify-recaptcha="true"
-          data-netlify="true"
-        >
-          <!-- Netlify honeypot -->
-          <!-- hidden(隠し)クラスにしているので、人の目からはこの入力枠は見えない。
-               それでも入力枠に文字入力されているならば、ボット（コンピュータプログラム）
-               による投稿なので、Netlify により、スパム(迷惑)として扱われる -->
-          <p class="hidden">
-            <label
-              >Don’t fill this out if you're human:
-              <input name="bot-field" />
-            </label>
+        <!-- Hero Section -->
+        <div class="contact-hero">
+          <div class="icon-circle">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <h1>お問い合わせ</h1>
+          <p>
+            ご意見・ご感想など、以下の欄にご記入の上、送信してください。
+            記事に関するご質問などもお気軽にお寄せください。
           </p>
+        </div>
 
-          <!-- メール通知用の隠し枠 -->
-          <!-- Netlifyから送られるメールの「件名」と
-              「問い合わせ前に見ていたURL」を指定している -->
-          <label class="hidden" for="subject">件名</label>
-          <input
-            type="hidden"
-            id="subject"
-            name="subject"
-            data-remove-prefix="true"
-            value="Webサイトから「お問い合わせ」がありました。"
-          />
-          <label class="hidden" for="referrer_url"
-            >お問い合わせ前に見ていたURL</label
+        <!-- Form Card -->
+        <div class="form-card">
+          <form
+            name="contact"
+            action="https://ssgform.com/s/G72D9M88AyCi"
+            method="POST"
+            id="contact-form"
           >
-          <input type="hidden" id="referrer_url" name="referrer_url" />
-          <script>
-            document.getElementById("referrer_url").value = document.referrer;
-          </script>
+            <!-- Hidden fields -->
+            <input type="hidden" id="referrer_url" name="referrer_url" />
+            <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response" />
 
-          <p>
-            <!-- 長文用の文字入力枠 -->
-            <!-- 各種属性の意味は次の通り -->
-            <!-- autocapitalize="none" 自動的に先頭文字を大文字にしない
-                  autocorrect="off"    自動的に綴校正(スペルチェック)を行わない
-                  id="message"         id属性をmesseageにする。
-                                       labelのfor属性に for="message" と書き、
-                                       入力枠とラベルの対応関係を明確にする
-                  name="message"       サーバ側で、message という名前の入力枠として扱う
-                  placeholder="とっても為になりました。ありがとうございます。" 入力例 required="required"  required属性。送信ボタンを押すには入力必須 -->
-            <label for="message">お問い合わせ内容</label>
-            <textarea
-              autocapitalize="none"
-              autocorrect="off"
-              id="message"
-              name="message"
-              placeholder="とっても為になりました。ありがとうございます。"
-              required="required"
-            ></textarea>
-          </p>
+            <!-- Message -->
+            <div class="form-group" data-validate="required">
+              <label for="message">
+                お問い合わせ内容
+                <span class="required">*</span>
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="ご質問やご意見をお聞かせください"
+                required
+                autocapitalize="none"
+                autocorrect="off"
+              ></textarea>
+              <span class="message error">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                お問い合わせ内容を入力してください
+              </span>
+              <span class="message success">
+                <i class="fa-solid fa-circle-check"></i>
+                OK
+              </span>
+            </div>
 
-          <p>
-            <!-- 文字入力枠 -->
-            <!-- 各種属性の意味は次の通り -->
-            <!-- type="text" 文字入力用の枠 通常のキーボードが表示される
-                 autocomplete="name" iPhone の連絡先から自分の名前が自動入力できる -->
-            <label for="name">お名前</label>
-            <input
-              type="text"
-              autocomplete="name"
-              id="name"
-              name="name"
-              placeholder="山田 太郎"
-              required="required"
-            />
-          </p>
+            <!-- Name -->
+            <div class="form-group" data-validate="required">
+              <label for="name">
+                お名前
+                <span class="required">*</span>
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="山田 太郎"
+                required
+                autocomplete="name"
+              />
+              <span class="message error">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                お名前を入力してください
+              </span>
+              <span class="message success">
+                <i class="fa-solid fa-circle-check"></i>
+                OK
+              </span>
+            </div>
 
-          <p>
-            <!-- 文字入力枠 -->
-            <!-- 各種属性の意味は次の通り -->
-            <!-- type="email" メール入力用の枠 メール用のキーボードが表示される
-                 autocomplete="email" iPhone で自分のメールアドレスが自動入力できる -->
-            <label for="email">メールアドレス</label>
-            <input
-              type="email"
-              autocomplete="email"
-              id="email"
-              name="email"
-              placeholder="taro@example.com"
-              required="required"
-            />
-          </p>
+            <!-- Email -->
+            <div class="form-group" data-validate="email">
+              <label for="email">
+                メールアドレス
+                <span class="required">*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="taro@example.com"
+                required
+                autocomplete="email"
+              />
+              <span class="message error">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                正しいメールアドレスを入力してください
+              </span>
+              <span class="message success">
+                <i class="fa-solid fa-circle-check"></i>
+                OK
+              </span>
+            </div>
 
-          <p>
-            <!-- 文字入力枠 -->
-            <!-- 各種属性の意味は次の通り -->
-            <!-- type="tel" 電話入力用の枠 電話用のキーボードが表示される
-                 autocomplete="tel" iPhone で自分の電話番号が自動入力できる
-                 maxlength="13" 最大13桁
-                 minlength="7"  最小 7桁
-                 pattern="^(\d|-|\(|\))*$" 「正規表現」数字か - か () が入力可 -->
-            <label for="tel">電話番号</label>
-            <input
-              type="tel"
-              autocomplete="tel"
-              id="tel"
-              maxlength="13"
-              minlength="7"
-              name="tel"
-              pattern="^(\d|-|\(|\))*$"
-              placeholder="0523734649"
-            />
-          </p>
+            <!-- Phone -->
+            <div class="form-group" data-validate="tel">
+              <label for="tel">
+                電話番号
+                <span style="color: var(--text-muted); font-weight: 400;">（任意）</span>
+              </label>
+              <input
+                type="tel"
+                id="tel"
+                name="tel"
+                placeholder="052-373-4649"
+                autocomplete="tel"
+                maxlength="13"
+                minlength="7"
+                pattern="^(\d|-|\(|\))*$"
+              />
+              <span class="message error">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                正しい形式で入力してください
+              </span>
+              <span class="message success">
+                <i class="fa-solid fa-circle-check"></i>
+                OK
+              </span>
+            </div>
 
-          <!-- Netlify が提供する「キャプチャ機能」を用いるには
-               以下のコードを記述する。
-               「キャプチャ」機能とは、車の絵を選ぶなど、
-               人が操作しているか確認する機能のこと -->
-          <div data-netlify-recaptcha="true"></div>
+            <!-- Form Footer -->
+            <div class="form-footer">
+              <button
+                type="button"
+                class="privacy-btn"
+                data-micromodal-trigger="privacy-modal"
+              >
+                <i class="fa-solid fa-shield-halved"></i>
+                お預かりする情報の取り扱い
+              </button>
 
-          <p>
-            <button
-              type="button"
-              class="simple button"
-              data-micromodal-trigger="privacy-modal"
-            >
-              お預かりする情報の取り扱い
-            </button>
-          </p>
+              <button type="submit" class="submit-btn" disabled>
+                <i class="fa-solid fa-paper-plane"></i>
+                送信する
+              </button>
+            </div>
 
-          <!-- 送信ボタン -->
-          <!-- type="submit" で、送信ボタンになる -->
-          <input type="submit" value="送信" />
-        </form>
+            <p class="form-note" style="margin-top: 1rem; text-align: center;">
+              ご入力内容は本お問い合わせ対応以外の目的では利用いたしません。
+            </p>
+          </form>
+        </div>
 
         <!-- お預かりする情報の取り扱い（モーダル） -->
         <div class="modal" id="privacy-modal" aria-hidden="true">
@@ -273,16 +590,204 @@
       </article>
     </main>
 
-    <!-- サイドバー -->
-    <div id="sidebar" class="sidebar"></div>
-    <script>
-      include("sidebar");
-    </script>
-
     <!-- フッター -->
     <footer id="footer"></footer>
     <script>
       include("footer");
+    </script>
+
+    <!-- Form Validation & reCAPTCHA Script -->
+    <script>
+      (function() {
+        // Set referrer URL
+        var referrerField = document.getElementById("referrer_url");
+        if (referrerField && !referrerField.value) {
+          referrerField.value = document.referrer || window.location.href;
+        }
+
+        // reCAPTCHA v3
+        var siteKey = "6Lda9vArAAAAADeKagqVWNV8PEZKND3-TjOnDUZ9";
+
+        function requestToken(action, onToken, onError) {
+          if (!window.grecaptcha || typeof window.grecaptcha.ready !== "function") {
+            setTimeout(function() { requestToken(action, onToken, onError); }, 150);
+            return;
+          }
+
+          window.grecaptcha.ready(function() {
+            window.grecaptcha.execute(siteKey, { action: action })
+              .then(function(token) {
+                onToken(token);
+              })
+              .catch(function(error) {
+                if (typeof onError === "function") {
+                  onError(error);
+                } else {
+                  console.error("reCAPTCHA token request failed", error);
+                }
+              });
+          });
+        }
+
+        // Form validation
+        document.addEventListener("DOMContentLoaded", function() {
+          var form = document.getElementById("contact-form");
+          if (!form) return;
+
+          var formGroups = form.querySelectorAll(".form-group[data-validate]");
+          var submitBtn = form.querySelector(".submit-btn");
+          var tokenField = form.querySelector("input[name='g-recaptcha-response']");
+
+          // Request initial token
+          function updateToken(token) {
+            if (tokenField) tokenField.value = token;
+          }
+          requestToken("contact_form", updateToken);
+
+          // Validation functions
+          function validateRequired(value) {
+            return value.trim().length > 0;
+          }
+
+          function validateEmail(value) {
+            if (!value.trim()) return false;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(value);
+          }
+
+          function validateTel(value) {
+            if (!value.trim()) return true; // Optional field
+            var telRegex = /^(\d|-|\(|\))*$/;
+            return telRegex.test(value) && value.length >= 7;
+          }
+
+          function validateField(formGroup) {
+            var input = formGroup.querySelector("input, textarea");
+            if (!input) return true;
+
+            var validationType = formGroup.dataset.validate;
+            var value = input.value;
+            var isValid = true;
+
+            switch (validationType) {
+              case "required":
+                isValid = validateRequired(value);
+                break;
+              case "email":
+                isValid = validateEmail(value);
+                break;
+              case "tel":
+                isValid = validateTel(value);
+                break;
+            }
+
+            // Update UI
+            formGroup.classList.remove("valid", "invalid");
+            if (value.trim()) {
+              formGroup.classList.add(isValid ? "valid" : "invalid");
+            }
+
+            return isValid;
+          }
+
+          // Check if all required fields are valid
+          function checkAllRequiredValid() {
+            var allValid = true;
+            formGroups.forEach(function(formGroup) {
+              var input = formGroup.querySelector("input, textarea");
+              if (input && input.hasAttribute("required")) {
+                var validationType = formGroup.dataset.validate;
+                var value = input.value;
+                var isValid = true;
+
+                switch (validationType) {
+                  case "required":
+                    isValid = validateRequired(value);
+                    break;
+                  case "email":
+                    isValid = validateEmail(value);
+                    break;
+                  case "tel":
+                    isValid = validateTel(value);
+                    break;
+                }
+
+                if (!isValid) {
+                  allValid = false;
+                }
+              }
+            });
+            return allValid;
+          }
+
+          // Update submit button state
+          function updateSubmitButton() {
+            if (checkAllRequiredValid()) {
+              submitBtn.disabled = false;
+              submitBtn.classList.add("enabled");
+            } else {
+              submitBtn.disabled = true;
+              submitBtn.classList.remove("enabled");
+            }
+          }
+
+          // Add event listeners for real-time validation
+          formGroups.forEach(function(formGroup) {
+            var input = formGroup.querySelector("input, textarea");
+            if (input) {
+              input.addEventListener("blur", function() {
+                validateField(formGroup);
+                updateSubmitButton();
+              });
+
+              input.addEventListener("input", function() {
+                if (formGroup.classList.contains("invalid") || formGroup.classList.contains("valid")) {
+                  validateField(formGroup);
+                }
+                updateSubmitButton();
+              });
+            }
+          });
+
+          // Form submit with reCAPTCHA
+          form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var allValid = true;
+            formGroups.forEach(function(formGroup) {
+              var input = formGroup.querySelector("input, textarea");
+              if (input && input.hasAttribute("required")) {
+                if (!validateField(formGroup)) {
+                  allValid = false;
+                }
+              } else {
+                validateField(formGroup);
+              }
+            });
+
+            if (!allValid) {
+              var firstInvalid = form.querySelector(".form-group.invalid input, .form-group.invalid textarea");
+              if (firstInvalid) {
+                firstInvalid.focus();
+              }
+              return;
+            }
+
+            // Request fresh token before submit
+            requestToken(
+              "contact_form_submit",
+              function(token) {
+                updateToken(token);
+                form.submit();
+              },
+              function(error) {
+                console.error("reCAPTCHA execution failed", error);
+                alert("reCAPTCHAの検証に失敗しました。時間を置いて再度お試しください。");
+              }
+            );
+          });
+        });
+      })();
     </script>
   </body>
 </html>

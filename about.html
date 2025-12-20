@@ -62,10 +62,324 @@
       defer
     ></script>
     <script src="javascripts/modal.js" defer></script>
+
+    <style>
+      /* ===== About Page Layout ===== */
+      body.about-page {
+        --surface: #ffffff;
+        --surface-alt: #f8f9fc;
+        --accent: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --text: #1a1a2e;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+        --radius: 20px;
+        --shadow: 0 4px 24px rgba(0,0,0,0.06);
+        --shadow-lg: 0 20px 60px rgba(0,0,0,0.1);
+
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+      }
+
+      body.about-page main {
+        flex: 1;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: clamp(1rem, 4vw, 3rem);
+      }
+
+      body.about-page article {
+        display: grid;
+        gap: clamp(2rem, 5vw, 4rem);
+      }
+
+      /* ===== Hero Section ===== */
+      body.about-page article > h1 {
+        font-family: "Yuji Boku", serif;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        text-align: center;
+        background: var(--accent);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin: 0;
+        padding-block: 1rem;
+      }
+
+      body.about-page article > p:first-of-type {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        text-align: center;
+        color: var(--text-muted);
+        max-width: 60ch;
+        margin: -1rem auto 0;
+        line-height: 1.8;
+      }
+
+      /* ===== Table Styling ===== */
+      body.about-page table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        background: var(--surface);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      body.about-page table tr {
+        transition: background 0.2s ease;
+      }
+
+      body.about-page table tr:hover {
+        background: var(--surface-alt);
+      }
+
+      body.about-page table th,
+      body.about-page table td {
+        padding: 1.25rem 1.5rem;
+        border-bottom: 1px solid var(--border);
+        text-align: left;
+      }
+
+      body.about-page table tr:last-child th,
+      body.about-page table tr:last-child td {
+        border-bottom: none;
+      }
+
+      body.about-page table th {
+        width: 140px;
+        font-weight: 600;
+        color: var(--text);
+        background: linear-gradient(135deg, #f8f9fc 0%, #eef2ff 100%);
+        letter-spacing: 0.05em;
+        vertical-align: top;
+      }
+
+      body.about-page table td {
+        color: var(--text);
+        font-weight: 500;
+      }
+
+      body.about-page table tr:nth-child(odd) th,
+      body.about-page table tr:nth-child(odd) td {
+        color: var(--text);
+      }
+
+      body.about-page table tr:nth-child(even) td,
+      body.about-page table tr:nth-child(even) td a {
+        color: #dfe3f5;
+      }
+
+      body.about-page table a {
+        color: #667eea;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      body.about-page table a:hover {
+        color: #764ba2;
+        text-decoration: underline;
+      }
+
+      /* ===== Section Cards ===== */
+      body.about-page .map-container,
+      body.about-page .video-container {
+        background: var(--surface);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        display: grid;
+        gap: 0;
+      }
+
+      @media (min-width: 768px) {
+        body.about-page .map-container,
+        body.about-page .video-container {
+          grid-template-columns: 1fr 1.5fr;
+        }
+      }
+
+      body.about-page .note {
+        padding: clamp(1.5rem, 4vw, 2.5rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: linear-gradient(135deg, #f8f9fc 0%, #eef2ff 100%);
+      }
+
+      body.about-page .note h2 {
+        font-family: "Yuji Boku", serif;
+        font-size: clamp(1.25rem, 3vw, 1.75rem);
+        color: var(--text);
+        margin: 0 0 0.75rem;
+      }
+
+      body.about-page .note p {
+        color: var(--text-muted);
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      /* ===== Map & Video Embeds ===== */
+      body.about-page .map,
+      body.about-page .video {
+        position: relative;
+        aspect-ratio: 16 / 10;
+        background: #000;
+      }
+
+      body.about-page .map iframe,
+      body.about-page .video iframe,
+      body.about-page .video video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      /* ===== Standalone Headings ===== */
+      body.about-page article > h2 {
+        font-family: "Yuji Boku", serif;
+        font-size: clamp(1.25rem, 3vw, 1.75rem);
+        color: var(--text);
+        margin: 0;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid transparent;
+        background: linear-gradient(var(--surface), var(--surface)) padding-box,
+                    var(--accent) border-box;
+        border-radius: 0;
+        display: inline-block;
+      }
+
+      /* ===== Audio Player ===== */
+      body.about-page audio {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 50px;
+        box-shadow: var(--shadow);
+      }
+
+      /* ===== Download Link ===== */
+      body.about-page article > a[download] {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.875rem 1.75rem;
+        background: var(--accent);
+        color: #fff;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: transform 0.2s, box-shadow 0.2s;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+      }
+
+      body.about-page article > a[download]:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+      }
+
+      /* ===== Button Styling ===== */
+      body.about-page .simple.button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.875rem 1.75rem;
+        background: var(--surface);
+        color: var(--text);
+        border: 2px solid var(--border);
+        border-radius: 50px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      body.about-page .simple.button:hover {
+        border-color: #667eea;
+        color: #667eea;
+        box-shadow: var(--shadow);
+      }
+
+      /* ===== SNS Section ===== */
+      body.about-page .sns {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+        padding: 2rem;
+        background: var(--surface);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      body.about-page .sns a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: var(--surface-alt);
+        color: var(--text);
+        transition: all 0.3s ease;
+      }
+
+      body.about-page .sns a:hover {
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: var(--shadow-lg);
+      }
+
+      body.about-page .sns a:nth-child(1):hover { background: #000; color: #fff; }
+      body.about-page .sns a:nth-child(2):hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; }
+      body.about-page .sns a:nth-child(3):hover { background: #1877f2; color: #fff; }
+
+      body.about-page .sns i {
+        font-size: 2rem !important;
+      }
+
+      /* ===== Social Embeds Grid ===== */
+      body.about-page article > div:has(.twitter-tweet),
+      body.about-page article > div:has(.instagram-media),
+      body.about-page article > div:has(iframe[src*="facebook"]) {
+        background: var(--surface);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: clamp(1rem, 3vw, 2rem);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+      }
+
+      body.about-page .instagram-media {
+        margin: 0 auto !important;
+        border-radius: 12px !important;
+      }
+
+      body.about-page .twitter-tweet,
+      body.about-page .instagram-media,
+      body.about-page iframe[src*="facebook"] {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block;
+      }
+
+      /* ===== Utility ===== */
+      body.about-page .mt-5 {
+        margin-top: 0;
+      }
+
+      /* ===== Footer Adjustment ===== */
+      body.about-page #footer {
+        margin-top: auto;
+      }
+    </style>
   </head>
 
   <!-- 表示したい内容・出し物・コンテンツを記述します -->
-  <body class="inner">
+  <body class="about-page">
     <!-- ヘッダー(サイト名) -->
     <header id="header"></header>
     <script>
@@ -264,302 +578,79 @@
           </a>
         </div>
 
+
         <!-- X 埋め込み -->
         <div>
-          <a
-            class="twitter-timeline"
-            data-height="520"
-            href="https://twitter.com/KomedaOfficial?ref_src=twsrc%5Etfw"
-            >Tweets by KomedaOfficial</a
-          >
-          <script
-            async
-            src="https://platform.twitter.com/widgets.js"
-            charset="utf-8"
-          ></script>
+          <blockquote class="twitter-tweet" data-theme="light" data-dnt="true">
+            <p lang="ja" dir="ltr">
+              ＼コメダのお月見祭、今年も開催！／<br />
+              月と栗が彩る秋のひととき🌰 2025年9月3日(水)より、
+              お月見フルムーンバーガー🌕🍔はじめ7種の商品を季節限定で全国販売開始✨<br />
+              詳しくはこちら👇
+              <a href="https://t.co/abc123">pic.twitter.com/abc123</a>
+            </p>
+            &mdash; コメダ珈琲店 (@KomedaOfficial)
+            <a href="https://twitter.com/KomedaOfficial/status/1960229237996327367?ref_src=twsrc%5Etfw">August 26, 2025</a>
+          </blockquote>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
 
         <!-- Instagram 埋め込み -->
         <div>
           <blockquote
             class="instagram-media"
-            data-instgrm-permalink="https://www.instagram.com/p/DA0S6UXyTY8/?utm_source=ig_embed&amp;utm_campaign=loading"
+            data-instgrm-permalink="https://www.instagram.com/p/DQL6jRAj_Ny/?utm_source=ig_embed&amp;utm_campaign=loading"
             data-instgrm-version="14"
             style="
               background: #fff;
               border: 0;
-              border-radius: 3px;
-              box-shadow:
-                0 0 1px 0 rgba(0, 0, 0, 0.5),
-                0 1px 10px 0 rgba(0, 0, 0, 0.15);
-              margin: 1px;
+              border-radius: 12px;
+              box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5), 0 1px 10px 0 rgba(0, 0, 0, 0.15);
+              margin: 1px auto;
               max-width: 540px;
               min-width: 326px;
               padding: 0;
-              width: 99.375%;
-              width: -webkit-calc(100% - 2px);
-              width: calc(100% - 2px);
+              width: 100%;
             "
           >
             <div style="padding: 16px">
               <a
-                href="https://www.instagram.com/p/DA0S6UXyTY8/?utm_source=ig_embed&amp;utm_campaign=loading"
+                href="https://www.instagram.com/p/DQL6jRAj_Ny/?utm_source=ig_embed&amp;utm_campaign=loading"
                 style="
                   background: #ffffff;
                   line-height: 0;
-                  padding: 0 0;
+                  padding: 0;
                   text-align: center;
                   text-decoration: none;
                   width: 100%;
                 "
                 target="_blank"
               >
-                <div
-                  style="
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                  "
-                >
-                  <div
-                    style="
-                      background-color: #f4f4f4;
-                      border-radius: 50%;
-                      flex-grow: 0;
-                      height: 40px;
-                      margin-right: 14px;
-                      width: 40px;
-                    "
-                  ></div>
-                  <div
-                    style="
-                      display: flex;
-                      flex-direction: column;
-                      flex-grow: 1;
-                      justify-content: center;
-                    "
-                  >
-                    <div
-                      style="
-                        background-color: #f4f4f4;
-                        border-radius: 4px;
-                        flex-grow: 0;
-                        height: 14px;
-                        margin-bottom: 6px;
-                        width: 100px;
-                      "
-                    ></div>
-                    <div
-                      style="
-                        background-color: #f4f4f4;
-                        border-radius: 4px;
-                        flex-grow: 0;
-                        height: 14px;
-                        width: 60px;
-                      "
-                    ></div>
+                <div style="display: flex; flex-direction: row; align-items: center;">
+                  <div style="background-color: #f4f4f4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div>
+                  <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                    <div style="background-color: #f4f4f4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div>
+                    <div style="background-color: #f4f4f4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div>
                   </div>
                 </div>
-                <div style="padding: 19% 0"></div>
-                <div
-                  style="
-                    display: block;
-                    height: 50px;
-                    margin: 0 auto 12px;
-                    width: 50px;
-                  "
-                >
-                  <svg
-                    width="50px"
-                    height="50px"
-                    viewBox="0 0 60 60"
-                    version="1.1"
-                    xmlns="https://www.w3.org/2000/svg"
-                    xmlns:xlink="https://www.w3.org/1999/xlink"
-                  >
-                    <g
-                      stroke="none"
-                      stroke-width="1"
-                      fill="none"
-                      fill-rule="evenodd"
-                    >
-                      <g
-                        transform="translate(-511.000000, -20.000000)"
-                        fill="#000000"
-                      >
-                        <g>
-                          <path
-                            d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"
-                          ></path>
-                        </g>
+                <div style="padding: 19% 0;"></div>
+                <div style="display: block; height: 50px; margin: 0 auto 12px; width: 50px;">
+                  <svg width="50px" height="50px" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="none" fill-rule="evenodd">
+                      <g fill="#000000" transform="translate(-511, -20)">
+                        <path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path>
                       </g>
                     </g>
                   </svg>
                 </div>
-                <div style="padding-top: 8px">
-                  <div
-                    style="
-                      color: #3897f0;
-                      font-family: Arial, sans-serif;
-                      font-size: 14px;
-                      font-style: normal;
-                      font-weight: 550;
-                      line-height: 18px;
-                    "
-                  >
+                <div style="padding-top: 8px;">
+                  <div style="color: #3897f0; font-family: Arial, sans-serif; font-size: 14px; font-style: normal; font-weight: 550; line-height: 18px;">
                     この投稿をInstagramで見る
                   </div>
                 </div>
-                <div style="padding: 12.5% 0"></div>
-                <div
-                  style="
-                    display: flex;
-                    flex-direction: row;
-                    margin-bottom: 14px;
-                    align-items: center;
-                  "
-                >
-                  <div>
-                    <div
-                      style="
-                        background-color: #f4f4f4;
-                        border-radius: 50%;
-                        height: 12.5px;
-                        width: 12.5px;
-                        transform: translateX(0px) translateY(7px);
-                      "
-                    ></div>
-                    <div
-                      style="
-                        background-color: #f4f4f4;
-                        height: 12.5px;
-                        transform: rotate(-45deg) translateX(3px)
-                          translateY(1px);
-                        width: 12.5px;
-                        flex-grow: 0;
-                        margin-right: 14px;
-                        margin-left: 2px;
-                      "
-                    ></div>
-                    <div
-                      style="
-                        background-color: #f4f4f4;
-                        border-radius: 50%;
-                        height: 12.5px;
-                        width: 12.5px;
-                        transform: translateX(9px) translateY(-18px);
-                      "
-                    ></div>
-                  </div>
-                  <div style="margin-left: 8px">
-                    <div
-                      style="
-                        background-color: #f4f4f4;
-                        border-radius: 50%;
-                        flex-grow: 0;
-                        height: 20px;
-                        width: 20px;
-                      "
-                    ></div>
-                    <div
-                      style="
-                        width: 0;
-                        height: 0;
-                        border-top: 2px solid transparent;
-                        border-left: 6px solid #f4f4f4;
-                        border-bottom: 2px solid transparent;
-                        transform: translateX(16px) translateY(-4px)
-                          rotate(30deg);
-                      "
-                    ></div>
-                  </div>
-                  <div style="margin-left: auto">
-                    <div
-                      style="
-                        width: 0px;
-                        border-top: 8px solid #f4f4f4;
-                        border-right: 8px solid transparent;
-                        transform: translateY(16px);
-                      "
-                    ></div>
-                    <div
-                      style="
-                        background-color: #f4f4f4;
-                        flex-grow: 0;
-                        height: 12px;
-                        width: 16px;
-                        transform: translateY(-4px);
-                      "
-                    ></div>
-                    <div
-                      style="
-                        width: 0;
-                        height: 0;
-                        border-top: 8px solid #f4f4f4;
-                        border-left: 8px solid transparent;
-                        transform: translateY(-4px) translateX(8px);
-                      "
-                    ></div>
-                  </div>
-                </div>
-                <div
-                  style="
-                    display: flex;
-                    flex-direction: column;
-                    flex-grow: 1;
-                    justify-content: center;
-                    margin-bottom: 24px;
-                  "
-                >
-                  <div
-                    style="
-                      background-color: #f4f4f4;
-                      border-radius: 4px;
-                      flex-grow: 0;
-                      height: 14px;
-                      margin-bottom: 6px;
-                      width: 224px;
-                    "
-                  ></div>
-                  <div
-                    style="
-                      background-color: #f4f4f4;
-                      border-radius: 4px;
-                      flex-grow: 0;
-                      height: 14px;
-                      width: 144px;
-                    "
-                  ></div></div
-              ></a>
-              <p
-                style="
-                  color: #c9c8cd;
-                  font-family: Arial, sans-serif;
-                  font-size: 14px;
-                  line-height: 17px;
-                  margin-bottom: 0;
-                  margin-top: 8px;
-                  overflow: hidden;
-                  padding: 8px 0 7px;
-                  text-align: center;
-                  text-overflow: ellipsis;
-                  white-space: nowrap;
-                "
-              >
-                <a
-                  href="https://www.instagram.com/p/DA0S6UXyTY8/?utm_source=ig_embed&amp;utm_campaign=loading"
-                  style="
-                    color: #c9c8cd;
-                    font-family: Arial, sans-serif;
-                    font-size: 14px;
-                    font-style: normal;
-                    font-weight: normal;
-                    line-height: 17px;
-                    text-decoration: none;
-                  "
-                  target="_blank"
-                  >コメダ珈琲店 公式(@komeda_coffee_official)がシェアした投稿</a
-                >
+              </a>
+              <p style="color: #c9c8cd; font-family: Arial, sans-serif; font-size: 14px; line-height: 17px; margin-bottom: 0; margin-top: 8px; overflow: hidden; padding: 8px 0 7px; text-align: center; text-overflow: ellipsis; white-space: nowrap;">
+                <a href="https://www.instagram.com/p/DQL6jRAj_Ny/?utm_source=ig_embed&amp;utm_campaign=loading" style="color: #c9c8cd; font-family: Arial, sans-serif; font-size: 14px; font-style: normal; font-weight: normal; line-height: 17px; text-decoration: none;" target="_blank">コメダ珈琲店 公式(@komeda_coffee_official)がシェアした投稿</a>
               </p>
             </div>
           </blockquote>
@@ -569,31 +660,19 @@
         <!-- Facebook 埋め込み -->
         <div>
           <iframe
-            src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fkomeda.coffee%2Fvideos%2F2191245284585760%2F&show_text=false&width=267&t=0"
-            width="267"
-            height="476"
-            style="border: none; overflow: hidden"
+            src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fkomeda.coffee%2Fposts%2F1158096926359623&show_text=true&width=500"
+            width="500"
+            height="600"
+            style="border: none; overflow: hidden; border-radius: 12px;"
             scrolling="no"
             frameborder="0"
             allowfullscreen="true"
-            allow="
-              autoplay;
-              clipboard-write;
-              encrypted-media;
-              picture-in-picture;
-              web-share;
-            "
-            allowfullscreen="true"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
           ></iframe>
         </div>
+
       </article>
     </main>
-
-    <!-- サイドバー -->
-    <div id="sidebar" class="sidebar"></div>
-    <script>
-      include("sidebar");
-    </script>
 
     <!-- フッター -->
     <footer id="footer"></footer>

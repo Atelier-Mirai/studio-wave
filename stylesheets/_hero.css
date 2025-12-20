@@ -7,9 +7,9 @@
   grid-column: 1 / -1;
   grid-row: 1 / span 2;
   min-height: 100vh;
-  margin-block-start: calc(
-    -100px - var(--space-l)
-  ); /* ヘッダー + 行間分だけ上に引き上げて、背景の帯を隠す */
+  margin-block-start: calc(-100px - var(--space-l)); /* ヘッダー + 行間分だけ上に引き上げて、背景の帯を隠す */
+
+  pointer-events: none; /* 背景レイヤーをクリック不可にして前面要素を操作可能に */
 
   img {
     position: absolute;

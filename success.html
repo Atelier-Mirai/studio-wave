@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
 
     <!-- ページのタイトル -->
-    <title>お問い合わせ - WAVE</title>
+    <title>送信完了 - WAVE</title>
 
     <!-- ビューポート(視点)の指定 -->
     <meta name="viewport" content="width=device-width" />
@@ -23,8 +23,7 @@
     <!-- 検索時に表示される、ウェブサイトの要約文 -->
     <meta
       name="description"
-      content="概ね80文字前後のサイトの
-    紹介文が、検索時に表示されます。"
+      content="お問い合わせありがとうございます。"
     />
 
     <!-- Google Fonts -->
@@ -55,10 +54,127 @@
 
     <!-- 部分ファイルを読み込む -->
     <script src="include.js"></script>
+
+    <style>
+      /* ===== Success Page Layout ===== */
+      body.success-page {
+        --surface: #ffffff;
+        --surface-alt: #f8f9fc;
+        --accent: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --accent-solid: #667eea;
+        --text: #1a1a2e;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+        --radius: 20px;
+        --shadow: 0 4px 24px rgba(0,0,0,0.06);
+        --shadow-lg: 0 20px 60px rgba(0,0,0,0.1);
+        --success: #10b981;
+
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+      }
+
+      body.success-page main {
+        flex: 1;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: clamp(1rem, 4vw, 3rem);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      body.success-page article {
+        width: 100%;
+      }
+
+      /* ===== Success Card ===== */
+      body.success-page .success-card {
+        text-align: center;
+        padding: clamp(3rem, 8vw, 5rem) clamp(1.5rem, 4vw, 3rem);
+        background: var(--surface);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      body.success-page .success-icon {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 2rem;
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: #fff;
+        animation: success-pop 0.5s ease-out;
+      }
+
+      @keyframes success-pop {
+        0% {
+          transform: scale(0);
+          opacity: 0;
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      body.success-page .success-card h1 {
+        font-family: "Yuji Boku", serif;
+        font-size: clamp(1.5rem, 4vw, 2.25rem);
+        background: var(--accent);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin: 0 0 1rem;
+        line-height: 1.4;
+      }
+
+      body.success-page .success-card p {
+        color: var(--text-muted);
+        line-height: 1.8;
+        max-width: 45ch;
+        margin: 0 auto 2rem;
+        font-size: 1.05rem;
+      }
+
+      body.success-page .success-card .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.875rem 2rem;
+        background: var(--accent);
+        color: #fff;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+      }
+
+      body.success-page .success-card .back-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+      }
+
+      /* ===== Footer ===== */
+      body.success-page #footer {
+        margin-top: auto;
+      }
+    </style>
   </head>
 
   <!-- 表示したい内容・出し物・コンテンツを記述します -->
-  <body class="post">
+  <body class="success-page">
     <!-- ヘッダー(サイト名) -->
     <header id="header"></header>
     <script>
@@ -75,16 +191,23 @@
     <main>
       <!-- 投稿記事 -->
       <article>
-        <h1>お問い合わせ<br />ありがとうございます</h1>
-        <p>担当者よりご連絡差し上げますので、 しばらくお待ちください。</p>
+        <div class="success-card">
+          <div class="success-icon">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <h1>お問い合わせ<br />ありがとうございます</h1>
+          <p>
+            メッセージを受け付けました。<br />
+            担当者より折り返しご連絡いたしますので、<br />
+            しばらくお待ちください。
+          </p>
+          <a href="/" class="back-link">
+            <i class="fa-solid fa-house"></i>
+            トップページへ戻る
+          </a>
+        </div>
       </article>
     </main>
-
-    <!-- サイドバー -->
-    <div id="sidebar" class="sidebar"></div>
-    <script>
-      include("sidebar");
-    </script>
 
     <!-- フッター -->
     <footer id="footer"></footer>
