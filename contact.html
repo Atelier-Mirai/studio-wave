@@ -103,11 +103,14 @@
 
       /* ===== Hero Section ===== */
       body.contact-page .contact-hero {
+        display: grid;
+        place-items: center;
         text-align: center;
         padding: clamp(2rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
         background: var(--surface);
         border-radius: var(--radius);
         box-shadow: var(--shadow);
+        gap: 1rem;
       }
 
       body.contact-page .contact-hero h1 {
@@ -156,13 +159,20 @@
       /* ===== Form Groups ===== */
       body.contact-page .form-group {
         position: relative;
+        display: grid;
+        gap: 0.5rem;
+      }
+
+      body.contact-page .form-group.message-group,
+      body.contact-page .form-footer,
+      body.contact-page .form-note,
+      body.contact-page .recaptcha-wrapper {
+        grid-column: 1 / -1;
       }
 
       body.contact-page .form-group label {
-        display: block;
         font-weight: 600;
         color: var(--text);
-        margin-bottom: 0.5rem;
         font-size: 0.95rem;
       }
 
@@ -303,11 +313,10 @@
 
       /* ===== Form Footer ===== */
       body.contact-page .form-footer {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
+        display: grid;
         gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        align-items: center;
         padding-top: 1rem;
         border-top: 1px solid var(--border);
       }
@@ -316,20 +325,22 @@
         font-size: 0.85rem;
         color: var(--text-muted);
         max-width: 35ch;
+        text-align: center;
+        margin-top: 1rem;
+        justify-self: center;
       }
 
       /* ===== reCAPTCHA ===== */
       body.contact-page .recaptcha-wrapper {
-        display: flex;
-        justify-content: center;
+        display: grid;
+        place-items: center;
         margin: 1rem 0;
       }
 
       /* ===== Modal Styling ===== */
       body.contact-page .modal-overlay {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: grid;
+        place-items: center;
         padding: 2rem 1rem;
       }
 
@@ -417,7 +428,7 @@
         <div class="form-card">
           <form
             name="contact"
-            action="https://ssgform.com/s/G72D9M88AyCi"
+            action="https://ssgform.com/s/JBURw2UIStOc"
             method="POST"
             id="contact-form"
           >
