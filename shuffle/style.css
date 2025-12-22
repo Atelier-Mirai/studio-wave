@@ -1,0 +1,240 @@
+:root {
+  --control-height: 48px;
+}
+
+/*=====================================================================
+  Shuffle.js デモ用スタイル
+=====================================================================*/
+
+body {
+  padding: 1rem;
+}
+
+.form-group {
+  display: grid;
+  grid-auto-rows: auto;
+  gap: 1rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  align-items: end;
+}
+
+.form-field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.form-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+  letter-spacing: 0.01em;
+  margin-block-end: 0;
+}
+.form-input,
+.form-select,
+.price-range input[type="number"] {
+  appearance: none;
+  border: 1px solid #c7ced6;
+  border-radius: 0.65rem;
+  background: #f8fafc;
+  padding: 0.65rem 1rem;
+  font-size: 1.05rem;
+  color: #1b2b3e;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  min-height: var(--control-height);
+}
+
+.price-input span {
+  font-size: 1rem;
+}
+
+.price-separator {
+  font-size: 1.25rem;
+}
+
+.form-select {
+  background-image: linear-gradient(45deg, transparent 50%, #1b2b3e 50%),
+    linear-gradient(135deg, #1b2b3e 50%, transparent 50%);
+  background-position: calc(100% - 18px) center, calc(100% - 12px) center;
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 2.5rem;
+}
+
+.form-input:focus,
+.form-select:focus,
+.price-range input[type="number"]:focus {
+  border-color: #007c85;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(0, 124, 133, 0.2);
+  outline: none;
+}
+
+.divider {
+  background-image: url("../muuri/images/raimon.webp");
+  background-repeat: repeat-x;
+  height: 20px;
+  width: 100%;
+
+  border: none;
+}
+
+.grid {
+  position: relative;
+  margin: 0 auto;
+  min-height: 200px;
+}
+
+.grid-sizer,
+.item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.grid-sizer {
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.item {
+  padding: 10px;
+}
+
+.price-range {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.price-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 160px;
+  flex: 1 1 180px;
+}
+
+.price-input {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.price-range input[type="number"] {
+  flex: 1 1 auto;
+  min-width: 120px;
+}
+
+.price-separator {
+  font-weight: 700;
+  color: #4a5568;
+  align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--control-height);
+}
+
+.price-input span {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--control-height);
+}
+
+.price-reset {
+  align-self: center;
+  min-height: var(--control-height);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  margin-block-start: 15px;
+}
+
+.price-reset {
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(135deg, #0d5662, #11879a);
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.price-reset:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(17, 135, 154, 0.25);
+}
+
+.price-reset:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+@media (width >= 768px) {
+  .grid-sizer,
+  .item {
+    width: 50%;
+  }
+}
+
+@media (width >= 1024px) {
+  .grid-sizer,
+  .item {
+    width: 33.3333%;
+  }
+}
+
+.item-content[data-color="shoyu"] {
+  border: 5px solid #674196;
+}
+
+.item-content[data-color="miso"] {
+  border: 5px solid #f19072;
+}
+
+.item-content[data-color="shio"] {
+  border: 5px solid #2ca9e1;
+}
+
+.item-content[data-color="tonkotsu"] {
+  border: 5px solid #ffec47;
+}
+
+.card-image {
+  margin: 0;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  margin-block-end: 1rem;
+}
+
+.card-title,
+.card-desc {
+  padding: 0.5rem;
+}
+
+.card-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  min-height: 5rem;
+  margin-block-end: 1rem;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.5rem;
+}

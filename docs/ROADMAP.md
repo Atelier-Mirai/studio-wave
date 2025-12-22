@@ -60,6 +60,28 @@
   - 代替ライブラリ（Shuffle.js、Gridstack、Sortable + Masonry 等）の調査を並行して進める。
   - 重要な画面では E2E/UI テストを用意し、将来のブラウザアップデートによる破綻を早期に検知する。
 
+代替候補の調査メモ（muuri/index.html ではカテゴリ絞り込み＋ソートを利用中）:
+
+| ライブラリ | 最新状況 | 特徴 / 向き不向き | 備考 |
+| --- | --- | --- | --- |
+| Shuffle.js v6.1.2 | MIT / npm で継続的に更新（Rollup + Vitest でビルドテスト） | データ属性ベースのフィルタ・複数条件コールバック・テキスト検索が標準サポート。Dependency-free、TypeScript 型付き。レスポンシブな masonry 風配置は CSS で制御。 | [package.json](https://cdn.jsdelivr.net/npm/shufflejs/package.json) 参照。 |
+| MixItUp 3 | 2024/11 で OSS 化・リポジトリはアーカイブ予定だが安定稼働。Apache 2.0 | 高速 DOM アニメーション、フィルタ／ソート／Dataset API。Pagination / MultiFilter 拡張も無償公開。公式サポートは終了予定。 | [README](https://raw.githubusercontent.com/patrickkunka/mixitup/v3/README.md) より。 |
+| Isotope v3.0.5 | 2018 以降リリースなし。商用は有料ライセンス。 | Masonry/packery 風レイアウトやドラッグ対応は豊富。jQuery あり/なし両対応。近年更新なしのため長期保守リスクあり。 | [metafizzy/isotope リリース](https://github.com/metafizzy/isotope/releases/tag/v3.0.5)。 |
+
+→ 新規実装なら Shuffle.js が最も積極的にメンテされており移行性も高い。既存マークアップを大きく変えたくない場合や、複雑な多次元フィルタが必要なら MixItUp（アーカイブ前提）も検討余地。Isotope はライセンス費用と更新停止リスクに注意。
+
+#### 参考: モーダルライブラリ比較（MicroModal vs GLightbox）
+
+| 項目 | MicroModal + `modal.js` | GLightbox |
+| --- | --- | --- |
+| 主な用途 | テキスト・フォーム・埋め込みなど任意 DOM を覆う軽量モーダル（`about.html`/`contact.html`） | 画像・動画・HTML をライトボックス表示するギャラリー（`glightbox/index.html`） |
+| 機能 | フォーカストラップ／ESC クローズ／スクロール抑制などアクセシブル。UI は自前で構築。 | サムネ付きギャラリー、前後ナビ、キャプション、HTML/iframe/動画対応。デフォルト UI が充実。 |
+| 依存/サイズ | MicroModal + 数行の初期化（非常に軽量） | CSS/JS で約 30KB、`glightbox-custom.js` で初期化。 |
+| カスタマイズ性 | HTML/CSS を自由に組めるが、ギャラリーなどは自作が必要。 | オプションでアニメ・テーマ変更可。UI はライトボックス前提で単発モーダルだと過剰な場合も。 |
+| 向いているケース | 「動画を大きく表示」「お知らせ詳細」などページ固有モーダル | 写真・動画ギャラリーや作品閲覧などメディア中心のライトボックス演出 |
+
+→ ページ内の単発モーダルは MicroModal を継続利用、ギャラリー演出が必要な箇所では GLightbox を採用する方針が良い。
+
 ### JavaScript: 各ファイルがやっていること（概要）
 
 - `javascripts/hero-slideshow.js`
